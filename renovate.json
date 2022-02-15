@@ -26,5 +26,7 @@
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     }
-  ]
+  ],
+  "timezone": "Europe/Warsaw",
+  "schedule": ["after 10pm and before 6:00am"]
 }
