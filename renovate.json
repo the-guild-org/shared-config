@@ -1,0 +1,30 @@
+{
+  "extends": ["config:base"],
+  "postUpdateOptions": ["yarnDedupeFewer"],
+  "automerge": true,
+  "major": {
+    "automerge": false
+  },
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "prPriority": -1
+    },
+    {
+      "matchPackagePatterns": ["^@theguild/", "^@guild-docs/"],
+      "prPriority": 5
+    },
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    }
+  ]
+}
