@@ -17,7 +17,8 @@
     },
     {
       "excludePackageNames": [
-        "@changesets/cli"
+        "@changesets/cli",
+        "@changesets/apply-release-plan"
       ],
       "matchPackagePatterns": [
         "*"
