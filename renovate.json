@@ -16,6 +16,9 @@
       "prPriority": 5
     },
     {
+      "excludePackageNames": [
+        "@changesets/cli"
+      ],
       "matchPackagePatterns": [
         "*"
       ],
