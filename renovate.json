@@ -18,7 +18,8 @@
     {
       "excludePackageNames": [
         "@changesets/cli",
-        "@changesets/apply-release-plan"
+        "@changesets/apply-release-plan",
+        "@changesets/assemble-release-plan"
       ],
       "matchPackagePatterns": [
         "*"
