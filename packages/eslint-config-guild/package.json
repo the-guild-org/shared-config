@@ -7,7 +7,7 @@
     "url": "the-guild-org/shared-config",
     "directory": "packages/eslint-config-guild"
   },
-  "author": "The Guild <contact@the-guild.dev> (https://the-guild.dev)",
+  "author": "The Guild (https://the-guild.dev)",
   "license": "MIT",
   "private": false,
   "dependencies": {

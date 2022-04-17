@@ -4,7 +4,6 @@
   "repository": "git@github.com:the-guild-org/shared-config.git",
   "author": {
     "name": "The Guild",
-    "email": "contact@the-guild.dev",
     "url": "https://the-guild.dev"
   },
   "license": "MIT",
@@ -14,13 +13,17 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@types/eslint": "8.4.1",
+    "@types/node": "16.11.27",
     "eslint": "8.13.0",
     "eslint-remote-tester": "2.1.1",
+    "patch-package": "6.4.7",
     "prettier": "2.6.2",
     "ts-node": "10.7.0",
     "typescript": "4.6.3"
   },
   "scripts": {
+    "postinstall": "patch-package",
     "lint:eslint": "eslint --ignore-path .gitignore .",
     "lint:prettier": "prettier --ignore-path --check .gitignore .",
     "lint:remote": "eslint-remote-tester",

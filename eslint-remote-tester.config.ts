@@ -1,4 +1,9 @@
 import type { Config } from 'eslint-remote-tester';
+import type { Linter } from 'eslint';
+
+const JSExtensions = ['js', 'jsx', 'cjs', 'mjs', 'cjsx', 'mjsx'] as const;
+
+const TSExtensions = ['ts', 'tsx', 'cts', 'mts', 'ctsx', 'mtsx'] as const;
 
 enum Repo {
   // Ecosystem
@@ -26,34 +31,43 @@ enum Repo {
   Website = 'the-guild-org/the-guild-website',
 }
 
-enum JSExtension {
-  js = 'js',
-  jsx = 'jsx',
-  cjs = 'cjs',
-  mjs = 'mjs',
-  cjsx = 'cjsx',
-  mjsx = 'mjsx',
-}
-
-enum TSExtension {
-  ts = 'ts',
-  tsx = 'tsx',
-  cts = 'cts',
-  mts = 'mts',
-  ctsx = 'ctsx',
-  mtsx = 'mtsx',
-}
-
-const config: Config = {
-  repositories: Object.values(Repo),
-  extensions: [...Object.keys(JSExtension), ...Object.keys(TSExtension)],
-  eslintrc: {
-    root: true,
-    extends: ['eslint:recommended'],
-    rules: {
-      'no-console': 'error',
+const overrideConfig: Linter.Config = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
   },
+  env: {
+    node: true,
+    browser: true,
+  },
+  overrides: [
+    {
+      files: '**/tests/**',
+      env: {
+        jest: true,
+      },
+    },
+  ],
+  rules: {
+    'no-unreachable-loop': 'error',
+  },
+};
+
+const config: Config = {
+  cache: true,
+  extensions: [...JSExtensions, ...TSExtensions],
+  repositories: Object.values(Repo),
+  eslintrc: overrideConfig,
+  pathIgnorePattern: `(${[
+    'dev-test/githunt/flow.flow.js', // codegen
+    'dev-test/test-schema/flow-types.flow.js', // codegen
+    'packages/load/tests/loaders/schema/test-files/error.ts', // tools
+    '.yarn/releases/yarn-berry.cjs', // shield
+    '.yarn/plugins/@yarnpkg/plugin-interactive-tools.cjs', // swift
+  ].join('|')})`,
 };
 
 export default config;
