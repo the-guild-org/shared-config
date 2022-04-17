@@ -19,6 +19,7 @@
   },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
-    "prettier:check": "prettier --ignore-path --check .gitignore ."
+    "prettier:check": "prettier --ignore-path --check .gitignore .",
+    "prettier": "prettier --ignore-path .gitignore --write --list-different ."
   }
 }

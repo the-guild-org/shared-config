@@ -2,15 +2,13 @@ module.exports = {
   reportUnusedDisableDirectives: true,
   extends: ['eslint:recommended'],
   rules: {},
-  ignorePatterns: [
-    '!.*'
-  ],
+  ignorePatterns: ['!.*'],
   overrides: [
     {
       files: ['packages/eslint-config-guild/**'],
       env: {
-        node: true
-      }
-    }
-  ]
-}
+        node: true,
+      },
+    },
+  ],
+};

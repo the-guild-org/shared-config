@@ -7,8 +7,8 @@ module.exports = {
       files: '*.{md,mdx}',
       options: {
         semi: false,
-        trailingComma: 'none'
-      }
-    }
-  ]
-}
+        trailingComma: 'none',
+      },
+    },
+  ],
+};
