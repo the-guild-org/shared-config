@@ -15,13 +15,15 @@
   "dependencies": {},
   "devDependencies": {
     "eslint": "8.13.0",
+    "eslint-remote-tester": "2.1.1",
     "prettier": "2.6.2",
     "ts-node": "10.7.0",
     "typescript": "4.6.3"
   },
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore .",
-    "prettier:check": "prettier --ignore-path --check .gitignore .",
+    "lint:eslint": "eslint --ignore-path .gitignore .",
+    "lint:prettier": "prettier --ignore-path --check .gitignore .",
+    "lint:remote": "eslint-remote-tester",
     "prettier": "prettier --ignore-path .gitignore --write --list-different ."
   }
 }
