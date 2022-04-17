@@ -9,9 +9,16 @@
   },
   "license": "MIT",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "8.13.0",
+    "prettier": "2.6.2"
+  },
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "prettier:check": "prettier --ignore-path --check .gitignore ."
   }
 }

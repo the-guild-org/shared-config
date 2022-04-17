@@ -1,0 +1,13 @@
+{
+  "name": "eslint-config-guild",
+  "version": "0.0.0",
+  "description": "Guild's ESLint shareable config for TypeScript/React projects",
+  "main": "src/index.js",
+  "repository": "https://github.com/the-guild-org/shared-config",
+  "author": "The Guild <contact@the-guild.dev> (https://the-guild.dev)",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "eslint": "^8"
+  }
+}
