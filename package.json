@@ -1,5 +1,6 @@
 {
   "name": "shared-configs",
+  "version": "0.0.0",
   "description": "Guild's shared configs following our styleguide",
   "repository": "git@github.com:the-guild-org/shared-config.git",
   "author": {
