@@ -9,11 +9,12 @@ module.exports = {
   },
   overrides: [
     {
-      files: '*.{js,jsx,cjs,cjsx,mjs,mjsx,ts,tsx,cts,ctsx,mts,mtsx}',
+      files: '*.{,c,m}{j,t}s{,x}',
       extends: [
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:jsx-a11y/recommended',
+        'prettier',
       ],
       rules: {
         'react/jsx-curly-brace-presence': 'error',

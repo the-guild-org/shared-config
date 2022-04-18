@@ -29,6 +29,8 @@ enum Repo {
   Components = 'the-guild-org/the-guild-components',
   Docs = 'the-guild-org/the-guild-docs',
   Website = 'the-guild-org/the-guild-website',
+  SharedConfigs = 'the-guild-org/shared-config',
+  TimeAgo = 'n1ru4l/react-time-ago',
 }
 
 const overrideConfig: Linter.Config = {
@@ -51,6 +53,14 @@ const overrideConfig: Linter.Config = {
       },
     },
   ],
+  plugins: [
+    'sonarjs',
+    'unicorn',
+    'import',
+    'react',
+    '@typescript-eslint',
+    '@shopify',
+  ],
   rules: {
     'no-unreachable-loop': 'error',
   },
@@ -65,8 +75,11 @@ const config: Config = {
     'dev-test/githunt/flow.flow.js', // codegen
     'dev-test/test-schema/flow-types.flow.js', // codegen
     'packages/load/tests/loaders/schema/test-files/error.ts', // tools
+    'action/index.js', // inspector
     '.yarn/releases/yarn-berry.cjs', // shield
     '.yarn/plugins/@yarnpkg/plugin-interactive-tools.cjs', // swift
+    '.yarn/plugins/@yarnpkg/plugin-workspace-tools.cjs', // swift
+    '.yarn/plugins/@yarnpkg/plugin-typescript.cjs', // swift
   ].join('|')})`,
 };
 

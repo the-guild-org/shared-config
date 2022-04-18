@@ -1,14 +1,7 @@
 module.exports = {
-  reportUnusedDisableDirectives: true,
-  extends: ['eslint:recommended'],
+  extends: ['guild/base'],
+  env: {
+    node: true,
+  },
   rules: {},
-  ignorePatterns: ['!.*'],
-  overrides: [
-    {
-      files: ['packages/eslint-config-guild/**'],
-      env: {
-        node: true,
-      },
-    },
-  ],
 };

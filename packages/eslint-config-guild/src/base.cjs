@@ -7,21 +7,31 @@ module.exports = {
   ],
   overrides: [
     {
-      files: '*.{js,jsx,cjs,cjsx,mjs,mjsx,ts,tsx,cts,ctsx,mts,mtsx}',
+      files: '*.c{j,t}s',
+      env: {
+        node: true,
+      },
+    },
+    {
+      files: '*.{,c,m}{j,t}s{,x}',
       parser: '@typescript-eslint/parser',
-      extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+      ],
       plugins: ['sonarjs', 'unicorn'],
       rules: {
         'no-lonely-if': 'error',
         'no-console': 'error',
         'object-shorthand': ['error', 'always'],
         'no-unreachable-loop': 'error',
+        'sonarjs/no-one-iteration-loop': 'off', // similar to `no-unreachable-loop` but reports less cases
         'prefer-arrow-callback': ['error', { allowNamedFunctions: true }],
 
         // TODO
         // Test if provoke false positive when `import ...` and `import type ...` were used
         // 'no-duplicate-imports': 'error',
-
         // Rediscuss later
         // 'prefer-destructuring': [
         //   'error',

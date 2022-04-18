@@ -13,9 +13,11 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@shopify/eslint-plugin": "41.2.1",
     "@types/eslint": "8.4.1",
     "@types/node": "16.11.27",
     "eslint": "8.13.0",
+    "eslint-config-guild": "file:./packages/eslint-config-guild/src",
     "eslint-remote-tester": "2.1.1",
     "patch-package": "6.4.7",
     "prettier": "2.6.2",
