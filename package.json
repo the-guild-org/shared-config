@@ -1,6 +1,5 @@
 {
   "name": "shared-configs",
-  "version": "0.0.0",
   "description": "Guild's shared configs following our styleguide",
   "repository": "git@github.com:the-guild-org/shared-config.git",
   "author": {
@@ -15,19 +14,19 @@
   "dependencies": {},
   "devDependencies": {
     "@shopify/eslint-plugin": "41.2.1",
-    "@types/eslint": "8.4.1",
+    "@types/eslint": "8.4.2",
     "@types/node": "16.11.27",
-    "eslint": "8.13.0",
-    "eslint-config-guild": "file:./packages/eslint-config-guild/src",
-    "eslint-remote-tester": "2.1.1",
+    "eslint": "8.14.0",
+    "eslint-plugin-n": "15.2.0",
+    "eslint-remote-tester": "2.1.4",
     "patch-package": "6.4.7",
     "prettier": "2.6.2",
     "ts-node": "10.7.0",
-    "typescript": "4.6.3"
+    "typescript": "4.6.4"
   },
   "scripts": {
     "postinstall": "patch-package",
-    "lint:eslint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --ignore-path .gitignore .",
     "lint:prettier": "prettier --ignore-path --check .gitignore .",
     "lint:remote": "eslint-remote-tester",
     "prettier": "prettier --ignore-path .gitignore --write --list-different ."

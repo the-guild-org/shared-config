@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['guild/base'],
+  extends: ['guild'],
   env: {
     node: true,
   },

@@ -31,6 +31,9 @@ enum Repo {
   Website = 'the-guild-org/the-guild-website',
   SharedConfigs = 'the-guild-org/shared-config',
   TimeAgo = 'n1ru4l/react-time-ago',
+  Bob = 'kamilkisiela/bob',
+  DataLoader = 'graphql/dataloader',
+  LiveQuery = 'n1ru4l/graphql-live-query'
 }
 
 const overrideConfig: Linter.Config = {
@@ -60,6 +63,8 @@ const overrideConfig: Linter.Config = {
     'react',
     '@typescript-eslint',
     '@shopify',
+    'n',
+    'promise',
   ],
   rules: {
     'no-unreachable-loop': 'error',
