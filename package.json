@@ -30,6 +30,8 @@
     "lint": "eslint --ignore-path .gitignore .",
     "lint:prettier": "prettier --ignore-path --check .gitignore .",
     "lint:remote": "eslint-remote-tester",
-    "prettier": "prettier --ignore-path .gitignore --write --list-different ."
+    "prettier": "prettier --ignore-path .gitignore --write --list-different .",
+    "release": "changeset publish",
+    "release:canary": "ts-node scripts/canary-release.ts && yarn changeset publish --tag alpha"
   }
 }
