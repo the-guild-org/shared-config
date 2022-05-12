@@ -14,11 +14,19 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'prettier',
       ],
-      plugins: ['sonarjs', 'unicorn', 'promise'],
+      plugins: ['sonarjs', 'unicorn', 'promise', 'import'],
       rules: {
+        // Disallows if statements as the only statement in else blocks
+        // https://eslint.org/docs/rules/no-lonely-if
         'no-lonely-if': 'error',
+        // Disallows the use of console
+        // https://eslint.org/docs/rules/no-console
         'no-console': 'error',
+        // Requires method and property shorthand syntax for object literals
+        // https://eslint.org/docs/rules/object-shorthand
         'object-shorthand': ['error', 'always'],
+        // Disallows loops with a body that allows only one iteration
+        // https://eslint.org/docs/rules/no-unreachable-loop
         'no-unreachable-loop': 'error',
         'sonarjs/no-one-iteration-loop': 'off', // similar to 'no-unreachable-loop' but reports less cases
         'prefer-arrow-callback': ['error', { allowNamedFunctions: true }],
@@ -39,6 +47,8 @@ module.exports = {
         'unicorn/no-useless-spread': 'error',
         'unicorn/prefer-includes': 'error',
 
+        // Disallows specified syntax
+        // https://eslint.org/docs/rules/no-restricted-syntax
         'no-restricted-syntax': [
           'error',
           {
@@ -68,7 +78,21 @@ module.exports = {
           },
         ],
         'no-else-return': ['error', { allowElseIf: false }],
-        'promise/no-nesting': 'warn',
+        'promise/no-nesting': 'error',
+
+        // Disallows specific imports
+        // https://eslint.org/docs/rules/no-restricted-imports
+        'no-restricted-imports': [
+          'error',
+          {
+            name: 'react',
+            importNames: ['FC', 'FunctionComponent'],
+            message: 'Just type props and `ReactElement` as return type',
+          },
+        ],
+        'import/no-default-export': 'error',
+        'import/prefer-default-export': 'off', // disable opposite of 'import/no-default-export'
+        'unicorn/filename-case': 'error',
 
         // TODO
         // Test if provoke false positive when `import ...` and `import type ...` were used
@@ -91,7 +115,15 @@ module.exports = {
         node: true,
       },
       rules: {
+        // Disallows the use of require statements
+        // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-var-requires.md
         '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+    {
+      files: ['eslint-remote-tester.config.ts'],
+      rules: {
+        'import/no-default-export': 'off',
       },
     },
   ],
