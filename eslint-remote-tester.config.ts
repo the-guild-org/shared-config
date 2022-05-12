@@ -1,3 +1,4 @@
+/* eslint-disable import/no-default-export */
 import type { Config } from 'eslint-remote-tester';
 import type { Linter } from 'eslint';
 

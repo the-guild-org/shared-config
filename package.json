@@ -13,6 +13,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@changesets/cli": "^2.22.0",
     "@shopify/eslint-plugin": "41.2.1",
     "@types/eslint": "8.4.2",
     "@types/node": "16.11.27",

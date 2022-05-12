@@ -110,7 +110,7 @@ module.exports = {
       },
     },
     {
-      files: ['*.c{j,t}s', 'next.config.mjs', 'postcss.config.js'],
+      files: ['*.c{j,t}s'],
       env: {
         node: true,
       },
@@ -118,12 +118,6 @@ module.exports = {
         // Disallows the use of require statements
         // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-var-requires.md
         '@typescript-eslint/no-var-requires': 'off',
-      },
-    },
-    {
-      files: ['eslint-remote-tester.config.ts'],
-      rules: {
-        'import/no-default-export': 'off',
       },
     },
   ],
