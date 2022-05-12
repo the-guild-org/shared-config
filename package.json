@@ -1,0 +1,37 @@
+{
+  "name": "shared-configs",
+  "description": "Guild's shared configs following our styleguide",
+  "repository": "git@github.com:the-guild-org/shared-config.git",
+  "author": {
+    "name": "The Guild",
+    "url": "https://the-guild.dev"
+  },
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@changesets/cli": "^2.22.0",
+    "@shopify/eslint-plugin": "41.2.1",
+    "@types/eslint": "8.4.2",
+    "@types/node": "16.11.27",
+    "eslint": "8.15.0",
+    "eslint-plugin-n": "15.2.0",
+    "eslint-remote-tester": "2.1.4",
+    "patch-package": "6.4.7",
+    "prettier": "2.6.2",
+    "ts-node": "10.7.0",
+    "typescript": "4.6.4"
+  },
+  "scripts": {
+    "postinstall": "patch-package",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:prettier": "prettier --ignore-path --check .gitignore .",
+    "lint:remote": "eslint-remote-tester",
+    "prettier": "prettier --ignore-path .gitignore --write --list-different .",
+    "release": "changeset publish",
+    "release:canary": "ts-node scripts/canary-release.ts && yarn changeset publish --tag alpha"
+  }
+}
