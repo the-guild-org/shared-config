@@ -6,24 +6,24 @@ module.exports = {
       processor: 'mdx/remark',
       plugins: ['mdx'],
       rules: {
-        'mdx/remark': 'error'
+        'mdx/remark': 'error',
       },
       settings: {
-        'mdx/code-blocks': true
-      }
+        'mdx/code-blocks': true,
+      },
     },
     {
       files: ['*.md{,x}', '*.{j,t}s{,x}'],
       parserOptions: {
         ecmaFeatures: {
-          jsx: true
-        }
+          jsx: true,
+        },
       },
       plugins: ['react'],
       rules: {
         'react/self-closing-comp': 'error',
-        'react/jsx-curly-brace-presence': 'error'
-      }
-    }
-  ]
-}
+        'react/jsx-curly-brace-presence': 'error',
+      },
+    },
+  ],
+};

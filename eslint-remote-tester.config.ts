@@ -34,7 +34,7 @@ enum Repo {
   TimeAgo = 'n1ru4l/react-time-ago',
   Bob = 'kamilkisiela/bob',
   DataLoader = 'graphql/dataloader',
-  LiveQuery = 'n1ru4l/graphql-live-query'
+  LiveQuery = 'n1ru4l/graphql-live-query',
 }
 
 const overrideConfig: Linter.Config = {
