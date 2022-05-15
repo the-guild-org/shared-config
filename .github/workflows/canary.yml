@@ -39,7 +39,7 @@ jobs:
         run: |
           git config --global user.email "theguild-bot@users.noreply.github.com"
           git config --global user.name "theguild-bot"
-          echo "machine github.com login theguild-bot password ${{secrets.GH_API_TOKEN}}" > ~/.netrc
+          echo "machine github.com login theguild-bot password ${{secrets.GITHUB_TOKEN}}" > ~/.netrc
 
       - name: Setup NPM credentials
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
@@ -75,7 +75,7 @@ jobs:
             ```
             ${{steps.canary.outputs.changesetsPublishedPackages}}
             ```
-          bot-token: ${{secrets.GH_API_TOKEN}}
+          bot-token: ${{secrets.GITHUB_TOKEN}}
           bot: theguild-bot
           github-token: ${{secrets.GITHUB_TOKEN}}
 
@@ -84,6 +84,6 @@ jobs:
         uses: kamilkisiela/pr-comment@master
         with:
           message: The latest changes of this PR are not available as alpha, since there are no linked `changesets` for this PR.
-          bot-token: ${{secrets.GH_API_TOKEN}}
+          bot-token: ${{secrets.GITHUB_TOKEN}}
           bot: theguild-bot
           github-token: ${{secrets.GITHUB_TOKEN}}

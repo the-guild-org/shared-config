@@ -80,16 +80,6 @@ module.exports = {
         'no-else-return': ['error', { allowElseIf: false }],
         'promise/no-nesting': 'error',
 
-        // Disallows specific imports
-        // https://eslint.org/docs/rules/no-restricted-imports
-        'no-restricted-imports': [
-          'error',
-          {
-            name: 'react',
-            importNames: ['FC', 'FunctionComponent'],
-            message: 'Just type props and `ReactElement` as return type',
-          },
-        ],
         'import/no-default-export': 'error',
         'import/prefer-default-export': 'off', // disable opposite of 'import/no-default-export'
         'unicorn/filename-case': 'error',
@@ -118,6 +108,29 @@ module.exports = {
         // Disallows the use of require statements
         // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-var-requires.md
         '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+    {
+      files: [
+        'jest.config.js',
+        'webpack.config.js',
+        'bob.config.js',
+        'babel.config.js',
+      ],
+      env: {
+        node: true,
+      },
+    },
+    {
+      files: ['*.spec.*'],
+      env: {
+        jest: true,
+      },
+    },
+    {
+      files: ['vite.config.ts', 'jest.config.js', '*.d.ts'],
+      rules: {
+        'import/no-default-export': 'off',
       },
     },
   ],
