@@ -1,7 +1,7 @@
 name: Release
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
@@ -32,18 +32,17 @@ jobs:
           node-version: 16
 
       - name: Setup NPM credentials
-        run: echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
+        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Cache Yarn
         uses: actions/cache@v3
         with:
           path: '**/node_modules'
-          key: ${{runner.os}}-16-node-modules-${{hashFiles('yarn.lock')}}
+          key: ${{runner.os}}-16-${{hashFiles('yarn.lock')}}
           restore-keys: |
-            ${{runner.os}}-16-node-modules-${{hashFiles('yarn.lock')}}
-            ${{runner.os}}-16-node-modules-
+            ${{runner.os}}-16-
 
       - name: Install Dependencies
         run: yarn
