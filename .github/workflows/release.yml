@@ -12,6 +12,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Use Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       - name: Configure Git Credentials
         run: |
           git config --global user.email "theguild-bot@users.noreply.github.com"
@@ -26,15 +31,10 @@ jobs:
           git checkout main
           git reset --hard
 
-      - name: Use Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
       - name: Setup NPM credentials
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Cache Yarn
         uses: actions/cache@v3

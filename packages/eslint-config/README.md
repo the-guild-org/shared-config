@@ -14,10 +14,10 @@ For React projects
 
 ```sh
 yarn add -D eslint \
-            @theguild/eslint-config \
-            eslint-plugin-jsx-a11y \
-            eslint-plugin-react \
-            eslint-plugin-react-hooks
+  @theguild/eslint-config \
+  eslint-plugin-jsx-a11y \
+  eslint-plugin-react \
+  eslint-plugin-react-hooks
 ```
 
 ## Usage
@@ -31,12 +31,12 @@ module.exports = {
 }
 ```
 
-Additionally extend a `@theguild/react` for React projects.
+Additionally extend a `@theguild/eslint-config/react` config for React projects.
 
 ```diff
 // .eslintrc.cjs
 module.exports = {
 - extends: ['@theguild']
-+ extends: ['@theguild', '@theguild/react']
++ extends: ['@theguild', '@theguild/eslint-config/react']
 }
 ```

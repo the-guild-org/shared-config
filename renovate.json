@@ -16,11 +16,7 @@
       "prPriority": 5
     },
     {
-      "excludePackageNames": [
-        "@changesets/cli",
-        "@changesets/apply-release-plan",
-        "@changesets/assemble-release-plan"
-      ],
+      "excludePackageNames": ["@changesets/cli", "@changesets/apply-release-plan", "@changesets/assemble-release-plan"],
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all non-major dependencies",

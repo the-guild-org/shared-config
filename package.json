@@ -28,7 +28,7 @@
   "scripts": {
     "postinstall": "patch-package",
     "lint": "eslint --ignore-path .gitignore .",
-    "lint:prettier": "prettier --ignore-path --check .gitignore .",
+    "lint:prettier": "prettier --ignore-path .gitignore --check .",
     "lint:remote": "eslint-remote-tester",
     "prettier": "prettier --ignore-path .gitignore --write --list-different .",
     "release": "changeset publish",
