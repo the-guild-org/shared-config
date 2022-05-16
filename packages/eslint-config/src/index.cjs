@@ -84,6 +84,7 @@ module.exports = {
         'import/prefer-default-export': 'off', // disable opposite of 'import/no-default-export'
         'unicorn/filename-case': 'error',
 
+        '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }]
         // TODO
         // Test if provoke false positive when `import ...` and `import type ...` were used
         // 'no-duplicate-imports': 'error',
