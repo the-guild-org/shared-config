@@ -3227,6 +3227,11 @@ ms@^2.1.1:
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
+mvdan-sh@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/mvdan-sh/-/mvdan-sh-0.10.1.tgz#5b3a4462a89cf20739b12d851589342c875f4d1f"
+  integrity sha512-kMbrH0EObaKmK3nVRKUIIya1dpASHIEusM13S4V1ViHFuxuNxCo+arxoa6j/dbV22YBGjl7UKJm9QQKJ2Crzhg==
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
@@ -3609,6 +3614,13 @@ prettier-linter-helpers@^1.0.0:
   integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
   dependencies:
     fast-diff "^1.1.2"
+
+prettier-plugin-sh@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-sh/-/prettier-plugin-sh-0.11.0.tgz#b65974d49d93d7f303c3513e218741f2d4820e98"
+  integrity sha512-YwuWGYuf6UiF80BZ3Lrby2yot0zRcktcBl+VD/xSLoPrmiH/yXcopz3RBtNMNcBeP13ALim9N/LtlTCmvUziVQ==
+  dependencies:
+    mvdan-sh "^0.10.1"
 
 prettier@2.6.2:
   version "2.6.2"

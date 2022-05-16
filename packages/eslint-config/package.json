@@ -1,17 +1,24 @@
 {
   "name": "@theguild/eslint-config",
   "version": "0.0.1",
-  "description": "Guild's ESLint shareable config for TypeScript/React projects",
+  "description": "The Guild's shared ESLint config",
   "repository": {
     "url": "the-guild-org/shared-config",
-    "directory": "packages/eslint-config-guild"
+    "directory": "packages/eslint-config"
   },
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
   "author": "The Guild (https://the-guild.dev)",
   "license": "MIT",
   "private": false,
   "exports": {
     ".": "./src/index.cjs",
     "./*": "./src/*.cjs"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@rushstack/eslint-patch": "^1.1.3",
@@ -31,8 +38,5 @@
   },
   "peerDependencies": {
     "eslint": "^8"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
