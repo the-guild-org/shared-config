@@ -25,7 +25,7 @@ jobs:
     needs: changes
     if: github.event.pull_request.head.repo.full_name == github.repository && needs.changes.outputs.wasChangesetChanged == 'true'
     steps:
-      - name: Checkout Master
+      - name: Checkout Main
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -75,8 +75,8 @@ jobs:
             ```
             ${{steps.canary.outputs.changesetsPublishedPackages}}
             ```
-          bot-token: ${{secrets.GITHUB_TOKEN}}
           bot: theguild-bot
+          bot-token: ${{secrets.GITHUB_TOKEN}}
           github-token: ${{secrets.GITHUB_TOKEN}}
 
       - name: Publish an empty message
@@ -84,6 +84,6 @@ jobs:
         uses: kamilkisiela/pr-comment@master
         with:
           message: The latest changes of this PR are not available as alpha, since there are no linked `changesets` for this PR.
-          bot-token: ${{secrets.GITHUB_TOKEN}}
           bot: theguild-bot
+          bot-token: ${{secrets.GITHUB_TOKEN}}
           github-token: ${{secrets.GITHUB_TOKEN}}
