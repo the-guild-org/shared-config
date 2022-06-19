@@ -29,7 +29,7 @@
     },
     {
       "matchPackageNames": "typescript",
-      "automerge": false,
+      "automerge": false
     }
   ],
   "timezone": "Europe/Warsaw",
