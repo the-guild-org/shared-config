@@ -20,7 +20,12 @@
         "@changesets/cli",
         "@changesets/apply-release-plan",
         "@changesets/assemble-release-plan",
-        "typescript"
+        "typescript",
+        "@guild-docs/client",
+        "@guild-docs/server",
+        "@theguild/components",
+        "nextra",
+        "nextra-theme-docs"
       ],
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
