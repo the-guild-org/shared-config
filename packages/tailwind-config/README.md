@@ -1,0 +1,1 @@
+# @theguild/tailwind-config
