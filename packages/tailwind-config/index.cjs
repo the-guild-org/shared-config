@@ -2,9 +2,9 @@ module.exports = {
   content: [
     './src/**/*.{tsx,mdx}',
     './theme.config.tsx',
-    '../node_modules/@theguild/components/dist/index.esm.js',
+    '../node_modules/@theguild/components/dist/index.mjs',
     '../node_modules/nextra-theme-docs/dist/**/*.js',
-    './node_modules/@theguild/components/dist/index.esm.js',
+    './node_modules/@theguild/components/dist/index.mjs',
     './node_modules/nextra-theme-docs/dist/**/*.js'
   ],
   theme: {
