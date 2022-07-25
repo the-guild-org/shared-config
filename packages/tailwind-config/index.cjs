@@ -4,6 +4,8 @@ module.exports = {
     './theme.config.tsx',
     '../node_modules/@theguild/components/dist/index.esm.js',
     '../node_modules/nextra-theme-docs/dist/**/*.js',
+    './node_modules/@theguild/components/dist/index.esm.js',
+    './node_modules/nextra-theme-docs/dist/**/*.js'
   ],
   theme: {
     container: {
@@ -13,9 +15,9 @@ module.exports = {
         sm: '2rem',
         lg: '4rem',
         xl: '5rem',
-        '2xl': '6rem',
-      },
-    },
+        '2xl': '6rem'
+      }
+    }
   },
-  darkMode: 'class',
-};
+  darkMode: 'class'
+}
