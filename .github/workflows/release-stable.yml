@@ -1,3 +1,5 @@
+# Note: this is a shared pipeline used by other repositories. 
+
 on:
   workflow_call:
     inputs:
