@@ -18,7 +18,6 @@ on:
       githubReleaseName:
         required: false
         type: string
-        default: 'Release ${{ steps.vars.outputs.sha_short }} (from ${{ steps.vars.outputs.branch }})'
     secrets:
       githubToken:
         required: true
@@ -69,7 +68,7 @@ jobs:
           commit: 'chore(release): update monorepo packages versions'
           title: 'Upcoming Release Changes'
           createGithubReleases: ${{ inputs.createGithubReleases }}
-          githubReleaseName: ${{ inputs.githubReleaseName }}
+          githubReleaseName: ${{ inputs.githubReleaseName || 'Release ${{ steps.vars.outputs.sha_short }} (from ${{ steps.vars.outputs.branch }})' }}
         env:
           NPM_TOKEN: ${{ secrets.npmToken }}
           GITHUB_TOKEN: ${{ secrets.githubToken }}
