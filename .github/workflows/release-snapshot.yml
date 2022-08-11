@@ -35,7 +35,18 @@ jobs:
           node-version: ${{ inputs.nodeVersion }}
           cache: 'yarn'
 
-      - run: yarn install --frozen-lockfile --immutable
+      - name: cache yarn
+        uses: actions/cache@v3
+        id: node-modules-cache-release
+        with:
+          path: '**/node_modules'
+          key: ${{runner.os}}-${{ inputs.nodeVersion }}-node-modules-${{hashFiles('yarn.lock')}}
+          restore-keys: |
+            ${{runner.os}}-${{ inputs.nodeVersion }}-node-modules-
+
+      - name: yarn install
+        run: yarn install --ignore-engines --frozen-lockfile --immutable
+        if: steps.node-modules-cache-release.outputs.cache-hit != 'true'
 
       - name: ${{ inputs.npmTag }} release
         uses: 'the-guild-org/changesets-snapshot-action@v0.0.1'
