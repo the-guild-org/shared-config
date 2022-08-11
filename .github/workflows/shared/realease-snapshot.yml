@@ -1,0 +1,47 @@
+on:
+  workflow_call:
+    inputs:
+      nodeVersion:
+        required: false
+        type: number
+        default: 18
+      buildScript:
+        required: false
+        type: string
+        default: build
+      npmTag:
+        required: false
+        type: string
+        default: npmTag
+    secrets:
+      githubToken:
+        required: true
+      npmToken:
+        required: true
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.nodeVersion }}
+          cache: 'yarn'
+
+      - run: yarn install --frozen-lockfile --immutable
+
+      - name: ${{ inputs.npmTag }} release
+        uses: 'the-guild-org/changesets-snapshot-action@v0.0.1'
+        with:
+          tag: ${{ inputs.npmTag }}
+          prepareScript: 'yarn ${{ inputs.buildScript }}'
+        env:
+          NPM_TOKEN: ${{ secrets.npmToken }}
+          GITHUB_TOKEN: ${{ secrets.githubToken }}
