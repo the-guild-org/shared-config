@@ -1,0 +1,73 @@
+on:
+  workflow_call:
+    inputs:
+      nodeVersion:
+        required: false
+        type: number
+        default: 18
+      releaseScript:
+        required: false
+        type: string
+        default: release
+      createGithubReleases:
+        required: false
+        type: string
+        default: aggregate
+      githubReleaseName:
+        required: false
+        type: string
+        default: 'Release ${{ steps.vars.outputs.sha_short }} (from ${{ steps.vars.outputs.branch }})'
+    secrets:
+      githubToken:
+        required: true
+      npmToken:
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.nodeVersion }}
+          cache: 'yarn'
+
+      - name: cache yarn
+        uses: actions/cache@v3
+        id: node-modules-cache-release
+        with:
+          path: '**/node_modules'
+          key: ${{runner.os}}-${{ inputs.nodeVersion }}-node-modules-${{hashFiles('yarn.lock')}}
+          restore-keys: |
+            ${{runner.os}}-${{ inputs.nodeVersion }}-node-modules-
+
+      - name: yarn install
+        run: yarn install --ignore-engines --frozen-lockfile --immutable
+        if: steps.node-modules-cache-release.outputs.cache-hit != 'true'
+
+      - name: set version variables
+        id: vars
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
+      - name: release / pull_request
+        id: changesets
+        uses: dotansimha/changesets-action@v1.3.1
+        with:
+          publish: 'yarn ${{ inputs.releaseScript }}'
+          commit: 'chore(release): update monorepo packages versions'
+          title: 'Upcoming Release Changes'
+          createGithubReleases: ${{ inputs.createGithubReleases }}
+          githubReleaseName: ${{ inputs.githubReleaseName }}
+        env:
+          NPM_TOKEN: ${{ secrets.npmToken }}
+          GITHUB_TOKEN: ${{ secrets.githubToken }}
