@@ -6,7 +6,7 @@ on:
 
 jobs:
   stable:
-    uses: ./.github/workflows/release-stable.yml@main
+    uses: ./.github/workflows/release-stable.yml
     with:
       releaseScript: release 
       nodeVersion: 18
