@@ -13,7 +13,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@changesets/cli": "^2.24.1",
+    "@changesets/cli": "2.24.2",
     "@shopify/eslint-plugin": "41.2.1",
     "@types/eslint": "8.4.5",
     "@types/node": "16.11.27",
@@ -31,7 +31,6 @@
     "lint:prettier": "prettier --ignore-path .gitignore --check .",
     "lint:remote": "eslint-remote-tester",
     "prettier": "prettier --ignore-path .gitignore --write --list-different .",
-    "release": "changeset publish",
-    "release:canary": "ts-node scripts/canary-release.ts && yarn changeset publish --tag alpha"
+    "release": "changeset publish"
   }
 }

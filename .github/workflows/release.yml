@@ -1,59 +1,15 @@
-name: Release
+name: release
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Main
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Use Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Configure Git Credentials
-        run: |
-          git config --global user.email "theguild-bot@users.noreply.github.com"
-          git config --global user.name "theguild-bot"
-          echo "machine github.com login theguild-bot password ${{secrets.GITHUB_TOKEN}}" > ~/.netrc
-
-      - name: Add origin remote and refetch main
-        run: |
-          git remote rm origin
-          git remote add origin "https://github.com/${{github.repository}}"
-          git fetch
-          git checkout main
-          git reset --hard
-
-      - name: Setup NPM credentials
-        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-
-      - name: Cache Yarn
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{runner.os}}-16-${{hashFiles('yarn.lock')}}
-          restore-keys: |
-            ${{runner.os}}-16-
-
-      - name: Install Dependencies
-        run: yarn
-
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: yarn release
-          commit: 'chore(release): update monorepo packages versions'
-          title: Upcoming Release Changes
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+  stable:
+    uses: ./.github/workflows/release-stable.yml@main
+    with:
+      releaseScript: release 
+      nodeVersion: 18
+    secrets:
+      githubToken: ${{ secrets.GITHUB_TOKEN }}
+      npmToken: ${{ secrets.NPM_TOKEN }}

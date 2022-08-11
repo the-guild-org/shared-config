@@ -80,7 +80,7 @@ In addition, the shared pipelines are going to use `GITHUB_TOKEN` provided by Gi
 <details>
   <summary>Step 4: Automatic Stable Release</summary>
 
-Create a GitHub Actions the refers to the workflow defined in this repo, along with your settings: 
+Create a GitHub Actions that refers to the workflow defined in this repo, along with your settings: 
 
 ```yaml
 name: release
@@ -123,7 +123,7 @@ Start by updating your changesets `config.json` to use the following:
 
 > You can customize the canary release template, see: https://github.com/changesets/changesets/blob/main/docs/config-file-options.md#prereleasetemplate-optional-string
 
-Create a github workflow (you can call it `pr.yaml`):
+Create a GitHub workflow (you can call it `pr.yaml`):
 
 ```yaml
 name: pr
