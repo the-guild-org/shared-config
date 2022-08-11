@@ -187,3 +187,11 @@ jobs:
 ```
 
 </details>
+
+<details>
+  <summary>Step 8: ESLint/Prettier config</summary>
+  
+  - eslint: https://github.com/the-guild-org/shared-config/tree/main/packages/eslint-config
+  - prettier: https://github.com/the-guild-org/shared-config/tree/main/packages/prettier-config
+  
+</details>
