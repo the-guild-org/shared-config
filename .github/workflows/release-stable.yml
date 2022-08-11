@@ -63,7 +63,7 @@ jobs:
 
       - name: release / pull_request
         id: changesets
-        uses: dotansimha/changesets-action@v1.3.1
+        uses: dotansimha/changesets-action@v1.3.2
         with:
           publish: 'yarn ${{ inputs.releaseScript }}'
           commit: 'chore(release): update monorepo packages versions'
