@@ -28,7 +28,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-sonarjs": "^0.13.0",
-    "eslint-plugin-unicorn": "^42.0.0"
+    "eslint-plugin-unicorn": "^43.0.0"
   },
   "optionalDependencies": {
     "eslint-plugin-jsx-a11y": "^6.5.1",
