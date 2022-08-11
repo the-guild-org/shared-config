@@ -6,7 +6,7 @@ on:
 
 jobs:
   dependencies:
-    uses: the-guild-org/shared-config/.github/workflows/changesets-dependencies.yaml
+    uses: ./.github/workflows/changesets-dependencies.yaml
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
 
