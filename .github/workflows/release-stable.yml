@@ -68,7 +68,7 @@ jobs:
           commit: 'chore(release): update monorepo packages versions'
           title: 'Upcoming Release Changes'
           createGithubReleases: ${{ inputs.createGithubReleases }}
-          githubReleaseName: ${{ inputs.githubReleaseName || '${{ steps.vars.outputs.date }} (${{ steps.vars.outputs.sha_short }})' }}
+          githubReleaseName: ${{ inputs.githubReleaseName || steps.vars.outputs.date (steps.vars.outputs.sha_short) }}
         env:
           NPM_TOKEN: ${{ secrets.npmToken }}
           GITHUB_TOKEN: ${{ secrets.githubToken }}
