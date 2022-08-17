@@ -41,3 +41,5 @@ jobs:
         with:
           repo-token: ${{ secrets.githubToken }}
           report-json: eslint_report.json
+          only-pr-files: true
+          check-name: eslint
