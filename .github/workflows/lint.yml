@@ -1,0 +1,44 @@
+# Note: this is a shared pipeline used by other repositories. 
+# Docs: https://docs.github.com/en/actions/using-workflows/reusing-workflows
+
+on:
+  workflow_call:
+    inputs:
+      nodeVersion:
+        required: false
+        type: number
+        default: 18
+      annotations:
+        required: false
+        type: boolean
+        default: true
+      script:
+        required: false
+        type: string
+        default: 'eslint'
+    secrets:
+      githubToken:
+        required: false
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - uses: ./.github/workflows/setup
+        name: setup env
+        with:
+          nodeVersion: ${{inputs.nodeVersion}}
+
+      - name: lint
+        run: ${{ inputs.script || 'yarn eslint --output-file eslint_report.json --format json .' }}
+        continue-on-error: true
+
+      - name: annotate
+        if: ${{ github.event_name == 'pull_request' && secrets.githubToken && inputs.annotations }}
+        uses: ataylorme/eslint-annotate-action@v2
+        with:
+          repo-token: ${{ secrets.githubToken }}
+          report-json: eslint_report.json

@@ -19,7 +19,7 @@ runs:
 
       - name: cache yarn
         uses: actions/cache@v3
-        id: node-modules-cache-release
+        id: node-modules-cache
         with:
           path: '**/node_modules'
           key: ${{runner.os}}-${{ inputs.nodeVersion }}-node-modules-${{hashFiles('yarn.lock')}}
@@ -29,4 +29,4 @@ runs:
       - name: yarn install
         shell: bash
         run: yarn install --ignore-engines --frozen-lockfile --immutable
-        if: steps.node-modules-cache-release.outputs.cache-hit != 'true'
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
