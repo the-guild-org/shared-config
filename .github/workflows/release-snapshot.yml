@@ -33,7 +33,7 @@ jobs:
           fetch-depth: 0
 
       - uses: ./.github/workflows/setup
-        id: setup env
+        name: setup env
         with:
           nodeVersion: ${{inputs.nodeVersion}}
 
