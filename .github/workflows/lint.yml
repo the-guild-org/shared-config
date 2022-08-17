@@ -35,9 +35,9 @@ jobs:
         run: ${{ inputs.script || 'yarn eslint --output-file eslint_report.json --format json .' }}
         continue-on-error: true
 
-      # - name: annotate
-      #   if: ${{ github.event_name == 'pull_request' && inputs.annotations }}
-      #   uses: ataylorme/eslint-annotate-action@v2
-      #   with:
-      #     repo-token: ${{ secrets.githubToken }}
-      #     report-json: eslint_report.json
+      - name: annotate
+        if: ${{ github.event_name == 'pull_request' && inputs.annotations }}
+        uses: ataylorme/eslint-annotate-action@v2
+        with:
+          repo-token: ${{ secrets.githubToken }}
+          report-json: eslint_report.json
