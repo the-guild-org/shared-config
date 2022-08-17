@@ -2,8 +2,7 @@
 
 This repository is a collection of configurations, tools and examples, that demonstrate how The Guild is using their libs.
 
-We use the files stored here in our other repositories, to have a single point of truth for all configurations/pipelines needed. 
-
+We use the files stored here in our other repositories, to have a single point of truth for all configurations/pipelines needed.
 
 <details>
   <summary>Step 1: changesets</summary>
@@ -11,7 +10,7 @@ We use the files stored here in our other repositories, to have a single point o
 To setup automated release flow for your package, using `changesets`:
 
 1. Create a monorepo, either by using `yarn` (v1) or `pnpm`.
-2. Install and initialize the Changesets config by following these instructions: https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md (also make sure to install `@changesets/changelog-github`) 
+2. Install and initialize the Changesets config by following these instructions: https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md (also make sure to install `@changesets/changelog-github`)
 
 Make sure to adjust you Changesets config file, based on your repo setup:
 
@@ -26,7 +25,7 @@ Make sure to adjust you Changesets config file, based on your repo setup:
   "linked": [],
   "access": "public",
   "baseBranch": "master", // change if needed
-  "updateInternalDependencies": "patch", 
+  "updateInternalDependencies": "patch",
   "ignore": ["website"] // change if needed
 }
 ```
@@ -52,7 +51,7 @@ Make sure to adjust you Changesets config file, based on your repo setup:
 }
 ```
 
-5. Install Changesets Bot on your repo: https://github.com/apps/changeset-bot  
+5. Install Changesets Bot on your repo: https://github.com/apps/changeset-bot
 
 </details>
 
@@ -61,15 +60,15 @@ Make sure to adjust you Changesets config file, based on your repo setup:
 
 Configure GitHub Actions permissions: Go to repo Settings > Actions > General and make sure to configure the following:
 
-  - `Actions permissions` should be set to `Allow all actions and reusable workflows`
-  - `Workflow permissions` should be set to `Read and write permissions`, and make sure the `Allow GitHub Actions to create and approve pull requests` option is active. 
+- `Actions permissions` should be set to `Allow all actions and reusable workflows`
+- `Workflow permissions` should be set to `Read and write permissions`, and make sure the `Allow GitHub Actions to create and approve pull requests` option is active.
 
 </details>
 
 <details>
   <summary>Step 3: Unified secrets</summary>
 
-You can create an NPM publishing token by using `npm token create`. 
+You can create an NPM publishing token by using `npm token create`.
 
 After creating your token, make sure to add it as part of your GitHub Actions Secrets (under repo Settings). Name it `NPM_TOKEN`.
 
@@ -80,7 +79,7 @@ In addition, the shared pipelines are going to use `GITHUB_TOKEN` provided by Gi
 <details>
   <summary>Step 4: Automatic Stable Release</summary>
 
-Create a GitHub Actions that refers to the workflow defined in this repo, along with your settings: 
+Create a GitHub Actions that refers to the workflow defined in this repo, along with your settings:
 
 ```yaml
 name: release
@@ -100,7 +99,7 @@ jobs:
       npmToken: ${{ secrets.NPM_TOKEN }}
 ```
 
-> By default, we use `aggregated` release mode. 
+> By default, we use `aggregated` release mode.
 
 </details>
 
@@ -142,10 +141,9 @@ jobs:
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
       npmToken: ${{ secrets.NPM_TOKEN }}
-
 ```
 
-> You can choose the NPM tag of the release. We prefer using `alpha` or `canary` for PR-based releases. 
+> You can choose the NPM tag of the release. We prefer using `alpha` or `canary` for PR-based releases.
 
 </details>
 
@@ -161,12 +159,11 @@ jobs:
   "extends": ["github>the-guild-org/shared-config:renovate"]
 }
 ```
-  
+
 </details>
 
 <details>
   <summary>Step 7: Automatic changesets for dependencies updates</summary>
-  
 
 To get automatic changesets created for Renovate PRs (and manual dependencies changes), add the following GitHub Action workflow to your repo:
 
@@ -189,9 +186,110 @@ jobs:
 </details>
 
 <details>
-  <summary>Step 8: ESLint/Prettier config</summary>
+  <summary>Step 9: ESLint/Prettier config</summary>
   
-  - eslint: https://github.com/the-guild-org/shared-config/tree/main/packages/eslint-config
-  - prettier: https://github.com/the-guild-org/shared-config/tree/main/packages/prettier-config
-  
+If you wish to use the unified config for eslint or prettier, following these instructions:
+
+- eslint: https://github.com/the-guild-org/shared-config/tree/main/packages/eslint-config
+- prettier: https://github.com/the-guild-org/shared-config/tree/main/packages/prettier-config
+
+</details>
+
+<details>
+  <summary>Step 10: ESLint pipeline</summary>
+
+If you wish to have a lint using ESLint and report the results back to GitHub, do the following:
+
+1. Make sure your project has eslint installed and configured
+2. Add `ci:lint` script with the following flags: `eslint --output-file eslint_report.json --format json` on top of your regular ESLint CLI flags.
+3. Add a CI pipelines with the following:
+
+```yml
+name: test
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  lint:
+    uses: the-guild-org/shared-config/.github/workflows/lint.yml@main
+    with:
+      script: yarn ci:lint
+    secrets:
+      githubToken: ${{ secrets.GITHUB_TOKEN }}
+```
+
+</details>
+
+<details>
+  <summary>Step 11: Shared pipelines</summary>
+
+To get the most out of the shared pipelines, you can use the following to run scripts as part of your CI process:
+
+```yml
+name: build
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    uses: the-guild-org/shared-config/.github/workflows/ci.yml@main
+    with:
+      script: yarn build
+```
+
+If our script is more complex and requires NodeJS version matrix, you can use this:
+
+```yml
+name: build
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    uses: the-guild-org/shared-config/.github/workflows/ci-node-matrix.yml@main
+    with:
+      script: yarn build
+      nodeVersions: '[14,16,18]'
+```
+
+If your script requires more stuff, and you just want to avoid configuring NodeJS + Yarn + Caches, you can just use the following to get started with your pipeline:
+
+```yml
+name: test
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: myScript
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: the-guild-org/shared-config/setup@main
+        name: setup env
+        with:
+          nodeVersion: 18
+```
+
 </details>
