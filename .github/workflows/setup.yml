@@ -11,11 +11,6 @@ inputs:
 runs:
   using: composite
   steps:
-      - name: checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
       - name: setup node
         uses: actions/setup-node@v3
         with:
