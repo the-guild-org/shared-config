@@ -1,0 +1,37 @@
+# Note: This is a composite GitHub Actions, it should do all env setup, caching an so on, so other pipelines can just compose their own stuff on top of that.
+# Docs: https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+
+name: 'Configure Environment'
+description: 'Shared configuration for checkout, NodeJS and package manager'
+inputs:
+  nodeVersion:
+    description: 'NodeJS Version to use'
+    required: true
+    default: '18'
+runs:
+  using: composite
+  steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.nodeVersion }}
+          cache: 'yarn'
+
+      - name: cache yarn
+        uses: actions/cache@v3
+        id: node-modules-cache-release
+        with:
+          path: '**/node_modules'
+          key: ${{runner.os}}-${{ inputs.nodeVersion }}-node-modules-${{hashFiles('yarn.lock')}}
+          restore-keys: |
+            ${{runner.os}}-${{ inputs.nodeVersion }}-node-modules-
+
+      - name: yarn install
+        shell: bash
+        run: yarn install --ignore-engines --frozen-lockfile --immutable
+        if: steps.node-modules-cache-release.outputs.cache-hit != 'true'
