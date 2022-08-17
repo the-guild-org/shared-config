@@ -25,7 +25,7 @@ on:
         default: 'eslint_report.json'
     secrets:
       githubToken:
-        required: true
+        required: false
 
 jobs:
   eslint:
