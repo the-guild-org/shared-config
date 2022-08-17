@@ -4,10 +4,6 @@
 on:
   workflow_call:
     inputs:
-      nodeVersion:
-        required: false
-        type: number
-        default: 18
       script:
         required: true
         type: string
