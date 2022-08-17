@@ -12,9 +12,17 @@ on:
         required: false
         type: boolean
         default: true
+      onlyPrFiles:
+        required: false
+        type: boolean
+        default: true
       script:
         required: false
         type: string
+      reportFile:
+        required: false
+        type: string
+        default: 'eslint_report.json'
     secrets:
       githubToken:
         required: true
@@ -33,13 +41,13 @@ jobs:
 
       - name: lint
         run: ${{ inputs.script || 'yarn eslint --output-file eslint_report.json --format json .' }}
-        continue-on-error: true
+        continue-on-error: ${{ github.event_name == 'pull_request' }}
 
       - name: annotate
         if: ${{ github.event_name == 'pull_request' && inputs.annotations }}
         uses: ataylorme/eslint-annotate-action@v2
         with:
           repo-token: ${{ secrets.githubToken }}
-          report-json: eslint_report.json
-          only-pr-files: true
+          report-json: ${{ inputs.script && inputs.reportFile || 'eslint_report.json' }}
+          only-pr-files: ${{ inputs.onlyPrFiles }}
           check-name: eslint
