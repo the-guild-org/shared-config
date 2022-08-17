@@ -28,6 +28,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    outputs:
+      published: ${{ steps.changesets.outputs.published }}
     steps:
       - name: checkout
         uses: actions/checkout@v3
