@@ -20,7 +20,7 @@ on:
         required: true
 
 jobs:
-  lint:
+  eslint:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
