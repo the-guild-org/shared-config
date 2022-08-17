@@ -32,7 +32,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: ./.github/workflows/setup
+      - uses: the-guild-org/shared-config/setup@shared-setup
         name: setup env
         with:
           nodeVersion: ${{inputs.nodeVersion}}
