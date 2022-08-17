@@ -34,7 +34,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: ./.github/workflows/setup.yml
+      - uses: ./.github/workflows/setup
         with:
           nodeVersion: ${{inputs.nodeVersion}}
 
