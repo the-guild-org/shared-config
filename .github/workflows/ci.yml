@@ -11,10 +11,14 @@ on:
       script:
         required: true
         type: string
+      name:
+        required: false
+        type: string
 
 jobs:
   ci:
     runs-on: ubuntu-latest
+    name: ${{ inputs.name || 'script' }}
     steps:
       - name: checkout
         uses: actions/checkout@v3
