@@ -1,3 +1,5 @@
+# Note: this pipelines is for the `shared-config` library
+
 name: release
 on:
   push:
