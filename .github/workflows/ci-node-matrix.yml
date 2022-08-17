@@ -30,6 +30,7 @@ jobs:
     strategy:
       matrix:
         nodeVersion: ${{fromJson(needs.ci_setup.outputs.matrix)}}
+    name: ci (node ${{ matrix.nodeVersion }} )
     steps:
       - name: checkout
         uses: actions/checkout@v3
