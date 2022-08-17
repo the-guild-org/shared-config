@@ -1,0 +1,47 @@
+# Note: this is a shared pipeline used by other repositories. 
+# Docs: https://docs.github.com/en/actions/using-workflows/reusing-workflows
+
+on:
+  workflow_call:
+    inputs:
+      nodeVersion:
+        required: false
+        type: number
+        default: 18
+      script:
+        required: true
+        type: string
+      nodeVersions:
+        required: true
+        type: string
+        default: '[16, 18]'
+
+jobs:
+  ci_setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.setVariables.outputs.matrix }}
+    steps:
+      - id: setVariables
+        run: |
+          echo "::set-output name=matrix::$input"
+        env:
+          input: ${{ inputs.nodeVersions }}
+
+  ci:
+    needs: ci_setup
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        nodeVersion: ${{fromJson(needs.ci_setup.outputs.matrix)}}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - uses: the-guild-org/shared-config/setup@shared-setup
+        name: setup env
+        with:
+          nodeVersion: ${{matrix.nodeVersion }}
+
+      - name: ${{ inputs.script }}
+        run: ${{ inputs.script }}
