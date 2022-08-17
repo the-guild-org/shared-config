@@ -18,7 +18,7 @@ on:
         default: 'eslint'
     secrets:
       githubToken:
-        required: false
+        required: true
 
 jobs:
   lint:
@@ -37,7 +37,7 @@ jobs:
         continue-on-error: true
 
       - name: annotate
-        if: ${{ github.event_name == 'pull_request' && secrets.githubToken && inputs.annotations }}
+        if: ${{ github.event_name == 'pull_request' && inputs.annotations }}
         uses: ataylorme/eslint-annotate-action@v2
         with:
           repo-token: ${{ secrets.githubToken }}
