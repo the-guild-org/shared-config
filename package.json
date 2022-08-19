@@ -16,7 +16,7 @@
     "@changesets/cli": "2.24.3",
     "@changesets/changelog-github": "0.4.6",
     "@shopify/eslint-plugin": "41.3.1",
-    "@types/eslint": "8.4.5",
+    "@types/eslint": "8.4.6",
     "@types/node": "16.11.49",
     "eslint": "8.22.0",
     "eslint-plugin-n": "15.2.4",
