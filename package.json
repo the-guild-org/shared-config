@@ -19,7 +19,7 @@
     "@types/eslint": "8.4.6",
     "@types/node": "16.11.52",
     "eslint": "8.22.0",
-    "eslint-plugin-n": "15.2.4",
+    "eslint-plugin-n": "15.2.5",
     "eslint-remote-tester": "2.1.4",
     "patch-package": "6.4.7",
     "prettier": "2.7.1",
