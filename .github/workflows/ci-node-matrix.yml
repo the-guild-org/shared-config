@@ -11,6 +11,10 @@ on:
         required: true
         type: string
         default: '[18]'
+      packageManager:
+        type: string
+        required: false
+        default: yarn
 
 jobs:
   ci_setup:
@@ -39,6 +43,7 @@ jobs:
         name: setup env
         with:
           nodeVersion: ${{matrix.nodeVersion }}
+          packageManager: ${{inputs.packageManager}}
 
       - name: ${{ inputs.script }}
         run: ${{ inputs.script }}
