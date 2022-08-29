@@ -4,6 +4,10 @@
 on:
   workflow_call:
     inputs:
+      packageManager:
+        type: string
+        required: false
+        default: yarn
       nodeVersion:
         required: false
         type: number
@@ -40,6 +44,7 @@ jobs:
         name: setup env
         with:
           nodeVersion: ${{inputs.nodeVersion}}
+          packageManager: ${{inputs.packageManager}}
 
       - name: set version variables
         id: vars

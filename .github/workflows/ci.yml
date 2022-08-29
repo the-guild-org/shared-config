@@ -14,7 +14,10 @@ on:
       name:
         required: false
         type: string
-
+      packageManager:
+        type: string
+        required: false
+        default: yarn
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -27,6 +30,7 @@ jobs:
         name: setup env
         with:
           nodeVersion: ${{inputs.nodeVersion}}
+          packageManager: ${{inputs.packageManager}}
 
       - name: ${{ inputs.script }}
         run: ${{ inputs.script }}
