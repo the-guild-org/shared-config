@@ -78,5 +78,7 @@ runs:
           issue-number: ${{ inputs.prId }}
           body: |
             <!--- website_deployment ---> 
-            TEST
+            ### 🚀 Website Preview
+
+            The latest changes to the website are available as preview in: [${{ steps.deploy.outputs.url }}](${{ steps.deploy.outputs.url }})
           edit-mode: replace
