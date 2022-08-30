@@ -64,6 +64,7 @@ runs:
         id: fc
         if: ${{ inputs.prId != '' }}
         with:
+          token: ${{ inputs.githubToken }}
           issue-number: ${{ inputs.prId }}
           comment-author: 'github-actions[bot]'
           body-includes: <!--- website_deployment ---> 
@@ -72,6 +73,7 @@ runs:
         uses: peter-evans/create-or-update-comment@v2
         if: ${{ inputs.prId != '' }}
         with:
+          token: ${{ inputs.githubToken }}
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ inputs.prId }}
           body: |
