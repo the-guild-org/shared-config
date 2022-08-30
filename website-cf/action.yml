@@ -4,10 +4,10 @@
 name: 'Deploy Website to CF'
 description: 'Shared configuration for deploying website to Cloudflare Pages'
 inputs:
-  packageManager:
-    description: 'Package Manager'
+  websiteDirectory:
+    description: 'Build script for building the website'
     required: false
-    default: yarn
+    default: website
   buildScript:
     description: 'Build script for building the website'
     required: true
