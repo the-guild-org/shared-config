@@ -1,0 +1,84 @@
+# Note: This is a composite GitHub Actions, it should do all env setup, caching an so on, so other pipelines can just compose their own stuff on top of that.
+# Docs: https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+
+name: 'Deploy Website to CF'
+description: 'Shared configuration for deploying website to Cloudflare Pages'
+inputs:
+  websiteDirectory:
+    description: 'Build script for building the website'
+    required: false
+    default: website
+  buildScript:
+    description: 'Build script for building the website'
+    required: true
+  cloudflareApiToken:
+    description: 'CF API Token'
+    required: true
+  cloudflareAccountId:
+    description: 'CF API Account ID'
+    required: true
+  githubToken:
+    description: 'GH PAT'
+    required: true
+  projectName:
+    description: 'CF Pages Project name'
+    required: true
+  artifactDir:
+    description: 'Artifact dir after build and export'
+    required: false
+    default: out
+  prId:
+    description: 'PR id for publishing preview'
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+      - uses: actions/cache@v3
+        name: cache nextjs
+        with:
+          path: packages/guild-website/.next
+          key: ${{ runner.os }}-nextjs-${{ hashFiles(format('{0}/**', inputs.websiteDirectory)) }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-
+
+      - name: build website
+        shell: bash
+        run: ${{ inputs.buildScript }}
+        working-directory: ${{ inputs.websiteDirectory }}
+
+      - name: push to cloudflare pages
+        uses: cloudflare/pages-action@1.1.0
+        id: deploy
+        with:
+          apiToken: ${{ inputs.cloudflareApiToken }}
+          accountId: ${{ inputs.cloudflareAccountId }}
+          gitHubToken: ${{ inputs.githubToken }}
+          projectName: ${{ inputs.projectName }}
+          directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
+          branch: ${{ inputs.prId != '' && format('pr-{0}', inputs.prId) || '' }}
+
+      - name: find pr comment
+        uses: peter-evans/find-comment@v2
+        id: fc
+        if: ${{ inputs.prId != '' }}
+        with:
+          token: ${{ inputs.githubToken }}
+          issue-number: ${{ inputs.prId }}
+          comment-author: 'github-actions[bot]'
+          body-includes: <!--- website_deployment ---> 
+
+      - name: create/update comment
+        uses: peter-evans/create-or-update-comment@v2
+        if: ${{ inputs.prId != '' }}
+        with:
+          token: ${{ inputs.githubToken }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ inputs.prId }}
+          body: |
+            <!--- website_deployment ---> 
+            ### 🚀 Website Preview
+
+            The latest changes to the website are available as preview in: [${{ steps.deploy.outputs.url }}](${{ steps.deploy.outputs.url }})
+          edit-mode: replace
