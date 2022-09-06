@@ -13,11 +13,11 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@changesets/cli": "2.24.4",
     "@changesets/changelog-github": "0.4.6",
+    "@changesets/cli": "2.24.4",
     "@shopify/eslint-plugin": "42.0.1",
     "@types/eslint": "8.4.6",
-    "@types/node": "16.11.59",
+    "@types/node": "18.7.15",
     "eslint": "8.23.1",
     "eslint-plugin-n": "15.2.5",
     "eslint-remote-tester": "2.1.4",
