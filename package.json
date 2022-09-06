@@ -28,6 +28,7 @@
   },
   "scripts": {
     "postinstall": "patch-package",
+    "build": "echo No build command, skipping...",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:prettier": "prettier --ignore-path .gitignore --check .",
     "lint:remote": "eslint-remote-tester",
