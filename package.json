@@ -17,7 +17,7 @@
     "@changesets/cli": "2.24.4",
     "@shopify/eslint-plugin": "42.0.1",
     "@types/eslint": "8.4.6",
-    "@types/node": "18.7.15",
+    "@types/node": "18.7.18",
     "eslint": "8.23.1",
     "eslint-plugin-n": "15.2.5",
     "eslint-remote-tester": "2.1.4",
