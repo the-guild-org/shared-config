@@ -20,6 +20,10 @@ on:
         required: false
         type: string
         default: npmTag
+      exitPre:
+        required: false
+        type: boolean
+        default: false
     secrets:
       githubToken:
         required: true
@@ -44,13 +48,17 @@ jobs:
         with:
           nodeVersion: ${{inputs.nodeVersion}}
           packageManager: ${{inputs.packageManager}}
+          
+      - if: inputs.exitPre
+        name: Exit Prerelease Mode
+        run: ${{inputs.packageManager}} run changeset pre exit
 
       - name: ${{ inputs.npmTag }} release
         id: changesets
         uses: 'the-guild-org/changesets-snapshot-action@v0.0.1'
         with:
           tag: ${{ inputs.npmTag }}
-          prepareScript: 'yarn ${{ inputs.buildScript }}'
+          prepareScript: '${{inputs.packageManager}} run ${{ inputs.buildScript }}'
         env:
           NPM_TOKEN: ${{ secrets.npmToken }}
           GITHUB_TOKEN: ${{ secrets.githubToken }}
