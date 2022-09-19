@@ -31,6 +31,10 @@ inputs:
     description: 'PR id for publishing preview'
     required: false
     default: ''
+  mainBranch:
+    description: 'The main branch name that is set in CF Pages'
+    required: false
+    default: ''
 
 runs:
   using: composite
@@ -57,7 +61,7 @@ runs:
           gitHubToken: ${{ inputs.githubToken }}
           projectName: ${{ inputs.projectName }}
           directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
-          branch: ${{ inputs.prId != '' && format('pr-{0}', inputs.prId) || '' }}
+          branch: ${{ inputs.prId != '' && format('pr-{0}', inputs.prId) || inputs.mainBranch }}
 
       - name: find pr comment
         uses: peter-evans/find-comment@v2
