@@ -23,6 +23,10 @@ on:
       githubReleaseName:
         required: false
         type: string
+      releasePrName:
+        required: false
+        type: string
+        default: 'Upcoming Release Changes'
     secrets:
       githubToken:
         required: true
@@ -59,7 +63,7 @@ jobs:
         with:
           publish: 'yarn ${{ inputs.releaseScript }}'
           commit: 'chore(release): update monorepo packages versions'
-          title: 'Upcoming Release Changes'
+          title: ${{inputs.releasePrName}}
           createGithubReleases: ${{ inputs.createGithubReleases }}
           githubReleaseName: ${{ inputs.githubReleaseName || steps.vars.outputs.date }}
         env:
