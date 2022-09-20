@@ -34,6 +34,7 @@ jobs:
     strategy:
       matrix:
         nodeVersion: ${{fromJson(needs.ci_setup.outputs.matrix)}}
+      fail-fast: false
     name: nodejs v${{ matrix.nodeVersion }}
     steps:
       - name: checkout
