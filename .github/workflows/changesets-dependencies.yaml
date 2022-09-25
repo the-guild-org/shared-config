@@ -19,6 +19,6 @@ jobs:
           token: ${{ secrets.githubToken }}
 
       - name: Create/Update Changesets
-        uses: 'the-guild-org/changesets-dependencies-action@prettier-fix'
+        uses: 'the-guild-org/changesets-dependencies-action@main'
         env:
           GITHUB_TOKEN: ${{ secrets.githubToken }}
