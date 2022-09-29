@@ -1,5 +1,15 @@
 # @theguild/tailwind-config
 
+## 0.1.1
+
+### Patch Changes
+
+- [#61](https://github.com/the-guild-org/shared-config/pull/61) [`9a56292`](https://github.com/the-guild-org/shared-config/commit/9a56292605bb0b5042c04659eaf0a49bc52170f8) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`autoprefixer@^10.4.12` ↗︎](https://www.npmjs.com/package/autoprefixer/v/10.4.12) (from `^10.4.8`, in `dependencies`)
+
+- [#61](https://github.com/the-guild-org/shared-config/pull/61) [`9a56292`](https://github.com/the-guild-org/shared-config/commit/9a56292605bb0b5042c04659eaf0a49bc52170f8) Thanks [@B2o5T](https://github.com/B2o5T)! - update tailwind config to use components bundled by tsup
+
 ## 0.1.0
 
 ### Minor Changes
