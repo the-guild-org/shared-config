@@ -21,7 +21,7 @@
     "access": "public"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.8",
+    "autoprefixer": "^10.4.12",
     "cssnano": "^5.1.13",
     "postcss": "^8.4.16",
     "postcss-import": "^15.0.0",
