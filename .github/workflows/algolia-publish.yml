@@ -1,0 +1,58 @@
+# Note: this is a shared pipeline used by other repositories. 
+# Docs: https://docs.github.com/en/actions/using-workflows/reusing-workflows
+
+on:
+  workflow_call:
+    secrets:
+      domain:
+        required: true
+      lockFilePath:
+        required: true
+      docsBaseDir:
+        required: true
+
+jobs:
+  algolia-push-records:
+    name: Push new records if changes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup env
+        uses: the-guild-org/shared-config/setup@main
+        with:
+          nodeVersion: 18
+
+      - name: Build Packages
+        run: yarn build
+
+      - name: Build website
+        run: yarn workspace website build
+
+      - name: Algolia push
+        run: yarn workspace website theguild-nextra-algolia --o ${{ secrets.lockFilePath }} --domain https://www.graphql-code-generator.com/ --docsBaseDir ${{ secrets.docsBaseDir }}
+
+      - name: Prettier
+        run: yarn prettier
+
+      - name: Compare
+        run: git diff ${{ secrets.lockFilePath }}
+
+      - name: Diff to file
+        if: always()
+        id: diff_result
+        run: |
+          OUTPUT=$(git diff ${{ secrets.lockFilePath }})
+          OUTPUT="${OUTPUT//'%'/'%25'}"
+          OUTPUT="${OUTPUT//$'\n'/'%0A'}"
+          OUTPUT="${OUTPUT//$'\r'/'%0D'}"
+          echo "::set-output name=result::$OUTPUT"
+
+      - name: Commit algolia-lockfile.json
+        if: always() && contains(steps.diff_result.outputs.result, 'diff')
+        uses: EndBug/add-and-commit@v9
+        with:
+          commit: ${{ secrets.lockFilePath }}
+          message: Update algolia-lockfile.json
+          default_author: github_actions

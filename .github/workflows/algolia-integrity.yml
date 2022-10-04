@@ -1,0 +1,62 @@
+# Note: this is a shared pipeline used by other repositories. 
+# Docs: https://docs.github.com/en/actions/using-workflows/reusing-workflows
+
+on:
+  workflow_call:
+    secrets:
+      domain:
+        required: true
+      lockFilePath:
+        required: true
+      docsBaseDir:
+        required: true
+
+jobs:
+  algolia-records-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Fetch
+        run: git fetch origin master
+
+      - name: Setup env
+        uses: the-guild-org/shared-config/setup@main
+        with:
+          nodeVersion: 18
+
+      - name: Build Packages
+        run: yarn build
+
+      - name: Build website
+        run: yarn workspace website build
+
+      - name: Algolia generate
+        run: yarn workspace website theguild-nextra-algolia --o ${{ secrets.lockFilePath }} --domain https://www.graphql-code-generator.com/ --docsBaseDir ${{ secrets.docsBaseDir }} --dryrun true
+
+      - name: Prettier
+        run: yarn prettier
+
+      - name: Compare
+        run: git diff origin/${{ github.base_ref }}.. -- ${{ secrets.lockFilePath }}
+
+      - name: Diff to file
+        if: always()
+        id: diff_result
+        run: |
+          OUTPUT=$(git diff origin/${{ github.base_ref }}.. -- ${{ secrets.lockFilePath }})
+          OUTPUT="${OUTPUT//'%'/'%25'}"
+          OUTPUT="${OUTPUT//$'\n'/'%0A'}"
+          OUTPUT="${OUTPUT//$'\r'/'%0D'}"
+          echo "::set-output name=result::$OUTPUT"
+
+      - name: Publish a message
+        if: always() && contains(steps.diff_result.outputs.result, 'diff')
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            ```diff
+            ${{ steps.diff_result.outputs.result }}
+            ```
