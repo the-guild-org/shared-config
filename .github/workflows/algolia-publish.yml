@@ -25,7 +25,7 @@ jobs:
           nodeVersion: 18
 
       - name: Algolia push
-        run: yarn workspace website theguild-nextra-algolia -o ${{ secrets.lockFilePath }} --domain ${{ secrets.domain }} --docsBaseDir ${{ secrets.docsBaseDir }}
+        run: yarn workspace website theguild-nextra-algolia --publish -o ${{ secrets.lockFilePath }} --domain ${{ secrets.domain }} --docsBaseDir ${{ secrets.docsBaseDir }}
 
       - name: Prettier
         run: yarn prettier
