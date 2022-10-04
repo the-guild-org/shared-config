@@ -24,14 +24,8 @@ jobs:
         with:
           nodeVersion: 18
 
-      - name: Build Packages
-        run: yarn build
-
-      - name: Build website
-        run: yarn workspace website build
-
       - name: Algolia push
-        run: yarn workspace website theguild-nextra-algolia --o ${{ secrets.lockFilePath }} --domain https://www.graphql-code-generator.com/ --docsBaseDir ${{ secrets.docsBaseDir }}
+        run: yarn workspace website theguild-nextra-algolia --o ${{ secrets.lockFilePath }} --domain ${{ secrets.domain }} --docsBaseDir ${{ secrets.docsBaseDir }}
 
       - name: Prettier
         run: yarn prettier
