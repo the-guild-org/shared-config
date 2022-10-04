@@ -28,7 +28,7 @@ jobs:
           nodeVersion: 18
 
       - name: Algolia generate
-        run: yarn workspace website theguild-nextra-algolia --o ${{ secrets.lockFilePath }} --domain ${{ secrets.domain }} --docsBaseDir ${{ secrets.docsBaseDir }} --dryrun true
+        run: yarn workspace website theguild-nextra-algolia -o ${{ secrets.lockFilePath }} --domain ${{ secrets.domain }} --docsBaseDir ${{ secrets.docsBaseDir }} --dryrun true
 
       - name: Prettier
         run: yarn prettier
