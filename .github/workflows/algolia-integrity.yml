@@ -11,7 +11,7 @@ on:
       domain:
         type: string
         required: true
-        description: "The root domain and path that will prefix all URLs (ex: "https://www.the-guild.dev/graphql/codegen/")
+        description: "The root domain and path that will prefix all URLs (ex: 'https://www.the-guild.dev/graphql/codegen/')"
       lockFilePath:
         type: string
         required: false
