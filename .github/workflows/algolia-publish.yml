@@ -6,16 +6,12 @@ on:
     secrets:
       githubToken:
         type: string
-        required: true
       algoliaAppId:
         type: string
-        required: true
       algoliaAdminApiKey:
         type: string
-        required: true
       algoliaIndexName:
         type: string
-        required: true
     inputs:
       domain:
         type: string
