@@ -4,12 +4,24 @@
 on:
   workflow_call:
     secrets:
+      githubToken:
+        required: true
+    inputs:
       domain:
         required: true
+        description: "The root domain and path that will prefix all URLs (ex: "https://www.the-guild.dev/graphql/codegen/")
       lockFilePath:
-        required: true
+        required: false
+        default: "./algolia-lockfile.json"
+        description: "Relative path from `website/` to the Algolia lockfile"
       docsBaseDir:
-        required: true
+        required: false
+        default: "./src/pages/"
+        description: "Relative path from `website/` to nextra markdown pages root folder"
+      nodeVersion:
+        required: false
+        type: number
+        default: 18
 
 jobs:
   algolia-records-check:
@@ -19,32 +31,28 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - name: Fetch
-        run: git fetch origin master
+        run: git fetch origin ${{ github.base_ref }}
 
       - name: Setup env
         uses: the-guild-org/shared-config/setup@main
         with:
-          nodeVersion: 18
+          nodeVersion: ${{inputs.nodeVersion}}
 
       - name: Algolia generate
-        run: yarn workspace website theguild-nextra-algolia -o ${{ secrets.lockFilePath }} --domain ${{ secrets.domain }} --docsBaseDir ${{ secrets.docsBaseDir }}
-
-      - name: Prettier
-        run: yarn prettier
-
-      - name: Compare
-        run: git diff origin/${{ github.base_ref }}.. -- ${{ secrets.lockFilePath }}
+        run: yarn workspace website theguild-nextra-algolia -o ${{ inputs.lockFilePath }} --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}
 
       - name: Diff to file
         if: always()
         id: diff_result
         run: |
-          OUTPUT=$(git diff origin/${{ github.base_ref }}.. -- ${{ secrets.lockFilePath }})
+          OUTPUT=$(git diff origin/${{ github.base_ref }}.. -- ${{ inputs.lockFilePath }})
           OUTPUT="${OUTPUT//'%'/'%25'}"
           OUTPUT="${OUTPUT//$'\n'/'%0A'}"
           OUTPUT="${OUTPUT//$'\r'/'%0D'}"
           echo "::set-output name=result::$OUTPUT"
+          echo $OUTPUT
 
       - name: Publish a message
         if: always() && contains(steps.diff_result.outputs.result, 'diff')
@@ -54,3 +62,5 @@ jobs:
             ```diff
             ${{ steps.diff_result.outputs.result }}
             ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.githubToken }}
