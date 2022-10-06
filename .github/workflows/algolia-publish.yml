@@ -52,7 +52,7 @@ jobs:
           nodeVersion: ${{inputs.nodeVersion}}
 
       - name: Algolia push
-        run: yarn workspace website theguild-nextra-algolia --publish -o ${{ inputs.lockFilePath }} --source ${{ $inputs.source }} --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}
+        run: yarn workspace website theguild-nextra-algolia --publish -o ${{ inputs.lockFilePath }} --source ${{ inputs.source }} --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}
         env:
           ALGOLIA_APP_ID: ${{ secrets.algoliaAppId }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.algoliaAdminApiKey }}
