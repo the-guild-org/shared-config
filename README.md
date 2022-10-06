@@ -334,7 +334,7 @@ on:
 jobs:
   algolia:
     uses: the-guild-org/shared-config/.github/workflows/algolia-integrity.yml@main
-    inputs:
+    with:
       domain: https://www.the-guild.dev/graphql/codegen/
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
@@ -357,7 +357,7 @@ jobs:
       algoliaAppId: ${{ secrets.ALGOLIA_APP_ID }}
       algoliaAdminApiKey: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
       algoliaIndexName: ${{ secrets.ALGOLIA_INDEX_NAME }}
-    inputs:
+    with:
       domain: https://www.the-guild.dev/graphql/codegen/
 ```
 
