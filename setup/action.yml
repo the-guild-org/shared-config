@@ -32,6 +32,10 @@ runs:
         with:
           node-version: ${{ inputs.nodeVersion }}
           cache: ${{ inputs.packageManager }}
+          cache-dependency-path: |
+            **/pnpm-lock.yaml
+            **/yarn.lock
+            patches/**
 
       - name: yarn install
         shell: bash
