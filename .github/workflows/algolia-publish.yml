@@ -5,22 +5,29 @@ on:
   workflow_call:
     secrets:
       githubToken:
+        type: string
         required: true
       algoliaAppId:
+        type: string
         required: true
       algoliaAdminApiKey:
+        type: string
         required: true
       algoliaIndexName:
+        type: string
         required: true
     inputs:
       domain:
+        type: string
         required: true
         description: "The root domain and path that will prefix all URLs (ex: "https://www.the-guild.dev/graphql/codegen/")
       lockFilePath:
+        type: string
         required: false
         default: "./algolia-lockfile.json"
         description: "Relative path from `website/` to the Algolia lockfile"
       docsBaseDir:
+        type: string
         required: false
         default: "./src/pages/"
         description: "Relative path from `website/` to nextra markdown pages root folder"
