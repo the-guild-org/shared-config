@@ -31,10 +31,12 @@ on:
         default: 18
       websiteDirectory:
         required: false
+        type: string
         default: 'website/'
       packageManager:
         description: 'Package Manager'
-        required: false
+        required: 
+        type: string
         default: yarn
 
 jobs:

@@ -37,8 +37,10 @@ on:
         default: 18
       websiteDirectory:
         required: false
+        type: string
         default: 'website/'
       packageManager:
+        type: string
         description: 'Package Manager'
         required: false
         default: yarn
