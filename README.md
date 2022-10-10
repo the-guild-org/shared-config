@@ -293,3 +293,76 @@ jobs:
 ```
 
 </details>
+
+<details>
+  <summary>(Optional) Setup Algolia search</summary>
+
+  We recommend setup Algolia to any The Guild project that provides documentation with Nextra.
+
+  <br />
+
+  1. Install `@theguild/algolia`
+
+  ```
+  yarn add -D @theguild/algolia
+  ```
+
+  2. Configure Prettier
+
+  If Prettier or other tools are used, ensure to exclude the `website/algolia-lockfile.json` file.
+
+  3. Add Algolia credentials to repo secrets
+
+  Configure the following Github Actions secrets from your Algolia dashboard:
+  - `ALGOLIA_APP_ID`
+  - `ALGOLIA_ADMIN_API_KEY`
+  - `ALGOLIA_INDEX_NAME`
+
+  4. Add the Github Actions workflows
+
+  _PR workflow example_
+
+```yml
+name: pr
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  algolia:
+    uses: the-guild-org/shared-config/.github/workflows/algolia-integrity.yml@main
+    with:
+      domain: https://www.the-guild.dev/graphql/codegen/
+    secrets:
+      githubToken: ${{ secrets.GITHUB_TOKEN }}
+```
+
+  _main branch workflow example_
+
+```yml
+name: release
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  algolia:
+    uses: the-guild-org/shared-config/.github/workflows/algolia-publish.yml@main
+    secrets:
+      githubToken: ${{ secrets.GITHUB_TOKEN }}
+      algoliaAppId: ${{ secrets.ALGOLIA_APP_ID }}
+      algoliaAdminApiKey: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+      algoliaIndexName: ${{ secrets.ALGOLIA_INDEX_NAME }}
+    with:
+      domain: https://www.the-guild.dev/graphql/codegen/
+```
+
+</details>
+
+For the complete list of available options (`with: ...`), please refer to the [workflow declaration](./github/workflows/algolia-integrity.yml).
+
+If your project runs a node version different version of `18` or uses a package manager different from `yarn`, please use the following options under the `with` block:
+- `packageManager: "pnpm"`
+- `nodeVersion: 16`

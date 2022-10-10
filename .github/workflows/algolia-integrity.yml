@@ -1,0 +1,84 @@
+# Note: this is a shared pipeline used by other repositories. 
+# Docs: https://docs.github.com/en/actions/using-workflows/reusing-workflows
+
+on:
+  workflow_call:
+    secrets:
+      githubToken:
+        required: true
+    inputs:
+      domain:
+        type: string
+        required: true
+        description: "The root domain and path that will prefix all URLs (ex: 'https://www.the-guild.dev/graphql/codegen/')"
+      source:
+        type: string
+        required: true
+        description: "(ex: 'Code Generator')"
+      lockFilePath:
+        type: string
+        required: false
+        default: "./algolia-lockfile.json"
+        description: "Relative path from `website/` to the Algolia lockfile"
+      docsBaseDir:
+        type: string
+        required: false
+        default: "./src/pages/"
+        description: "Relative path from `website/` to nextra markdown pages root folder"
+      nodeVersion:
+        required: false
+        type: number
+        default: 18
+      websiteDirectory:
+        required: false
+        type: string
+        default: 'website/'
+      packageManager:
+        description: 'Package Manager'
+        required: false
+        type: string
+        default: yarn
+
+jobs:
+  algolia-records-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Fetch
+        run: git fetch origin ${{ github.base_ref }}
+
+      - name: Setup env
+        uses: the-guild-org/shared-config/setup@main
+        with:
+          nodeVersion: ${{inputs.nodeVersion}}
+
+      - name: Algolia generate
+        run: ${{ inputs.packageManager }} run theguild-nextra-algolia -o ${{ inputs.lockFilePath }} --source ${{ inputs.source }} --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}
+        working-directory: ${{ inputs.websiteDirectory }}
+
+      - name: Diff to file
+        if: always()
+        id: diff_result
+        working-directory: ${{ inputs.websiteDirectory }}
+        run: |
+          OUTPUT=$(git diff origin/${{ github.base_ref }}.. -- ${{ inputs.lockFilePath }})
+          OUTPUT="${OUTPUT//'%'/'%25'}"
+          OUTPUT="${OUTPUT//$'\n'/'%0A'}"
+          OUTPUT="${OUTPUT//$'\r'/'%0D'}"
+          echo "::set-output name=result::$OUTPUT"
+          echo $OUTPUT
+
+      - name: Publish a message
+        if: always() && contains(steps.diff_result.outputs.result, 'diff')
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            ```diff
+            ${{ steps.diff_result.outputs.result }}
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.githubToken }}
