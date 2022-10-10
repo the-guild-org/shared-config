@@ -299,8 +299,6 @@ jobs:
 
   We recommend setup Algolia to any The Guild project that provides documentation with Nextra.
 
-  **This setup is only compatible with `yarn` projects**
-
   <br />
 
   1. Install `@theguild/algolia`
@@ -362,3 +360,9 @@ jobs:
 ```
 
 </details>
+
+For the complete list of available options (`with: ...`), please refer to the [workflow declaration](./github/workflows/algolia-integrity.yml).
+
+If your project runs a node version different version of `18` or uses a package manager different from `yarn`, please use the following options under the `with` block:
+- `packageManager: "pnpm"`
+- `nodeVersion: 16`
