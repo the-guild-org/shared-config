@@ -35,6 +35,13 @@ on:
         required: false
         type: number
         default: 18
+      websiteDirectory:
+        required: false
+        default: 'website/'
+      packageManager:
+        description: 'Package Manager'
+        required: false
+        default: yarn
 
 jobs:
   algolia-push-records:
@@ -52,7 +59,8 @@ jobs:
           nodeVersion: ${{inputs.nodeVersion}}
 
       - name: Algolia push
-        run: yarn workspace website theguild-nextra-algolia --publish -o ${{ inputs.lockFilePath }} --source ${{ inputs.source }} --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}
+        run: ${{ inputs.packageManager }} run theguild-nextra-algolia --publish -o ${{ inputs.lockFilePath }} --source ${{ inputs.source }} --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}
+        working-directory: ${{ inputs.websiteDirectory }}
         env:
           ALGOLIA_APP_ID: ${{ secrets.algoliaAppId }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.algoliaAdminApiKey }}
@@ -61,6 +69,7 @@ jobs:
       - name: Diff to file
         if: always()
         id: diff_result
+        working-directory: ${{ inputs.websiteDirectory }}
         run: |
           OUTPUT=$(git diff ${{ inputs.lockFilePath }})
           OUTPUT="${OUTPUT//'%'/'%25'}"
@@ -72,7 +81,7 @@ jobs:
         if: always() && contains(steps.diff_result.outputs.result, 'diff')
         uses: EndBug/add-and-commit@v9
         with:
-          commit: ${{ inputs.lockFilePath }}
+          commit: "${{ inputs.websiteDirectory }}${{ inputs.lockFilePath }}"
           message: Update algolia-lockfile.json
           default_author: github_actions
         env:
