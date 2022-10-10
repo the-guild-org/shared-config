@@ -5,13 +5,13 @@ on:
   workflow_call:
     secrets:
       githubToken:
-        type: string
+        required: true
       algoliaAppId:
-        type: string
+        required: true
       algoliaAdminApiKey:
-        type: string
+        required: true
       algoliaIndexName:
-        type: string
+        required: true
     inputs:
       source:
         type: string
