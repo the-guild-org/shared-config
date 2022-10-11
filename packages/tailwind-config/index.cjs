@@ -12,7 +12,10 @@ module.exports = {
     './node_modules/@theguild/components/esm/**/*.js',
     // components v4 + tsup
     '../node_modules/@theguild/components/dist/**/*.{js,mjs}',
-    './node_modules/@theguild/components/dist/**/*.{js,mjs}'
+    './node_modules/@theguild/components/dist/**/*.{js,mjs}',
+    // pnpm
+    '../node_modules/.pnpm/node_modules/nextra-theme-docs/dist/**/*.js',
+    '../node_modules/.pnpm/node_modules/@theguild/components/dist/**/*.{js,mjs}'
   ],
   theme: {
     container: {
