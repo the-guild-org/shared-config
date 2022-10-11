@@ -1,5 +1,11 @@
 # @theguild/tailwind-config
 
+## 0.1.2
+
+### Patch Changes
+
+- [#69](https://github.com/the-guild-org/shared-config/pull/69) [`5d7e85b`](https://github.com/the-guild-org/shared-config/commit/5d7e85b11170b20dd658f3410f21628a6d516a10) Thanks [@B2o5T](https://github.com/B2o5T)! - adjust config for pnpm projects
+
 ## 0.1.1
 
 ### Patch Changes
