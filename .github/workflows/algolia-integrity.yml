@@ -70,7 +70,7 @@ jobs:
         if: always()
         id: diff_result
         run: |
-          OUTPUT=$(git diff origin/${{ github.base_ref }}.. -- ${{ inputs.websiteDirectory }}${{ inputs.lockFilePath }})
+          OUTPUT=$(git diff origin/${{ github.base_ref }} ${{ inputs.websiteDirectory }}${{ inputs.lockFilePath }})
           OUTPUT="${OUTPUT//'%'/'%25'}"
           OUTPUT="${OUTPUT//$'\n'/'%0A'}"
           OUTPUT="${OUTPUT//$'\r'/'%0D'}"
