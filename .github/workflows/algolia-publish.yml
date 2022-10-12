@@ -24,7 +24,7 @@ on:
       lockFilePath:
         type: string
         required: false
-        default: "./algolia-lockfile.json"
+        default: "algolia-lockfile.json"
         description: "Relative path from `website/` to the Algolia lockfile"
       docsBaseDir:
         type: string
@@ -38,7 +38,7 @@ on:
       websiteDirectory:
         required: false
         type: string
-        default: 'website/'
+        default: './website/'
       packageManager:
         type: string
         description: 'Package Manager'
@@ -71,9 +71,8 @@ jobs:
       - name: Diff to file
         if: always()
         id: diff_result
-        working-directory: ${{ inputs.websiteDirectory }}
         run: |
-          OUTPUT=$(git diff ${{ inputs.lockFilePath }})
+          OUTPUT=$(git diff ${{ inputs.websiteDirectory }}${{ inputs.lockFilePath }})
           OUTPUT="${OUTPUT//'%'/'%25'}"
           OUTPUT="${OUTPUT//$'\n'/'%0A'}"
           OUTPUT="${OUTPUT//$'\r'/'%0D'}"
