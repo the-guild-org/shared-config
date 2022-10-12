@@ -1,5 +1,11 @@
 # @theguild/prettier-config
 
+## 0.1.1
+
+### Patch Changes
+
+- [#73](https://github.com/the-guild-org/shared-config/pull/73) [`570f65a`](https://github.com/the-guild-org/shared-config/commit/570f65a26e22049abc1a5a27c7f3ccb5f39d8e7a) Thanks [@B2o5T](https://github.com/B2o5T)! - add `package.json` to `exports` field
+
 ## 0.1.0
 
 ### Minor Changes
