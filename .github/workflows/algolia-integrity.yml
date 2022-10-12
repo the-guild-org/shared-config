@@ -38,6 +38,11 @@ on:
         required: false
         type: string
         default: yarn
+      setupEnvWorkingDirectory:
+        description: 'workingDirectory for `setup-env` action'
+        required: false
+        type: string
+        default: '.'
 
 jobs:
   algolia-records-check:
@@ -55,6 +60,7 @@ jobs:
         uses: the-guild-org/shared-config/setup@main
         with:
           nodeVersion: ${{inputs.nodeVersion}}
+          workingDirectory: ${{ inputs.setupEnvWorkingDirectory }}
 
       - name: Algolia generate
         run: ${{ inputs.packageManager }} run theguild-nextra-algolia -o ${{ inputs.lockFilePath }} --source '${{ inputs.source }}' --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}

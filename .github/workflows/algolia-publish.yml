@@ -44,6 +44,11 @@ on:
         description: 'Package Manager'
         required: false
         default: yarn
+      setupEnvWorkingDirectory:
+        description: 'workingDirectory for `setup-env` action'
+        required: false
+        type: string
+        default: '.'
 
 jobs:
   algolia-push-records:
@@ -59,6 +64,7 @@ jobs:
         uses: the-guild-org/shared-config/setup@main
         with:
           nodeVersion: ${{inputs.nodeVersion}}
+          workingDirectory: ${{ inputs.setupEnvWorkingDirectory }}
 
       - name: Algolia push
         run: ${{ inputs.packageManager }} run theguild-nextra-algolia --publish -o ${{ inputs.lockFilePath }} --source '${{ inputs.source }}' --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}
