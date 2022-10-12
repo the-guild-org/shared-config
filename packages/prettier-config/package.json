@@ -14,7 +14,8 @@
   "license": "MIT",
   "private": false,
   "exports": {
-    ".": "./index.cjs"
+    ".": "./index.cjs",
+    "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public"
