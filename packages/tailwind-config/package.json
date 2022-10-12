@@ -15,7 +15,8 @@
   "private": false,
   "exports": {
     ".": "./index.cjs",
-    "./postcss.config": "./postcss.config.cjs"
+    "./postcss.config": "./postcss.config.cjs",
+    "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public"
