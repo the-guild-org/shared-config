@@ -15,7 +15,8 @@
   "private": false,
   "exports": {
     ".": "./src/index.cjs",
-    "./*": "./src/*.cjs"
+    "./*": "./src/*.cjs",
+    "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public"
