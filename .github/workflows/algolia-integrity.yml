@@ -60,6 +60,7 @@ jobs:
         uses: the-guild-org/shared-config/setup@main
         with:
           nodeVersion: ${{inputs.nodeVersion}}
+          packageManager: ${{inputs.packageManager}}
           workingDirectory: ${{ inputs.setupEnvWorkingDirectory }}
 
       - name: Algolia generate
