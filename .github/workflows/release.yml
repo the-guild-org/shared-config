@@ -10,7 +10,7 @@ jobs:
   stable:
     uses: ./.github/workflows/release-stable.yml
     with:
-      releaseScript: release 
+      releaseScript: release
       nodeVersion: 18
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}

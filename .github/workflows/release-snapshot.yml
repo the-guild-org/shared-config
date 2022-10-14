@@ -1,4 +1,4 @@
-# Note: this is a shared pipeline used by other repositories. 
+# Note: this is a shared pipeline used by other repositories.
 # Docs: https://docs.github.com/en/actions/using-workflows/reusing-workflows
 
 on:
@@ -32,7 +32,6 @@ on:
 
 jobs:
   snapshot:
-  
     runs-on: ubuntu-latest
     if: github.event.pull_request.head.repo.full_name == github.repository
     outputs:
@@ -48,7 +47,7 @@ jobs:
         with:
           nodeVersion: ${{inputs.nodeVersion}}
           packageManager: ${{inputs.packageManager}}
-          
+
       - if: inputs.exitPre
         name: Exit Prerelease Mode
         run: ${{inputs.packageManager}} run changeset pre exit
