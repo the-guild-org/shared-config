@@ -1,4 +1,4 @@
-# Note: this is a shared pipeline used by other repositories. 
+# Note: this is a shared pipeline used by other repositories.
 # Docs: https://docs.github.com/en/actions/using-workflows/reusing-workflows
 
 on:
@@ -18,13 +18,13 @@ on:
       lockFilePath:
         type: string
         required: false
-        default: "algolia-lockfile.json"
-        description: "Relative path from `website/` to the Algolia lockfile"
+        default: 'algolia-lockfile.json'
+        description: 'Relative path from `website/` to the Algolia lockfile'
       docsBaseDir:
         type: string
         required: false
-        default: "./src/pages/"
-        description: "Relative path from `website/` to nextra markdown pages root folder"
+        default: './src/pages/'
+        description: 'Relative path from `website/` to nextra markdown pages root folder'
       nodeVersion:
         required: false
         type: number

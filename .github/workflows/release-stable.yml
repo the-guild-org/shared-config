@@ -1,4 +1,4 @@
-# Note: this is a shared pipeline used by other repositories. 
+# Note: this is a shared pipeline used by other repositories.
 # Docs: https://docs.github.com/en/actions/using-workflows/reusing-workflows
 
 on:

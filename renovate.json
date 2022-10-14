@@ -15,10 +15,5 @@
   ],
   "timezone": "Europe/Warsaw",
   "schedule": ["after 10pm and before 6:00am"],
-  "ignorePaths": [
-    "**/__tests__/**",
-    "**/test/**",
-    "**/tests/**",
-    "**/__fixtures__/**"
-  ]
+  "ignorePaths": ["**/__tests__/**", "**/test/**", "**/tests/**", "**/__fixtures__/**"]
 }

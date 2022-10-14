@@ -39,50 +39,50 @@ inputs:
 runs:
   using: composite
   steps:
-      - uses: actions/cache@v3
-        name: cache nextjs
-        with:
-          path: packages/guild-website/.next
-          key: ${{ runner.os }}-nextjs-${{ hashFiles(format('{0}/**', inputs.websiteDirectory)) }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-
+    - uses: actions/cache@v3
+      name: cache nextjs
+      with:
+        path: packages/guild-website/.next
+        key: ${{ runner.os }}-nextjs-${{ hashFiles(format('{0}/**', inputs.websiteDirectory)) }}
+        restore-keys: |
+          ${{ runner.os }}-nextjs-
 
-      - name: build website
-        shell: bash
-        run: ${{ inputs.buildScript }}
-        working-directory: ${{ inputs.websiteDirectory }}
+    - name: build website
+      shell: bash
+      run: ${{ inputs.buildScript }}
+      working-directory: ${{ inputs.websiteDirectory }}
 
-      - name: push to cloudflare pages
-        uses: cloudflare/pages-action@1.1.0
-        id: deploy
-        with:
-          apiToken: ${{ inputs.cloudflareApiToken }}
-          accountId: ${{ inputs.cloudflareAccountId }}
-          gitHubToken: ${{ inputs.githubToken }}
-          projectName: ${{ inputs.projectName }}
-          directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
-          branch: ${{ inputs.prId != '' && format('pr-{0}', inputs.prId) || inputs.mainBranch }}
+    - name: push to cloudflare pages
+      uses: cloudflare/pages-action@1.1.0
+      id: deploy
+      with:
+        apiToken: ${{ inputs.cloudflareApiToken }}
+        accountId: ${{ inputs.cloudflareAccountId }}
+        gitHubToken: ${{ inputs.githubToken }}
+        projectName: ${{ inputs.projectName }}
+        directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
+        branch: ${{ inputs.prId != '' && format('pr-{0}', inputs.prId) || inputs.mainBranch }}
 
-      - name: find pr comment
-        uses: peter-evans/find-comment@v2
-        id: fc
-        if: ${{ inputs.prId != '' }}
-        with:
-          token: ${{ inputs.githubToken }}
-          issue-number: ${{ inputs.prId }}
-          comment-author: 'github-actions[bot]'
-          body-includes: <!--- website_deployment ---> 
+    - name: find pr comment
+      uses: peter-evans/find-comment@v2
+      id: fc
+      if: ${{ inputs.prId != '' }}
+      with:
+        token: ${{ inputs.githubToken }}
+        issue-number: ${{ inputs.prId }}
+        comment-author: 'github-actions[bot]'
+        body-includes: <!--- website_deployment --->
 
-      - name: create/update comment
-        uses: peter-evans/create-or-update-comment@v2
-        if: ${{ inputs.prId != '' }}
-        with:
-          token: ${{ inputs.githubToken }}
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          issue-number: ${{ inputs.prId }}
-          body: |
-            <!--- website_deployment ---> 
-            ### 🚀 Website Preview
+    - name: create/update comment
+      uses: peter-evans/create-or-update-comment@v2
+      if: ${{ inputs.prId != '' }}
+      with:
+        token: ${{ inputs.githubToken }}
+        comment-id: ${{ steps.fc.outputs.comment-id }}
+        issue-number: ${{ inputs.prId }}
+        body: |
+          <!--- website_deployment ---> 
+          ### 🚀 Website Preview
 
-            The latest changes to the website are available as preview in: [${{ steps.deploy.outputs.url }}](${{ steps.deploy.outputs.url }})
-          edit-mode: replace
+          The latest changes to the website are available as preview in: [${{ steps.deploy.outputs.url }}](${{ steps.deploy.outputs.url }})
+        edit-mode: replace

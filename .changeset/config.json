@@ -1,16 +1,12 @@
-
 {
   "$schema": "https://unpkg.com/@changesets/config@2.1.0/schema.json",
-  "changelog": [
-    "@changesets/changelog-github",
-    { "repo": "the-guild-org/shared-config" }
-  ],
+  "changelog": ["@changesets/changelog-github", { "repo": "the-guild-org/shared-config" }],
   "commit": false,
   "linked": [],
   "access": "public",
-  "baseBranch": "main", 
-  "updateInternalDependencies": "patch", 
-  "ignore": [] ,
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": [],
   "snapshot": {
     "useCalculatedVersion": true,
     "prereleaseTemplate": "{tag}-{datetime}-{commit}"
