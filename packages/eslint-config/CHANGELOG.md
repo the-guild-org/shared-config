@@ -1,5 +1,11 @@
 # @theguild/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- [#77](https://github.com/the-guild-org/shared-config/pull/77) [`d63132c`](https://github.com/the-guild-org/shared-config/commit/d63132c099aab495caa67b3050557b42a5f1b938) Thanks [@saihaj](https://github.com/saihaj)! - require to have `.js` extensions since when bundling with `bob` we need all the extensions to be explicit.
+
 ## 0.1.2
 
 ### Patch Changes
