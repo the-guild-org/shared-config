@@ -66,6 +66,9 @@ jobs:
       - name: Algolia generate
         run: ${{ inputs.packageManager }} run theguild-nextra-algolia -o ${{ inputs.lockFilePath }} --source '${{ inputs.source }}' --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}
         working-directory: ${{ inputs.websiteDirectory }}
+        
+      - name: Prettier
+        run: ${{ inputs.packageManager }} prettier --write ${{ inputs.lockFilePath }}
 
       - name: Diff to file
         if: always()
