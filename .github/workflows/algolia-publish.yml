@@ -49,11 +49,17 @@ on:
         required: false
         type: string
         default: '.'
+      continueOnError:
+        description: 'Prevent failing if commit lockfile fails'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   algolia-push-records:
     name: Push new records if changes
     runs-on: ubuntu-latest
+    continue-on-error: ${{ inputs.continueOnError }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
