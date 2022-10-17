@@ -68,7 +68,7 @@ jobs:
         working-directory: ${{ inputs.websiteDirectory }}
         
       - name: Prettier
-        run: ${{ inputs.packageManager }} prettier --write ${{ inputs.lockFilePath }}
+        run: npx prettier --write website/${{ inputs.lockFilePath }}
 
       - name: Diff to file
         if: always()
