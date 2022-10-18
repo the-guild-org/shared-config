@@ -49,8 +49,8 @@ on:
         required: false
         type: string
         default: '.'
-      continueOnError:
-        description: 'Prevent failing if commit lockfile fails'
+      skipCommitLockFile:
+        description: 'Prevent committing lockfile'
         required: false
         type: boolean
         default: false
@@ -59,7 +59,6 @@ jobs:
   algolia-push-records:
     name: Push new records if changes
     runs-on: ubuntu-latest
-    continue-on-error: ${{ inputs.continueOnError }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -92,7 +91,7 @@ jobs:
           echo "::set-output name=result::$OUTPUT"
 
       - name: Commit algolia-lockfile.json
-        if: always() && contains(steps.diff_result.outputs.result, 'diff')
+        if: ${{ !inputs.skipCommitLockFile && contains(steps.diff_result.outputs.result, 'diff') }}
         uses: EndBug/add-and-commit@v9
         with:
           commit: '${{ inputs.websiteDirectory }}${{ inputs.lockFilePath }}'
