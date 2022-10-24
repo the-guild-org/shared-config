@@ -1,5 +1,11 @@
 # @theguild/tailwind-config
 
+## 0.2.0
+
+### Minor Changes
+
+- [#84](https://github.com/the-guild-org/shared-config/pull/84) [`620a0f9`](https://github.com/the-guild-org/shared-config/commit/620a0f9ae8e9559b80269faea0a62a565f0fc327) Thanks [@B2o5T](https://github.com/B2o5T)! - remove unneeded tailwind `content` field patterns
+
 ## 0.1.3
 
 ### Patch Changes
