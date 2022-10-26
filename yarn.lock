@@ -2064,10 +2064,10 @@ eslint-plugin-unicorn@^44.0.0:
     semver "^7.3.7"
     strip-indent "^3.0.0"
 
-eslint-remote-tester@2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/eslint-remote-tester/-/eslint-remote-tester-2.1.4.tgz#c01bc23a1c1bc3e896eabf635325975fada22c25"
-  integrity sha512-XEvq5sISZw/RegsfZ5arb0lyZYIxc6RLMBZFHvEznkD5LUyqD1F+hDmCTqUl954yMiUvGii4KTqsXoIHZ1bg6g==
+eslint-remote-tester@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-remote-tester/-/eslint-remote-tester-3.0.0.tgz#aa9b357d65250245f1d6556b4decaf993e2c72f4"
+  integrity sha512-cb7w8WPQwJsH6bTU2fUNBcVfqPwOE7fIX4UuqkG4v0dcfwegsUhoVuYMrUeZNLJXYpjnRki4ZfTMvBfCXRS+ag==
   dependencies:
     "@babel/code-frame" "^7.16.7"
     JSONStream "^1.3.5"
