@@ -1,5 +1,11 @@
 # @theguild/tailwind-config
 
+## 0.2.1
+
+### Patch Changes
+
+- [#92](https://github.com/the-guild-org/shared-config/pull/92) [`ffb3d22`](https://github.com/the-guild-org/shared-config/commit/ffb3d222709549feee58e277a9523e84e72c9e52) Thanks [@B2o5T](https://github.com/B2o5T)! - update tailwind config to be compatible with nextra styles
+
 ## 0.2.0
 
 ### Minor Changes
