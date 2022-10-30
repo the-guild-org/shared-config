@@ -1,6 +1,6 @@
 /* eslint-disable import/no-default-export */
-import type { Config } from 'eslint-remote-tester';
-import type { Linter } from 'eslint';
+import { Linter } from 'eslint';
+import { Config } from 'eslint-remote-tester';
 
 const JSExtensions = ['js', 'jsx', 'cjs', 'mjs', 'cjsx', 'mjsx'] as const;
 
@@ -8,9 +8,9 @@ const TSExtensions = ['ts', 'tsx', 'cts', 'mts', 'ctsx', 'mtsx'] as const;
 
 enum Repo {
   // Ecosystem
-  // Hive = 'the-guild-org/graphql-hive', TODO: enable after will be OpenSourced
+  Hive = 'kamilkisiela/graphql-hive',
   Yoga = 'dotansimha/graphql-yoga',
-  Envelop = 'dotansimha/envelop',
+  Envelop = 'n1ru4l/envelop',
   Inspector = 'kamilkisiela/graphql-inspector',
   CodeGenerator = 'dotansimha/graphql-code-generator',
   Mesh = 'urigo/graphql-mesh',
@@ -19,7 +19,7 @@ enum Repo {
   ESLint = 'b2o5t/graphql-eslint',
   Config = 'kamilkisiela/graphql-config',
   Scalars = 'urigo/graphql-scalars',
-  Shield = 'maticzav/graphql-shield',
+  Shield = 'dimatill/graphql-shield',
   Swift = 'maticzav/swift-graphql',
   CLI = 'urigo/graphql-cli',
   SOFA = 'urigo/sofa',
@@ -28,7 +28,6 @@ enum Repo {
   WhatsApp = 'urigo/whatsapp-clone-tutorial',
   // Another Guild's repos
   Components = 'the-guild-org/the-guild-components',
-  Docs = 'the-guild-org/the-guild-docs',
   Website = 'the-guild-org/the-guild-website',
   SharedConfigs = 'the-guild-org/shared-config',
   TimeAgo = 'n1ru4l/react-time-ago',
