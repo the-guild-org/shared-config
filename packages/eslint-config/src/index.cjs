@@ -40,7 +40,9 @@ const SORT_IMPORTS_GROUPS = [
     // Side effect imports.
     '^\\u0000',
     // Node.js builtins
-    `^(node:)?(${builtinModules.filter(mod => !mod.startsWith('_') && !mod.includes('/')).join('|')})(/.*|$)`,
+    `^(node:)?(${builtinModules
+      .filter(mod => !mod.startsWith('_') && !mod.includes('/'))
+      .join('|')})(/.*|$)`,
     '^react(-dom)?$',
     '^next(/.*|$)',
     '^graphql(/.*|$)',

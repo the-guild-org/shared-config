@@ -6,10 +6,6 @@
     "url": "the-guild-org/shared-config",
     "directory": "packages/prettier-config"
   },
-  "keywords": [
-    "prettier",
-    "prettier-config"
-  ],
   "author": "The Guild (https://the-guild.dev)",
   "license": "MIT",
   "private": false,
@@ -17,13 +13,18 @@
     ".": "./index.cjs",
     "./package.json": "./package.json"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "prettier-plugin-sh": "^0.12.8"
-  },
+  "keywords": [
+    "prettier",
+    "prettier-config"
+  ],
   "peerDependencies": {
     "prettier": "^2"
+  },
+  "dependencies": {
+    "prettier-plugin-pkg": "^0.17.1",
+    "prettier-plugin-sh": "^0.12.8"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
