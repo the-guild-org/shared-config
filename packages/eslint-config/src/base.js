@@ -137,6 +137,7 @@ module.exports = {
     'no-restricted-globals': ['error', 'stop'],
 
     '@typescript-eslint/no-explicit-any': 'error',
+    'prefer-const': ['error', { destructuring: 'all' }],
   },
 };
 
