@@ -55,7 +55,16 @@ const overrideConfig: Config['eslintrc'] = {
       },
     },
   ],
-  plugins: ['sonarjs', 'unicorn', 'import', 'react', '@typescript-eslint', '@shopify', 'n', 'promise'],
+  plugins: [
+    'sonarjs',
+    'unicorn',
+    'import',
+    'react',
+    '@typescript-eslint',
+    '@shopify',
+    'n',
+    'promise',
+  ],
   rules: {
     'no-unreachable-loop': 'error',
   },
