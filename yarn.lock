@@ -1842,7 +1842,7 @@ eslint-plugin-mdx@^2.0.0:
     unified "^10.1.2"
     vfile "^5.3.4"
 
-eslint-plugin-n@15.3.0:
+eslint-plugin-n@15.3.0, eslint-plugin-n@^15.3.0:
   version "15.3.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-n/-/eslint-plugin-n-15.3.0.tgz#3e1ad236a17dce7ecc0760621c46cc251ef99560"
   integrity sha512-IyzPnEWHypCWasDpxeJnim60jhlumbmq0pubL6IOcnk8u2y53s5QfT8JnXy7skjHJ44yWHRb11PLtDHuu1kg/Q==
@@ -1905,6 +1905,11 @@ eslint-plugin-react@^7.30.0, eslint-plugin-react@^7.31.7:
     semver "^6.3.0"
     string.prototype.matchall "^4.0.7"
 
+eslint-plugin-simple-import-sort@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-8.0.0.tgz#9d9a2372b0606e999ea841b10458a370a6ccc160"
+  integrity sha512-bXgJQ+lqhtQBCuWY/FUWdB27j4+lqcvXv5rUARkzbeWLwea+S5eBZEQrhnO+WgX3ZoJHVj0cn943iyXwByHHQw==
+
 eslint-plugin-sonarjs@^0.16.0:
   version "0.16.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.16.0.tgz#227651fea8a7c82b40156a1d70d52d64ea058dba"
@@ -1935,10 +1940,10 @@ eslint-plugin-unicorn@^44.0.0:
     semver "^7.3.7"
     strip-indent "^3.0.0"
 
-eslint-remote-tester@2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/eslint-remote-tester/-/eslint-remote-tester-2.1.4.tgz#c01bc23a1c1bc3e896eabf635325975fada22c25"
-  integrity sha512-XEvq5sISZw/RegsfZ5arb0lyZYIxc6RLMBZFHvEznkD5LUyqD1F+hDmCTqUl954yMiUvGii4KTqsXoIHZ1bg6g==
+eslint-remote-tester@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-remote-tester/-/eslint-remote-tester-3.0.0.tgz#aa9b357d65250245f1d6556b4decaf993e2c72f4"
+  integrity sha512-cb7w8WPQwJsH6bTU2fUNBcVfqPwOE7fIX4UuqkG4v0dcfwegsUhoVuYMrUeZNLJXYpjnRki4ZfTMvBfCXRS+ag==
   dependencies:
     "@babel/code-frame" "^7.16.7"
     JSONStream "^1.3.5"
