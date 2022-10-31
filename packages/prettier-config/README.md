@@ -5,7 +5,7 @@ Guild's ESLint shareable configs for linting JavaScript/TypeScript/React project
 ## Install
 
 ```sh
-yarn add -D prettier @theguild/prettier-config
+pnpm add -D prettier @theguild/prettier-config
 ```
 
 ## Usage

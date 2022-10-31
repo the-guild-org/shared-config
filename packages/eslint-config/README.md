@@ -7,13 +7,13 @@ Guild's ESLint shareable configs for linting JavaScript/TypeScript/React project
 For JavaScript/TypeScript projects
 
 ```sh
-yarn add -D eslint @theguild/eslint-config
+pnpm add -D eslint @theguild/eslint-config
 ```
 
 For React projects
 
 ```sh
-yarn add -D eslint \
+pnpm add -D eslint \
   @theguild/eslint-config \
   eslint-plugin-jsx-a11y \
   eslint-plugin-react \

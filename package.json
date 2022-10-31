@@ -8,10 +8,9 @@
   },
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "devDependencies": {
+    "@theguild/eslint-config": "workspace:*",
+    "@theguild/prettier-config": "workspace:*",
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.1",
     "@shopify/eslint-plugin": "42.0.1",
@@ -26,12 +25,16 @@
     "typescript": "4.8.4"
   },
   "scripts": {
-    "postinstall": "patch-package",
     "build": "echo No build command, skipping...",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:prettier": "prettier --ignore-path .gitignore --check .",
     "lint:remote": "eslint-remote-tester",
-    "prettier": "prettier --ignore-path .gitignore --write --list-different .",
+    "prettier": "prettier --write --list-different .",
     "release": "changeset publish"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "eslint-remote-tester@3.0.0": "patches/eslint-remote-tester@3.0.0.patch"
+    }
   }
 }

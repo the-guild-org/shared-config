@@ -41,7 +41,7 @@ on:
         default: './website/'
       packageManager:
         type: string
-        description: 'Package Manager'
+        description: Package manager
         required: false
         default: yarn
       setupEnvWorkingDirectory:
