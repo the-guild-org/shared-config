@@ -1,38 +1,38 @@
 # Note: This is a composite GitHub Actions, it should do all env setup, caching an so on, so other pipelines can just compose their own stuff on top of that.
 # Docs: https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 
-name: 'Deploy Website to CF'
-description: 'Shared configuration for deploying website to Cloudflare Pages'
+name: Deploy Website to CF
+description: Shared configuration for deploying website to Cloudflare Pages
 inputs:
   websiteDirectory:
-    description: 'Build script for building the website'
+    description: Build script for building the website
     required: false
     default: website
   buildScript:
-    description: 'Build script for building the website'
+    description: Build script for building the website
     required: true
   cloudflareApiToken:
-    description: 'CF API Token'
+    description: CF API Token
     required: true
   cloudflareAccountId:
-    description: 'CF API Account ID'
+    description: CF API Account ID
     required: true
   githubToken:
-    description: 'GH PAT'
+    description: GH PAT
     required: true
   projectName:
-    description: 'CF Pages Project name'
+    description: CF Pages Project name
     required: true
   artifactDir:
-    description: 'Artifact dir after build and export'
+    description: Artifact dir after build and export
     required: false
     default: out
   prId:
-    description: 'PR id for publishing preview'
+    description: PR id for publishing preview
     required: false
     default: ''
   mainBranch:
-    description: 'The main branch name that is set in CF Pages'
+    description: The main branch name that is set in CF Pages
     required: false
     default: ''
 

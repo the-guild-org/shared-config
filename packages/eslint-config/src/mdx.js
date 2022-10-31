@@ -1,6 +1,6 @@
 module.exports = {
   // Extending follow configs to lint code blocks content by their virtual filenames
-  extends: ['./react', './json'],
+  extends: ['./react', './json', './yml'],
   overrides: [
     {
       files: '*.md{,x}',
