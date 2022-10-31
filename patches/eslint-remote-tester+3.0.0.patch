@@ -1,59 +1,18 @@
 diff --git a/node_modules/eslint-remote-tester/dist/engine/worker-task.js b/node_modules/eslint-remote-tester/dist/engine/worker-task.js
-index 1f251f8..67e5e19 100644
+index 1f251f8..b360215 100644
 --- a/node_modules/eslint-remote-tester/dist/engine/worker-task.js
 +++ b/node_modules/eslint-remote-tester/dist/engine/worker-task.js
-@@ -103,14 +103,15 @@ function parseErrorStack(error, file) {
-         // Older ESLint versions
-         stack.match(RULE_FROM_PATH_REGEXP) ||
-         [];
--    const ruleId = ruleMatch.pop() || UNKNOWN_RULE_ID;
-+    const ruleId = error.ruleId || ruleMatch.pop() || UNKNOWN_RULE_ID;
-     const lineMatch = stack.match(LINE_REGEX) || [];
--    const line = parseInt(lineMatch.pop() || '0');
-+    const line = error.line || parseInt(lineMatch.pop() || '0');
-     // Include erroneous line to source when line was successfully parsed from the stack
-     let source;
-     if (line > 0) {
-         const content = fs_1.default.readFileSync(path, 'utf-8');
--        source = constructCodeFrame(content, { line, column: 0 });
-+        const { column = 0, endLine, endColumn } = error
-+        source = constructCodeFrame(content, { line, column, endLine, endColumn });
+@@ -55,7 +55,7 @@ function getMessageReducer(repository) {
+         return _config_1.default.rulesUnderTesting.includes(message.ruleId);
      }
-     return createErrorMessage({
-         path,
-@@ -176,6 +177,11 @@ async function workerTask() {
-                     type: 'FILE_LINT_SLOW',
-                     payload: { path, lintTime },
-                 }), _config_1.default.slowLintTimeLimit);
-+            for (const { messages } of result) {
-+                for (const message of messages) {
-+                    sendResult(message)
-+                }
-+            }
-             }
-             else {
-                 result = await lintFile();
-@@ -183,6 +189,10 @@ async function workerTask() {
-         }
-         catch (error) {
-             // Catch crashing linter
-+            sendResult(error)
-+            continue;
-+        }
-+        function sendResult(error) {
-             const crashMessage = parseErrorStack(error, file);
-             postMessage({
-                 type: 'ON_RESULT',
-@@ -196,7 +206,6 @@ async function workerTask() {
-                 type: 'LINTER_CRASH',
-                 payload: crashMessage.ruleId || '',
-             });
--            continue;
-         }
-         const messages = result
-             .reduce(messageReducer, [])
+     return function reducer(all, result) {
+-        const messages = result.messages.filter(messageFilter);
++        const { messages } = result // Don't filter rules by ruleId, show all
+         // Process only rules that are under testing
+         if (messages.length === 0) {
+             return all;
 diff --git a/node_modules/eslint-remote-tester/dist/file-client/results-writer.js b/node_modules/eslint-remote-tester/dist/file-client/results-writer.js
-index adb37a3..9f08abe 100644
+index adb37a3..314f909 100644
 --- a/node_modules/eslint-remote-tester/dist/file-client/results-writer.js
 +++ b/node_modules/eslint-remote-tester/dist/file-client/results-writer.js
 @@ -68,7 +68,7 @@ async function writeResults(messages, repository) {
@@ -61,7 +20,7 @@ index adb37a3..9f08abe 100644
          // Construct result file name, e.g. mui-org_material-ui.md
          const repositoryOwnerAndName = repository.split('/').join('_');
 -        const fileName = `${repositoryOwnerAndName}${RESULT_EXTENSION}`;
-+        const fileName = `${messages.length}-${repositoryOwnerAndName}${RESULT_EXTENSION}`;
++        const fileName = `${messages.length}-${repositoryOwnerAndName}${RESULT_EXTENSION}` // Add prefix with total errors
          await new Promise((resolve, reject) => {
              const stream = fs_1.default
                  .createWriteStream(`${file_constants_1.RESULTS_LOCATION}/${fileName}`, {

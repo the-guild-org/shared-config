@@ -1,10 +1,9 @@
 /* eslint-disable import/no-default-export */
-import { Linter } from 'eslint';
 import { Config } from 'eslint-remote-tester';
 
-const JSExtensions = ['js', 'jsx', 'cjs', 'mjs', 'cjsx', 'mjsx'] as const;
+const JSExtensions = ['.js', '.jsx', '.cjs', '.mjs', '.cjsx', '.mjsx'] as const;
 
-const TSExtensions = ['ts', 'tsx', 'cts', 'mts', 'ctsx', 'mtsx'] as const;
+const TSExtensions = ['.ts', '.tsx', '.cts', '.mts', '.ctsx', '.mtsx'] as const;
 
 enum Repo {
   // Ecosystem
@@ -36,7 +35,7 @@ enum Repo {
   LiveQuery = 'n1ru4l/graphql-live-query',
 }
 
-const overrideConfig: Linter.Config = {
+const overrideConfig: Config['eslintrc'] = {
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -77,6 +76,7 @@ const config: Config = {
     '.yarn/plugins/@yarnpkg/plugin-workspace-tools.cjs', // swift
     '.yarn/plugins/@yarnpkg/plugin-typescript.cjs', // swift
   ].join('|')})`,
+  rulesUnderTesting: () => true,
 };
 
 export default config;
