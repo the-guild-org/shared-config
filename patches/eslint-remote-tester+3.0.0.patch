@@ -1,8 +1,8 @@
 diff --git a/node_modules/eslint-remote-tester/dist/engine/worker-task.js b/node_modules/eslint-remote-tester/dist/engine/worker-task.js
-index b1d23d2..0ccf2f7 100644
+index 1f251f8..67e5e19 100644
 --- a/node_modules/eslint-remote-tester/dist/engine/worker-task.js
 +++ b/node_modules/eslint-remote-tester/dist/engine/worker-task.js
-@@ -104,14 +104,15 @@ function parseErrorStack(error, file) {
+@@ -103,14 +103,15 @@ function parseErrorStack(error, file) {
          // Older ESLint versions
          stack.match(RULE_FROM_PATH_REGEXP) ||
          [];
@@ -21,15 +21,19 @@ index b1d23d2..0ccf2f7 100644
      }
      return createErrorMessage({
          path,
-@@ -178,9 +179,18 @@ async function workerTask() {
-                 type: 'FILE_LINT_SLOW',
-                 payload: { path, lintTime },
-             }), MAX_LINT_TIME_SECONDS);
+@@ -176,6 +177,11 @@ async function workerTask() {
+                     type: 'FILE_LINT_SLOW',
+                     payload: { path, lintTime },
+                 }), _config_1.default.slowLintTimeLimit);
 +            for (const { messages } of result) {
 +                for (const message of messages) {
 +                    sendResult(message)
 +                }
 +            }
+             }
+             else {
+                 result = await lintFile();
+@@ -183,6 +189,10 @@ async function workerTask() {
          }
          catch (error) {
              // Catch crashing linter
@@ -40,7 +44,7 @@ index b1d23d2..0ccf2f7 100644
              const crashMessage = parseErrorStack(error, file);
              postMessage({
                  type: 'ON_RESULT',
-@@ -194,7 +204,6 @@ async function workerTask() {
+@@ -196,7 +206,6 @@ async function workerTask() {
                  type: 'LINTER_CRASH',
                  payload: crashMessage.ruleId || '',
              });
