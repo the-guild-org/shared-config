@@ -66,7 +66,7 @@ jobs:
       - name: Algolia generate
         run: ${{ inputs.packageManager }} run theguild-nextra-algolia -o ${{ inputs.lockFilePath }} --source '${{ inputs.source }}' --domain ${{ inputs.domain }} --docsBaseDir ${{ inputs.docsBaseDir }}
         working-directory: ${{ inputs.websiteDirectory }}
-        
+
       - name: Prettier
         run: npx prettier --write website/${{ inputs.lockFilePath }}
 

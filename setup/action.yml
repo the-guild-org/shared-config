@@ -1,19 +1,19 @@
 # Note: This is a composite GitHub Actions, it should do all env setup, caching an so on, so other pipelines can just compose their own stuff on top of that.
 # Docs: https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 
-name: 'Configure Environment'
-description: 'Shared configuration for checkout, NodeJS and package manager'
+name: Configure Environment
+description: Shared configuration for checkout, Node.js and package manager
 inputs:
   nodeVersion:
-    description: 'NodeJS Version to use'
+    description: Node.js version to use
     required: true
     default: '18'
   workingDirectory:
-    description: 'Working directory'
+    description: Working directory
     required: false
     default: './'
   packageManager:
-    description: 'Package Manager'
+    description: Package manager
     required: false
     default: yarn
 runs:

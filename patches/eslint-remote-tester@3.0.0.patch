@@ -1,7 +1,7 @@
-diff --git a/node_modules/eslint-remote-tester/dist/engine/worker-task.js b/node_modules/eslint-remote-tester/dist/engine/worker-task.js
+diff --git a/dist/engine/worker-task.js b/dist/engine/worker-task.js
 index 1f251f8..b360215 100644
---- a/node_modules/eslint-remote-tester/dist/engine/worker-task.js
-+++ b/node_modules/eslint-remote-tester/dist/engine/worker-task.js
+--- a/dist/engine/worker-task.js
++++ b/dist/engine/worker-task.js
 @@ -55,7 +55,7 @@ function getMessageReducer(repository) {
          return _config_1.default.rulesUnderTesting.includes(message.ruleId);
      }
@@ -11,10 +11,10 @@ index 1f251f8..b360215 100644
          // Process only rules that are under testing
          if (messages.length === 0) {
              return all;
-diff --git a/node_modules/eslint-remote-tester/dist/file-client/results-writer.js b/node_modules/eslint-remote-tester/dist/file-client/results-writer.js
+diff --git a/dist/file-client/results-writer.js b/dist/file-client/results-writer.js
 index adb37a3..314f909 100644
---- a/node_modules/eslint-remote-tester/dist/file-client/results-writer.js
-+++ b/node_modules/eslint-remote-tester/dist/file-client/results-writer.js
+--- a/dist/file-client/results-writer.js
++++ b/dist/file-client/results-writer.js
 @@ -68,7 +68,7 @@ async function writeResults(messages, repository) {
      if (!_config_1.default.CI) {
          // Construct result file name, e.g. mui-org_material-ui.md
