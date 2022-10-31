@@ -4,11 +4,12 @@ module.exports = {
   reportUnusedDisableDirectives: true,
   ignorePatterns: [
     '!.*', // Don't ignore dot-files because by default ESLint ignore dot-files (except for .eslintrc.*) and dot-folders
+    '.git',
   ],
   overrides: [
     {
       files: '*.{,c,m}{j,t}s{,x}',
-      extends: './base.js',
+      extends: './base',
     },
     {
       files: ['*.c{j,t}s'],

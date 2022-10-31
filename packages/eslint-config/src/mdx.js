@@ -1,11 +1,13 @@
 module.exports = {
+  // Extending follow configs to lint code blocks content by their virtual filenames
+  extends: ['./react', './json'],
   overrides: [
     {
       files: '*.md{,x}',
       parser: 'eslint-mdx',
       processor: 'mdx/remark',
       plugins: ['mdx'],
-      extends: ['./base', './react-base.js'],
+      extends: ['./base', './react-base'],
       parserOptions: {
         ecmaVersion: 13,
       },
@@ -17,9 +19,10 @@ module.exports = {
         'mdx/code-blocks': true,
       },
     },
+    // Disable filename check
     {
       files: [
-        '**/*.md{,x}/*', // Redundant, rule already compare physical filename
+        '**/*.md{,x}/*', // Redundant, in first override rule already compare filename
         '.changeset/*.md',
         'CHANGELOG.md',
       ],
@@ -27,6 +30,7 @@ module.exports = {
         'unicorn/filename-case': 'off',
       },
     },
+    // Disable code-file rules inside md/mdx
     {
       files: ['**/*.md{,x}/*'],
       rules: {

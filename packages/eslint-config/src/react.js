@@ -3,7 +3,7 @@ module.exports = {
     // Run rules only on JSX files
     {
       files: '*.{,c,m}{j,t}sx',
-      extends: './react-base.js',
+      extends: './react-base',
     },
     {
       files: '*.{,c,m}{j,t}s{,x}',

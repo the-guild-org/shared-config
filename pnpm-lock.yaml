@@ -46,6 +46,7 @@ importers:
       '@typescript-eslint/parser': ^5.42.0
       eslint-config-prettier: ^8.5.0
       eslint-plugin-import: ^2.26.0
+      eslint-plugin-jsonc: ^2.5.0
       eslint-plugin-jsx-a11y: ^6.6.1
       eslint-plugin-mdx: ^2.0.5
       eslint-plugin-n: ^15.4.0
@@ -61,6 +62,7 @@ importers:
       '@typescript-eslint/parser': 5.42.0
       eslint-config-prettier: 8.5.0
       eslint-plugin-import: 2.26.0_4gdxjh3hhuskiu2z35q7twwscq
+      eslint-plugin-jsonc: 2.5.0
       eslint-plugin-n: 15.4.0
       eslint-plugin-promise: 6.1.1
       eslint-plugin-simple-import-sort: 8.0.0
@@ -2133,6 +2135,17 @@ packages:
       - typescript
     dev: true
 
+  /eslint-plugin-jsonc/2.5.0:
+    resolution: {integrity: sha512-G257khwkrOQ5MJpSzz4yQh5K12W4xFZRcHmVlhVFWh2GCLDX+JwHnmkQoUoFDbOieSPBMsPFZDTJScwrXiWlIg==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: '>=6.0.0'
+    dependencies:
+      eslint-utils: 3.0.0
+      jsonc-eslint-parser: 2.1.0
+      natural-compare: 1.4.0
+    dev: false
+
   /eslint-plugin-jsx-a11y/6.6.1:
     resolution: {integrity: sha512-sXgFVNHiWffBq23uiS/JaP6eVR622DqwB4yTzKvGZGcPq6/yZ3WmOZfuBks/vHWo9GaFOqC2ZK4i6+C35knx7Q==}
     engines: {node: '>=4.0'}
@@ -3194,6 +3207,16 @@ packages:
     dependencies:
       minimist: 1.2.7
 
+  /jsonc-eslint-parser/2.1.0:
+    resolution: {integrity: sha512-qCRJWlbP2v6HbmKW7R3lFbeiVWHo+oMJ0j+MizwvauqnCV/EvtAeEeuCgoc/ErtsuoKgYB8U4Ih8AxJbXoE6/g==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dependencies:
+      acorn: 8.8.1
+      eslint-visitor-keys: 3.3.0
+      espree: 9.4.0
+      semver: 7.3.8
+    dev: false
+
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
@@ -3837,7 +3860,6 @@ packages:
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
-    dev: true
 
   /nice-try/1.0.5:
     resolution: {integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==}

@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@theguild', '@theguild/eslint-config/react', '@theguild/eslint-config/mdx'],
+  extends: ['@theguild', '@theguild/eslint-config/mdx'],
   env: {
     node: true,
   },
