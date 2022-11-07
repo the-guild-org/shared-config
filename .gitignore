@@ -115,3 +115,4 @@ out
 .idea/
 
 dist/
+eslint-remote-tester-results/*.md

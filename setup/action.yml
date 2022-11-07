@@ -11,7 +11,7 @@ inputs:
   workingDirectory:
     description: Working directory
     required: false
-    default: './'
+    default: ./
   packageManager:
     description: Package manager
     required: false

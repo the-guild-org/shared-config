@@ -20,13 +20,13 @@ on:
       lockFilePath:
         type: string
         required: false
-        default: 'algolia-lockfile.json'
-        description: 'Relative path from `website/` to the Algolia lockfile'
+        default: algolia-lockfile.json
+        description: Relative path from `website/` to the Algolia lockfile
       docsBaseDir:
         type: string
         required: false
-        default: './src/pages/'
-        description: 'Relative path from `website/` to nextra markdown pages root folder'
+        default: ./src/pages/
+        description: Relative path from `website/` to nextra markdown pages root folder
       nodeVersion:
         required: false
         type: number
@@ -34,17 +34,17 @@ on:
       websiteDirectory:
         required: false
         type: string
-        default: './website/'
+        default: ./website/
       packageManager:
-        description: 'Package Manager'
+        description: Package Manager
         required: false
         type: string
         default: yarn
       setupEnvWorkingDirectory:
-        description: 'workingDirectory for `setup-env` action'
+        description: workingDirectory for `setup-env` action
         required: false
         type: string
-        default: '.'
+        default: .
 
 jobs:
   algolia-records-check:

@@ -38,10 +38,12 @@ Make sure to adjust you Changesets config file, based on your repo setup:
    `package.json`:
 
 ```json
+{
   "publishConfig": {
     "directory": "dist",
     "access": "public"
-  },
+  }
+}
 ```
 
 > If you are not using a bundler/build flow, make sure to change the `directory` value if needed.
@@ -122,9 +124,9 @@ following setup:
 
 Start by updating your changesets `config.json` to use the following:
 
-```json
+```jsonc
 {
-  // ... other stuff ...
+  // ... other stuff
   "snapshot": {
     "useCalculatedVersion": true,
     "prereleaseTemplate": "{tag}-{datetime}-{commit}"
