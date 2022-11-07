@@ -21,8 +21,9 @@ module.exports = {
       env: { node: true },
     },
     {
-      files: ['*.spec.*'],
+      files: ['*.{spec,test}.*'],
       env: { jest: true },
+      rules: { 'import/extensions': ['error', 'never'] },
     },
     {
       files: ['vite.config.ts', 'jest.config.js', '*.d.ts'],

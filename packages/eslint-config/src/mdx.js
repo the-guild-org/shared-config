@@ -34,6 +34,7 @@ module.exports = {
     {
       files: ['**/*.md{,x}/*'],
       rules: {
+        'no-console': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         'no-undef': 'off',
       },

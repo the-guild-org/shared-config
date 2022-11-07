@@ -138,6 +138,16 @@ module.exports = {
 
     '@typescript-eslint/no-explicit-any': 'error',
     'prefer-const': ['error', { destructuring: 'all' }],
+
+    'require-await': 'off',
+    // Disallow async functions which have no await expression
+    // https://typescript-eslint.io/rules/require-await/
+    '@typescript-eslint/require-await': 'error',
+
+    'no-return-await': 'off',
+    // Enforce consistent returning of awaited values.
+    // https://typescript-eslint.io/rules/return-await/
+    '@typescript-eslint/return-await': 'error',
   },
 };
 

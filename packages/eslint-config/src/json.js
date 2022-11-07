@@ -1,12 +1,14 @@
+const JSONC_FILES = ['tsconfig.json', 'tsconfig.eslint.json', 'turbo.json'];
+
 module.exports = {
   overrides: [
     {
       files: '*.json',
-      excludedFiles: ['tsconfig.json'],
+      excludedFiles: JSONC_FILES,
       extends: 'plugin:jsonc/recommended-with-json',
     },
     {
-      files: ['*.jsonc', 'tsconfig.json'],
+      files: ['*.jsonc', ...JSONC_FILES],
       extends: 'plugin:jsonc/recommended-with-jsonc',
     },
     {

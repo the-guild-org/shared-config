@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePattern: ['next-env.d.ts'],
   overrides: [
     // Run rules only on JSX files
     {
@@ -19,14 +20,14 @@ module.exports = {
     {
       files: [
         '**/pages/**', // Next.js pages directory use default export
-        'next.config.mjs',
+        'next.config.{js,mjs}',
       ],
       rules: {
         'import/no-default-export': 'off',
       },
     },
     {
-      files: ['next.config.mjs'],
+      files: ['next.config.{js,mjs}'],
       env: {
         node: true,
       },

@@ -33,8 +33,8 @@ module.exports = {
     'react/jsx-curly-brace-presence': 'error',
     'react/jsx-no-literals': 'off', // opposite of `react/jsx-curly-brace-presence`
     // Disallows specific imports
-    // https://eslint.org/docs/rules/no-restricted-imports
-    'no-restricted-imports': ['error', ...RESTRICTED_IMPORTS],
+    // https://typescript-eslint.io/rules/no-restricted-imports
+    '@typescript-eslint/no-restricted-imports': ['error', ...RESTRICTED_IMPORTS],
     'react/react-in-jsx-scope': 'off', // import of React is no longer required starting from react@17
     // Disallow extra closing tags for components without children
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
@@ -43,5 +43,7 @@ module.exports = {
     'react/no-unused-state': 'error',
     'react/no-unescaped-entities': 'off', // annoying
     'react/jsx-no-undef': 'off', // same as `no-undef`
+
+    'import/extensions': ['error', 'never']
   },
 };
