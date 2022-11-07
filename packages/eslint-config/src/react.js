@@ -1,5 +1,5 @@
 module.exports = {
-  ignorePattern: ['next-env.d.ts'],
+  ignorePatterns: ['next-env.d.ts'],
   overrides: [
     // Run rules only on JSX files
     {

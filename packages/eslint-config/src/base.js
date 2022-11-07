@@ -48,8 +48,6 @@ const SORT_IMPORTS_GROUPS = [
     // Packages.
     // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
     '^@?\\w',
-  ],
-  [
     // Absolute imports and other imports such as Vue-style `@/foo`.
     // Anything not matched in another group.
     '^',
@@ -142,12 +140,12 @@ module.exports = {
     'require-await': 'off',
     // Disallow async functions which have no await expression
     // https://typescript-eslint.io/rules/require-await/
-    '@typescript-eslint/require-await': 'error',
+    // '@typescript-eslint/require-await': 'error', // TODO: enable
 
     'no-return-await': 'off',
     // Enforce consistent returning of awaited values.
     // https://typescript-eslint.io/rules/return-await/
-    '@typescript-eslint/return-await': 'error',
+    // '@typescript-eslint/return-await': 'error', // TODO: enable
   },
 };
 
