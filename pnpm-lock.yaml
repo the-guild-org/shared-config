@@ -17,7 +17,7 @@ importers:
       '@types/eslint': 8.4.10
       '@types/node': 18.11.9
       eslint: 8.27.0
-      eslint-plugin-n: 15.5.0
+      eslint-plugin-n: 15.5.1
       eslint-remote-tester: 3.0.0
       patch-package: 6.5.0
       prettier: 2.7.1
@@ -32,7 +32,7 @@ importers:
       '@types/eslint': 8.4.10
       '@types/node': 18.11.9
       eslint: 8.27.0
-      eslint-plugin-n: 15.5.0_eslint@8.27.0
+      eslint-plugin-n: 15.5.1_eslint@8.27.0
       eslint-remote-tester: 3.0.0_lm5ikotw57jauxruva6mg45pva_xjksvvq3ava35ywqcwgip5j57u
       patch-package: 6.5.0
       prettier: 2.7.1
@@ -2240,8 +2240,8 @@ packages:
       semver: 7.3.8
     dev: false
 
-  /eslint-plugin-n/15.5.0_eslint@8.27.0:
-    resolution: {integrity: sha512-VCqQiZDpdm1Q9grnvy+XsENZoXDgTLqPHRQwgl9qFNNgTKR4YEnQOMN0pFB/9TbmrQ88jdeTnqTcNwRvjqMOtg==}
+  /eslint-plugin-n/15.5.1_eslint@8.27.0:
+    resolution: {integrity: sha512-kAd+xhZm7brHoFLzKLB7/FGRFJNg/srmv67mqb7tto22rpr4wv/LV6RuXzAfv3jbab7+k1wi42PsIhGviywaaw==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       eslint: '>=7.0.0'
