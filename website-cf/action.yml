@@ -39,14 +39,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: actions/cache@v3
-      name: cache nextjs
-      with:
-        path: packages/guild-website/.next
-        key: ${{ runner.os }}-nextjs-${{ hashFiles(format('{0}/**', inputs.websiteDirectory)) }}
-        restore-keys: |
-          ${{ runner.os }}-nextjs-
-
     - name: build website
       shell: bash
       run: ${{ inputs.buildScript }}
