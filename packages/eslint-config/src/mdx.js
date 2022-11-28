@@ -14,6 +14,7 @@ module.exports = {
       rules: {
         'react/self-closing-comp': 'off', // TODO: false positive https://github.com/mdx-js/eslint-mdx/issues/437
         'mdx/remark': 'error',
+        'import/no-default-export': 'off',
       },
       settings: {
         'mdx/code-blocks': true,
@@ -37,6 +38,14 @@ module.exports = {
         'no-console': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         'no-undef': 'off',
+      },
+    },
+    // Disable rules that requires types information
+    {
+      files: ['*.md{,x}', '**/*.md{,x}/*'],
+      rules: {
+        '@typescript-eslint/require-await': 'off',
+        '@typescript-eslint/return-await': 'off',
       },
     },
   ],
