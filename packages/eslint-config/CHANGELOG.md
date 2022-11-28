@@ -1,5 +1,13 @@
 # @theguild/eslint-config
 
+## 0.3.1
+
+### Patch Changes
+
+- [#108](https://github.com/the-guild-org/shared-config/pull/108)
+  [`a00a18a`](https://github.com/the-guild-org/shared-config/commit/a00a18ad8af6c988b79208bc6ebc05dd28fd373a)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - config adjustments
+
 ## 0.3.0
 
 ### Minor Changes
