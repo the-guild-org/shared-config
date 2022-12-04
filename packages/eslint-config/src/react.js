@@ -1,13 +1,9 @@
 module.exports = {
   ignorePatterns: ['next-env.d.ts'],
   overrides: [
-    // Run rules only on JSX files
-    {
-      files: '*.{,c,m}{j,t}sx',
-      extends: './react-base',
-    },
     {
       files: '*.{,c,m}{j,t}s{,x}',
+      extends: './react-base',
       rules: {
         // Disallow file extensions that may contain JSX
         // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
