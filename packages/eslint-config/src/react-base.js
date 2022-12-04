@@ -21,6 +21,7 @@ module.exports = {
   env: {
     browser: true,
   },
+  plugins: ['import', 'unicorn'],
   extends: [
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
@@ -44,6 +45,7 @@ module.exports = {
     'react/no-unescaped-entities': 'off', // annoying
     'react/jsx-no-undef': 'off', // same as `no-undef`
 
-    'import/extensions': ['error', 'never']
+    'import/extensions': ['error', 'never'],
+    'unicorn/filename-case': ['error', { ignore: ['^\\[\\w+\\]\\.tsx$'] }],
   },
 };

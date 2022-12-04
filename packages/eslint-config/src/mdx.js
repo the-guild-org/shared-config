@@ -24,6 +24,10 @@ module.exports = {
         '**/*.md{,x}/*', // Redundant, in first override rule already compare filename
         '.changeset/*.md',
         'CHANGELOG.md',
+        '.github/workflows/pull_request_template.md',
+        'SECURITY.md',
+        'CODE_OF_CONDUCT.md',
+        'README.md'
       ],
       rules: {
         'unicorn/filename-case': 'off',
