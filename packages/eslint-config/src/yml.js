@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ['pnpm-lock.yaml'],
   overrides: [
     {
       files: '*.y{,a}ml',

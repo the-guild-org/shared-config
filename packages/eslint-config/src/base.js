@@ -110,7 +110,15 @@ module.exports = {
 
     // Enforce the style of numeric separators by correctly grouping digits
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md
-    'unicorn/numeric-separators-style': 'error',
+    'unicorn/numeric-separators-style': [
+      'error',
+      {
+        number: {
+          minimumDigits: 0,
+          groupLength: 3,
+        },
+      },
+    ],
     // Prefer using the node: protocol when importing Node.js builtin modules
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md
     'unicorn/prefer-node-protocol': 'error',
