@@ -46,6 +46,6 @@ module.exports = {
     'react/jsx-no-undef': 'off', // same as `no-undef`
 
     'import/extensions': ['error', 'never'],
-    'unicorn/filename-case': ['error', { ignore: ['^\\[\\w+\\]\\.tsx$'] }],
+    'unicorn/filename-case': ['error', { case: 'kebabCase', ignore: [/^\[\w+]\.tsx?$/] }],
   },
 };
