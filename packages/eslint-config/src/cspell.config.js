@@ -10,8 +10,16 @@ const ignoreWords = [
   'GitHunt',
   'pnpm',
   'rushstack',
+  'supertokens',
+  'turborepo',
+  'esbuild',
+  'dockest',
+  'clickhouse',
+  'pulumi',
+  'slonik',
 
   // users
+  'kamil',
   'theguild',
   'kamilkisiela',
   'urigo',
@@ -25,6 +33,9 @@ const ignoreWords = [
   'rediscuss',
   'styleguide',
   'automerge',
+  'ingestor',
+  'testkit',
+  'sourcemaps',
 
   // others
   'cjsx',

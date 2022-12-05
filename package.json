@@ -24,7 +24,7 @@
     "@theguild/eslint-config": "workspace:*",
     "@theguild/prettier-config": "workspace:*",
     "@types/eslint": "8.4.10",
-    "@types/node": "18.11.17",
+    "@types/node": "18.11.18",
     "cspell": "6.17.0",
     "eslint": "8.30.0",
     "eslint-remote-tester": "3.0.0",
