@@ -32,7 +32,7 @@
     "eslint-plugin-n": "^15.4.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-simple-import-sort": "^8.0.0",
-    "eslint-plugin-sonarjs": "^0.16.0",
+    "eslint-plugin-sonarjs": "^0.17.0",
     "eslint-plugin-unicorn": "^45.0.0",
     "eslint-plugin-yml": "^1.2.0"
   },
