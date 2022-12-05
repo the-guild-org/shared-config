@@ -54,7 +54,7 @@ importers:
       eslint-plugin-react: ^7.31.10
       eslint-plugin-react-hooks: ^4.6.0
       eslint-plugin-simple-import-sort: ^8.0.0
-      eslint-plugin-sonarjs: ^0.16.0
+      eslint-plugin-sonarjs: ^0.17.0
       eslint-plugin-unicorn: ^45.0.0
       eslint-plugin-yml: ^1.2.0
     dependencies:
@@ -67,7 +67,7 @@ importers:
       eslint-plugin-n: 15.4.0
       eslint-plugin-promise: 6.1.1
       eslint-plugin-simple-import-sort: 8.0.0
-      eslint-plugin-sonarjs: 0.16.0
+      eslint-plugin-sonarjs: 0.17.0
       eslint-plugin-unicorn: 45.0.0
       eslint-plugin-yml: 1.2.0
     optionalDependencies:
@@ -2414,8 +2414,8 @@ packages:
       eslint: '>=5.0.0'
     dev: false
 
-  /eslint-plugin-sonarjs/0.16.0:
-    resolution: {integrity: sha512-al8ojAzcQW8Eu0tWn841ldhPpPcjrJ59TzzTfAVWR45bWvdAASCmrGl8vK0MWHyKVDdC0i17IGbtQQ1KgxLlVA==}
+  /eslint-plugin-sonarjs/0.17.0:
+    resolution: {integrity: sha512-jtGtxI49UbJJeJj7CVRLI3+LLH+y+hkR3GOOwM7vBbci9DEFIRGCWvEd2BJScrzltZ6D6iubukTAfc9cyG7sdw==}
     engines: {node: '>=14'}
     peerDependencies:
       eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
