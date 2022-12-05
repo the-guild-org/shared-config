@@ -22,7 +22,7 @@ Make sure to adjust you Changesets config file, based on your repo setup:
 {
   "$schema": "https://unpkg.com/@changesets/config@2.1.0/schema.json",
   "changelog": [
-    "@changesets/changelog-github", // this will make nice output for changesets, with "thank you..." notes, and liks to the commits + references in PRs!
+    "@changesets/changelog-github", // this will make nice output for changesets, with "thank you..." notes, and links to the commits + references in PRs!
     { "repo": "guild-member/project-repo" } // Set the repo name here
   ],
   "commit": false,
@@ -333,13 +333,13 @@ If Prettier or other tools are used, ensure to exclude the `website/algolia-lock
 
 3. Add Algolia credentials to repo secrets
 
-Configure the following Github Actions secrets from your Algolia dashboard:
+Configure the following GitHub Actions secrets from your Algolia dashboard:
 
 - `ALGOLIA_APP_ID`
 - `ALGOLIA_ADMIN_API_KEY`
 - `ALGOLIA_INDEX_NAME`
 
-4. Add the Github Actions workflows
+4. Add the GitHub Actions workflows
 
 _PR workflow example_
 

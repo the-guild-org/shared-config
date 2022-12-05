@@ -24,22 +24,20 @@
   },
   "dependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
-    "@typescript-eslint/eslint-plugin": "^5.42.0",
-    "@typescript-eslint/parser": "^5.42.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsonc": "^2.5.0",
-    "eslint-plugin-n": "^15.4.0",
+    "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-sonarjs": "^0.17.0",
-    "eslint-plugin-unicorn": "^45.0.0",
-    "eslint-plugin-yml": "^1.2.0"
-  },
-  "optionalDependencies": {
+    "eslint-plugin-unicorn": "^45.0.1",
+    "eslint-plugin-yml": "^1.2.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-mdx": "^2.0.5",
-    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0"
   },
   "publishConfig": {
