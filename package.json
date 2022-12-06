@@ -23,7 +23,7 @@
     "@theguild/eslint-config": "workspace:*",
     "@theguild/prettier-config": "workspace:*",
     "@types/eslint": "8.4.10",
-    "@types/node": "18.11.10",
+    "@types/node": "18.11.11",
     "eslint": "8.29.0",
     "eslint-plugin-n": "15.6.0",
     "eslint-remote-tester": "3.0.0",

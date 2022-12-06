@@ -15,7 +15,7 @@ importers:
       '@theguild/eslint-config': workspace:*
       '@theguild/prettier-config': workspace:*
       '@types/eslint': 8.4.10
-      '@types/node': 18.11.10
+      '@types/node': 18.11.11
       eslint: 8.29.0
       eslint-plugin-n: 15.6.0
       eslint-remote-tester: 3.0.0
@@ -30,13 +30,13 @@ importers:
       '@theguild/eslint-config': link:packages/eslint-config
       '@theguild/prettier-config': link:packages/prettier-config
       '@types/eslint': 8.4.10
-      '@types/node': 18.11.10
+      '@types/node': 18.11.11
       eslint: 8.29.0
       eslint-plugin-n: 15.6.0_eslint@8.29.0
       eslint-remote-tester: 3.0.0_lm5ikotw57jauxruva6mg45pva_dp3cryvzixhidix7m3sxnyl5my
       patch-package: 6.5.0
       prettier: 2.8.0
-      ts-node: 10.9.1_eoe7put6ewfbqpy6gs36tihw6y
+      ts-node: 10.9.1_zhirybrk4zoofuxp64necizyzy
       typescript: 4.9.3
 
   packages/eslint-config:
@@ -621,8 +621,8 @@ packages:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: true
 
-  /@types/node/18.11.10:
-    resolution: {integrity: sha512-juG3RWMBOqcOuXC643OAdSA525V44cVgGV6dUDuiFtss+8Fk5x1hI93Rsld43VeJVIeqlP9I7Fn9/qaVqoEAuQ==}
+  /@types/node/18.11.11:
+    resolution: {integrity: sha512-KJ021B1nlQUBLopzZmPBVuGU9un7WJd/W4ya7Ih02B4Uwky5Nja0yGYav2EfYIk0RR2Q9oVhf60S2XR1BCWJ2g==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -2487,7 +2487,7 @@ packages:
       object-hash: 3.0.0
       react: 17.0.2
       simple-git: 3.14.1
-      ts-node: 10.9.1_eoe7put6ewfbqpy6gs36tihw6y
+      ts-node: 10.9.1_zhirybrk4zoofuxp64necizyzy
     transitivePeerDependencies:
       - '@types/react'
       - bufferutil
@@ -5327,7 +5327,7 @@ packages:
     dev: false
     optional: true
 
-  /ts-node/10.9.1_eoe7put6ewfbqpy6gs36tihw6y:
+  /ts-node/10.9.1_zhirybrk4zoofuxp64necizyzy:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -5346,7 +5346,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.11.10
+      '@types/node': 18.11.11
       acorn: 8.8.1
       acorn-walk: 8.2.0
       arg: 4.1.3
