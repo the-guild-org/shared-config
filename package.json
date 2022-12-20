@@ -17,7 +17,7 @@
     "release": "changeset publish"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "0.4.7",
+    "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.0",
     "@shopify/eslint-plugin": "42.0.2",
     "@theguild/eslint-config": "workspace:*",

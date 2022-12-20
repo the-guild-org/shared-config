@@ -9,7 +9,7 @@ importers:
 
   .:
     specifiers:
-      '@changesets/changelog-github': 0.4.7
+      '@changesets/changelog-github': 0.4.8
       '@changesets/cli': 2.26.0
       '@shopify/eslint-plugin': 42.0.2
       '@theguild/eslint-config': workspace:*
@@ -24,7 +24,7 @@ importers:
       ts-node: 10.9.1
       typescript: 4.9.3
     devDependencies:
-      '@changesets/changelog-github': 0.4.7
+      '@changesets/changelog-github': 0.4.8
       '@changesets/cli': 2.26.0
       '@shopify/eslint-plugin': 42.0.2_x4fmxu3xk26jacyvrarq5vdbpq
       '@theguild/eslint-config': link:packages/eslint-config
@@ -197,11 +197,11 @@ packages:
       '@changesets/types': 5.2.1
     dev: true
 
-  /@changesets/changelog-github/0.4.7:
-    resolution: {integrity: sha512-UUG5sKwShs5ha1GFnayUpZNcDGWoY7F5XxhOEHS62sDPOtoHQZsG3j1nC5RxZ3M1URHA321cwVZHeXgu99Y3ew==}
+  /@changesets/changelog-github/0.4.8:
+    resolution: {integrity: sha512-jR1DHibkMAb5v/8ym77E4AMNWZKB5NPzw5a5Wtqm1JepAuIF+hrKp2u04NKM14oBZhHglkCfrla9uq8ORnK/dw==}
     dependencies:
-      '@changesets/get-github-info': 0.5.1
-      '@changesets/types': 5.2.0
+      '@changesets/get-github-info': 0.5.2
+      '@changesets/types': 5.2.1
       dotenv: 8.6.0
     transitivePeerDependencies:
       - encoding
@@ -274,8 +274,8 @@ packages:
       semver: 5.7.1
     dev: true
 
-  /@changesets/get-github-info/0.5.1:
-    resolution: {integrity: sha512-w2yl3AuG+hFuEEmT6j1zDlg7GQLM/J2UxTmk0uJBMdRqHni4zXGe/vUlPfLom5KfX3cRfHc0hzGvloDPjWFNZw==}
+  /@changesets/get-github-info/0.5.2:
+    resolution: {integrity: sha512-JppheLu7S114aEs157fOZDjFqUDpm7eHdq5E8SSR0gUBTEK0cNSHsrSR5a66xs0z3RWuo46QvA3vawp8BxDHvg==}
     dependencies:
       dataloader: 1.4.0
       node-fetch: 2.6.7
@@ -349,10 +349,6 @@ packages:
 
   /@changesets/types/4.1.0:
     resolution: {integrity: sha512-LDQvVDv5Kb50ny2s25Fhm3d9QSZimsoUGBsUioj6MC3qbMUCuC8GPIvk/M6IvXx3lYhAs0lwWUQLb+VIEUCECw==}
-    dev: true
-
-  /@changesets/types/5.2.0:
-    resolution: {integrity: sha512-km/66KOqJC+eicZXsm2oq8A8bVTSpkZJ60iPV/Nl5Z5c7p9kk8xxh6XGRTlnludHldxOOfudhnDN2qPxtHmXzA==}
     dev: true
 
   /@changesets/types/5.2.1:
