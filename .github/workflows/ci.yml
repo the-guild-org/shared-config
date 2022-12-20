@@ -20,7 +20,7 @@ on:
         default: yarn
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     name: ${{ inputs.name || 'script' }}
     steps:
       - name: checkout

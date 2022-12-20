@@ -18,7 +18,7 @@ on:
 
 jobs:
   ci_setup:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       matrix: ${{ steps.setVariables.outputs.matrix }}
     steps:
@@ -29,7 +29,7 @@ jobs:
 
   ci:
     needs: ci_setup
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         nodeVersion: ${{fromJson(needs.ci_setup.outputs.matrix)}}
