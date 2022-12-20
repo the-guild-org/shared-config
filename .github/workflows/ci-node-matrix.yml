@@ -23,8 +23,7 @@ jobs:
       matrix: ${{ steps.setVariables.outputs.matrix }}
     steps:
       - id: setVariables
-        run: |
-          echo "::set-output name=matrix::$input"
+        run: echo "matrix=$input" >> $GITHUB_OUTPUT
         env:
           input: ${{ inputs.nodeVersions }}
 

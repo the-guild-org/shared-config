@@ -55,8 +55,8 @@ jobs:
         id: vars
         shell: bash
         run: |
-          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-          echo "::set-output name=date::$(date +"%B %d, %Y")"
+          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "date=$(date +"%B %d, %Y")" >> $GITHUB_OUTPUT
 
       - name: release / pull_request
         id: changesets

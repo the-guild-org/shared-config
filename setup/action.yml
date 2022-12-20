@@ -24,7 +24,7 @@ runs:
       if: inputs.packageManager == 'pnpm'
       uses: pnpm/action-setup@v2.2.4
       with:
-        version: 7.18.1 
+        version: 7.18.2
         run_install: false
 
     - name: setup node

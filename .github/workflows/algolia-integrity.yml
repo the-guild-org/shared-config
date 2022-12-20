@@ -83,7 +83,7 @@ jobs:
           OUTPUT="${OUTPUT//'%'/'%25'}"
           OUTPUT="${OUTPUT//$'\n'/'%0A'}"
           OUTPUT="${OUTPUT//$'\r'/'%0D'}"
-          echo "::set-output name=result::$OUTPUT"
+          echo "result=$OUTPUT" >> $GITHUB_OUTPUT
           echo $OUTPUT
 
       - name: Publish a message
