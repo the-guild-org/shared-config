@@ -3,6 +3,7 @@
   "postUpdateOptions": ["yarnDedupeFewer"],
   "automerge": false,
   "labels": ["dependencies"],
+  "rebaseWhen": "behind-base-branch",
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
@@ -14,6 +15,6 @@
     }
   ],
   "timezone": "Europe/Warsaw",
-  "schedule": ["after 10pm and before 6:00am"],
+  "schedule": ["after 8pm and before 8:00am"],
   "ignorePaths": ["**/__tests__/**", "**/test/**", "**/tests/**", "**/__fixtures__/**"]
 }
