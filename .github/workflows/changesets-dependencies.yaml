@@ -3,6 +3,18 @@
 
 on:
   workflow_call:
+    inputs:
+      installDependencies:
+        type: boolean
+        default: false
+      packageManager:
+        type: string
+        required: false
+        default: yarn
+      nodeVersion:
+        required: false
+        type: number
+        default: 18
     secrets:
       githubToken:
         required: true
@@ -17,6 +29,13 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.githubToken }}
+
+      - uses: the-guild-org/shared-config/setup@main
+        name: setup env and install dependencies
+        if: ${{ inputs.installDependencies }}}
+        with:
+          nodeVersion: ${{ inputs.nodeVersion }}
+          packageManager: ${{ inputs.packageManager }}
 
       - name: Create/Update Changesets
         uses: the-guild-org/changesets-dependencies-action@main
