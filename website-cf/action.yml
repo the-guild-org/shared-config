@@ -45,12 +45,11 @@ runs:
       working-directory: ${{ inputs.websiteDirectory }}
 
     - name: push to cloudflare pages
-      uses: cloudflare/pages-action@v1.2.0
+      uses: cloudflare/pages-action@v1.3.0
       id: deploy
       with:
         apiToken: ${{ inputs.cloudflareApiToken }}
         accountId: ${{ inputs.cloudflareAccountId }}
-        gitHubToken: ${{ inputs.githubToken }}
         projectName: ${{ inputs.projectName }}
         directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
         branch: ${{ inputs.prId != '' && format('pr-{0}', inputs.prId) || inputs.mainBranch }}
