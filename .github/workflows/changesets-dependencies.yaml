@@ -32,7 +32,7 @@ jobs:
 
       - uses: the-guild-org/shared-config/setup@main
         name: setup env and install dependencies
-        if: ${{ inputs.installDependencies }}}
+        if: ${{ inputs.installDependencies == true }}}
         with:
           nodeVersion: ${{ inputs.nodeVersion }}
           packageManager: ${{ inputs.packageManager }}
