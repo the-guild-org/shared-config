@@ -1,5 +1,52 @@
 # @theguild/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- [#122](https://github.com/the-guild-org/shared-config/pull/122)
+  [`cb4c789`](https://github.com/the-guild-org/shared-config/commit/cb4c789053e52d4af6e210fb9c6bed9c710988f2)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - run react rule on js/ts files, since it can be react
+  hook without JSX extension
+
+### Patch Changes
+
+- [#122](https://github.com/the-guild-org/shared-config/pull/122)
+  [`cb4c789`](https://github.com/the-guild-org/shared-config/commit/cb4c789053e52d4af6e210fb9c6bed9c710988f2)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency
+    [`@typescript-eslint/eslint-plugin@^5.45.1` ↗︎](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin/v/5.45.1)
+    (from `^5.42.0`, in `dependencies`)
+  - Updated dependency
+    [`@typescript-eslint/parser@^5.45.1` ↗︎](https://www.npmjs.com/package/@typescript-eslint/parser/v/5.45.1)
+    (from `^5.42.0`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-n@^15.6.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-n/v/15.6.0) (from
+    `^15.4.0`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-unicorn@^45.0.1` ↗︎](https://www.npmjs.com/package/eslint-plugin-unicorn/v/45.0.1)
+    (from `^45.0.0`, in `dependencies`)
+  - Added dependency
+    [`eslint-plugin-jsx-a11y@^6.6.1` ↗︎](https://www.npmjs.com/package/eslint-plugin-jsx-a11y/v/6.6.1)
+    (to `dependencies`)
+  - Added dependency
+    [`eslint-plugin-mdx@^2.0.5` ↗︎](https://www.npmjs.com/package/eslint-plugin-mdx/v/2.0.5) (to
+    `dependencies`)
+  - Added dependency
+    [`eslint-plugin-react@^7.31.11` ↗︎](https://www.npmjs.com/package/eslint-plugin-react/v/7.31.11)
+    (to `dependencies`)
+  - Added dependency
+    [`eslint-plugin-react-hooks@^4.6.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-react-hooks/v/4.6.0)
+    (to `dependencies`)
+
+- [#124](https://github.com/the-guild-org/shared-config/pull/124)
+  [`1092362`](https://github.com/the-guild-org/shared-config/commit/1092362499a1462da764d65341b9cc7cc3208b62)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-sonarjs@^0.17.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-sonarjs/v/0.17.0)
+    (from `^0.16.0`, in `dependencies`)
+
 ## 0.3.1
 
 ### Patch Changes
