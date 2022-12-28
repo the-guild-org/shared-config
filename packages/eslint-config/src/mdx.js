@@ -1,6 +1,6 @@
+const { CODE_BLOCK } = require('./constants.js');
+
 module.exports = {
-  // Extending follow configs to lint code blocks content by their virtual filenames
-  extends: ['./react', './json', './yml'],
   overrides: [
     {
       files: '*.md{,x}',
@@ -23,17 +23,21 @@ module.exports = {
     // Disable filename check
     {
       files: [
-        '**/*.md{,x}/*', // Redundant, in first override rule already compare filename
+        CODE_BLOCK,
         '.changeset/*.md',
         'CHANGELOG.md',
+        '.github/workflows/pull_request_template.md',
+        'SECURITY.md',
+        'CODE_OF_CONDUCT.md',
+        'README.md',
       ],
       rules: {
         'unicorn/filename-case': 'off',
       },
     },
-    // Disable code-file rules inside md/mdx
+    // Disable rules for code blocks
     {
-      files: ['**/*.md{,x}/*'],
+      files: [CODE_BLOCK],
       rules: {
         'no-console': 'off',
         '@typescript-eslint/no-unused-vars': 'off',

@@ -1,3 +1,5 @@
+const { CODE_BLOCK } = require('./constants.js');
+
 const JSONC_FILES = ['tsconfig.json', 'tsconfig.eslint.json', 'turbo.json'];
 
 module.exports = {
@@ -17,6 +19,7 @@ module.exports = {
     },
     {
       files: '*.json{,c,5}',
+      excludedFiles: CODE_BLOCK,
       plugins: ['unicorn'],
       rules: {
         'unicorn/filename-case': 'error',

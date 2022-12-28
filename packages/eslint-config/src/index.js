@@ -1,3 +1,5 @@
+const { CODE_FILE, CODE_BLOCK } = require('./constants.js');
+
 require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
@@ -8,8 +10,15 @@ module.exports = {
   ],
   overrides: [
     {
-      files: '*.{,c,m}{j,t}s{,x}',
+      files: CODE_FILE,
       extends: './base',
+    },
+    {
+      files: CODE_FILE,
+      excludedFiles: CODE_BLOCK,
+      rules: {
+        'unicorn/filename-case': 'error',
+      }
     },
     {
       files: ['*.c{j,t}s'],

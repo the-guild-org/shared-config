@@ -44,7 +44,6 @@ const SORT_IMPORTS_GROUPS = [
       .join('|')})(/.*|$)`,
     '^react(-dom)?$',
     '^next(/.*|$)',
-    '^graphql(/.*|$)',
     // Packages.
     // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
     '^@?\\w',
@@ -54,6 +53,7 @@ const SORT_IMPORTS_GROUPS = [
     // Relative imports.
     // Anything that starts with a dot.
     '^\\.',
+    '^.+\\.graphql',
     // Style imports.
     '^.+\\.css$',
   ],
@@ -104,7 +104,6 @@ module.exports = {
     'import/extensions': ['error', 'ignorePackages'], // Bob when bundling requires to have `.js` extension
     'import/no-default-export': 'error',
     'import/prefer-default-export': 'off', // disable opposite of 'import/no-default-export'
-    'unicorn/filename-case': 'error',
 
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
 
@@ -146,6 +145,9 @@ module.exports = {
     // Enforce consistent returning of awaited values.
     // https://typescript-eslint.io/rules/return-await/
     // '@typescript-eslint/return-await': 'error', // TODO: enable
+
+    'import/no-duplicates': 'error',
+    'import/newline-after-import': 'error',
   },
 };
 
