@@ -12,6 +12,10 @@
     {
       "matchPackagePatterns": ["^@theguild/"],
       "prPriority": 5
+    },
+    {
+      "groupName": "nextra",
+      "matchPackageNames": ["nextra", "nextra-theme-docs", "nextra-theme-blog"]
     }
   ],
   "timezone": "Europe/Warsaw",
