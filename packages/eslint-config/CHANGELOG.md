@@ -1,5 +1,16 @@
 # @theguild/eslint-config
 
+## 0.4.1
+
+### Patch Changes
+
+- [#142](https://github.com/the-guild-org/shared-config/pull/142)
+  [`b09a4ce`](https://github.com/the-guild-org/shared-config/commit/b09a4cef20c7aab5af3267803fdad323814717fe)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - ignore `import/no-default-export` for
+  `website/theme.config.tsx` treat `.vscode/launch.json` as jsonc ignore `import/extensions` for
+  Markdown code blocks ignore filename for `.github/FUNDING.yml` put imported filename extensions
+  `graphql|css|png|svg|jpe?g|webp|avif` always last
+
 ## 0.4.0
 
 ### Minor Changes
