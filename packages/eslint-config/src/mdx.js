@@ -42,6 +42,7 @@ module.exports = {
         'no-console': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         'no-undef': 'off',
+        'import/extensions': 'off',
       },
     },
     // Disable rules that requires types information
