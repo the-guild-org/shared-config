@@ -18,7 +18,7 @@ module.exports = {
       excludedFiles: CODE_BLOCK,
       rules: {
         'unicorn/filename-case': 'error',
-      }
+      },
     },
     {
       files: ['*.c{j,t}s'],
@@ -35,7 +35,7 @@ module.exports = {
       rules: { 'import/extensions': ['error', 'never'] },
     },
     {
-      files: ['vite.config.ts', 'jest.config.js', '*.d.ts'],
+      files: ['vite.config.ts', 'jest.config.js', '*.d.ts', 'website/theme.config.tsx'],
       rules: { 'import/no-default-export': 'off' },
     },
   ],

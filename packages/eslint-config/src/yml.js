@@ -5,7 +5,7 @@ module.exports = {
   overrides: [
     {
       files: '*.y{,a}ml',
-      excludedFiles: CODE_BLOCK,
+      excludedFiles: [CODE_BLOCK, '.github/FUNDING.yml'],
       extends: ['plugin:yml/standard', 'plugin:yml/prettier'],
       plugins: ['unicorn'],
       rules: {

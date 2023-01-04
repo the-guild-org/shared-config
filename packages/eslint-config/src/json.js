@@ -1,6 +1,6 @@
 const { CODE_BLOCK } = require('./constants.js');
 
-const JSONC_FILES = ['tsconfig.json', 'tsconfig.eslint.json', 'turbo.json'];
+const JSONC_FILES = ['tsconfig.json', 'tsconfig.eslint.json', 'turbo.json', '.vscode/launch.json'];
 
 module.exports = {
   overrides: [
