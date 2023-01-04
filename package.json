@@ -26,7 +26,7 @@
     "@types/eslint": "8.4.10",
     "@types/node": "18.11.18",
     "cspell": "6.17.0",
-    "eslint": "8.30.0",
+    "eslint": "8.31.0",
     "eslint-remote-tester": "3.0.0",
     "patch-package": "6.5.0",
     "prettier": "2.8.1",
