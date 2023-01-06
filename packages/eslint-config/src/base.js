@@ -53,7 +53,7 @@ const SORT_IMPORTS_GROUPS = [
     // Relative imports.
     // Anything that starts with a dot.
     '^\\.',
-    '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm)',
+    '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)',
   ],
 ];
 
