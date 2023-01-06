@@ -51,5 +51,11 @@ module.exports = {
       ],
       rules: { 'import/no-default-export': 'off' },
     },
+    {
+      files: ['*.d.ts'],
+      rules: {
+        'no-var': 'off',
+      },
+    },
   ],
 };
