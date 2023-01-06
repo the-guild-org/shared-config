@@ -16,6 +16,10 @@
     {
       "groupName": "nextra",
       "matchPackageNames": ["nextra", "nextra-theme-docs", "nextra-theme-blog"]
+    },
+    {
+      "groupName": "@theguild/components",
+      "matchPackageNames": ["@theguild/components", "@theguild/algolia", "@theguild/tailwind-config"]
     }
   ],
   "timezone": "Europe/Warsaw",
