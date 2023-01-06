@@ -26,7 +26,14 @@ module.exports = {
       rules: { '@typescript-eslint/no-var-requires': 'off' },
     },
     {
-      files: ['jest.config.js', 'webpack.config.js', 'bob.config.js', 'babel.config.js'],
+      files: [
+        'jest.config.js',
+        'webpack.config.js',
+        'bob.config.js',
+        'babel.config.js',
+        'postcss.config.{js,cjs}',
+        'rollup.config.js',
+      ],
       env: { node: true },
     },
     {
@@ -35,7 +42,13 @@ module.exports = {
       rules: { 'import/extensions': ['error', 'never'] },
     },
     {
-      files: ['vite.config.ts', 'jest.config.js', '*.d.ts', 'website/theme.config.tsx'],
+      files: [
+        'vite.config.ts',
+        'jest.config.js',
+        '*.d.ts',
+        'website/theme.config.tsx',
+        'tsup.config.ts',
+      ],
       rules: { 'import/no-default-export': 'off' },
     },
   ],

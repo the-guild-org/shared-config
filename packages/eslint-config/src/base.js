@@ -4,6 +4,11 @@ const RESTRICTED_MODULES = [
   { name: 'axios', message: 'Use `fetch/node-fetch` instead.' },
   { name: 'moment', message: 'Use `dayjs/date-fns` instead.' },
   { name: 'classnames', message: 'Use `clsx` instead because he is faster.' },
+  { name: 'lodash/isString.js', message: "Use `typeof yourVar === 'string'` instead." },
+  { name: 'lodash/isArray.js', message: 'Use `Array.isArray` instead.' },
+  { name: 'lodash/flatten.js', message: 'Use `Array#flat()` instead.' },
+  { name: 'lodash/compact.js', message: 'Use `Array#filter(Boolean)` instead.' },
+  { name: 'lodash/identity.js', message: 'Use `(value) => value` instead.' },
 ];
 
 const RESTRICTED_SYNTAX = [
@@ -103,7 +108,13 @@ module.exports = {
     'import/no-default-export': 'error',
     'import/prefer-default-export': 'off', // disable opposite of 'import/no-default-export'
 
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_', // allow underscores in destructuring
+      },
+    ],
 
     // Enforce the style of numeric separators by correctly grouping digits
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md
