@@ -1,5 +1,15 @@
 # @theguild/eslint-config
 
+## 0.4.2
+
+### Patch Changes
+
+- [#144](https://github.com/the-guild-org/shared-config/pull/144)
+  [`2e7099a`](https://github.com/the-guild-org/shared-config/commit/2e7099a27f74c1f9bacf38e2488b1fc547b7eaed)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add `varsIgnorePattern: '^_'` for
+  `@typescript-eslint/no-unused-vars` forbid lodash/isString.js, lodash/isArray.js,
+  lodash/flatten.js, lodash/compact.js, lodash/identity.js
+
 ## 0.4.1
 
 ### Patch Changes
