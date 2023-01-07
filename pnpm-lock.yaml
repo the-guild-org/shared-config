@@ -19,13 +19,13 @@ importers:
       cspell: 6.18.1
       eslint: 8.31.0
       eslint-remote-tester: 3.0.0
-      prettier: 2.8.1
+      prettier: 2.8.2
       ts-node: 10.9.1
       typescript: 4.9.4
     devDependencies:
       '@changesets/changelog-github': 0.4.8
       '@changesets/cli': 2.26.0
-      '@shopify/eslint-plugin': 42.0.2_pizzqsi6myk3636ihwmmh4mlr4
+      '@shopify/eslint-plugin': 42.0.2_z6jn4luhndly6szzkk2fv4o2bi
       '@theguild/eslint-config': link:packages/eslint-config
       '@theguild/prettier-config': link:packages/prettier-config
       '@types/eslint': 8.4.10
@@ -33,7 +33,7 @@ importers:
       cspell: 6.18.1
       eslint: 8.31.0
       eslint-remote-tester: 3.0.0_lm5ikotw57jauxruva6mg45pva_dypgld54m4pa6qt5jhza6jkzdm
-      prettier: 2.8.1
+      prettier: 2.8.2
       ts-node: 10.9.1_awa2wsr5thmg3i7jqycphctjfq
       typescript: 4.9.4
 
@@ -179,7 +179,7 @@ packages:
       fs-extra: 7.0.1
       lodash.startcase: 4.4.0
       outdent: 0.5.0
-      prettier: 2.8.1
+      prettier: 2.8.2
       resolve-from: 5.0.0
       semver: 5.7.1
     dev: true
@@ -366,7 +366,7 @@ packages:
       '@changesets/types': 5.2.1
       fs-extra: 7.0.1
       human-id: 1.0.2
-      prettier: 2.8.1
+      prettier: 2.8.2
     dev: true
 
   /@cspell/cspell-bundled-dicts/6.18.1:
@@ -761,7 +761,7 @@ packages:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
     dev: false
 
-  /@shopify/eslint-plugin/42.0.2_pizzqsi6myk3636ihwmmh4mlr4:
+  /@shopify/eslint-plugin/42.0.2_z6jn4luhndly6szzkk2fv4o2bi:
     resolution: {integrity: sha512-z8r01/KIgeI9YDiPhjrcDC4RjHppZwtNR8C5um6syAq76oXdpsNZLzaVUE3bhWfPuEuETQrEBwHiKxkbtizm6g==}
     peerDependencies:
       eslint: ^8.3.0
@@ -782,7 +782,7 @@ packages:
       eslint-plugin-jest-formatting: 3.1.0_eslint@8.31.0
       eslint-plugin-jsx-a11y: 6.6.1_eslint@8.31.0
       eslint-plugin-node: 11.1.0_eslint@8.31.0
-      eslint-plugin-prettier: 4.2.1_xtjuwoibeoaqavcvkna3ocxxbu
+      eslint-plugin-prettier: 4.2.1_dnph5ut4uorbxeyhkuxa3pfy3u
       eslint-plugin-promise: 6.1.1_eslint@8.31.0
       eslint-plugin-react: 7.31.10_eslint@8.31.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.31.0
@@ -2753,7 +2753,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_xtjuwoibeoaqavcvkna3ocxxbu:
+  /eslint-plugin-prettier/4.2.1_dnph5ut4uorbxeyhkuxa3pfy3u:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -2766,7 +2766,7 @@ packages:
     dependencies:
       eslint: 8.31.0
       eslint-config-prettier: 8.5.0_eslint@8.31.0
-      prettier: 2.8.1
+      prettier: 2.8.2
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -5132,8 +5132,8 @@ packages:
       synckit: 0.8.4
     dev: false
 
-  /prettier/2.8.1:
-    resolution: {integrity: sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==}
+  /prettier/2.8.2:
+    resolution: {integrity: sha512-BtRV9BcncDyI2tsuS19zzhzoxD8Dh8LiCx7j7tHzrkz8GFXAexeWFdi22mjE1d16dftH2qNaytVxqiRTGlMfpw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
