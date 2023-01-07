@@ -15,6 +15,7 @@ module.exports = {
         'react/self-closing-comp': 'off', // TODO: false positive https://github.com/mdx-js/eslint-mdx/issues/437
         'mdx/remark': 'error',
         'import/no-default-export': 'off',
+        '@typescript-eslint/prefer-optional-chain': 'off', // throws "parserOptions.project" error
       },
       settings: {
         'mdx/code-blocks': true,

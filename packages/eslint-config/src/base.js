@@ -145,6 +145,22 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'error',
     'prefer-const': ['error', { destructuring: 'all' }],
 
+    'import/no-duplicates': 'error',
+    'import/newline-after-import': 'error',
+
+    'prefer-object-has-own': 'error',
+    'logical-assignment-operators': ['error', 'always', { enforceForIfStatements: true }],
+    '@typescript-eslint/prefer-optional-chain': 'error',
+
+    // 'prefer-destructuring': [ // TODO: Rediscuss later
+    //   'error',
+    //   {
+    //     VariableDeclarator: { array: false, object: true },
+    //     AssignmentExpression: { array: true, object: false },
+    //   },
+    //   { enforceForRenamedProperties: false },
+    // ],
+
     'require-await': 'off',
     // Disallow async functions which have no await expression
     // https://typescript-eslint.io/rules/require-await/
@@ -154,22 +170,5 @@ module.exports = {
     // Enforce consistent returning of awaited values.
     // https://typescript-eslint.io/rules/return-await/
     // '@typescript-eslint/return-await': 'error', // TODO: enable
-
-    'import/no-duplicates': 'error',
-    'import/newline-after-import': 'error',
   },
 };
-
-// TODO
-// Test if provoke false positive when `import ...` and `import type ...` were used
-// 'no-duplicate-imports': 'error',
-//
-// Rediscuss later
-// 'prefer-destructuring': [
-//   'error',
-//   {
-//     VariableDeclarator: { array: false, object: true },
-//     AssignmentExpression: { array: true, object: false },
-//   },
-//   { enforceForRenamedProperties: false },
-// ],
