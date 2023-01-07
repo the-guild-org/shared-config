@@ -20,7 +20,7 @@
     "eslint-config"
   ],
   "peerDependencies": {
-    "eslint": "^8"
+    "eslint": "^8.24.0"
   },
   "dependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
