@@ -1,5 +1,14 @@
 # @theguild/eslint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- [#146](https://github.com/the-guild-org/shared-config/pull/146)
+  [`f829c8d`](https://github.com/the-guild-org/shared-config/commit/f829c8d285499c9bb7df7818d22570ead7112ad6)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add new rules `prefer-object-has-own`,
+  `logical-assignment-operators` and `@typescript-eslint/prefer-optional-chain`
+
 ## 0.4.2
 
 ### Patch Changes
