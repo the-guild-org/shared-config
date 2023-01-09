@@ -18,7 +18,7 @@ module.exports = {
         '**/pages/**', // Next.js pages directory use default export
         'next.config.{js,mjs}',
         '**/*.stories.tsx',
-        '.storybook/main.ts'
+        '.storybook/main.ts',
       ],
       rules: {
         'import/no-default-export': 'off',

@@ -1,3 +1,5 @@
+const { REACT_RESTRICTED_SYNTAX } = require('./constants.js');
+
 const RESTRICTED_IMPORTS = [
   {
     name: 'react',
@@ -47,5 +49,6 @@ module.exports = {
 
     'import/extensions': ['error', 'never'],
     'unicorn/filename-case': ['error', { case: 'kebabCase', ignore: [/^\[\w+]\.tsx?$/] }],
+    'no-restricted-syntax': ['error', ...REACT_RESTRICTED_SYNTAX],
   },
 };
