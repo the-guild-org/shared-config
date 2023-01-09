@@ -129,7 +129,14 @@ module.exports = {
     'import/first': 'error',
     // Disallow shorthand type conversions
     // https://eslint.org/docs/latest/rules/no-implicit-coercion
-    'no-implicit-coercion': ['error', { disallowTemplateShorthand: true }],
+    'no-implicit-coercion': [
+      'error',
+      {
+        disallowTemplateShorthand: true,
+        // in TypeScript `!!` is preferable https://www.typescriptlang.org/docs/handbook/2/narrowing.html#truthiness-narrowing
+        boolean: false,
+      },
+    ],
     // Disallow specified modules when loaded by `import` declarations
     // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-restricted-import.md
     'n/no-restricted-import': ['error', RESTRICTED_MODULES],
