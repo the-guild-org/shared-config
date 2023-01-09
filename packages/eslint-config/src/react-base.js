@@ -1,4 +1,4 @@
-const { REACT_RESTRICTED_SYNTAX } = require('./constants.js')
+const { REACT_RESTRICTED_SYNTAX } = require('./constants.js');
 
 const RESTRICTED_IMPORTS = [
   {

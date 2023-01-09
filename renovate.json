@@ -19,7 +19,11 @@
     },
     {
       "groupName": "@theguild/components",
-      "matchPackageNames": ["@theguild/components", "@theguild/algolia", "@theguild/tailwind-config"]
+      "matchPackageNames": [
+        "@theguild/components",
+        "@theguild/algolia",
+        "@theguild/tailwind-config"
+      ]
     }
   ],
   "timezone": "Europe/Warsaw",
