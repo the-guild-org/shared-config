@@ -1,5 +1,14 @@
 # @theguild/eslint-config
 
+## 0.5.1
+
+### Patch Changes
+
+- [#149](https://github.com/the-guild-org/shared-config/pull/149)
+  [`10a328a`](https://github.com/the-guild-org/shared-config/commit/10a328a6042a68bee44594d7089d51111eda322b)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add `boolean: false` for `no-implicit-coercion`
+  because in TypeScript `!!` is preferable
+
 ## 0.5.0
 
 ### Minor Changes
