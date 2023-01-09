@@ -7,7 +7,7 @@
 - [#151](https://github.com/the-guild-org/shared-config/pull/151)
   [`d5152a8`](https://github.com/the-guild-org/shared-config/commit/d5152a88d1e74769b2cdff580f1107a60a6faaa0)
   Thanks [@B2o5T](https://github.com/B2o5T)! - forbid `useMemo(…, [])` for react and `Boolean(…)`
-  for code blocks
+  for all files
 
 ## 0.5.1
 
