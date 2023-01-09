@@ -1,12 +1,12 @@
 const RESTRICTED_SYNTAX = [
   {
     // ❌ readFile(…, { encoding: … })
-    selector: `CallExpression[callee.name=/readFileSync|readFile|writeFileSync|writeFile/] .arguments:last-child[type=ObjectExpression][properties.length=1] Property[key.name=encoding]`,
+    selector: `CallExpression[callee.name=/readFileSync|readFile|writeFileSync|writeFile/] > .arguments:last-child[type=ObjectExpression][properties.length=1] Property[key.name=encoding]`,
     message: `Specify encoding as last argument instead of object with encoding key`,
   },
   {
     // ❌ readFile(…, {})
-    selector: `CallExpression[callee.name=/readFileSync|readFile|writeFileSync|writeFile/] .arguments:last-child[type=ObjectExpression][properties.length=0]`,
+    selector: `CallExpression[callee.name=/readFileSync|readFile|writeFileSync|writeFile/] > .arguments:last-child[type=ObjectExpression][properties.length=0]`,
     message: 'Specify encoding as last argument',
   },
   {
@@ -16,12 +16,12 @@ const RESTRICTED_SYNTAX = [
   },
   {
     // ❌ ….readFile(…, { encoding: … })
-    selector: `CallExpression[callee.type=MemberExpression][callee.property.name=/readFileSync|readFile|writeFileSync|writeFile/] .arguments:last-child[type=ObjectExpression][properties.length=1] Property[key.name=encoding]`,
+    selector: `CallExpression[callee.type=MemberExpression][callee.property.name=/readFileSync|readFile|writeFileSync|writeFile/] > .arguments:last-child[type=ObjectExpression][properties.length=1] Property[key.name=encoding]`,
     message: `Specify encoding as last argument instead of object with encoding key`,
   },
   {
     // ❌ ….readFile(…, {})
-    selector: `CallExpression[callee.type=MemberExpression][callee.property.name=/readFileSync|readFile|writeFileSync|writeFile/] .arguments:last-child[type=ObjectExpression][properties.length=0]`,
+    selector: `CallExpression[callee.type=MemberExpression][callee.property.name=/readFileSync|readFile|writeFileSync|writeFile/] > .arguments:last-child[type=ObjectExpression][properties.length=0]`,
     message: 'Specify encoding as last argument',
   },
   {
