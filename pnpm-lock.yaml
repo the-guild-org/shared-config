@@ -51,7 +51,6 @@ importers:
       eslint-plugin-promise: ^6.1.1
       eslint-plugin-react: ^7.31.11
       eslint-plugin-react-hooks: ^4.6.0
-      eslint-plugin-simple-import-sort: ^8.0.0
       eslint-plugin-sonarjs: ^0.18.0
       eslint-plugin-unicorn: ^45.0.1
       eslint-plugin-yml: ^1.2.0
@@ -68,7 +67,6 @@ importers:
       eslint-plugin-promise: 6.1.1
       eslint-plugin-react: 7.31.11
       eslint-plugin-react-hooks: 4.6.0
-      eslint-plugin-simple-import-sort: 8.0.0
       eslint-plugin-sonarjs: 0.18.0
       eslint-plugin-unicorn: 45.0.2
       eslint-plugin-yml: 1.2.0
@@ -3089,12 +3087,6 @@ packages:
       semver: 6.3.0
       string.prototype.matchall: 4.0.8
     dev: true
-
-  /eslint-plugin-simple-import-sort/8.0.0:
-    resolution: {integrity: sha512-bXgJQ+lqhtQBCuWY/FUWdB27j4+lqcvXv5rUARkzbeWLwea+S5eBZEQrhnO+WgX3ZoJHVj0cn943iyXwByHHQw==}
-    peerDependencies:
-      eslint: '>=5.0.0'
-    dev: false
 
   /eslint-plugin-sonarjs/0.18.0:
     resolution: {integrity: sha512-DJ3osLnt6KFdT5e9ZuIDOjT5A6wUGSLeiJJT03lPgpdD+7CVWlYAw9Goe3bt7SmbFO3Xh89NOCZAuB9XA7bAUQ==}
