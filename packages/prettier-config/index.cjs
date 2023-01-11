@@ -1,3 +1,5 @@
+const { builtinModules } = require('node:module');
+
 module.exports = {
   trailingComma: 'all', // default to `all` in v3
   printWidth: 100,
@@ -19,4 +21,27 @@ module.exports = {
     // for sort fields in package.json
     require('prettier-plugin-pkg'),
   ],
+  importOrder: [
+    // Side effect imports.
+    '^\\u0000',
+    // Node.js builtins
+    `^(node:)?(${builtinModules
+      .filter(mod => !mod.startsWith('_') && !mod.includes('/'))
+      .join('|')})(/.*|$)`,
+    '^react(-dom)?$',
+    '^next(/.*|$)',
+    // Packages.
+    // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+    '^@?\\w',
+    // Absolute imports and other imports such as Vue-style `@/foo`.
+    // Anything not matched in another group.
+    '^',
+    // Relative imports.
+    // Anything that starts with a dot.
+    '^\\.',
+    '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)',
+  ],
+  importOrderSeparation: true, // import order groups will be separated by a new line
+  importOrderSortSpecifiers: true, // sorts the import specifiers alphabetically
+  importOrderCaseInsensitive: true, // case insensitive sorting
 };
