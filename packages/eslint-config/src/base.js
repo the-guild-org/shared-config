@@ -1,4 +1,3 @@
-const { builtinModules } = require('node:module');
 const { RESTRICTED_SYNTAX } = require('./constants.js');
 
 const RESTRICTED_MODULES = [
@@ -12,33 +11,10 @@ const RESTRICTED_MODULES = [
   { name: 'lodash/identity.js', message: 'Use `(value) => value` instead.' },
 ];
 
-const SORT_IMPORTS_GROUPS = [
-  [
-    // Side effect imports.
-    '^\\u0000',
-    // Node.js builtins
-    `^(node:)?(${builtinModules
-      .filter(mod => !mod.startsWith('_') && !mod.includes('/'))
-      .join('|')})(/.*|$)`,
-    '^react(-dom)?$',
-    '^next(/.*|$)',
-    // Packages.
-    // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-    '^@?\\w',
-    // Absolute imports and other imports such as Vue-style `@/foo`.
-    // Anything not matched in another group.
-    '^',
-    // Relative imports.
-    // Anything that starts with a dot.
-    '^\\.',
-    '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)',
-  ],
-];
-
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-  plugins: ['sonarjs', 'unicorn', 'promise', 'import', 'n', 'simple-import-sort'],
+  plugins: ['sonarjs', 'unicorn', 'promise', 'import', 'n'],
   rules: {
     // Disallows if statements as the only statement in else blocks
     // https://eslint.org/docs/rules/no-lonely-if
@@ -95,8 +71,6 @@ module.exports = {
     // Prefer using the node: protocol when importing Node.js builtin modules
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md
     'unicorn/prefer-node-protocol': 'error',
-    'simple-import-sort/exports': 'error',
-    'simple-import-sort/imports': ['error', { groups: SORT_IMPORTS_GROUPS }],
     // Reports any imports that come after non-import statements
     // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/first.md
     'import/first': 'error',

@@ -35,7 +35,6 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-sonarjs": "^0.18.0",
     "eslint-plugin-unicorn": "^45.0.1",
     "eslint-plugin-yml": "^1.2.0"
