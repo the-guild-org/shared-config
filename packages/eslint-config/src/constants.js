@@ -30,6 +30,12 @@ const RESTRICTED_SYNTAX = [
     message:
       'Prefer `!!…` over `Boolean(…)` because TypeScript infers a narrow literal boolean `type: true` instead of `type: boolean`.',
   },
+  {
+    // ❌ process.browser
+    selector:
+      'ExpressionStatement[expression.object.name=process][expression.property.name=browser]',
+    message: "`process.browser` is deprecated, use `!!globalThis.window`",
+  },
 ];
 
 const REACT_RESTRICTED_SYNTAX = [

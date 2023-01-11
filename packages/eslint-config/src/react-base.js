@@ -28,6 +28,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:import/typescript',
     'prettier',
   ],
   rules: {
@@ -47,8 +48,15 @@ module.exports = {
     'react/no-unescaped-entities': 'off', // annoying
     'react/jsx-no-undef': 'off', // same as `no-undef`
 
-    'import/extensions': ['error', 'never'],
+    'import/extensions': ['error', 'ignorePackages', { tsx: 'never' }],
     'unicorn/filename-case': ['error', { case: 'kebabCase', ignore: [/^\[\w+]\.tsx?$/] }],
     'no-restricted-syntax': ['error', ...REACT_RESTRICTED_SYNTAX],
+
+    'react/prop-types': 'off',
+    'react/jsx-boolean-value': 'error',
+
+    // TODO: add in base config
+    'prefer-destructuring': ['error', { VariableDeclarator: { object: true } }],
+    quotes: ['error', 'single', { avoidEscape: true }], // Matches Prettier, but also replaces backticks
   },
 };

@@ -106,6 +106,14 @@ module.exports = {
     'logical-assignment-operators': ['error', 'always', { enforceForIfStatements: true }],
     '@typescript-eslint/prefer-optional-chain': 'error',
 
+    yoda: 'error',
+    'unicorn/prefer-export-from': ['error', { ignoreUsedVariables: true }],
+    'promise/no-multiple-resolved': 'error',
+    'unicorn/prefer-logical-operator-over-ternary': 'error',
+    'no-unused-expressions': 'off',
+    '@typescript-eslint/no-unused-expressions': 'error',
+    'no-negated-condition': 'error',
+
     // 'prefer-destructuring': [ // TODO: Rediscuss later
     //   'error',
     //   {
