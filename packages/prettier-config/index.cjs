@@ -20,6 +20,8 @@ module.exports = {
     require('prettier-plugin-sh'),
     // for sort fields in package.json
     require('prettier-plugin-pkg'),
+    // for sorting imports
+    require('@trivago/prettier-plugin-sort-imports'),
   ],
   importOrder: [
     // Side effect imports.
