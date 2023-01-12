@@ -14,13 +14,6 @@ module.exports = {
       extends: './base',
     },
     {
-      files: CODE_FILE,
-      excludedFiles: CODE_BLOCK,
-      rules: {
-        'unicorn/filename-case': 'error',
-      },
-    },
-    {
       files: ['*.c{j,t}s'],
       env: { node: true },
       rules: { '@typescript-eslint/no-var-requires': 'off' },

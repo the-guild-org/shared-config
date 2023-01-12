@@ -57,6 +57,7 @@ module.exports = {
     'import/extensions': ['error', 'ignorePackages'], // Bob when bundling requires to have `.js` extension
     'import/no-default-export': 'error',
     'import/prefer-default-export': 'off', // disable opposite of 'import/no-default-export'
+    'unicorn/filename-case': 'error',
 
     '@typescript-eslint/no-unused-vars': [
       'error',
