@@ -14,6 +14,7 @@ const RESTRICTED_IMPORTS = [
   },
 ];
 
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   settings: {
     react: {
@@ -49,11 +50,13 @@ module.exports = {
     'react/jsx-no-undef': 'off', // same as `no-undef`
 
     'import/extensions': ['error', 'ignorePackages', { tsx: 'never', ts: 'never' }],
-    'unicorn/filename-case': ['error', { case: 'kebabCase', ignore: [/^\[\w+]\.tsx?$/] }],
     'no-restricted-syntax': ['error', ...REACT_RESTRICTED_SYNTAX],
 
     'react/prop-types': 'off',
     'react/jsx-boolean-value': 'error',
+    // Disallow file extensions that may contain JSX
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.jsx'], allow: 'as-needed' }],
 
     // TODO: add in base config
     'prefer-destructuring': ['error', { VariableDeclarator: { object: true } }],

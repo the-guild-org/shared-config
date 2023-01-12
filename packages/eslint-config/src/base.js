@@ -11,6 +11,7 @@ const RESTRICTED_MODULES = [
   { name: 'lodash/identity.js', message: 'Use `(value) => value` instead.' },
 ];
 
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],

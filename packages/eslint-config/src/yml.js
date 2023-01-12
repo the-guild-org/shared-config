@@ -1,5 +1,6 @@
 const { CODE_BLOCK } = require('./constants.js');
 
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   ignorePatterns: ['pnpm-lock.yaml'],
   overrides: [

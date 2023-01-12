@@ -24,6 +24,4 @@ react:
 
 fix `import/extensions`
 
-'react/prop-types': 'off',
-'react/jsx-boolean-value': 'error',
-
+'react/prop-types': 'off', 'react/jsx-boolean-value': 'error',
