@@ -17,6 +17,7 @@ module.exports = {
         'mdx/remark': 'error',
         'import/no-default-export': 'off',
         '@typescript-eslint/prefer-optional-chain': 'off', // throws "parserOptions.project" error
+        'react/jsx-filename-extension': 'off', // fixes JSX not allowed in files with extension '.mdx'
       },
       settings: {
         'mdx/code-blocks': true,

@@ -1,4 +1,4 @@
-const { CODE_FILE, CODE_BLOCK } = require('./constants.js');
+const { CODE_FILE } = require('./constants.js');
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
@@ -7,13 +7,6 @@ module.exports = {
     {
       files: CODE_FILE,
       extends: './react-base',
-    },
-    {
-      files: CODE_FILE,
-      excludedFiles: CODE_BLOCK,
-      rules: {
-        'unicorn/filename-case': ['error', { case: 'kebabCase', ignore: [/^\[\w+]\.tsx?$/] }],
-      },
     },
     {
       files: [
