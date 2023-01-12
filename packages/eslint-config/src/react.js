@@ -6,6 +6,10 @@ module.exports = {
   overrides: [
     {
       files: CODE_FILE,
+      extends: './react-base',
+    },
+    {
+      files: CODE_FILE,
       excludedFiles: CODE_BLOCK,
       rules: {
         'unicorn/filename-case': ['error', { case: 'kebabCase', ignore: [/^\[\w+]\.tsx?$/] }],
