@@ -37,7 +37,7 @@ module.exports = {
     '^@?\\w',
     // Absolute imports and other imports such as Vue-style `@/foo`.
     // Anything not matched in another group.
-    '^',
+    '<THIRD_PARTY_MODULES>',
     // Relative imports.
     // Anything that starts with a dot.
     '^\\.',
