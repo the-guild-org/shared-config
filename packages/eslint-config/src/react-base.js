@@ -26,6 +26,7 @@ module.exports = {
   plugins: ['import', 'unicorn'],
   extends: [
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:import/typescript',
@@ -39,7 +40,6 @@ module.exports = {
     // Disallows specific imports
     // https://typescript-eslint.io/rules/no-restricted-imports
     '@typescript-eslint/no-restricted-imports': ['error', ...RESTRICTED_IMPORTS],
-    'react/react-in-jsx-scope': 'off', // import of React is no longer required starting from react@17
     // Disallow extra closing tags for components without children
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
     'react/self-closing-comp': 'error',
