@@ -48,7 +48,7 @@ module.exports = {
     'react/no-unescaped-entities': 'off', // annoying
     'react/jsx-no-undef': 'off', // same as `no-undef`
 
-    'import/extensions': ['error', 'ignorePackages', { tsx: 'never' }],
+    'import/extensions': ['error', 'ignorePackages', { tsx: 'never', ts: 'never' }],
     'unicorn/filename-case': ['error', { case: 'kebabCase', ignore: [/^\[\w+]\.tsx?$/] }],
     'no-restricted-syntax': ['error', ...REACT_RESTRICTED_SYNTAX],
 
