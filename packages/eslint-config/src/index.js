@@ -1,4 +1,4 @@
-const { CODE_FILE, CODE_BLOCK } = require('./constants.js');
+const { CODE_FILE } = require('./constants.js');
 
 require('@rushstack/eslint-patch/modern-module-resolution');
 

@@ -114,7 +114,8 @@ module.exports = {
     'unicorn/prefer-logical-operator-over-ternary': 'error',
     'no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-expressions': 'error',
-    'no-negated-condition': 'error',
+    'no-negated-condition': 'off',
+    'unicorn/no-negated-condition': 'error', // has autofix
 
     // 'prefer-destructuring': [ // TODO: Rediscuss later
     //   'error',
