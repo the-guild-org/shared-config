@@ -96,7 +96,11 @@ module.exports = {
 
     // Disallow specified global variables
     // https://eslint.org/docs/latest/rules/no-restricted-globals
-    'no-restricted-globals': ['error', 'stop'],
+    'no-restricted-globals': [
+      'error',
+      'stop',
+      { name: 'isNaN', message: 'Use Number.isNaN instead' },
+    ],
 
     '@typescript-eslint/no-explicit-any': 'error',
     'prefer-const': ['error', { destructuring: 'all' }],
