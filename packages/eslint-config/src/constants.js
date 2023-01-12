@@ -34,8 +34,16 @@ const RESTRICTED_SYNTAX = [
     // ❌ process.browser
     selector:
       'ExpressionStatement[expression.object.name=process][expression.property.name=browser]',
-    message: "`process.browser` is deprecated, use `!!globalThis.window`",
+    message: '`process.browser` is deprecated, use `!!globalThis.window`',
   },
+  // {
+  //   // ❌ let { foo: { bar } } = baz
+  //   // ✅ let { bar } = baz.foo
+  //   // ✅ let { foo: { bar } } = await baz
+  //   selector:
+  //     'VariableDeclarator[init.type!=AwaitExpression] > ObjectPattern[properties.length=1][properties.0.value.type=ObjectPattern]',
+  //   message: 'Do not use nested destructuring.',
+  // },
 ];
 
 const REACT_RESTRICTED_SYNTAX = [
