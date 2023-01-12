@@ -43,7 +43,7 @@ module.exports = {
     '^\\.',
     '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)',
   ],
-  importOrderSeparation: true, // import order groups will be separated by a new line
+  importOrderSeparation: false, // import order groups wont be separated by a new line
   importOrderSortSpecifiers: true, // sorts the import specifiers alphabetically
   importOrderCaseInsensitive: true, // case insensitive sorting
 };
