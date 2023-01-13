@@ -46,4 +46,5 @@ module.exports = {
   importOrderSeparation: false, // import order groups wont be separated by a new line
   importOrderSortSpecifiers: true, // sorts the import specifiers alphabetically
   importOrderCaseInsensitive: true, // case insensitive sorting
+  importOrderParserPlugins: ['typescript', 'decorators-legacy'],
 };
