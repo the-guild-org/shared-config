@@ -33,9 +33,8 @@ module.exports = {
     '^react(-dom)?$',
     '^next(/.*|$)',
     // Packages.
-    // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-    '^@?\\w',
-    // Absolute imports and other imports such as Vue-style `@/foo`.
+    // Things that start with `@` or digit or underscore.
+    '^(@|d|_)',
     // Anything not matched in another group.
     '<THIRD_PARTY_MODULES>',
     // Relative imports.
