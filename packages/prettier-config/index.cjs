@@ -30,17 +30,17 @@ module.exports = {
     `^(node:)?(${builtinModules
       .filter(mod => !mod.startsWith('_') && !mod.includes('/'))
       .join('|')})(/.*|$)`,
+    // React and Next.
     '^react(-dom)?$',
     '^next(/.*|$)',
-    // Packages.
+    // Anything not matched in other groups.
+    '<THIRD_PARTY_MODULES>',
     // Things that start with `@` or digit or underscore.
     '^(@|d|_)',
-    // Anything not matched in another group.
-    '<THIRD_PARTY_MODULES>',
-    // Relative imports.
-    // Anything that starts with a dot.
-    '^\\.',
-    '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)',
+    // Anything that starts with a dot and doesnt have an extension (relative imports).
+    '^\\.[^\\.]+$',
+    // Files with extensions.
+    '^.+\\.',
   ],
   importOrderSeparation: false, // import order groups wont be separated by a new line
   importOrderSortSpecifiers: true, // sorts the import specifiers alphabetically
