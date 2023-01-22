@@ -24,8 +24,8 @@ module.exports = {
     require('@trivago/prettier-plugin-sort-imports'),
   ],
   importOrder: [
-    // Side effect imports.
-    '^\\u0000',
+    // TODO: Sort side effects on the top
+    // See more: https://github.com/trivago/prettier-plugin-sort-imports/issues/110
     // Node.js builtins
     `^(node:)?(${builtinModules
       .filter(mod => !mod.startsWith('_') && !mod.includes('/'))
