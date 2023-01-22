@@ -24,8 +24,8 @@ module.exports = {
     require('@trivago/prettier-plugin-sort-imports'),
   ],
   importOrder: [
-    // Side effect imports.
-    '^\\u0000',
+    // TODO: Sort side effects on the top
+    // See more: https://github.com/trivago/prettier-plugin-sort-imports/issues/110
     // Node.js builtins
     `^(node:)?(${builtinModules
       .filter(mod => !mod.startsWith('_') && !mod.includes('/'))
@@ -36,11 +36,11 @@ module.exports = {
     // Anything not matched in other groups.
     '<THIRD_PARTY_MODULES>',
     // Things that start with `@` or digit or underscore.
-    '^(@|d|_)',
-    // Anything that starts with a dot and doesnt have an extension (relative imports).
-    '^\\.[^\\.]+$',
-    // Files with extensions.
-    '^.+\\.',
+    '^(@|\\d|_)',
+    // Anything that starts with a dot, or multiple dots, and doesnt have the "other files" extensions.
+    '^(?=\\.+)(.(?!\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)))+$',
+    // Other files with extensions.
+    '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)$',
   ],
   importOrderSeparation: false, // import order groups wont be separated by a new line
   importOrderSortSpecifiers: true, // sorts the import specifiers alphabetically
