@@ -39,8 +39,8 @@ module.exports = {
     '^(@|d|_)',
     // Anything that starts with a dot and doesnt have an extension (relative imports).
     '^\\.[^\\.]+$',
-    // Files with extensions.
-    '^.+\\.',
+    // Other files with extensions.
+    '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)',
   ],
   importOrderSeparation: false, // import order groups wont be separated by a new line
   importOrderSortSpecifiers: true, // sorts the import specifiers alphabetically
