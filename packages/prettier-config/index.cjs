@@ -37,7 +37,7 @@ module.exports = {
     '<THIRD_PARTY_MODULES>',
     // Things that start with `@` or digit or underscore.
     '^(@|\\d|_)',
-    // Anything that starts with a dot (relative imports).
+    // Anything that starts with a dot, or multiple dots (relative imports).
     '^\\.+',
     // Other files with extensions.
     '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)$',
