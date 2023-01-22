@@ -1,5 +1,31 @@
 # @theguild/eslint-config
 
+## 0.7.0
+
+### Minor Changes
+
+- [#154](https://github.com/the-guild-org/shared-config/pull/154)
+  [`8e8e708`](https://github.com/the-guild-org/shared-config/commit/8e8e70847a71de1e5395c1b5a7211a910328daf0)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - prettier should be responsible for import
+  sorting instead of eslint
+
+### Patch Changes
+
+- [#154](https://github.com/the-guild-org/shared-config/pull/154)
+  [`8e8e708`](https://github.com/the-guild-org/shared-config/commit/8e8e70847a71de1e5395c1b5a7211a910328daf0)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - dependencies updates:
+
+  - Removed dependency
+    [`eslint-plugin-simple-import-sort@^8.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-simple-import-sort/v/8.0.0)
+    (from `dependencies`)
+
+- [#155](https://github.com/the-guild-org/shared-config/pull/155)
+  [`71cf9c5`](https://github.com/the-guild-org/shared-config/commit/71cf9c5b7475a72a8901d22cae67d85841cfb490)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-sonarjs@^0.18.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-sonarjs/v/0.18.0)
+    (from `^0.17.0`, in `dependencies`)
+
 ## 0.6.0
 
 ### Minor Changes
