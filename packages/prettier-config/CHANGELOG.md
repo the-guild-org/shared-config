@@ -1,5 +1,28 @@
 # @theguild/prettier-config
 
+## 1.1.0
+
+### Minor Changes
+
+- [#154](https://github.com/the-guild-org/shared-config/pull/154)
+  [`8e8e708`](https://github.com/the-guild-org/shared-config/commit/8e8e70847a71de1e5395c1b5a7211a910328daf0)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - prettier should be responsible for import
+  sorting instead of eslint
+
+### Patch Changes
+
+- [#154](https://github.com/the-guild-org/shared-config/pull/154)
+  [`8e8e708`](https://github.com/the-guild-org/shared-config/commit/8e8e70847a71de1e5395c1b5a7211a910328daf0)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - dependencies updates:
+
+  - Added dependency
+    [`@trivago/prettier-plugin-sort-imports@^4.0.0` ↗︎](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports/v/4.0.0)
+    (to `dependencies`)
+
+- [#162](https://github.com/the-guild-org/shared-config/pull/162)
+  [`19085c2`](https://github.com/the-guild-org/shared-config/commit/19085c22066663353b49e1b1618b259863d70410)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - Even prettier imports
+
 ## 1.0.0
 
 ### Major Changes
