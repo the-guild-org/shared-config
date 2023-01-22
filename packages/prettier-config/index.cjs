@@ -24,8 +24,6 @@ module.exports = {
     require('@trivago/prettier-plugin-sort-imports'),
   ],
   importOrder: [
-    // Side effect imports.
-    '^\\u0000',
     // Node.js builtins
     `^(node:)?(${builtinModules
       .filter(mod => !mod.startsWith('_') && !mod.includes('/'))
@@ -36,7 +34,7 @@ module.exports = {
     // Anything not matched in other groups.
     '<THIRD_PARTY_MODULES>',
     // Things that start with `@` or digit or underscore.
-    '^(@|d|_)',
+    '^(@|\\d|_)',
     // Anything that starts with a dot (relative imports).
     '^\\.+',
     // Other files with extensions.
