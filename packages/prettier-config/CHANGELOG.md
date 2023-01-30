@@ -1,5 +1,13 @@
 # @theguild/prettier-config
 
+## 1.1.1
+
+### Patch Changes
+
+- [#157](https://github.com/the-guild-org/shared-config/pull/157)
+  [`3f7437f`](https://github.com/the-guild-org/shared-config/commit/3f7437f6430459661b5d40b3f6f49666042b4122)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - format svg with html parser
+
 ## 1.1.0
 
 ### Minor Changes
