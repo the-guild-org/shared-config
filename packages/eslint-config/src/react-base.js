@@ -14,6 +14,7 @@ const RESTRICTED_IMPORTS = [
   },
 ];
 
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   settings: {
     react: {
@@ -26,8 +27,10 @@ module.exports = {
   plugins: ['import', 'unicorn'],
   extends: [
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:import/typescript',
     'prettier',
   ],
   rules: {
@@ -38,7 +41,6 @@ module.exports = {
     // Disallows specific imports
     // https://typescript-eslint.io/rules/no-restricted-imports
     '@typescript-eslint/no-restricted-imports': ['error', ...RESTRICTED_IMPORTS],
-    'react/react-in-jsx-scope': 'off', // import of React is no longer required starting from react@17
     // Disallow extra closing tags for components without children
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
     'react/self-closing-comp': 'error',
@@ -46,9 +48,19 @@ module.exports = {
     'react/no-unused-state': 'error',
     'react/no-unescaped-entities': 'off', // annoying
     'react/jsx-no-undef': 'off', // same as `no-undef`
-
-    'import/extensions': ['error', 'never'],
-    'unicorn/filename-case': ['error', { case: 'kebabCase', ignore: [/^\[\w+]\.tsx?$/] }],
+    'import/extensions': ['error', 'ignorePackages', { tsx: 'never', ts: 'never' }],
     'no-restricted-syntax': ['error', ...REACT_RESTRICTED_SYNTAX],
+    // Disallow file extensions that may contain JSX
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.jsx'], allow: 'as-needed' }],
+    'unicorn/filename-case': ['error', { case: 'kebabCase', ignore: [/^\[\w+]\.tsx?$/] }],
+    'react/prop-types': 'off',
+    'react/jsx-boolean-value': 'error',
+    'react/hook-use-state': 'error',
+    'react/iframe-missing-sandbox': 'error',
+
+    // TODO: add in base config
+    'prefer-destructuring': ['error', { VariableDeclarator: { object: true } }],
+    quotes: ['error', 'single', { avoidEscape: true }], // Matches Prettier, but also replaces backticks
   },
 };

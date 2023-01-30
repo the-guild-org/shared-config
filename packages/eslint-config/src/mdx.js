@@ -1,5 +1,6 @@
 const { CODE_BLOCK } = require('./constants.js');
 
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   overrides: [
     {
@@ -16,6 +17,7 @@ module.exports = {
         'mdx/remark': 'error',
         'import/no-default-export': 'off',
         '@typescript-eslint/prefer-optional-chain': 'off', // throws "parserOptions.project" error
+        'react/jsx-filename-extension': 'off', // fixes JSX not allowed in files with extension '.mdx'
       },
       settings: {
         'mdx/code-blocks': true,
@@ -27,7 +29,8 @@ module.exports = {
         CODE_BLOCK,
         '.changeset/*.md',
         'CHANGELOG.md',
-        '.github/workflows/pull_request_template.md',
+        '.github/**/PULL_REQUEST_TEMPLATE.md',
+        '.github/ISSUE_TEMPLATE/bug_report.md',
         'SECURITY.md',
         'CODE_OF_CONDUCT.md',
         'README.md',

@@ -11,6 +11,7 @@ const RESTRICTED_MODULES = [
   { name: 'lodash/identity.js', message: 'Use `(value) => value` instead.' },
 ];
 
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
@@ -56,6 +57,7 @@ module.exports = {
     'import/extensions': ['error', 'ignorePackages'], // Bob when bundling requires to have `.js` extension
     'import/no-default-export': 'error',
     'import/prefer-default-export': 'off', // disable opposite of 'import/no-default-export'
+    'unicorn/filename-case': 'error',
 
     '@typescript-eslint/no-unused-vars': [
       'error',
@@ -94,17 +96,30 @@ module.exports = {
 
     // Disallow specified global variables
     // https://eslint.org/docs/latest/rules/no-restricted-globals
-    'no-restricted-globals': ['error', 'stop'],
+    'no-restricted-globals': [
+      'error',
+      'stop',
+      { name: 'isNaN', message: 'Use Number.isNaN instead' },
+    ],
 
     '@typescript-eslint/no-explicit-any': 'error',
     'prefer-const': ['error', { destructuring: 'all' }],
 
     'import/no-duplicates': 'error',
-    'import/newline-after-import': 'error',
+    'import/newline-after-import': 'off', // prettified by prettier-plugin-sort-imports
 
     'prefer-object-has-own': 'error',
     'logical-assignment-operators': ['error', 'always', { enforceForIfStatements: true }],
     '@typescript-eslint/prefer-optional-chain': 'error',
+
+    yoda: 'error',
+    'unicorn/prefer-export-from': ['error', { ignoreUsedVariables: true }],
+    'promise/no-multiple-resolved': 'error',
+    'unicorn/prefer-logical-operator-over-ternary': 'error',
+    'no-unused-expressions': 'off',
+    '@typescript-eslint/no-unused-expressions': 'error',
+    'no-negated-condition': 'off',
+    'unicorn/no-negated-condition': 'error', // has autofix
 
     // 'prefer-destructuring': [ // TODO: Rediscuss later
     //   'error',

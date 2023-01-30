@@ -30,6 +30,20 @@ const RESTRICTED_SYNTAX = [
     message:
       'Prefer `!!…` over `Boolean(…)` because TypeScript infers a narrow literal boolean `type: true` instead of `type: boolean`.',
   },
+  {
+    // ❌ process.browser
+    selector:
+      'ExpressionStatement[expression.object.name=process][expression.property.name=browser]',
+    message: '`process.browser` is deprecated, use `!!globalThis.window`',
+  },
+  // {
+  //   // ❌ let { foo: { bar } } = baz
+  //   // ✅ let { bar } = baz.foo
+  //   // ✅ let { foo: { bar } } = await baz
+  //   selector:
+  //     'VariableDeclarator[init.type!=AwaitExpression] > ObjectPattern[properties.length=1][properties.0.value.type=ObjectPattern]',
+  //   message: 'Do not use nested destructuring.',
+  // },
 ];
 
 const REACT_RESTRICTED_SYNTAX = [

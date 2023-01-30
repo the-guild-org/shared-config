@@ -33,6 +33,15 @@ enum Repo {
   Bob = 'kamilkisiela/bob',
   DataLoader = 'graphql/dataloader',
   LiveQuery = 'n1ru4l/graphql-live-query',
+  GraphiQL = 'graphql/graphiql',
+  GraphQLOrg = 'graphql/graphql.github.io',
+  GraphQLHTTP = 'graphql/graphql-http',
+  GraphQLWS = 'enisdenjo/graphql-ws',
+  GraphQLSSE = 'enisdenjo/graphql-sse',
+  // Other
+  Nextra = 'shuding/nextra',
+  Satori = 'vercel/satori',
+  NextJS = 'vercel/next.js',
 }
 
 const overrideConfig: Config['eslintrc'] = {
@@ -66,7 +75,28 @@ const overrideConfig: Config['eslintrc'] = {
     'promise',
   ],
   rules: {
-    'no-unreachable-loop': 'error',
+    'no-restricted-syntax': [
+      'error',
+      {
+        // ❌ process.browser
+        selector:
+          'ExpressionStatement[expression.object.name=process][expression.property.name=browser]',
+        message: '`process.browser` is deprecated, use `!!globalThis.window`',
+      },
+      {
+        // ❌ let { foo: {bar} } = baz
+        selector:
+          'VariableDeclarator[init.type!=AwaitExpression] > ObjectPattern[properties.length=1][properties.0.value.type=ObjectPattern]',
+        message: 'Do not use nested destructuring.',
+      },
+      {
+        // ❌ useMemo(…, [])
+        selector:
+          'CallExpression[callee.name=useMemo][arguments.1.type=ArrayExpression][arguments.1.elements.length=0]',
+        message:
+          "`useMemo` with an empty dependency array can't provide a stable reference, use `useRef` instead.",
+      },
+    ],
   },
 };
 
@@ -81,9 +111,23 @@ const config: Config = {
     'packages/load/tests/loaders/schema/test-files/error.ts', // tools
     'action/index.js', // inspector
     '.yarn/releases/yarn-berry.cjs', // shield
-    '.yarn/plugins/@yarnpkg/plugin-interactive-tools.cjs', // swift
-    '.yarn/plugins/@yarnpkg/plugin-workspace-tools.cjs', // swift
-    '.yarn/plugins/@yarnpkg/plugin-typescript.cjs', // swift
+    // swift
+    '.yarn/plugins/@yarnpkg/plugin-interactive-tools.cjs',
+    '.yarn/plugins/@yarnpkg/plugin-workspace-tools.cjs',
+    '.yarn/plugins/@yarnpkg/plugin-typescript.cjs',
+    // next.js
+    'packages/next/src/compiled/babel/bundle.js',
+    'packages/next/src/compiled/mini-css-extract-plugin/loader.js',
+    'packages/next/src/compiled/undici/index.js',
+    'packages/next/src/compiled/ws/index.js',
+    'test/development/basic/hmr/components/parse-error.js',
+    // dataloader
+    'flow-typed/npm/jest_v24.x.x.js',
+    'src/__tests__/abuse.test.js',
+    'src/__tests__/browser.test.js',
+    'src/__tests__/dataloader.test.js',
+    'src/__tests__/oldbrowser.test.js',
+    'src/__tests__/unhandled.test.js',
   ].join('|')})`,
   rulesUnderTesting: () => true,
 };

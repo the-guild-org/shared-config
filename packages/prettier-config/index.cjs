@@ -14,6 +14,12 @@ module.exports = {
         trailingComma: 'none',
       },
     },
+    {
+      files: '*.svg',
+      options: {
+        parser: 'html',
+      },
+    },
   ],
   plugins: [
     // for prettifying shellscript, Dockerfile, properties, gitignore, dotenv
@@ -37,13 +43,13 @@ module.exports = {
     '<THIRD_PARTY_MODULES>',
     // Things that start with `@` or digit or underscore.
     '^(@|\\d|_)',
-    // Anything that starts with a dot, or multiple dots, and doesnt have the "other files" extensions.
+    // Anything that starts with a dot, or multiple dots, and doesn't have the "other files" extensions.
     '^(?=\\.+)(.(?!\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)))+$',
     // Other files with extensions.
     '^.+\\.(graphql|css|png|svg|jpe?g|webp|avif|wasm|mp4|webm)$',
   ],
-  importOrderSeparation: false, // import order groups wont be separated by a new line
+  importOrderSeparation: false, // import order groups won't be separated by a new line
   importOrderSortSpecifiers: true, // sorts the import specifiers alphabetically
-  importOrderCaseInsensitive: true, // case insensitive sorting
+  importOrderCaseInsensitive: true, // case-insensitive sorting
   importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
 };
