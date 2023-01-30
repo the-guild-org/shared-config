@@ -106,7 +106,7 @@ module.exports = {
     'prefer-const': ['error', { destructuring: 'all' }],
 
     'import/no-duplicates': 'error',
-    'import/newline-after-import': 'error',
+    'import/newline-after-import': 'off', // prettified by prettier-plugin-sort-imports
 
     'prefer-object-has-own': 'error',
     'logical-assignment-operators': ['error', 'always', { enforceForIfStatements: true }],

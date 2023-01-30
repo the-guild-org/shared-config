@@ -58,7 +58,6 @@ module.exports = {
     'react/jsx-boolean-value': 'error',
     'react/hook-use-state': 'error',
     'react/iframe-missing-sandbox': 'error',
-    'react/jsx-no-leaked-render': 'error',
 
     // TODO: add in base config
     'prefer-destructuring': ['error', { VariableDeclarator: { object: true } }],
