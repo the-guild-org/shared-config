@@ -1,21 +1,84 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
   "postUpdateOptions": ["yarnDedupeFewer"],
   "automerge": false,
+  "recreateClosed": false,
+  "prConcurrentLimit": 25,
   "labels": ["dependencies"],
   "rebaseWhen": "behind-base-branch",
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
-      "prPriority": -1
+      "groupName": "graphql-eslint",
+      "matchPackagePrefixes": ["@graphql-eslint"],
+      "prPriority": 20,
+      "reviewers": ["B2o5T"]
     },
     {
-      "matchPackagePatterns": ["^@theguild/"],
-      "prPriority": 5
+      "groupName": "graphql-config",
+      "matchPackagePrefixes": ["@graphql-config", "graphql-config"],
+      "prPriority": 20,
+      "reviewers": ["B2o5T"]
     },
     {
-      "groupName": "nextra",
-      "matchPackageNames": ["nextra", "nextra-theme-docs", "nextra-theme-blog"]
+      "groupName": "graphql-tools",
+      "matchPackagePrefixes": ["@graphql-tools"],
+      "prPriority": 20,
+      "reviewers": ["ardatan"]
+    },
+    {
+      "groupName": "SOFA",
+      "matchPackagePrefixes": ["sofa-api"],
+      "prPriority": 20,
+      "reviewers": ["ardatan"]
+    },
+    {
+      "groupName": "graphql-modules",
+      "matchPackagePrefixes": ["graphql-modules"],
+      "prPriority": 20,
+      "reviewers": ["kamilkisiela"]
+    },
+    {
+      "groupName": "graphql-mesh",
+      "matchPackagePrefixes": ["@graphql-mesh"],
+      "prPriority": 20,
+      "reviewers": ["ardatan", "gilgardosh"]
+    },
+    {
+      "groupName": "graphql-codegen",
+      "matchPackagePrefixes": ["@graphql-codegen"],
+      "prPriority": 20,
+      "reviewers": ["dotansimha", "saihaj"]
+    },
+    {
+      "groupName": "envelop",
+      "matchPackagePrefixes": ["@envelop"],
+      "prPriority": 20,
+      "reviewers": ["n1ru4l"]
+    },
+    {
+      "groupName": "graphql-inspector",
+      "matchPackagePrefixes": ["@graphql-inspector"],
+      "prPriority": 20,
+      "reviewers": ["TuvalSimha", "kamilkisiela"]
+    },
+    {
+      "groupName": "graphql-yoga",
+      "matchPackagePrefixes": ["@graphql-yoga", "graphql-yoga"],
+      "prPriority": 20,
+      "reviewers": ["ardatan", "enisdenjo", "n1ru4l"]
+    },
+    {
+      "groupName": "whatwg-node",
+      "matchPackagePrefixes": ["@whatwg-node"],
+      "prPriority": 20,
+      "reviewers": ["ardatan"]
+    },
+    {
+      "groupName": "graphql-scalars",
+      "matchPackagePrefixes": ["graphql-scalars"],
+      "prPriority": 20,
+      "reviewers": ["ardatan"]
     },
     {
       "groupName": "@theguild/components",
@@ -23,10 +86,19 @@
         "@theguild/components",
         "@theguild/algolia",
         "@theguild/tailwind-config"
-      ]
+      ],
+      "prPriority": 20,
+      "reviewers": ["B2o5T"]
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "prPriority": 19
+    },
+    {
+      "groupName": "nextra",
+      "matchPackageNames": ["nextra", "nextra-theme-docs", "nextra-theme-blog"],
+      "reviewers": ["B2o5T"]
     }
   ],
-  "timezone": "Europe/Warsaw",
-  "schedule": ["after 8pm and before 8:00am"],
   "ignorePaths": ["**/__tests__/**", "**/test/**", "**/tests/**", "**/__fixtures__/**"]
 }
