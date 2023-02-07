@@ -15,7 +15,7 @@ importers:
       '@theguild/eslint-config': workspace:*
       '@theguild/prettier-config': workspace:*
       '@types/eslint': 8.21.0
-      '@types/node': 18.11.19
+      '@types/node': 18.13.0
       cspell: 6.22.0
       eslint: 8.33.0
       eslint-remote-tester: 3.0.0
@@ -29,12 +29,12 @@ importers:
       '@theguild/eslint-config': link:packages/eslint-config
       '@theguild/prettier-config': link:packages/prettier-config
       '@types/eslint': 8.21.0
-      '@types/node': 18.11.19
+      '@types/node': 18.13.0
       cspell: 6.22.0
       eslint: 8.33.0
       eslint-remote-tester: 3.0.0_lm5ikotw57jauxruva6mg45pva_bsxmlnvf5m255omqti77x3ukfy
       prettier: 2.8.3
-      ts-node: 10.9.1_qqdszkrtcshgbphghj7vnvrrby
+      ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
       typescript: 4.9.5
 
   packages/eslint-config:
@@ -1150,8 +1150,8 @@ packages:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: true
 
-  /@types/node/18.11.19:
-    resolution: {integrity: sha512-YUgMWAQBWLObABqrvx8qKO1enAvBUdjZOAWQ5grBAkp5LQv45jBvYKZ3oFS9iKRCQyFjqw6iuEa1vmFqtxYLZw==}
+  /@types/node/18.13.0:
+    resolution: {integrity: sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -3289,7 +3289,7 @@ packages:
       object-hash: 3.0.0
       react: 17.0.2
       simple-git: 3.14.1
-      ts-node: 10.9.1_qqdszkrtcshgbphghj7vnvrrby
+      ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
     transitivePeerDependencies:
       - '@types/react'
       - bufferutil
@@ -6241,7 +6241,7 @@ packages:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: false
 
-  /ts-node/10.9.1_qqdszkrtcshgbphghj7vnvrrby:
+  /ts-node/10.9.1_4bewfcp2iebiwuold25d6rgcsy:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -6260,7 +6260,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.11.19
+      '@types/node': 18.13.0
       acorn: 8.8.1
       acorn-walk: 8.2.0
       arg: 4.1.3
