@@ -15,6 +15,12 @@
       "reviewers": ["B2o5T"]
     },
     {
+      "groupName": "bob-the-bundler",
+      "matchPackagePrefixes": ["bob-the-bundler"],
+      "prPriority": 20,
+      "reviewers": ["n1ru4l"]
+    },
+    {
       "groupName": "graphql-config",
       "matchPackagePrefixes": ["@graphql-config", "graphql-config"],
       "prPriority": 20,
