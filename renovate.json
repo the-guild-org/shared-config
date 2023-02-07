@@ -6,7 +6,7 @@
   "recreateClosed": false,
   "prConcurrentLimit": 25,
   "labels": ["dependencies"],
-  "rebaseWhen": "behind-base-branch",
+  "rebaseWhen": "conflicted",
   "packageRules": [
     {
       "groupName": "graphql-eslint",
