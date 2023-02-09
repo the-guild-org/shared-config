@@ -24,6 +24,10 @@ on:
         required: false
         type: boolean
         default: false
+      restoreDeletedChangesets:
+        required: false
+        type: boolean
+        default: false
     secrets:
       githubToken:
         required: true
@@ -52,6 +56,10 @@ jobs:
       - if: inputs.exitPre
         name: Exit Prerelease Mode
         run: ${{inputs.packageManager}} run changeset pre exit
+
+      - if: inputs.restoreDeletedChangesets
+        name: restore deleted changesets
+        run: git checkout HEAD~1 -- .
 
       - name: ${{ inputs.npmTag }} release
         id: changesets

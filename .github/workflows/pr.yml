@@ -12,13 +12,27 @@ jobs:
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
 
-  release:
+  alpha:
     uses: ./.github/workflows/release-snapshot.yml
+    if: ${{ github.event.pull_request.title != 'Upcoming Release Changes' }}
     with:
       npmTag: alpha
       buildScript: build
       nodeVersion: 18
       packageManager: pnpm
+    secrets:
+      githubToken: ${{ secrets.GITHUB_TOKEN }}
+      npmToken: ${{ secrets.NPM_TOKEN }}
+
+  rc:
+    uses: ./.github/workflows/release-snapshot.yml
+    if: ${{ github.event.pull_request.title == 'Upcoming Release Changes' }}
+    with:
+      npmTag: rc
+      buildScript: build
+      nodeVersion: 18
+      packageManager: pnpm
+      restoreDeletedChangesets: true
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
       npmToken: ${{ secrets.NPM_TOKEN }}
