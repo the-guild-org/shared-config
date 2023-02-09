@@ -1,5 +1,12 @@
 # @theguild/prettier-config
 
+## 1.1.2
+
+### Patch Changes
+
+- [`92292ea`](https://github.com/the-guild-org/shared-config/commit/92292ea11efa0724c6748723141c6a8b7e24bd14)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Temp changeset for testing purposes
+
 ## 1.1.1
 
 ### Patch Changes

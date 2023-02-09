@@ -1,6 +1,6 @@
 {
   "name": "@theguild/prettier-config",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "The Guild's shared Prettier config",
   "repository": {
     "url": "the-guild-org/shared-config",
