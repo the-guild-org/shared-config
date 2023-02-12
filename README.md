@@ -315,7 +315,58 @@ jobs:
 </details>
 
 <details>
-  <summary>(Optional) Setup Algolia search</summary>
+  <summary>Step 12: `rc` relases</summary>
+
+To ship `rc` releases from `Upcoming Release Changes` PRs, do the following first:
+
+1. Ensure `GUILD_BOT_TOKEN` is set on your repository (or, a PAT created from a bot/user account).
+2. Change the stable release pipeline, and configure it to use `GUILD_BOT_TOKEN`:
+
+```yml
+jobs:
+  stable:
+    uses: the-guild-org/shared-config/.github/workflows/release-stable.yml@main
+    with:
+      releaseScript: release
+      nodeVersion: 18
+    secrets:
+      githubToken: ${{ secrets.GUILD_BOT_TOKEN }} # HERE
+      npmToken: ${{ secrets.NPM_TOKEN }}
+```
+
+3. Now, duplicate your snapshot release pipeline, add the conditions, and make sure to add the
+   required configuration for that kind of pipelines:
+
+```yaml
+jobs:
+  alpha: # Assuming this is your exisisting alpha release pipeline from previous step
+    uses: the-guild-org/shared-config/.github/workflows/release-snapshot.yml@main
+    if: ${{ github.event.pull_request.title != 'Upcoming Release Changes' }} # ADD THIS
+    with:
+      npmTag: alpha
+      buildScript: build
+      nodeVersion: 18
+    secrets:
+      githubToken: ${{ secrets.GITHUB_TOKEN }}
+      npmToken: ${{ secrets.NPM_TOKEN }}
+
+  release-candidate: # This is a new one
+    uses: the-guild-org/shared-config/.github/workflows/release-snapshot.yml@main
+    if: ${{ github.event.pull_request.title == 'Upcoming Release Changes' }} # ADD THIS, note that the condition is different
+    with:
+      npmTag: rc # Here we are using a different tag
+      restoreDeletedChangesets: true # Make sure to add this flag, in order to make changesets visible to the release pipeline!
+      buildScript: build
+      nodeVersion: 18
+    secrets:
+      githubToken: ${{ secrets.GITHUB_TOKEN }}
+      npmToken: ${{ secrets.NPM_TOKEN }}
+```
+
+</details>
+
+<details>
+  <summary>Step 13: (Optional) Setup Algolia search</summary>
 
 We recommend setup Algolia to any The Guild project that provides documentation with Nextra.
 
