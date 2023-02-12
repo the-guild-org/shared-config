@@ -6,6 +6,18 @@ inputs:
     required: true
     description: 'the job status'
     default: ${{ job.status }}
+  prOwners:
+    required: true
+    description: 'list of gh logins that are considered relevant for this action, use JSON string'
+    default: renovate[bot]
+  prereleaseTag:
+    required: true
+    description: 'list of NPM prerelease tags matchers'
+    default: 'rc-*'
+  relevantPackages:
+    required: true
+    description: 'list of packages, wildcard is supported'
+    default: ''
   token:
     required: false
     description: 'github token'

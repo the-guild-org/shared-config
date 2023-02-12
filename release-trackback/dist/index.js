@@ -12868,9 +12868,6 @@ const core = __importStar(__nccwpck_require__(3610));
 const github = __importStar(__nccwpck_require__(1419));
 const gh_utils_1 = __nccwpck_require__(6111);
 const utils_1 = __nccwpck_require__(6618);
-const VALID_LOGINS = ['renovate[bot]'];
-const RELEVANT_PACAKGES = ['@theguild/*'];
-const RELEVANT_TAG = 'rc-*';
 const uniqueCommentKey = (salt) => `<!-- trackback:${salt} -->`;
 function run() {
     var _a, _b;
@@ -12888,18 +12885,23 @@ function run() {
                 core.warning(`Trackback was executed on "${jobStatus}" job, but we can't do anything in such case.`);
                 return;
             }
+            const relevantPackages = core
+                .getInput('relevantPackages', { required: true })
+                .split('\n');
+            const prOwners = core.getInput('prOwners', { required: true }).split('\n');
+            const relevantTags = core.getInput('relevantTags', { required: true }).split('\n');
             const ghToken = core.getInput('token', { required: false }) || process.env.GITHUB_TOKEN;
             if (!ghToken) {
                 return core.setFailed(`No token provided. Please set the GITHUB_TOKEN environment variable, or use "token" input.`);
             }
             const octokit = github.getOctokit(ghToken);
             const sender = (_a = github.context.payload.sender) === null || _a === void 0 ? void 0 : _a.login;
-            if (!sender || !VALID_LOGINS.includes(sender)) {
-                core.warning(`Trackback was executed by "${sender}", but only runs on ${VALID_LOGINS.join(', ')}.'`);
+            if (!sender || !prOwners.includes(sender)) {
+                core.warning(`Trackback was executed by "${sender}", but only runs on ${prOwners.join(', ')}.'`);
                 return;
             }
             const changedPackages = (0, utils_1.extractChangedPackages)(((_b = github.context.payload.pull_request) === null || _b === void 0 ? void 0 : _b.body) || '');
-            const relevantChanges = (0, utils_1.filterRelevantPackages)(RELEVANT_PACAKGES, changedPackages);
+            const relevantChanges = (0, utils_1.filterRelevantPackages)(relevantPackages, changedPackages);
             core.debug(`Changed packages: ${JSON.stringify(changedPackages, null, 2)}`);
             core.debug(`Relevant packages: ${JSON.stringify(relevantChanges, null, 2)}`);
             if (relevantChanges.length === 0) {
@@ -12908,14 +12910,14 @@ function run() {
             }
             const result = yield Promise.all(relevantChanges.map((change) => __awaiter(this, void 0, void 0, function* () {
                 var _c, _d, _e, _f, _g, _h, _j, _k;
-                const matchesPrerelease = (_c = change.to) === null || _c === void 0 ? void 0 : _c.prerelease.find(prerelease => (0, utils_1.starMatch)(RELEVANT_TAG, String(prerelease)));
+                const matchesPrerelease = (_c = change.to) === null || _c === void 0 ? void 0 : _c.prerelease.find(prerelease => relevantTags.find(t => (0, utils_1.starMatch)(t, String(prerelease))));
                 if (!matchesPrerelease) {
                     core.warning(`Package ${change.package} was not updated to a prerelease version.`);
                     return { package: change.package, result: 'skipped-no-prerelease' };
                 }
                 const prereleaseParts = String(matchesPrerelease).split('-');
                 if (prereleaseParts.length !== 3) {
-                    core.warning(`Package ${change.package} has an invalid prerelease tag (${(_d = change.to) === null || _d === void 0 ? void 0 : _d.format()}), expected: "${RELEVANT_TAG.replace('*', '')}salt-commitId.`);
+                    core.warning(`Package ${change.package} has an invalid prerelease tag (${(_d = change.to) === null || _d === void 0 ? void 0 : _d.format()}), expected one of: ${relevantTags.join('/')} with an additional "salt-commitId" suffix.`);
                     return { package: change.package, result: 'skipped-invalid-prerelease' };
                 }
                 const prereleaseCommitId = prereleaseParts[2];

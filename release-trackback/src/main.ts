@@ -11,9 +11,6 @@ import {
   starMatch,
 } from './utils';
 
-const VALID_LOGINS = ['renovate[bot]'];
-const RELEVANT_PACAKGES = ['@theguild/*'];
-const RELEVANT_TAG = 'rc-*';
 const uniqueCommentKey = (salt: string) => `<!-- trackback:${salt} -->`;
 
 async function run(): Promise<void> {
@@ -42,6 +39,12 @@ async function run(): Promise<void> {
       return;
     }
 
+    const relevantPackages: string[] = core
+      .getInput('relevantPackages', { required: true })
+      .split('\n');
+    const prOwners: string[] = core.getInput('prOwners', { required: true }).split('\n');
+    const relevantTags: string[] = core.getInput('relevantTags', { required: true }).split('\n');
+
     const ghToken = core.getInput('token', { required: false }) || process.env.GITHUB_TOKEN;
 
     if (!ghToken) {
@@ -52,16 +55,16 @@ async function run(): Promise<void> {
     const octokit = github.getOctokit(ghToken);
     const sender = github.context.payload.sender?.login;
 
-    if (!sender || !VALID_LOGINS.includes(sender)) {
+    if (!sender || !prOwners.includes(sender)) {
       core.warning(
-        `Trackback was executed by "${sender}", but only runs on ${VALID_LOGINS.join(', ')}.'`,
+        `Trackback was executed by "${sender}", but only runs on ${prOwners.join(', ')}.'`,
       );
 
       return;
     }
 
     const changedPackages = extractChangedPackages(github.context.payload.pull_request?.body || '');
-    const relevantChanges = filterRelevantPackages(RELEVANT_PACAKGES, changedPackages);
+    const relevantChanges = filterRelevantPackages(relevantPackages, changedPackages);
     core.debug(`Changed packages: ${JSON.stringify(changedPackages, null, 2)}`);
     core.debug(`Relevant packages: ${JSON.stringify(relevantChanges, null, 2)}`);
 
@@ -74,7 +77,7 @@ async function run(): Promise<void> {
     const result = await Promise.all(
       relevantChanges.map(async change => {
         const matchesPrerelease = change.to?.prerelease.find(prerelease =>
-          starMatch(RELEVANT_TAG, String(prerelease)),
+          relevantTags.find(t => starMatch(t, String(prerelease))),
         );
 
         if (!matchesPrerelease) {
@@ -89,10 +92,9 @@ async function run(): Promise<void> {
           core.warning(
             `Package ${
               change.package
-            } has an invalid prerelease tag (${change.to?.format()}), expected: "${RELEVANT_TAG.replace(
-              '*',
-              '',
-            )}salt-commitId.`,
+            } has an invalid prerelease tag (${change.to?.format()}), expected one of: ${relevantTags.join(
+              '/',
+            )} with an additional "salt-commitId" suffix.`,
           );
 
           return { package: change.package, result: 'skipped-invalid-prerelease' };
