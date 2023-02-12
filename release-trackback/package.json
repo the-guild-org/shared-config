@@ -1,0 +1,37 @@
+{
+  "name": "release-trackback-action",
+  "version": "0.0.0",
+  "description": "Utility to track back a release to a PR, and notify in case of a breaking change",
+  "repository": {
+    "type": "git",
+    "directory": "release-trackback",
+    "url": "git+https://github.com/the-guild-org/shared-config.git"
+  },
+  "author": "Dotan Simha <dotansimha@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "main": "lib/main.js",
+  "keywords": [
+    "theguild",
+    "release",
+    "actions"
+  ],
+  "scripts": {
+    "all": "npm run build && npm run package",
+    "build": "tsc",
+    "package": "ncc build"
+  },
+  "dependencies": {
+    "@actions/core": "1.10.0",
+    "@actions/github": "5.1.1",
+    "marked": "4.2.12",
+    "semver": "7.3.8"
+  },
+  "devDependencies": {
+    "@types/marked": "4.0.8",
+    "@types/node": "18.13.0",
+    "@types/semver": "7.3.13",
+    "@vercel/ncc": "0.36.1",
+    "typescript": "4.9.5"
+  }
+}

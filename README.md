@@ -366,6 +366,36 @@ jobs:
 </details>
 
 <details>
+  <summary> Step 13: Trackback</summary>
+
+Trackback is a in-house tool for The Guild repositories, that allows up to easily test `rc`
+releases.
+
+To use that, following these instructions:
+
+1. Ensure you have `GUILD_BOT_TOKEN` set.
+2. Find the workflows in your repositories that might be effected by changes. Usually `build` /
+   `typecheck` and `test` are relevant here. Also more complicated workflows, such as integration
+   tests. Add this at the end of the workflow (or, after the importand command):
+
+```yaml
+- uses: the-guild-org/shared-config/release-trackback@main
+  if: ${{ always() }}} # Important!
+  with:
+    token: ${{ secrets.GUILD_BOT_TOKEN }} # Make sure to use the Guild bot token here
+    relevantPackages:
+      | # Here you can specify a list of explicit dependencies, or using "*" matcher.
+      @theguild/*
+      @whatwg-node/*
+```
+
+3. Now, if a **Renovate PR** with **`rc`** release, for a depenendecies declared under
+   `relevantPackages` will fail your workflow, you'll get a comment on `Upcoming Release Changes` PR
+   in the source repository!
+
+</details>
+
+<details>
   <summary>Step 13: (Optional) Setup Algolia search</summary>
 
 We recommend setup Algolia to any The Guild project that provides documentation with Nextra.
