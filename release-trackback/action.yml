@@ -1,0 +1,14 @@
+name: 'Guild Release Trackback'
+description: 'Utility to track back a release to a PR, and notify in case of a breaking change'
+author: 'The Guild'
+inputs:
+  jobStatus:
+    required: true
+    description: 'the job status'
+    default: ${{ job.status }}
+  token:
+    required: false
+    description: 'github token'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
