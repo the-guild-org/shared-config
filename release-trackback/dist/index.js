@@ -12894,7 +12894,7 @@ function run() {
                 .split('\n')
                 .map(v => v.trim());
             const relevantTags = core
-                .getInput('relevantTags', { required: true })
+                .getInput('prereleaseTag', { required: true })
                 .split('\n')
                 .map(v => v.trim());
             const ghToken = core.getInput('token', { required: false }) || process.env.GITHUB_TOKEN;

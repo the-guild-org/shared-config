@@ -48,7 +48,7 @@ async function run(): Promise<void> {
       .split('\n')
       .map(v => v.trim());
     const relevantTags: string[] = core
-      .getInput('relevantTags', { required: true })
+      .getInput('prereleaseTag', { required: true })
       .split('\n')
       .map(v => v.trim());
 
