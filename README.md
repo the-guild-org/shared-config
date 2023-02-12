@@ -389,7 +389,21 @@ To use that, following these instructions:
       @whatwg-node/*
 ```
 
-3. Now, if a **Renovate PR** with **`rc`** release, for a depenendecies declared under
+3. To make sure your repository accepts Renovate configuration for alpha release, use the following
+   snippet in your `renovate.json` config file:
+
+```json
+{
+  "groupName": "whatwg-node",
+  "matchPackageNames": ["@whatwg-node/*"],
+  "prPriority": 21,
+  "ignoreUnstable": false,
+  "respectLatest": false,
+  "allowedVersions": "/^([0-9]+).([0-9]+)(?:.([0-9]+))?(-rc-.+)?$/"
+}
+```
+
+4. Now, if a **Renovate PR** with **`rc`** release, for a depenendecies declared under
    `relevantPackages` will fail your workflow, you'll get a comment on `Upcoming Release Changes` PR
    in the source repository!
 
