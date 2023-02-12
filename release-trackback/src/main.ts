@@ -41,9 +41,16 @@ async function run(): Promise<void> {
 
     const relevantPackages: string[] = core
       .getInput('relevantPackages', { required: true })
-      .split('\n');
-    const prOwners: string[] = core.getInput('prOwners', { required: true }).split('\n');
-    const relevantTags: string[] = core.getInput('relevantTags', { required: true }).split('\n');
+      .split('\n')
+      .map(v => v.trim());
+    const prOwners: string[] = core
+      .getInput('prOwners', { required: true })
+      .split('\n')
+      .map(v => v.trim());
+    const relevantTags: string[] = core
+      .getInput('relevantTags', { required: true })
+      .split('\n')
+      .map(v => v.trim());
 
     const ghToken = core.getInput('token', { required: false }) || process.env.GITHUB_TOKEN;
 

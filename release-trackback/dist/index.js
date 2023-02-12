@@ -12887,9 +12887,16 @@ function run() {
             }
             const relevantPackages = core
                 .getInput('relevantPackages', { required: true })
-                .split('\n');
-            const prOwners = core.getInput('prOwners', { required: true }).split('\n');
-            const relevantTags = core.getInput('relevantTags', { required: true }).split('\n');
+                .split('\n')
+                .map(v => v.trim());
+            const prOwners = core
+                .getInput('prOwners', { required: true })
+                .split('\n')
+                .map(v => v.trim());
+            const relevantTags = core
+                .getInput('relevantTags', { required: true })
+                .split('\n')
+                .map(v => v.trim());
             const ghToken = core.getInput('token', { required: false }) || process.env.GITHUB_TOKEN;
             if (!ghToken) {
                 return core.setFailed(`No token provided. Please set the GITHUB_TOKEN environment variable, or use "token" input.`);
