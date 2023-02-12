@@ -71,7 +71,15 @@ async function run(): Promise<void> {
     }
 
     const changedPackages = extractChangedPackages(github.context.payload.pull_request?.body || '');
+    console.log(
+      'List of changes packages in the Renovate PR:',
+      JSON.stringify(changedPackages, null, 2),
+    );
     const relevantChanges = filterRelevantPackages(relevantPackages, changedPackages);
+    console.log(
+      'List of relevant packages in the Renovate PR:',
+      JSON.stringify(relevantChanges, null, 2),
+    );
     core.debug(`Changed packages: ${JSON.stringify(changedPackages, null, 2)}`);
     core.debug(`Relevant packages: ${JSON.stringify(relevantChanges, null, 2)}`);
 
@@ -144,7 +152,10 @@ async function run(): Promise<void> {
         const relevantPr =
           commitAndPr?.repository?.object?.associatedPullRequests?.nodes?.[0]?.number;
 
-        console.log('Relevant PR result:', relevantPr);
+        console.log('Relevant PR result:', {
+          queryVariables,
+          result: JSON.stringify(commitAndPr, null, 2),
+        });
 
         if (!relevantPr) {
           core.warning(

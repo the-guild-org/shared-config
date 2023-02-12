@@ -12908,7 +12908,9 @@ function run() {
                 return;
             }
             const changedPackages = (0, utils_1.extractChangedPackages)(((_b = github.context.payload.pull_request) === null || _b === void 0 ? void 0 : _b.body) || '');
+            console.log('List of changes packages in the Renovate PR:', JSON.stringify(changedPackages, null, 2));
             const relevantChanges = (0, utils_1.filterRelevantPackages)(relevantPackages, changedPackages);
+            console.log('List of relevant packages in the Renovate PR:', JSON.stringify(relevantChanges, null, 2));
             core.debug(`Changed packages: ${JSON.stringify(changedPackages, null, 2)}`);
             core.debug(`Relevant packages: ${JSON.stringify(relevantChanges, null, 2)}`);
             if (relevantChanges.length === 0) {
@@ -12957,7 +12959,10 @@ function run() {
             }
           `, queryVariables);
                 const relevantPr = (_j = (_h = (_g = (_f = (_e = commitAndPr === null || commitAndPr === void 0 ? void 0 : commitAndPr.repository) === null || _e === void 0 ? void 0 : _e.object) === null || _f === void 0 ? void 0 : _f.associatedPullRequests) === null || _g === void 0 ? void 0 : _g.nodes) === null || _h === void 0 ? void 0 : _h[0]) === null || _j === void 0 ? void 0 : _j.number;
-                console.log('Relevant PR result:', relevantPr);
+                console.log('Relevant PR result:', {
+                    queryVariables,
+                    result: JSON.stringify(commitAndPr, null, 2),
+                });
                 if (!relevantPr) {
                     core.warning(`Package ${change.package} has a prerelease tag (${(_k = change.to) === null || _k === void 0 ? void 0 : _k.format()}), but the commit was not associated with a PR in the upstream repo (${change.repository.owner}/${change.repository.repo}).`);
                     return { package: change.package, result: 'skipped-no-pr' };
