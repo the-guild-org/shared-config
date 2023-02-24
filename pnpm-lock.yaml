@@ -14,7 +14,7 @@ importers:
       '@shopify/eslint-plugin': 42.0.3
       '@theguild/eslint-config': workspace:*
       '@theguild/prettier-config': workspace:*
-      '@types/eslint': 8.21.0
+      '@types/eslint': 8.21.1
       '@types/node': 18.14.1
       cspell: 6.26.3
       eslint: 8.34.0
@@ -28,7 +28,7 @@ importers:
       '@shopify/eslint-plugin': 42.0.3_ztlnmuobvwn63gpuifwwrjpt4i
       '@theguild/eslint-config': link:packages/eslint-config
       '@theguild/prettier-config': link:packages/prettier-config
-      '@types/eslint': 8.21.0
+      '@types/eslint': 8.21.1
       '@types/node': 18.14.1
       cspell: 6.26.3
       eslint: 8.34.0
@@ -1238,8 +1238,8 @@ packages:
       '@types/ms': 0.7.31
     dev: false
 
-  /@types/eslint/8.21.0:
-    resolution: {integrity: sha512-35EhHNOXgxnUgh4XCJsGhE7zdlDhYDN/aMG6UbkByCFFNgQ7b3U+uVoqBpicFydR8JEfgdjCF7SJ7MiJfzuiTA==}
+  /@types/eslint/8.21.1:
+    resolution: {integrity: sha512-rc9K8ZpVjNcLs8Fp0dkozd5Pt2Apk1glO4Vgz8ix1u6yFByxfqo5Yavpy65o+93TAe24jr7v+eSBtFLvOQtCRQ==}
     dependencies:
       '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11

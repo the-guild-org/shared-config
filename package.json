@@ -23,7 +23,7 @@
     "@shopify/eslint-plugin": "42.0.3",
     "@theguild/eslint-config": "workspace:*",
     "@theguild/prettier-config": "workspace:*",
-    "@types/eslint": "8.21.0",
+    "@types/eslint": "8.21.1",
     "@types/node": "18.14.1",
     "cspell": "6.26.3",
     "eslint": "8.34.0",
