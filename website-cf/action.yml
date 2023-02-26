@@ -31,6 +31,14 @@ inputs:
     description: PR id for publishing preview
     required: false
     default: ''
+  commentId:
+    description: ID to use for the comment
+    required: false
+    default: 'website_deployment'
+  commentTitle:
+    description: Title to use for the PR comment
+    required: false
+    default: '🚀 Website Preview'
   mainBranch:
     description: The main branch name that is set in CF Pages
     required: false
@@ -62,7 +70,7 @@ runs:
         token: ${{ inputs.githubToken }}
         issue-number: ${{ inputs.prId }}
         comment-author: 'github-actions[bot]'
-        body-includes: <!--- website_deployment --->
+        body-includes: <!--- ${{ inputs.commentId }} --->
 
     - name: create/update comment
       uses: peter-evans/create-or-update-comment@v2
@@ -72,8 +80,8 @@ runs:
         comment-id: ${{ steps.fc.outputs.comment-id }}
         issue-number: ${{ inputs.prId }}
         body: |
-          <!--- website_deployment ---> 
-          ### 🚀 Website Preview
+          <!--- ${{ inputs.commentId }} ---> 
+          ### ${{ inputs.commentTitle }}
 
           The latest changes to the website are available as preview in: [${{ steps.deploy.outputs.url }}](${{ steps.deploy.outputs.url }})
         edit-mode: replace
