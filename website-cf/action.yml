@@ -53,7 +53,7 @@ runs:
       working-directory: ${{ inputs.websiteDirectory }}
 
     - name: push to cloudflare pages
-      uses: cloudflare/pages-action@v1.3.0
+      uses: cloudflare/pages-action@v1.4.1
       id: deploy
       with:
         apiToken: ${{ inputs.cloudflareApiToken }}
