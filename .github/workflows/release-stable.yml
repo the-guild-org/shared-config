@@ -64,7 +64,7 @@ jobs:
         uses: dotansimha/changesets-action@v1.3.3
         with:
           publish: 'yarn ${{ inputs.releaseScript }}'
-          version: 'yarn changesets version'
+          version: 'yarn changeset version'
           commit: 'chore(release): update monorepo packages versions'
           title: ${{inputs.releasePrName}}
           createGithubReleases: ${{ inputs.createGithubReleases }}
