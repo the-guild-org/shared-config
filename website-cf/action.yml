@@ -49,9 +49,9 @@ runs:
   steps:
     - name: build website
       env:
-        NEXT_PUBLIC_ALGOLIA_INDEX_NAME: ANRJKXZTRW
+        NEXT_PUBLIC_ALGOLIA_INDEX_NAME: searchv2_main
         NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY: a5522203ca95675199cc21edf09e6d75
-        NEXT_PUBLIC_ALGOLIA_APP_ID: searchv2_main
+        NEXT_PUBLIC_ALGOLIA_APP_ID: ANRJKXZTRW
       shell: bash
       run: ${{ inputs.buildScript }}
       working-directory: ${{ inputs.websiteDirectory }}
