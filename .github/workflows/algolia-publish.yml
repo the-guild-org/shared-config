@@ -81,9 +81,9 @@ jobs:
           --docsBaseDir ${{ inputs.docsBaseDir }}
         working-directory: ${{ inputs.websiteDirectory }}
         env:
-          ALGOLIA_APP_ID: ${{ secrets.algoliaAppId }}
+          ALGOLIA_APP_ID: ANRJKXZTRW
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.algoliaAdminApiKey }}
-          ALGOLIA_INDEX_NAME: ${{ secrets.algoliaIndexName}}
+          ALGOLIA_INDEX_NAME: searchv2_main
 
       - name: Diff to file
         if: always()
