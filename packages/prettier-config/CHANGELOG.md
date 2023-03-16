@@ -1,5 +1,12 @@
 # @theguild/prettier-config
 
+## 1.1.3
+
+### Patch Changes
+
+- [`ec9c470`](https://github.com/the-guild-org/shared-config/commit/ec9c4703445a62dc1e3e58c978cd3dd359526c63)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Bump @trivago/prettier-plugin-sort-imports
+
 ## 1.1.2
 
 ### Patch Changes

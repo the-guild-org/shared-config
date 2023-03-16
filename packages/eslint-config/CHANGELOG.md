@@ -1,5 +1,16 @@
 # @theguild/eslint-config
 
+## 0.8.1
+
+### Patch Changes
+
+- [#187](https://github.com/the-guild-org/shared-config/pull/187)
+  [`779ad25`](https://github.com/the-guild-org/shared-config/commit/779ad25c3bbe1cb12c464171468b719b2c5bdf51)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-unicorn@^46.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-unicorn/v/46.0.0)
+    (from `^45.0.2`, in `dependencies`)
+
 ## 0.8.0
 
 ### Minor Changes
