@@ -15,7 +15,7 @@ importers:
       '@theguild/eslint-config': workspace:*
       '@theguild/prettier-config': workspace:*
       '@types/eslint': 8.21.2
-      '@types/node': 18.15.0
+      '@types/node': 18.15.3
       cspell: 6.29.3
       eslint: 8.36.0
       eslint-remote-tester: 3.0.0
@@ -29,12 +29,12 @@ importers:
       '@theguild/eslint-config': link:packages/eslint-config
       '@theguild/prettier-config': link:packages/prettier-config
       '@types/eslint': 8.21.2
-      '@types/node': 18.15.0
+      '@types/node': 18.15.3
       cspell: 6.29.3
       eslint: 8.36.0
       eslint-remote-tester: 3.0.0_lm5ikotw57jauxruva6mg45pva_nrk4wmwcxx5fq5ovs5ndnbsmiy
       prettier: 2.8.4
-      ts-node: 10.9.1_lwgqdwokjtwlohdqtbb6s252kq
+      ts-node: 10.9.1_cbfmry4sbbh4vatmdrsmatfg5a
       typescript: 4.9.5
 
   packages/eslint-config:
@@ -102,7 +102,7 @@ importers:
       '@actions/core': 1.10.0
       '@actions/github': 5.1.1
       '@types/marked': 4.0.8
-      '@types/node': 18.15.0
+      '@types/node': 18.15.3
       '@types/semver': 7.3.13
       '@vercel/ncc': 0.36.1
       marked: 4.2.12
@@ -115,7 +115,7 @@ importers:
       semver: 7.3.8
     devDependencies:
       '@types/marked': 4.0.8
-      '@types/node': 18.15.0
+      '@types/node': 18.15.3
       '@types/semver': 7.3.13
       '@vercel/ncc': 0.36.1
       typescript: 4.9.5
@@ -1314,8 +1314,8 @@ packages:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: true
 
-  /@types/node/18.15.0:
-    resolution: {integrity: sha512-z6nr0TTEOBGkzLGmbypWOGnpSpSIBorEhC4L+4HeQ2iezKCi4f77kyslRwvHeNitymGQ+oFyIWGP96l/DPSV9w==}
+  /@types/node/18.15.3:
+    resolution: {integrity: sha512-p6ua9zBxz5otCmbpb5D3U4B5Nanw6Pk3PPyX05xnxbB/fRv71N7CPmORg7uAD5P70T0xmx1pzAx/FUfa5X+3cw==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -3467,7 +3467,7 @@ packages:
       object-hash: 3.0.0
       react: 17.0.2
       simple-git: 3.14.1
-      ts-node: 10.9.1_lwgqdwokjtwlohdqtbb6s252kq
+      ts-node: 10.9.1_cbfmry4sbbh4vatmdrsmatfg5a
     transitivePeerDependencies:
       - '@types/react'
       - bufferutil
@@ -6438,7 +6438,7 @@ packages:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: false
 
-  /ts-node/10.9.1_lwgqdwokjtwlohdqtbb6s252kq:
+  /ts-node/10.9.1_cbfmry4sbbh4vatmdrsmatfg5a:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -6457,7 +6457,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.15.0
+      '@types/node': 18.15.3
       acorn: 8.8.1
       acorn-walk: 8.2.0
       arg: 4.1.3
