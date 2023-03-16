@@ -430,9 +430,7 @@ If Prettier or other tools are used, ensure to exclude the `website/algolia-lock
 
 Configure the following GitHub Actions secrets from your Algolia dashboard:
 
-- `ALGOLIA_APP_ID`
 - `ALGOLIA_ADMIN_API_KEY`
-- `ALGOLIA_INDEX_NAME`
 
 4. Add the GitHub Actions workflows
 
@@ -468,9 +466,7 @@ jobs:
     uses: the-guild-org/shared-config/.github/workflows/algolia-publish.yml@main
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
-      algoliaAppId: ${{ secrets.ALGOLIA_APP_ID }}
       algoliaAdminApiKey: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
-      algoliaIndexName: ${{ secrets.ALGOLIA_INDEX_NAME }}
     with:
       domain: https://www.the-guild.dev/graphql/codegen/
 ```
