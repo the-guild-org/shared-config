@@ -57,9 +57,25 @@ const REACT_RESTRICTED_SYNTAX = [
   },
 ];
 
+const RESTRICTED_GLOBALS = ['stop', { name: 'isNaN', message: 'Use Number.isNaN instead' }];
+
+const RESTRICTED_MODULES = [
+  { name: 'axios', message: 'Use `fetch/node-fetch` instead.' },
+  { name: 'moment', message: 'Use `dayjs/date-fns` instead.' },
+  { name: 'classnames', message: 'Use `clsx` instead because he is faster.' },
+  { name: 'lodash/isString.js', message: "Use `typeof yourVar === 'string'` instead." },
+  { name: 'lodash/isArray.js', message: 'Use `Array.isArray` instead.' },
+  { name: 'lodash/flatten.js', message: 'Use `Array#flat()` instead.' },
+  { name: 'lodash/compact.js', message: 'Use `Array#filter(Boolean)` instead.' },
+  { name: 'lodash/identity.js', message: 'Use `(value) => value` instead.' },
+];
+
 module.exports = {
   CODE_BLOCK: '**/*.md{,x}/*',
   CODE_FILE: '*.{,c,m}{j,t}s{,x}',
+  TS_FILE: '*.{,c,m}ts{,x}',
+  RESTRICTED_GLOBALS,
+  RESTRICTED_MODULES,
   RESTRICTED_SYNTAX,
   REACT_RESTRICTED_SYNTAX,
 };

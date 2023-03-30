@@ -11,7 +11,7 @@
   "scripts": {
     "build": "echo No build command, skipping…",
     "cspell": "cspell --gitignore **/*",
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --ignore-path .gitignore --check .",
     "lint:remote": "eslint-remote-tester",
     "prettier": "prettier --write --list-different .",

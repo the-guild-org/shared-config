@@ -1,10 +1,10 @@
-name: 'Guild Release Trackback'
+name: Guild Release Trackback
 description: 'Utility to track back a release to a PR, and notify in case of a breaking change'
-author: 'The Guild'
+author: The Guild
 inputs:
   jobStatus:
     required: true
-    description: 'the job status'
+    description: the job status
     default: ${{ job.status }}
   prOwners:
     required: true
@@ -12,7 +12,7 @@ inputs:
     default: renovate[bot]
   prereleaseTag:
     required: true
-    description: 'list of NPM prerelease tags matchers'
+    description: list of NPM prerelease tags matchers
     default: 'rc-*'
   relevantPackages:
     required: true
@@ -20,7 +20,7 @@ inputs:
     default: ''
   token:
     required: false
-    description: 'github token'
+    description: github token
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: node16
+  main: dist/index.js

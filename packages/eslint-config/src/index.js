@@ -1,4 +1,4 @@
-const { CODE_FILE } = require('./constants.js');
+const { CODE_FILE, TS_FILE } = require('./constants.js');
 
 require('@rushstack/eslint-patch/modern-module-resolution');
 
@@ -12,6 +12,12 @@ module.exports = {
     {
       files: CODE_FILE,
       extends: './base',
+    },
+    {
+      files: TS_FILE,
+      rules: {
+        '@typescript-eslint/consistent-type-assertions': 'error',
+      },
     },
     {
       files: ['*.c{j,t}s'],

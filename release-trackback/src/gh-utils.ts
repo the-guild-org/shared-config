@@ -39,7 +39,7 @@ export async function findComment(
     issue_number: inputs.issueNumber,
   };
 
-  if (inputs.direction == 'first') {
+  if (inputs.direction === 'first') {
     for await (const { data: comments } of octokit.paginate.iterator(
       octokit.rest.issues.listComments,
       parameters,

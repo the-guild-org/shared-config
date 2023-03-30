@@ -34,11 +34,11 @@ inputs:
   commentId:
     description: ID to use for the comment
     required: false
-    default: 'website_deployment'
+    default: website_deployment
   commentTitle:
     description: Title to use for the PR comment
     required: false
-    default: '💻 Website Preview'
+    default: 💻 Website Preview
   mainBranch:
     description: The main branch name that is set in CF Pages
     required: false
