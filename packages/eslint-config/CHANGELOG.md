@@ -1,5 +1,38 @@
 # @theguild/eslint-config
 
+## 0.9.0
+
+### Minor Changes
+
+- [#205](https://github.com/the-guild-org/shared-config/pull/205)
+  [`ebd2920`](https://github.com/the-guild-org/shared-config/commit/ebd292059888515095c59c12657860ece3f76eac)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - new rules
+
+  ```json
+  {
+    "unicorn/no-array-for-each": "error",
+    "unicorn/prefer-string-trim-start-end": "error",
+    "no-self-compare": "error",
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "@typescript-eslint/consistent-type-assertions": "error"
+  }
+  ```
+
+### Patch Changes
+
+- [#200](https://github.com/the-guild-org/shared-config/pull/200)
+  [`df800fc`](https://github.com/the-guild-org/shared-config/commit/df800fcf68b878fef7701aa4a92378512904c0d3)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-sonarjs@^0.19.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-sonarjs/v/0.19.0)
+    (from `^0.18.0`, in `dependencies`)
+
 ## 0.8.1
 
 ### Patch Changes
