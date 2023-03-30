@@ -1,15 +1,4 @@
-const { RESTRICTED_SYNTAX } = require('./constants.js');
-
-const RESTRICTED_MODULES = [
-  { name: 'axios', message: 'Use `fetch/node-fetch` instead.' },
-  { name: 'moment', message: 'Use `dayjs/date-fns` instead.' },
-  { name: 'classnames', message: 'Use `clsx` instead because he is faster.' },
-  { name: 'lodash/isString.js', message: "Use `typeof yourVar === 'string'` instead." },
-  { name: 'lodash/isArray.js', message: 'Use `Array.isArray` instead.' },
-  { name: 'lodash/flatten.js', message: 'Use `Array#flat()` instead.' },
-  { name: 'lodash/compact.js', message: 'Use `Array#filter(Boolean)` instead.' },
-  { name: 'lodash/identity.js', message: 'Use `(value) => value` instead.' },
-];
+const { RESTRICTED_SYNTAX, RESTRICTED_GLOBALS, RESTRICTED_MODULES } = require('./constants.js');
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
@@ -96,11 +85,7 @@ module.exports = {
 
     // Disallow specified global variables
     // https://eslint.org/docs/latest/rules/no-restricted-globals
-    'no-restricted-globals': [
-      'error',
-      'stop',
-      { name: 'isNaN', message: 'Use Number.isNaN instead' },
-    ],
+    'no-restricted-globals': ['error', ...RESTRICTED_GLOBALS],
 
     '@typescript-eslint/no-explicit-any': 'error',
     'prefer-const': ['error', { destructuring: 'all' }],
@@ -120,6 +105,10 @@ module.exports = {
     '@typescript-eslint/no-unused-expressions': 'error',
     'no-negated-condition': 'off',
     'unicorn/no-negated-condition': 'error', // has autofix
+
+    'unicorn/no-array-for-each': 'error',
+    'unicorn/prefer-string-trim-start-end': 'error',
+    '@typescript-eslint/consistent-type-assertions': 'error',
 
     // 'prefer-destructuring': [ // TODO: Rediscuss later
     //   'error',
