@@ -73,6 +73,7 @@ const RESTRICTED_MODULES = [
 module.exports = {
   CODE_BLOCK: '**/*.md{,x}/*',
   CODE_FILE: '*.{,c,m}{j,t}s{,x}',
+  TS_FILE: '*.{,c,m}ts{,x}',
   RESTRICTED_GLOBALS,
   RESTRICTED_MODULES,
   RESTRICTED_SYNTAX,

@@ -108,7 +108,8 @@ module.exports = {
 
     'unicorn/no-array-for-each': 'error',
     'unicorn/prefer-string-trim-start-end': 'error',
-    '@typescript-eslint/consistent-type-assertions': 'error',
+    'no-self-compare': 'error',
+    eqeqeq: ['error', 'always', { null: 'ignore' }],
 
     // 'prefer-destructuring': [ // TODO: Rediscuss later
     //   'error',
