@@ -24,12 +24,22 @@ runs:
       with:
         access_token: ${{ github.token }}
 
+    - name: check pnpm version
+      shell: bash
+      id: pnpm
+      if: inputs.packageManager == 'pnpm'
+      run: |
+        PNPM_VERSION=$(cat package.json | jq -r '.packageManager' | awk -F@ '{print $2}')
+        PNPM_VERSION=${PNPM_VERSION:-7.30.5}
+        echo "Using PNPM version $PNPM_VERSION"
+        echo "version=$PNPM_VERSION" >> $GITHUB_OUTPUT
+
     - name: Setup ${{ inputs.packageManager }}
       id: pnpm_setup
       if: inputs.packageManager == 'pnpm'
       uses: pnpm/action-setup@v2.2.4
       with:
-        version: 7.30.0
+        version: ${{ steps.pnpm.outputs.version }}
         run_install: false
 
     - name: setup node
