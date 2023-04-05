@@ -77,7 +77,7 @@ runs:
         body-includes: <!--- ${{ inputs.commentId }} --->
 
     - name: create/update comment
-      uses: peter-evans/create-or-update-comment@v2
+      uses: peter-evans/create-or-update-comment@v3
       if: ${{ inputs.prId != '' }}
       with:
         token: ${{ inputs.githubToken }}
