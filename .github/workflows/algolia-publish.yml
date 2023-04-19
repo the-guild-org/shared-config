@@ -70,6 +70,9 @@ jobs:
           packageManager: ${{inputs.packageManager}}
           workingDirectory: ${{ inputs.setupEnvWorkingDirectory }}
 
+      - name: package manager print
+        run: 'echo "using package manager: ${{ inputs.packageManager }}"'
+
       - name: Algolia push
         if: inputs.packageManager != 'pnpm'
         run:
