@@ -85,7 +85,7 @@ jobs:
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.algoliaAdminApiKey }}
           ALGOLIA_INDEX_NAME: searchv2_main
 
-      - name: Algolia push
+      - name: Algolia push (pnpm)
         if: inputs.packageManager == 'pnpm'
         run:
           pnpm --filter ${{ inputs.websiteDirectory }} run theguild-nextra-algolia --publish -o ${{
