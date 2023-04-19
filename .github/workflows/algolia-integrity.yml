@@ -66,11 +66,20 @@ jobs:
           workingDirectory: ${{ inputs.setupEnvWorkingDirectory }}
 
       - name: Algolia generate
+        if: inputs.packageManager != 'pnpm'
         run:
           ${{ inputs.packageManager }} run theguild-nextra-algolia -o ${{ inputs.lockFilePath }}
           --source '${{ inputs.source }}' --domain ${{ inputs.domain }} --docsBaseDir ${{
           inputs.docsBaseDir }}
         working-directory: ${{ inputs.websiteDirectory }}
+
+      - name: Algolia generate
+        if: inputs.packageManager == 'pnpm'
+        run:
+          pnpm --filter ${{ inputs.websiteDirectory }} run theguild-nextra-algolia -o ${{
+          inputs.lockFilePath }} --source '${{ inputs.source }}' --domain ${{ inputs.domain }}
+          --docsBaseDir ${{ inputs.docsBaseDir }}
+        working-directory: ${{ inputs.setupEnvWorkingDirectory }}
 
       - name: Prettier
         run: npx prettier --write website/${{ inputs.lockFilePath }}

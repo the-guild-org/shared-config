@@ -71,11 +71,24 @@ jobs:
           workingDirectory: ${{ inputs.setupEnvWorkingDirectory }}
 
       - name: Algolia push
+        if: inputs.packageManager != 'pnpm'
         run:
           ${{ inputs.packageManager }} run theguild-nextra-algolia --publish -o ${{
           inputs.lockFilePath }} --source '${{ inputs.source }}' --domain ${{ inputs.domain }}
           --docsBaseDir ${{ inputs.docsBaseDir }}
         working-directory: ${{ inputs.websiteDirectory }}
+        env:
+          ALGOLIA_APP_ID: ANRJKXZTRW
+          ALGOLIA_ADMIN_API_KEY: ${{ secrets.algoliaAdminApiKey }}
+          ALGOLIA_INDEX_NAME: searchv2_main
+
+      - name: Algolia push
+        if: inputs.packageManager == 'pnpm'
+        run:
+          pnpm --filter ${{ inputs.websiteDirectory }} run theguild-nextra-algolia --publish -o ${{
+          inputs.lockFilePath }} --source '${{ inputs.source }}' --domain ${{ inputs.domain }}
+          --docsBaseDir ${{ inputs.docsBaseDir }}
+        working-directory: ${{ inputs.setupEnvWorkingDirectory }}
         env:
           ALGOLIA_APP_ID: ANRJKXZTRW
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.algoliaAdminApiKey }}
