@@ -70,10 +70,7 @@ jobs:
           packageManager: ${{inputs.packageManager}}
           workingDirectory: ${{ inputs.setupEnvWorkingDirectory }}
 
-      - name: package manager print
-        run: 'echo "using package manager: ${{ inputs.packageManager }}"'
-
-      - name: Algolia push
+      - name: Algolia push (non-pnpm)
         if: inputs.packageManager != 'pnpm'
         run:
           ${{ inputs.packageManager }} run theguild-nextra-algolia --publish -o ${{
