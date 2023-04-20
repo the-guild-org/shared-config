@@ -61,5 +61,5 @@ runs:
     - name: pnpm install
       shell: bash
       if: inputs.packageManager == 'pnpm'
-      run: pnpm install --frozen-lockfile
+      run: pnpm install
       working-directory: ${{ inputs.workingDirectory }}
