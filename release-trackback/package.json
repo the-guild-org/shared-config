@@ -32,6 +32,6 @@
     "@types/node": "18.15.3",
     "@types/semver": "7.3.13",
     "@vercel/ncc": "0.36.1",
-    "typescript": "4.9.5"
+    "typescript": "5.0.4"
   }
 }
