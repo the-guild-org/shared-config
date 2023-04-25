@@ -72,7 +72,7 @@ jobs:
           title: ${{inputs.releasePrName}}
           createGithubReleases: ${{ inputs.createGithubReleases }}
           githubReleaseName: ${{ inputs.githubReleaseName || steps.vars.outputs.date }}
-          githubReleaseAssets: ${{ inputs.githubReleaseAssets || steps.vars.outputs.date }}
+          githubReleaseAssets: ${{ inputs.githubReleaseAssets }}
         env:
           NPM_TOKEN: ${{ secrets.npmToken }}
           GITHUB_TOKEN: ${{ secrets.githubToken }}
