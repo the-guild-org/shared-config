@@ -23,6 +23,9 @@ on:
       githubReleaseName:
         required: false
         type: string
+      githubReleaseAssets:
+        required: false
+        type: string
       releasePrName:
         required: false
         type: string
@@ -61,7 +64,7 @@ jobs:
 
       - name: release / pull_request
         id: changesets
-        uses: dotansimha/changesets-action@v1.3.3
+        uses: dotansimha/changesets-action@v1.4.0
         with:
           publish: '${{inputs.packageManager}} ${{ inputs.releaseScript }}'
           version: '${{inputs.packageManager}} changeset version'
@@ -69,6 +72,7 @@ jobs:
           title: ${{inputs.releasePrName}}
           createGithubReleases: ${{ inputs.createGithubReleases }}
           githubReleaseName: ${{ inputs.githubReleaseName || steps.vars.outputs.date }}
+          githubReleaseAssets: ${{ inputs.githubReleaseAssets || steps.vars.outputs.date }}
         env:
           NPM_TOKEN: ${{ secrets.npmToken }}
           GITHUB_TOKEN: ${{ secrets.githubToken }}
