@@ -61,7 +61,7 @@ jobs:
 
       - name: release / pull_request
         id: changesets
-        uses: dotansimha/changesets-action@v1.5.0
+        uses: dotansimha/changesets-action@v1.5.1
         with:
           publish: '${{inputs.packageManager}} ${{ inputs.releaseScript }}'
           version: '${{inputs.packageManager}} changeset version'
