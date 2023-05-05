@@ -28,8 +28,8 @@ importers:
         specifier: 8.37.0
         version: 8.37.0
       '@types/node':
-        specifier: 18.16.3
-        version: 18.16.3
+        specifier: 18.16.4
+        version: 18.16.4
       cspell:
         specifier: 6.31.1
         version: 6.31.1
@@ -44,7 +44,7 @@ importers:
         version: 2.8.8
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@types/node@18.16.3)(typescript@5.0.4)
+        version: 10.9.1(@types/node@18.16.4)(typescript@5.0.4)
       typescript:
         specifier: 5.0.4
         version: 5.0.4
@@ -155,8 +155,8 @@ importers:
         specifier: 4.0.8
         version: 4.0.8
       '@types/node':
-        specifier: 18.16.3
-        version: 18.16.3
+        specifier: 18.16.4
+        version: 18.16.4
       '@types/semver':
         specifier: 7.3.13
         version: 7.3.13
@@ -1394,8 +1394,8 @@ packages:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: true
 
-  /@types/node@18.16.3:
-    resolution: {integrity: sha512-OPs5WnnT1xkCBiuQrZA4+YAV4HEJejmHneyraIaxsbev5yCEr6KMwINNFP9wQeFIw8FWcoTqF3vQsa5CDaI+8Q==}
+  /@types/node@18.16.4:
+    resolution: {integrity: sha512-LUhvPmAKAbgm+p/K11IWszLZVoZDlMF4NRmqbhEzDz/CnCuehPkZXwZbBCKGJsgjnuVejotBwM7B3Scrq4EqDw==}
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -3360,7 +3360,7 @@ packages:
       object-hash: 3.0.0
       react: 17.0.2
       simple-git: 3.14.1
-      ts-node: 10.9.1(@types/node@18.16.3)(typescript@5.0.4)
+      ts-node: 10.9.1(@types/node@18.16.4)(typescript@5.0.4)
     transitivePeerDependencies:
       - '@types/react'
       - bufferutil
@@ -5380,7 +5380,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.18
-      ts-node: 10.9.1(@types/node@18.16.3)(typescript@5.0.4)
+      ts-node: 10.9.1(@types/node@18.16.4)(typescript@5.0.4)
       yaml: 1.10.2
     dev: false
 
@@ -6313,7 +6313,7 @@ packages:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: false
 
-  /ts-node@10.9.1(@types/node@18.16.3)(typescript@5.0.4):
+  /ts-node@10.9.1(@types/node@18.16.4)(typescript@5.0.4):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -6332,7 +6332,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.16.3
+      '@types/node': 18.16.4
       acorn: 8.8.1
       acorn-walk: 8.2.0
       arg: 4.1.3
