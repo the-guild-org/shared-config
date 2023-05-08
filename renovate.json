@@ -3,7 +3,7 @@
   "extends": ["config:base"],
   "postUpdateOptions": ["yarnDedupeFewer", "pnpmDedupe"],
   "lockFileMaintenance": {
-    "enabled": true,
+    "enabled": true
   },
   "automerge": false,
   "recreateClosed": false,
