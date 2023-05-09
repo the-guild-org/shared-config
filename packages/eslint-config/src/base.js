@@ -111,6 +111,8 @@ module.exports = {
     'no-self-compare': 'error',
     eqeqeq: ['error', 'always', { null: 'ignore' }],
 
+    'import/no-useless-path-segments': 'error',
+
     // 'prefer-destructuring': [ // TODO: Rediscuss later
     //   'error',
     //   {
