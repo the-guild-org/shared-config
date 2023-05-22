@@ -21,7 +21,7 @@
     "prettier": "^2"
   },
   "dependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@ianvs/prettier-plugin-sort-imports": "4.0.0-alpha.3",
     "prettier-plugin-pkg": "^0.17.1",
     "prettier-plugin-sh": "^0.12.8"
   },
