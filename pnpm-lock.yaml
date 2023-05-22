@@ -148,8 +148,8 @@ importers:
         specifier: 5.0.1
         version: 5.0.1
       semver:
-        specifier: 7.5.0
-        version: 7.5.0
+        specifier: 7.5.1
+        version: 7.5.1
     devDependencies:
       '@types/marked':
         specifier: 4.3.1
@@ -1466,7 +1466,7 @@ packages:
       ignore: 5.2.4
       natural-compare-lite: 1.4.0
       regexpp: 3.2.0
-      semver: 7.3.8
+      semver: 7.5.1
       tsutils: 3.21.0(typescript@5.0.4)
       typescript: 5.0.4
     transitivePeerDependencies:
@@ -1603,7 +1603,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.0
+      semver: 7.5.1
       tsutils: 3.21.0(typescript@5.0.4)
       typescript: 5.0.4
     transitivePeerDependencies:
@@ -1624,7 +1624,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.0
+      semver: 7.5.1
       tsutils: 3.21.0(typescript@5.0.4)
       typescript: 5.0.4
     transitivePeerDependencies:
@@ -1644,7 +1644,7 @@ packages:
       eslint: 8.41.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0(eslint@8.41.0)
-      semver: 7.5.0
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -1664,7 +1664,7 @@ packages:
       eslint: 8.36.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0(eslint@8.36.0)
-      semver: 7.5.0
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -1684,7 +1684,7 @@ packages:
       eslint: 8.41.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0(eslint@8.41.0)
-      semver: 7.5.0
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -1973,7 +1973,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.5.0
+      semver: 7.5.1
     dev: false
 
   /call-bind@1.0.2:
@@ -2417,7 +2417,7 @@ packages:
       file-entry-cache: 6.0.1
       get-stdin: 8.0.0
       imurmurhash: 0.1.4
-      semver: 7.5.0
+      semver: 7.5.1
       strip-ansi: 6.0.1
       vscode-uri: 3.0.7
     transitivePeerDependencies:
@@ -4336,7 +4336,7 @@ packages:
       acorn: 8.8.1
       eslint-visitor-keys: 3.3.0
       espree: 9.4.1
-      semver: 7.5.0
+      semver: 7.5.1
     dev: false
 
   /jsonfile@4.0.0:
@@ -5957,9 +5957,10 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: false
 
-  /semver@7.5.0:
-    resolution: {integrity: sha512-+XC0AD/R7Q2mPSRuy2Id0+CGTZ98+8f+KvwirxOKIEyid+XSx6HbC63p+O4IndTHuX5Z+JxQ0TghCkO5Cg/2HA==}
+  /semver@7.5.1:
+    resolution: {integrity: sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
