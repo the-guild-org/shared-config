@@ -52,6 +52,7 @@ jobs:
         if:
           ${{ github.event_name == 'pull_request' && inputs.annotations &&
           github.event.pull_request.head.repo.full_name == github.repository }}
+        continue-on-error: true
         uses: ataylorme/eslint-annotate-action@v2
         with:
           repo-token: ${{ secrets.githubToken }}
