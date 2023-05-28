@@ -9,6 +9,10 @@
   "rebaseWhen": "conflicted",
   "packageRules": [
     {
+      "matchPackageNames": ["tailwindcss"],
+      "allowedVersions": "<3.3.2"
+    },
+    {
       "groupName": "graphql-eslint",
       "matchPackagePrefixes": ["@graphql-eslint"],
       "prPriority": 20,
