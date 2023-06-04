@@ -1,5 +1,25 @@
 # @theguild/prettier-config
 
+## 1.2.0
+
+### Minor Changes
+
+- [#228](https://github.com/the-guild-org/shared-config/pull/228)
+  [`e899b0c`](https://github.com/the-guild-org/shared-config/commit/e899b0cba701d9b1e7fe193679a5f0a43324100b)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - Better prettier plugin for sorting imports
+
+### Patch Changes
+
+- [#228](https://github.com/the-guild-org/shared-config/pull/228)
+  [`e899b0c`](https://github.com/the-guild-org/shared-config/commit/e899b0cba701d9b1e7fe193679a5f0a43324100b)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - dependencies updates:
+  - Added dependency
+    [`@ianvs/prettier-plugin-sort-imports@4.0.0-alpha.3` ↗︎](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports/v/4.0.0)
+    (to `dependencies`)
+  - Removed dependency
+    [`@trivago/prettier-plugin-sort-imports@^4.1.1` ↗︎](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports/v/4.1.1)
+    (from `dependencies`)
+
 ## 1.1.3
 
 ### Patch Changes
