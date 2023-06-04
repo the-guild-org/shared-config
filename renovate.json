@@ -27,13 +27,9 @@
       "reviewers": ["B2o5T"]
     },
     {
-      "groupName": "graphql-tools",
-      "matchPackagePrefixes": ["graphql-tools"],
-      "prPriority": 30,
-      "ignoreUnstable": false,
-      "respectLatest": false,
-      "automerge": false,
-      "allowedVersions": "/^([0-9]+).([0-9]+)(?:.([0-9]+))?(-rc-.+)?$/",
+      "groupName": "whatwg-node",
+      "matchPackagePrefixes": ["@graphql-tools"],
+      "prPriority": 20,
       "reviewers": ["ardatan"]
     },
     {
@@ -81,11 +77,7 @@
     {
       "groupName": "whatwg-node",
       "matchPackagePrefixes": ["@whatwg-node"],
-      "prPriority": 30,
-      "ignoreUnstable": false,
-      "respectLatest": false,
-      "automerge": false,
-      "allowedVersions": "/^([0-9]+).([0-9]+)(?:.([0-9]+))?(-rc-.+)?$/",
+      "prPriority": 20,
       "reviewers": ["ardatan"]
     },
     {
