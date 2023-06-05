@@ -1,5 +1,15 @@
 # @theguild/tailwind-config
 
+## 0.2.2
+
+### Patch Changes
+
+- [#204](https://github.com/the-guild-org/shared-config/pull/204)
+  [`369d2f3`](https://github.com/the-guild-org/shared-config/commit/369d2f390538a717df1a61a6d7b386afca90de69)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`cssnano@^6.0.0` ↗︎](https://www.npmjs.com/package/cssnano/v/6.0.0) (from
+    `^5.1.13`, in `dependencies`)
+
 ## 0.2.1
 
 ### Patch Changes

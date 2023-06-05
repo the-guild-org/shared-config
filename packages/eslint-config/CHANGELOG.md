@@ -1,5 +1,13 @@
 # @theguild/eslint-config
 
+## 0.10.0
+
+### Minor Changes
+
+- [#229](https://github.com/the-guild-org/shared-config/pull/229)
+  [`0fe6bba`](https://github.com/the-guild-org/shared-config/commit/0fe6bbadfd249e5d10f35ee9d1d01d39b2de9d29)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add `'import/no-useless-path-segments': 'error'`
+
 ## 0.9.0
 
 ### Minor Changes
