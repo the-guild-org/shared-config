@@ -12,9 +12,9 @@
     "build": "echo No build command, skipping…",
     "cspell": "cspell --gitignore **/*",
     "lint": "eslint --cache --ignore-path .gitignore .",
-    "lint:prettier": "prettier --ignore-path .gitignore --check .",
+    "lint:prettier": "prettier --ignore-path .gitignore --ignore-path .prettierignore --check .",
     "lint:remote": "eslint-remote-tester",
-    "prettier": "prettier --write --list-different .",
+    "prettier": "pnpm lint:prettier --write",
     "release": "changeset publish"
   },
   "devDependencies": {
@@ -28,7 +28,7 @@
     "cspell": "6.31.1",
     "eslint": "8.41.0",
     "eslint-remote-tester": "3.0.0",
-    "prettier": "2.8.8",
+    "prettier": "3.0.0",
     "ts-node": "10.9.1",
     "typescript": "5.0.4"
   },

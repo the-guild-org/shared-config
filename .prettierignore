@@ -1,2 +1,4 @@
 pnpm-lock.yaml
 eslint-remote-tester-results/*.md
+CHANGELOG.md
+.changeset/*.md
