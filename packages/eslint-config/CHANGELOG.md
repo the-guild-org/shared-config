@@ -1,5 +1,66 @@
 # @theguild/eslint-config
 
+## 0.11.0
+
+### Minor Changes
+
+- [#255](https://github.com/the-guild-org/shared-config/pull/255)
+  [`a68a857`](https://github.com/the-guild-org/shared-config/commit/a68a8579e65d6c67a4cf602956f32a9f305a9073)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+  - Updated dependency
+    [`@rushstack/eslint-patch@^1.3.2` ↗︎](https://www.npmjs.com/package/@rushstack/eslint-patch/v/1.3.2)
+    (from `^1.2.0`, in `dependencies`)
+  - Updated dependency
+    [`@typescript-eslint/eslint-plugin@^5.61.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin/v/5.61.0)
+    (from `^5.48.1`, in `dependencies`)
+  - Updated dependency
+    [`@typescript-eslint/parser@^5.61.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/parser/v/5.61.0)
+    (from `^5.48.1`, in `dependencies`)
+  - Updated dependency
+    [`eslint-config-prettier@^8.8.0` ↗︎](https://www.npmjs.com/package/eslint-config-prettier/v/8.8.0)
+    (from `^8.6.0`, in `dependencies`)
+  - Updated dependency
+    [`eslint-import-resolver-typescript@^3.5.5` ↗︎](https://www.npmjs.com/package/eslint-import-resolver-typescript/v/3.5.5)
+    (from `^3.5.3`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-import@^2.27.5` ↗︎](https://www.npmjs.com/package/eslint-plugin-import/v/2.27.5)
+    (from `^2.27.0`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-jsonc@^2.9.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-jsonc/v/2.9.0)
+    (from `^2.6.0`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-jsx-a11y@^6.7.1` ↗︎](https://www.npmjs.com/package/eslint-plugin-jsx-a11y/v/6.7.1)
+    (from `^6.7.0`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-mdx@^2.1.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-mdx/v/2.1.0) (from
+    `^2.0.5`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-n@^16.0.1` ↗︎](https://www.npmjs.com/package/eslint-plugin-n/v/16.0.1) (from
+    `^16.0.0`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-react@^7.32.2` ↗︎](https://www.npmjs.com/package/eslint-plugin-react/v/7.32.2)
+    (from `^7.32.0`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-yml@^1.8.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-yml/v/1.8.0) (from
+    `^1.4.0`, in `dependencies`)
+
+### Patch Changes
+
+- [#225](https://github.com/the-guild-org/shared-config/pull/225)
+  [`9f2267b`](https://github.com/the-guild-org/shared-config/commit/9f2267bd2ce4dfc56a550430e97e5ef9254e23f8)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`eslint-plugin-unicorn@^47.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-unicorn/v/47.0.0)
+    (from `^46.0.0`, in `dependencies`)
+
+- [#233](https://github.com/the-guild-org/shared-config/pull/233)
+  [`a07a94c`](https://github.com/the-guild-org/shared-config/commit/a07a94c4b98ca55ed1f75d667eba7e08db930d79)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-n@^16.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-n/v/16.0.0) (from
+    `^15.6.1`, in `dependencies`)
+
 ## 0.10.0
 
 ### Minor Changes
@@ -292,8 +353,8 @@
     [`eslint-plugin-unicorn@^44.0.2` ↗︎](https://www.npmjs.com/package/eslint-plugin-unicorn/v/44.0.2)
     (from `^44.0.0`, in `dependencies`)
   - Added dependency
-    [`eslint-plugin-jsonc@^2.5.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-jsonc/v/2.5.0) (to
-    `dependencies`)
+    [`eslint-plugin-jsonc@^2.5.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-jsonc/v/2.5.0)
+    (to `dependencies`)
   - Added dependency
     [`eslint-plugin-yml@^1.2.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-yml/v/1.2.0) (to
     `dependencies`)
