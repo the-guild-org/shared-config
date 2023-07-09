@@ -1,5 +1,5 @@
 ---
-"@theguild/eslint-config": patch
+"@theguild/eslint-config": minor
 ---
 dependencies updates:
   - Updated dependency [`@rushstack/eslint-patch@^1.3.2` ↗︎](https://www.npmjs.com/package/@rushstack/eslint-patch/v/1.3.2) (from `^1.2.0`, in `dependencies`)
