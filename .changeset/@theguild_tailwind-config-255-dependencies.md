@@ -1,5 +1,5 @@
 ---
-"@theguild/tailwind-config": patch
+"@theguild/tailwind-config": minor
 ---
 dependencies updates:
   - Updated dependency [`autoprefixer@^10.4.14` ↗︎](https://www.npmjs.com/package/autoprefixer/v/10.4.14) (from `^10.4.12`, in `dependencies`)
