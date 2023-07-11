@@ -16,6 +16,10 @@ inputs:
     description: Package manager
     required: false
     default: yarn
+  cacheNode:
+    description: Use cache of setup-node action
+    type: boolean
+    default: true
 runs:
   using: composite
   steps:
@@ -45,6 +49,7 @@ runs:
 
     - name: setup node
       uses: actions/setup-node@v3
+      if: inputs.cacheNode == true
       with:
         node-version: ${{ inputs.nodeVersion }}
         cache: ${{ inputs.packageManager }}
@@ -52,6 +57,12 @@ runs:
           **/pnpm-lock.yaml
           **/yarn.lock
           patches/**
+
+    - name: setup node
+      uses: actions/setup-node@v3
+      if: inputs.cacheNode != true
+      with:
+        node-version: ${{ inputs.nodeVersion }}
 
     - name: yarn install
       shell: bash
