@@ -97,6 +97,15 @@
       "reviewers": ["B2o5T"]
     },
     {
+      "groupName": "prettier",
+      "matchPackageNames": [
+        "prettier",
+        "@theguild/prettier-config"
+      ],
+      "prPriority": 20,
+      "reviewers": ["B2o5T"]
+    },
+    {
       "matchDepTypes": ["devDependencies"],
       "prPriority": 19
     },
