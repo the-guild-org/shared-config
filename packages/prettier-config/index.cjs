@@ -21,11 +21,11 @@ module.exports = {
   ],
   plugins: [
     // for prettifying shellscript, Dockerfile, properties, gitignore, dotenv
-    require('prettier-plugin-sh'),
+    'prettier-plugin-sh',
     // for sort fields in package.json
-    require('prettier-plugin-pkg'),
+    'prettier-plugin-pkg',
     // for sorting imports
-    require('@ianvs/prettier-plugin-sort-imports'),
+    '@ianvs/prettier-plugin-sort-imports',
   ],
   importOrder: [
     // React and Next.
