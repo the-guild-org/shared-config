@@ -1,5 +1,14 @@
 # @theguild/prettier-config
 
+## 2.0.1
+
+### Patch Changes
+
+- [#272](https://github.com/the-guild-org/shared-config/pull/272)
+  [`ac46a51`](https://github.com/the-guild-org/shared-config/commit/ac46a5120b36e6b1193f6672ccbf47923eb95924)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - Strings for plugins instead of require
+  statements
+
 ## 2.0.0
 
 ### Major Changes
