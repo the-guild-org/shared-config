@@ -149,8 +149,8 @@ importers:
         specifier: 5.1.1
         version: 5.1.1
       marked:
-        specifier: 5.1.1
-        version: 5.1.1
+        specifier: 8.0.1
+        version: 8.0.1
       semver:
         specifier: 7.5.4
         version: 7.5.4
@@ -4590,9 +4590,9 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /marked@5.1.1:
-    resolution: {integrity: sha512-bTmmGdEINWmOMDjnPWDxGPQ4qkDLeYorpYbEtFOXzOruTwUE671q4Guiuchn4N8h/v6NGd7916kXsm3Iz4iUSg==}
-    engines: {node: '>= 18'}
+  /marked@8.0.1:
+    resolution: {integrity: sha512-eEbeEb/mJwh+sNLEhHOWtxMgjN/NEwZUBs1nkiIH2sTQTq07KmPMQ48ihyvo5+Ya56spVOPhunfGr6406crCVA==}
+    engines: {node: '>= 16'}
     hasBin: true
     dev: false
 
