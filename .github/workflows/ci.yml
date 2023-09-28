@@ -24,7 +24,7 @@ jobs:
     name: ${{ inputs.name || 'script' }}
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - uses: the-guild-org/shared-config/setup@main
         name: setup env
