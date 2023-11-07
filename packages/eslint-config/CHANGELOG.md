@@ -1,5 +1,59 @@
 # @theguild/eslint-config
 
+## 0.11.1
+
+### Patch Changes
+
+- [#256](https://github.com/the-guild-org/shared-config/pull/256)
+  [`c6ea530`](https://github.com/the-guild-org/shared-config/commit/c6ea530694448dce6c549f02f9995ea328a8ee54)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@typescript-eslint/eslint-plugin@^6.0.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin/v/6.0.0)
+    (from `^5.61.0`, in `dependencies`)
+  - Updated dependency
+    [`@typescript-eslint/parser@^6.0.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/parser/v/6.0.0)
+    (from `^5.61.0`, in `dependencies`)
+
+- [#261](https://github.com/the-guild-org/shared-config/pull/261)
+  [`7178109`](https://github.com/the-guild-org/shared-config/commit/71781091197b842140cc9a65e743c2946aff1f50)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`eslint-plugin-unicorn@^48.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-unicorn/v/48.0.0)
+    (from `^47.0.0`, in `dependencies`)
+
+- [#267](https://github.com/the-guild-org/shared-config/pull/267)
+  [`3443fc1`](https://github.com/the-guild-org/shared-config/commit/3443fc140df20b2081769ae3fde82d0c174d277b)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`eslint-plugin-sonarjs@^0.21.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-sonarjs/v/0.21.0)
+    (from `^0.19.0`, in `dependencies`)
+
+- [#268](https://github.com/the-guild-org/shared-config/pull/268)
+  [`c1f28e1`](https://github.com/the-guild-org/shared-config/commit/c1f28e1aba3b976545af8cb2273ba63610ff170f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`eslint-config-prettier@^9.0.0` ↗︎](https://www.npmjs.com/package/eslint-config-prettier/v/9.0.0)
+    (from `^8.8.0`, in `dependencies`)
+
+- [#295](https://github.com/the-guild-org/shared-config/pull/295)
+  [`d089d85`](https://github.com/the-guild-org/shared-config/commit/d089d85e87ab701f12166261f0e394b2b563ad20)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`eslint-plugin-unicorn@^49.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-unicorn/v/49.0.0)
+    (from `^48.0.0`, in `dependencies`)
+
+- [#296](https://github.com/the-guild-org/shared-config/pull/296)
+  [`933fcd8`](https://github.com/the-guild-org/shared-config/commit/933fcd829d0e3574d7a76f456e83ff69bfd7b888)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-sonarjs@^0.23.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-sonarjs/v/0.23.0)
+    (from `^0.21.0`, in `dependencies`)
+
 ## 0.11.0
 
 ### Minor Changes
