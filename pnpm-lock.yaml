@@ -149,8 +149,8 @@ importers:
         specifier: 6.0.0
         version: 6.0.0
       marked:
-        specifier: 5.1.2
-        version: 5.1.2
+        specifier: 9.1.6
+        version: 9.1.6
       semver:
         specifier: 7.5.4
         version: 7.5.4
@@ -4992,8 +4992,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /marked@5.1.2:
-    resolution: {integrity: sha512-ahRPGXJpjMjwSOlBoTMZAK7ATXkli5qCPxZ21TG44rx1KEo44bii4ekgTDQPNRQ4Kh7JMb9Ub1PVk1NxRSsorg==}
+  /marked@9.1.6:
+    resolution: {integrity: sha512-jcByLnIFkd5gSXZmjNvS1TlmRhCXZjIzHYlaGkPlLIekG55JDR2Z4va9tZwCiP+/RDERiNhMOFu01xd6O5ct1Q==}
     engines: {node: '>= 16'}
     hasBin: true
     dev: false
