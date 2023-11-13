@@ -21,7 +21,7 @@ importers:
         version: 2.26.2
       '@shopify/eslint-plugin':
         specifier: 43.0.0
-        version: 43.0.0(@babel/core@7.22.8)(@types/eslint@8.44.7)(eslint@8.53.0)(prettier@3.0.3)(typescript@5.2.2)
+        version: 43.0.0(@babel/core@7.22.8)(@types/eslint@8.44.7)(eslint@8.53.0)(prettier@3.1.0)(typescript@5.2.2)
       '@theguild/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
@@ -44,8 +44,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(patch_hash=lm5ikotw57jauxruva6mg45pva)(eslint@8.53.0)(ts-node@10.9.1)
       prettier:
-        specifier: 3.0.3
-        version: 3.0.3
+        specifier: 3.1.0
+        version: 3.1.0
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@types/node@20.8.10)(typescript@5.2.2)
@@ -1305,7 +1305,7 @@ packages:
     resolution: {integrity: sha512-V+MvGwaHH03hYhY+k6Ef/xKd6RYlc4q8WBx+2ANmipHJcKuktNcI/NgEsJgdSUF6Lw32njT6OnrRsKYCdgHjYw==}
     dev: false
 
-  /@shopify/eslint-plugin@43.0.0(@babel/core@7.22.8)(@types/eslint@8.44.7)(eslint@8.53.0)(prettier@3.0.3)(typescript@5.2.2):
+  /@shopify/eslint-plugin@43.0.0(@babel/core@7.22.8)(@types/eslint@8.44.7)(eslint@8.53.0)(prettier@3.1.0)(typescript@5.2.2):
     resolution: {integrity: sha512-+/bLrmODh+OtPzf4YafsfpAbcdZfHOHBQGXgzoXPge6yUuyOo+NJiNvq0LOwo6jaRkaBgWQTUZB8HRlx4swHag==}
     peerDependencies:
       eslint: ^8.3.0
@@ -1326,7 +1326,7 @@ packages:
       eslint-plugin-jest-formatting: 3.1.0(eslint@8.53.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.53.0)
       eslint-plugin-node: 11.1.0(eslint@8.53.0)
-      eslint-plugin-prettier: 5.0.0(@types/eslint@8.44.7)(eslint-config-prettier@8.10.0)(eslint@8.53.0)(prettier@3.0.3)
+      eslint-plugin-prettier: 5.0.0(@types/eslint@8.44.7)(eslint-config-prettier@8.10.0)(eslint@8.53.0)(prettier@3.1.0)
       eslint-plugin-promise: 6.1.1(eslint@8.53.0)
       eslint-plugin-react: 7.33.2(eslint@8.53.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.53.0)
@@ -3449,7 +3449,7 @@ packages:
       semver: 6.3.1
     dev: true
 
-  /eslint-plugin-prettier@5.0.0(@types/eslint@8.44.7)(eslint-config-prettier@8.10.0)(eslint@8.53.0)(prettier@3.0.3):
+  /eslint-plugin-prettier@5.0.0(@types/eslint@8.44.7)(eslint-config-prettier@8.10.0)(eslint@8.53.0)(prettier@3.1.0):
     resolution: {integrity: sha512-AgaZCVuYDXHUGxj/ZGu1u8H8CYgDY3iG6w5kUFw4AzMVXzB7VvbKgYR4nATIN+OvUrghMbiDLeimVjVY5ilq3w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -3466,7 +3466,7 @@ packages:
       '@types/eslint': 8.44.7
       eslint: 8.53.0
       eslint-config-prettier: 8.10.0(eslint@8.53.0)
-      prettier: 3.0.3
+      prettier: 3.1.0
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.5
     dev: true
@@ -6320,8 +6320,8 @@ packages:
     hasBin: true
     dev: false
 
-  /prettier@3.0.3:
-    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+  /prettier@3.1.0:
+    resolution: {integrity: sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
