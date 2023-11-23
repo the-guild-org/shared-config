@@ -27,7 +27,7 @@
       "reviewers": ["B2o5T"]
     },
     {
-      "groupName": "whatwg-node",
+      "groupName": "graphql-tools",
       "matchPackagePrefixes": ["@graphql-tools"],
       "prPriority": 20,
       "reviewers": ["ardatan"]
