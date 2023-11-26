@@ -29,6 +29,7 @@ runs:
       shell: bash
       id: pnpm
       if: inputs.packageManager == 'pnpm'
+      working-directory: ${{ inputs.workingDirectory }}
       run: |
         PNPM_VERSION=$(cat package.json | jq -r '.packageManager' | awk -F@ '{print $2}')
         PNPM_VERSION=${PNPM_VERSION:-7.30.5}
