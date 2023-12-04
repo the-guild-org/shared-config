@@ -16,6 +16,11 @@ inputs:
     description: Package manager
     required: false
     default: yarn
+  packageManagerVersion:
+    description: Package manager version
+    required: false
+    default: ''
+
 runs:
   using: composite
   steps:
@@ -41,7 +46,7 @@ runs:
       if: inputs.packageManager == 'pnpm'
       uses: pnpm/action-setup@v2.4.0
       with:
-        version: ${{ steps.pnpm.outputs.version }}
+        version: ${{ github.event.inputs.packageManagerVersion  || steps.pnpm.outputs.version }}
         run_install: false
 
     - name: setup node
