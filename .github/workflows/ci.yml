@@ -18,6 +18,10 @@ on:
         type: string
         required: false
         default: yarn
+      packageManagerVersion:
+        description: Package manager version
+        required: false
+        default: ''
 jobs:
   ci:
     runs-on: ubuntu-22.04
@@ -31,6 +35,7 @@ jobs:
         with:
           nodeVersion: ${{inputs.nodeVersion}}
           packageManager: ${{inputs.packageManager}}
+          packageManagerVersion: ${{inputs.packageManagerVersion}}
 
       - name: ${{ inputs.script }}
         run: ${{ inputs.script }}

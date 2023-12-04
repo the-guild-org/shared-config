@@ -14,6 +14,10 @@ on:
         type: string
         required: false
         default: yarn
+      packageManagerVersion:
+        description: Package manager version
+        required: false
+        default: ''
       nodeVersion:
         required: false
         type: number
@@ -39,6 +43,7 @@ jobs:
         with:
           nodeVersion: ${{ inputs.nodeVersion }}
           packageManager: ${{ inputs.packageManager }}
+          packageManagerVersion: ${{ inputs.packageManagerVersion }}
 
       - name: Create/Update Changesets
         uses: the-guild-org/changesets-dependencies-action@main

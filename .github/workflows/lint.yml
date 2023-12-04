@@ -12,6 +12,10 @@ on:
         type: string
         required: false
         default: yarn
+      packageManagerVersion:
+        description: Package manager version
+        required: false
+        default: ''
       annotations:
         required: false
         type: boolean
@@ -43,6 +47,7 @@ jobs:
         with:
           nodeVersion: ${{inputs.nodeVersion}}
           packageManager: ${{inputs.packageManager}}
+          packageManagerVersion: ${{inputs.packageManagerVersion}}
 
       - name: lint
         run: ${{ inputs.script || 'yarn eslint --output-file eslint_report.json --format json .' }}

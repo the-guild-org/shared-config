@@ -40,6 +40,10 @@ on:
         required: false
         type: string
         default: yarn
+      packageManagerVersion:
+        description: Package manager version
+        required: false
+        default: ''
       setupEnvWorkingDirectory:
         description: workingDirectory for `setup-env` action
         required: false
@@ -63,6 +67,7 @@ jobs:
         with:
           nodeVersion: ${{inputs.nodeVersion}}
           packageManager: ${{inputs.packageManager}}
+          packageManagerVersion: ${{inputs.packageManagerVersion}}
           workingDirectory: ${{ inputs.setupEnvWorkingDirectory }}
 
       - name: Algolia generate

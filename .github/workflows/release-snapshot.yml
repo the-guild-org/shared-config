@@ -8,6 +8,10 @@ on:
         type: string
         required: false
         default: yarn
+      packageManagerVersion:
+        description: Package manager version
+        required: false
+        default: ''
       nodeVersion:
         required: false
         type: number
@@ -53,6 +57,7 @@ jobs:
         with:
           nodeVersion: ${{inputs.nodeVersion}}
           packageManager: ${{inputs.packageManager}}
+          packageManagerVersion: ${{inputs.packageManagerVersion}}
 
       - if: inputs.exitPre
         name: Exit Prerelease Mode

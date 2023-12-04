@@ -46,7 +46,7 @@ runs:
       if: inputs.packageManager == 'pnpm'
       uses: pnpm/action-setup@v2.4.0
       with:
-        version: ${{ github.event.inputs.packageManagerVersion  || steps.pnpm.outputs.version }}
+        version: ${{ inputs.packageManagerVersion  || steps.pnpm.outputs.version }}
         run_install: false
 
     - name: setup node
