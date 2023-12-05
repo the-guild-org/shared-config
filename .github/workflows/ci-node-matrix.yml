@@ -15,6 +15,10 @@ on:
         type: string
         required: false
         default: yarn
+      packageManagerVersion:
+        description: Package manager version
+        required: false
+        default: ''
 
 jobs:
   ci_setup:
@@ -44,6 +48,7 @@ jobs:
         with:
           nodeVersion: ${{matrix.nodeVersion }}
           packageManager: ${{inputs.packageManager}}
+          packageManagerVersion: ${{inputs.packageManagerVersion}}
 
       - name: ${{ inputs.script }}
         run: ${{ inputs.script }}
