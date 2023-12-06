@@ -10,6 +10,7 @@ on:
         default: yarn
       packageManagerVersion:
         description: Package manager version
+        type: string
         required: false
         default: ''
       nodeVersion:
