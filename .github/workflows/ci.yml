@@ -19,6 +19,7 @@ on:
         required: false
         default: yarn
       packageManagerVersion:
+        type: string
         description: Package manager version
         required: false
         default: ''
