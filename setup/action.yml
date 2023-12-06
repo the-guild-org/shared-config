@@ -54,6 +54,7 @@ runs:
       with:
         version: ${{ steps.pnpm.outputs.version }}
         run_install: false
+        package_json_file: ${{ inputs.workingDirectory }}/package.json
 
     - name: setup node
       uses: actions/setup-node@v4
