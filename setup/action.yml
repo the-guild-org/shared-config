@@ -51,14 +51,12 @@ runs:
       id: pnpm_setup
       if: inputs.packageManager == 'pnpm'
       uses: pnpm/action-setup@v2.4.0
-      working-directory: ${{ inputs.workingDirectory }}
       with:
         version: ${{ steps.pnpm.outputs.version }}
         run_install: false
 
     - name: setup node
       uses: actions/setup-node@v4
-      working-directory: ${{ inputs.workingDirectory }}
       with:
         node-version: ${{ inputs.nodeVersion }}
         cache: ${{ inputs.packageManager }}
