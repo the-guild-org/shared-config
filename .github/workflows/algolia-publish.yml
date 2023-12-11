@@ -45,6 +45,7 @@ on:
       packageManagerVersion:
         description: Package manager version
         required: false
+        type: string
         default: ''
       setupEnvWorkingDirectory:
         description: workingDirectory for `setup-env` action
