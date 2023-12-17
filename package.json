@@ -32,14 +32,14 @@
     "@types/node": "20.10.4",
     "cspell": "7.3.9",
     "eslint": "8.56.0",
-    "eslint-remote-tester": "3.0.0",
+    "eslint-remote-tester": "3.0.1",
     "prettier": "3.1.1",
     "ts-node": "10.9.2",
     "typescript": "5.3.3"
   },
   "pnpm": {
     "patchedDependencies": {
-      "eslint-remote-tester@3.0.0": "patches/eslint-remote-tester@3.0.0.patch"
+      "eslint-remote-tester@3.0.1": "patches/eslint-remote-tester@3.0.1.patch"
     }
   }
 }
