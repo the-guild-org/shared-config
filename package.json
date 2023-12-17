@@ -6,13 +6,13 @@
     "name": "The Guild",
     "url": "https://the-guild.dev"
   },
+  "license": "MIT",
+  "private": true,
   "packageManager": "pnpm@8.12.1",
   "engines": {
     "node": ">=18",
     "pnpm": ">=8.9.2"
   },
-  "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "echo No build command, skipping…",
     "cspell": "cspell --gitignore **/*",
