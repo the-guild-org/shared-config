@@ -1,5 +1,12 @@
 # @theguild/prettier-config
 
+## 2.0.3
+
+### Patch Changes
+
+- [#317](https://github.com/the-guild-org/shared-config/pull/317) [`d37d14e`](https://github.com/the-guild-org/shared-config/commit/d37d14eee9794d93b1b7129ed6244faa8b470056) Thanks [@dotansimha](https://github.com/dotansimha)! - dependencies updates:
+  - Updated dependency [`prettier-plugin-sh@^0.13.1` ↗︎](https://www.npmjs.com/package/prettier-plugin-sh/v/0.13.1) (from `^0.13.0`, in `dependencies`)
+
 ## 2.0.2
 
 ### Patch Changes
