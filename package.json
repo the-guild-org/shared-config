@@ -6,17 +6,17 @@
     "name": "The Guild",
     "url": "https://the-guild.dev"
   },
+  "license": "MIT",
+  "private": true,
   "packageManager": "pnpm@8.12.1",
   "engines": {
     "node": ">=18",
     "pnpm": ">=8.9.2"
   },
-  "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "echo No build command, skipping…",
     "cspell": "cspell --gitignore **/*",
-    "lint": "eslint --cache --ignore-path .gitignore .",
+    "lint": "eslint --cache .",
     "lint:prettier": "prettier --ignore-path .gitignore --ignore-path .prettierignore --check .",
     "lint:remote": "eslint-remote-tester",
     "prettier": "pnpm lint:prettier --write",
@@ -32,14 +32,14 @@
     "@types/node": "20.10.4",
     "cspell": "7.3.9",
     "eslint": "8.56.0",
-    "eslint-remote-tester": "3.0.0",
+    "eslint-remote-tester": "3.0.1",
     "prettier": "3.1.1",
     "ts-node": "10.9.2",
     "typescript": "5.3.3"
   },
   "pnpm": {
     "patchedDependencies": {
-      "eslint-remote-tester@3.0.0": "patches/eslint-remote-tester@3.0.0.patch"
+      "eslint-remote-tester@3.0.1": "patches/eslint-remote-tester@3.0.1.patch"
     }
   }
 }
