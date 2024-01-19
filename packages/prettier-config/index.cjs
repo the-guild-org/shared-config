@@ -18,6 +18,7 @@ module.exports = {
         parser: 'html',
       },
     },
+    { files: '*.json', options: { trailingComma: 'none' } },
   ],
   plugins: [
     // for prettifying shellscript, Dockerfile, properties, gitignore, dotenv
