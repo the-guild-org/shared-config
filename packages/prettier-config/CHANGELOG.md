@@ -1,5 +1,11 @@
 # @theguild/prettier-config
 
+## 2.0.4
+
+### Patch Changes
+
+- [`d1d0b17`](https://github.com/the-guild-org/shared-config/commit/d1d0b174409f827f60df77c4717260b7f5361bdb) Thanks [@ardatan](https://github.com/ardatan)! - Disable trailing comma for JSON files
+
 ## 2.0.3
 
 ### Patch Changes
