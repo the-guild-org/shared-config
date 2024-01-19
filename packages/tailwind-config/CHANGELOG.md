@@ -1,5 +1,12 @@
 # @theguild/tailwind-config
 
+## 0.3.2
+
+### Patch Changes
+
+- [#325](https://github.com/the-guild-org/shared-config/pull/325) [`9820dae`](https://github.com/the-guild-org/shared-config/commit/9820dae5a5f32e8ae4d2a8ae407996ae8f826f63) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`postcss-import@^16.0.0` ↗︎](https://www.npmjs.com/package/postcss-import/v/16.0.0) (from `^15.1.0`, in `dependencies`)
+
 ## 0.3.1
 
 ### Patch Changes
