@@ -67,7 +67,7 @@ runs:
         branch: ${{ inputs.prId != '' && format('pr-{0}', inputs.prId) || inputs.mainBranch }}
 
     - name: find pr comment
-      uses: peter-evans/find-comment@v2
+      uses: peter-evans/find-comment@v3
       id: fc
       if: ${{ inputs.prId != '' }}
       with:
