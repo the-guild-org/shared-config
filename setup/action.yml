@@ -71,6 +71,12 @@ runs:
       if: inputs.packageManager == 'yarn'
       run: yarn install --ignore-engines --frozen-lockfile --immutable
       working-directory: ${{ inputs.workingDirectory }}
+      
+    - name: modern yarn install
+      shell: bash
+      if: inputs.packageManager == 'yarn-modern'
+      run: corepack enable && yarn install
+      working-directory: ${{ inputs.workingDirectory }}
 
     - name: pnpm install
       shell: bash
