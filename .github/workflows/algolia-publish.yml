@@ -31,8 +31,8 @@ on:
         description: Relative path from `website/` to nextra markdown pages root folder
       nodeVersion:
         required: false
-        type: number
-        default: 18
+        type: string
+        default: '18'
       websiteDirectory:
         required: false
         type: string
