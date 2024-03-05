@@ -15,8 +15,8 @@ on:
         default: ''
       nodeVersion:
         required: false
-        type: number
-        default: 18
+        type: string
+        default: '18'
       releaseScript:
         required: false
         type: string

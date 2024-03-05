@@ -6,8 +6,8 @@ on:
     inputs:
       nodeVersion:
         required: false
-        type: number
-        default: 18
+        type: string
+        default: '18'
       script:
         required: true
         type: string
