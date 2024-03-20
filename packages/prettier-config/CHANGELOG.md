@@ -1,5 +1,16 @@
 # @theguild/prettier-config
 
+## 2.0.6
+
+### Patch Changes
+
+- [#364](https://github.com/the-guild-org/shared-config/pull/364) [`862b10d`](https://github.com/the-guild-org/shared-config/commit/862b10d19c8934370a614c3c63e338683b23a7f7) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@ianvs/prettier-plugin-sort-imports@4.2.0` ↗︎](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports/v/4.2.0) (from `4.1.1`, in `dependencies`)
+
+- [#374](https://github.com/the-guild-org/shared-config/pull/374) [`54f1464`](https://github.com/the-guild-org/shared-config/commit/54f14644318fef9ec6c87218f135cb53e818c5a9) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@ianvs/prettier-plugin-sort-imports@4.2.1` ↗︎](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports/v/4.2.1) (from `4.2.0`, in `dependencies`)
+
 ## 2.0.5
 
 ### Patch Changes
