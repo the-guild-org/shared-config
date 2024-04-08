@@ -7,17 +7,9 @@ const makePrimaryColor =
     return `hsl(var(--nextra-primary-hue) 100% ${l}% / ${opacityValue})`;
   };
 
-module.exports = {
+export default {
   darkMode: 'class',
-  content: [
-    './src/**/*.{tsx,mdx}',
-    './theme.config.tsx',
-    // components v4 + tsup
-    '../node_modules/@theguild/components/dist/**/*.{js,mjs}',
-    './node_modules/@theguild/components/dist/**/*.{js,mjs}',
-    // pnpm
-    '../node_modules/.pnpm/node_modules/@theguild/components/dist/**/*.{js,mjs}',
-  ],
+  content: ['./src/**/*.{tsx,mdx}', './theme.config.tsx'],
   theme: {
     container: {
       center: true,
