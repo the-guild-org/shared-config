@@ -1,5 +1,12 @@
 # @theguild/eslint-config
 
+## 0.11.6
+
+### Patch Changes
+
+- [#398](https://github.com/the-guild-org/shared-config/pull/398) [`c0cfe4c`](https://github.com/the-guild-org/shared-config/commit/c0cfe4ca77b3cc239c693250948d94d1c4aaf936) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`eslint-plugin-n@^17.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-n/v/17.0.0) (from `^16.4.0`, in `dependencies`)
+
 ## 0.11.5
 
 ### Patch Changes
