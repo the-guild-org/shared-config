@@ -12,8 +12,8 @@
   "private": false,
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/tailwind.config.js",
+      "types": "./dist/tailwind.config.d.ts"
     },
     "./postcss.config": {
       "import": "./dist/postcss.config.js",

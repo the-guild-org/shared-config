@@ -47,6 +47,8 @@ module.exports = {
         '*.d.ts',
         'website/theme.config.tsx',
         'tsup.config.ts',
+        'postcss.config.ts',
+        'tailwind.config.ts',
       ],
       rules: { 'import/no-default-export': 'off' },
     },
