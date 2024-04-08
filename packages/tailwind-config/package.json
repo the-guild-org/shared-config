@@ -10,17 +10,18 @@
   "license": "MIT",
   "private": false,
   "exports": {
-    ".": {
-      "import": "./dist/tailwind.config.mjs",
-      "types": "./dist/tailwind.config.d.mts"
-    },
-    "./postcss.config": {
-      "require": "./dist/postcss.config.js",
-      "types": "./dist/postcss.config.d.ts"
-    },
+    ".": "./dist/tailwind.config.mjs",
+    "./postcss.config": "./dist/postcss.config.js",
     "./package.json": "./package.json"
   },
   "types": "./dist/tailwind.config.d.mts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/postcss.config.d.ts"
+      ]
+    }
+  },
   "files": [
     "dist",
     "README.md",
