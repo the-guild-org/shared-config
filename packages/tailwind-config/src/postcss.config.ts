@@ -1,4 +1,6 @@
-export default {
+import { Config } from 'postcss-load-config';
+
+const config: Config = {
   plugins: {
     'postcss-import': {},
     tailwindcss: {},
@@ -6,3 +8,6 @@ export default {
     ...(process.env.NODE_ENV === 'production' && { cssnano: {} }),
   },
 };
+
+// eslint-disable-next-line import/no-default-export
+export default config;
