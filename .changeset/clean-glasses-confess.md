@@ -2,4 +2,5 @@
 "@theguild/tailwind-config": minor
 ---
 
-export tailwind/postcss configs as esm, update deps
+export `tailwind.config` as esm, `postcss.config` as cjs
+
