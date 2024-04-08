@@ -1,6 +1,6 @@
 {
   "name": "@theguild/eslint-config",
-  "version": "0.11.4",
+  "version": "0.11.5",
   "type": "commonjs",
   "description": "The Guild's shared ESLint config",
   "repository": {
@@ -33,7 +33,7 @@
     "eslint-plugin-jsonc": "^2.11.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-mdx": "^3.0.0",
-    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-n": "^17.0.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
