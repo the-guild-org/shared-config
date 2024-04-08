@@ -16,8 +16,8 @@
       "types": "./dist/tailwind.config.d.ts"
     },
     "./postcss.config": {
-      "import": "./dist/postcss.config.js",
-      "types": "./dist/postcss.config.d.ts"
+      "require": "./dist/postcss.config.cjs",
+      "types": "./dist/postcss.config.d.cts"
     },
     "./package.json": "./package.json"
   },
@@ -31,7 +31,7 @@
     "tailwind-config"
   ],
   "scripts": {
-    "build": "tsup src --clean --format esm --dts",
+    "build": "tsup",
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
