@@ -1,5 +1,6 @@
 import { type Config } from 'tailwindcss';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- tailwindcss types are incorrect
 const makePrimaryColor: any =
   (l: number) =>
   ({ opacityValue }: { opacityValue?: string }) =>
