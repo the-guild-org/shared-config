@@ -21,6 +21,7 @@
     },
     "./package.json": "./package.json"
   },
+  "types": "./dist/tailwind.config.d.ts",
   "files": [
     "dist",
     "README.md",

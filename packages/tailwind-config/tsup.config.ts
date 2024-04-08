@@ -14,6 +14,8 @@ export default defineConfig([
     // ESM postcss config isn't supported by Next.js at this moment
     format: 'cjs',
     dts: true,
+    cjsInterop: true,
+    splitting: true,
     clean: true,
   },
 ]);
