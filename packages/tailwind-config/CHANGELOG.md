@@ -1,5 +1,20 @@
 # @theguild/tailwind-config
 
+## 0.4.0
+
+### Minor Changes
+
+- [#399](https://github.com/the-guild-org/shared-config/pull/399) [`30e2e64`](https://github.com/the-guild-org/shared-config/commit/30e2e64faf3730646740076919e2fb980adb89f7) Thanks [@dimaMachina](https://github.com/dimaMachina)! - export `tailwind.config` as esm, `postcss.config` as cjs
+
+### Patch Changes
+
+- [#399](https://github.com/the-guild-org/shared-config/pull/399) [`30e2e64`](https://github.com/the-guild-org/shared-config/commit/30e2e64faf3730646740076919e2fb980adb89f7) Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+  - Updated dependency [`autoprefixer@^10.4.19` ↗︎](https://www.npmjs.com/package/autoprefixer/v/10.4.19) (from `^10.4.16`, in `dependencies`)
+  - Updated dependency [`cssnano@^6.1.2` ↗︎](https://www.npmjs.com/package/cssnano/v/6.1.2) (from `^6.0.2`, in `dependencies`)
+  - Updated dependency [`postcss@^8.4.38` ↗︎](https://www.npmjs.com/package/postcss/v/8.4.38) (from `^8.4.32`, in `dependencies`)
+  - Updated dependency [`postcss-import@^16.1.0` ↗︎](https://www.npmjs.com/package/postcss-import/v/16.1.0) (from `^16.0.0`, in `dependencies`)
+  - Updated dependency [`tailwindcss@^3.4.3` ↗︎](https://www.npmjs.com/package/tailwindcss/v/3.4.3) (from `^3.3.6`, in `dependencies`)
+
 ## 0.3.2
 
 ### Patch Changes
