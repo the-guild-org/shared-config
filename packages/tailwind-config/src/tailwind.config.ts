@@ -10,7 +10,15 @@ const makePrimaryColor: any =
 
 const config: Config = {
   darkMode: 'class',
-  content: ['./src/**/*.{tsx,mdx}', './theme.config.tsx'],
+  content: [
+    './src/**/*.{tsx,mdx}',
+    './theme.config.tsx',
+    // components v4 + tsup
+    '../node_modules/@theguild/components/dist/**/*.{js,mjs}',
+    './node_modules/@theguild/components/dist/**/*.{js,mjs}',
+    // pnpm
+    '../node_modules/.pnpm/node_modules/@theguild/components/dist/**/*.{js,mjs}',
+  ],
   theme: {
     container: {
       center: true,
