@@ -1,7 +1,6 @@
 {
   "name": "@theguild/tailwind-config",
   "version": "0.3.2",
-  "type": "module",
   "description": "The Guild's shared Tailwind config",
   "repository": {
     "url": "the-guild-org/shared-config",
@@ -12,16 +11,16 @@
   "private": false,
   "exports": {
     ".": {
-      "import": "./dist/tailwind.config.js",
-      "types": "./dist/tailwind.config.d.ts"
+      "import": "./dist/tailwind.config.mjs",
+      "types": "./dist/tailwind.config.d.mts"
     },
     "./postcss.config": {
-      "require": "./dist/postcss.config.cjs",
-      "types": "./dist/postcss.config.d.cts"
+      "require": "./dist/postcss.config.js",
+      "types": "./dist/postcss.config.d.ts"
     },
     "./package.json": "./package.json"
   },
-  "types": "./dist/tailwind.config.d.ts",
+  "types": "./dist/tailwind.config.d.mts",
   "files": [
     "dist",
     "README.md",
