@@ -1,13 +1,14 @@
-const makePrimaryColor =
-  l =>
-  ({ opacityValue }) => {
-    if (opacityValue === undefined) {
-      return `hsl(var(--nextra-primary-hue) 100% ${l}%)`;
-    }
-    return `hsl(var(--nextra-primary-hue) 100% ${l}% / ${opacityValue})`;
-  };
+import { type Config } from 'tailwindcss';
 
-module.exports = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- tailwindcss types are incorrect
+const makePrimaryColor: any =
+  (l: number) =>
+  ({ opacityValue }: { opacityValue?: string }) =>
+    `hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) ${l}%` +
+    (opacityValue ? ` / ${opacityValue}` : '') +
+    ')';
+
+const config: Config = {
   darkMode: 'class',
   content: [
     './src/**/*.{tsx,mdx}',
@@ -72,3 +73,6 @@ module.exports = {
     },
   },
 };
+
+export default config;
+export { type Config };

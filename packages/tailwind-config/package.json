@@ -10,20 +10,41 @@
   "license": "MIT",
   "private": false,
   "exports": {
-    ".": "./index.cjs",
-    "./postcss.config": "./postcss.config.cjs",
+    ".": "./dist/tailwind.config.mjs",
+    "./postcss.config": "./dist/postcss.config.js",
     "./package.json": "./package.json"
   },
+  "types": "./dist/tailwind.config.d.mts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/postcss.config.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "tailwind",
     "tailwind-config"
   ],
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "pnpm build"
+  },
   "dependencies": {
-    "autoprefixer": "^10.4.16",
-    "cssnano": "^6.0.2",
-    "postcss": "^8.4.32",
-    "postcss-import": "^16.0.0",
-    "tailwindcss": "^3.3.6"
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^6.1.2",
+    "postcss": "^8.4.38",
+    "postcss-import": "^16.1.0",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "postcss-load-config": "5.0.3",
+    "tsup": "^8.0.2"
   },
   "publishConfig": {
     "access": "public"

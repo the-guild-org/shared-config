@@ -71,7 +71,7 @@ runs:
       if: inputs.packageManager == 'yarn' && inputs.packageManagerVersion == ''
       run: yarn install --ignore-engines --frozen-lockfile --immutable
       working-directory: ${{ inputs.workingDirectory }}
-      
+
     - name: modern yarn install
       shell: bash
       if: inputs.packageManager == 'yarn' && inputs.packageManagerVersion == 'modern'
