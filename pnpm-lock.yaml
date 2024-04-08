@@ -132,7 +132,7 @@ importers:
         version: 10.4.19(postcss@8.4.38)
       cssnano:
         specifier: ^6.0.2
-        version: 6.1.1(postcss@8.4.38)
+        version: 6.1.2(postcss@8.4.38)
       postcss:
         specifier: ^8.4.32
         version: 8.4.38
@@ -2160,13 +2160,17 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.23.0
-      caniuse-lite: 1.0.30001599
+      caniuse-lite: 1.0.30001600
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: false
 
   /caniuse-lite@1.0.30001599:
     resolution: {integrity: sha512-LRAQHZ4yT1+f9LemSMeqdMpMxZcc4RMWdj4tiFe3G8tNkWK+E58g+/tzotb5cU6TbcVJLr4fySiAW7XmxQvZQA==}
+
+  /caniuse-lite@1.0.30001600:
+    resolution: {integrity: sha512-+2S9/2JFhYmYaDpZvo0lKkfvuKIglrx68MwOBqMGHhQsNkLjB5xtc/TGoEPs+MxjSyN/72qer2g97nzR641mOQ==}
+    dev: false
 
   /capital-case@1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
@@ -2599,8 +2603,8 @@ packages:
       - encoding
     dev: true
 
-  /css-declaration-sorter@7.1.1(postcss@8.4.38):
-    resolution: {integrity: sha512-dZ3bVTEEc1vxr3Bek9vGwfB5Z6ESPULhcRvO472mfjVnj8jRcTnKO8/JTczlvxM10Myb+wBM++1MtdO76eWcaQ==}
+  /css-declaration-sorter@7.2.0(postcss@8.4.38):
+    resolution: {integrity: sha512-h70rUM+3PNFuaBDTLe8wF/cdWu+dOZmb7pJt8Z2sedYbAcQVQV/tEchueg3GWxwqS0cxtbxmaHEdkNACqcvsow==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss: ^8.0.9
@@ -2645,14 +2649,14 @@ packages:
     hasBin: true
     dev: false
 
-  /cssnano-preset-default@6.1.1(postcss@8.4.38):
-    resolution: {integrity: sha512-XW/dYN2p8Jdkp1lovFd0UVRh6RB0iMyXJbAE9Qm+taR3p2LGu492AW34lVaukUrXoK9IxK5aK3CUmFpUorU4oA==}
+  /cssnano-preset-default@6.1.2(postcss@8.4.38):
+    resolution: {integrity: sha512-1C0C+eNaeN8OcHQa193aRgYexyJtU8XwbdieEjClw+J9d94E41LwT6ivKH0WT+fYwYWB0Zp3I3IZ7tI/BbUbrg==}
     engines: {node: ^14 || ^16 || >=18.0}
     peerDependencies:
       postcss: ^8.4.31
     dependencies:
       browserslist: 4.23.0
-      css-declaration-sorter: 7.1.1(postcss@8.4.38)
+      css-declaration-sorter: 7.2.0(postcss@8.4.38)
       cssnano-utils: 4.0.2(postcss@8.4.38)
       postcss: 8.4.38
       postcss-calc: 9.0.1(postcss@8.4.38)
@@ -2693,13 +2697,13 @@ packages:
       postcss: 8.4.38
     dev: false
 
-  /cssnano@6.1.1(postcss@8.4.38):
-    resolution: {integrity: sha512-paTFZuiVohpaXJuau8l7buFt9+FTmfjwEO70EKitzYOQw3frib/It4sb6cQ+gJyDEyY+myDSni6IbBvKZ0N8Lw==}
+  /cssnano@6.1.2(postcss@8.4.38):
+    resolution: {integrity: sha512-rYk5UeX7VAM/u0lNqewCdasdtPK81CgX8wJFLEIXHbV2oldWRgJAsZrdhRXkV1NJzA2g850KiFm9mMU2HxNxMA==}
     engines: {node: ^14 || ^16 || >=18.0}
     peerDependencies:
       postcss: ^8.4.31
     dependencies:
-      cssnano-preset-default: 6.1.1(postcss@8.4.38)
+      cssnano-preset-default: 6.1.2(postcss@8.4.38)
       lilconfig: 3.1.1
       postcss: 8.4.38
     dev: false
