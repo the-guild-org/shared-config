@@ -1,5 +1,11 @@
 # @theguild/tailwind-config
 
+## 0.4.1
+
+### Patch Changes
+
+- [#411](https://github.com/the-guild-org/shared-config/pull/411) [`534c7ba`](https://github.com/the-guild-org/shared-config/commit/534c7bad190eb4885c0cdb7a6b47c43277dc3a99) Thanks [@dimaMachina](https://github.com/dimaMachina)! - use `satisfies Config` for better typings
+
 ## 0.4.0
 
 ### Minor Changes
