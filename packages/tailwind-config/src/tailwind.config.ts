@@ -8,7 +8,7 @@ const makePrimaryColor: any =
     (opacityValue ? ` / ${opacityValue}` : '') +
     ')';
 
-const config: Config = {
+const config = {
   darkMode: 'class',
   content: [
     './src/**/*.{tsx,mdx}',
@@ -72,7 +72,7 @@ const config: Config = {
       },
     },
   },
-};
+} satisfies Config;
 
 export default config;
 export { type Config };
