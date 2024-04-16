@@ -57,7 +57,7 @@ importers:
     dependencies:
       '@rushstack/eslint-patch':
         specifier: ^1.6.1
-        version: 1.10.1
+        version: 1.10.2
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.0.0
         version: 7.7.0(@typescript-eslint/parser@7.7.0)(eslint@8.57.0)(typescript@5.3.3)
@@ -1635,8 +1635,8 @@ packages:
     dev: true
     optional: true
 
-  /@rushstack/eslint-patch@1.10.1:
-    resolution: {integrity: sha512-S3Kq8e7LqxkA9s7HKLqXGTGck1uwis5vAXan3FnU5yw1Ec5hsSGnq4s/UCaSqABPOnOTg7zASLyst7+ohgWexg==}
+  /@rushstack/eslint-patch@1.10.2:
+    resolution: {integrity: sha512-hw437iINopmQuxWPSUEvqE56NCPsiU8N4AYtfHmJFckclktzK9YQJieD3XkDCDH4OjL+C7zgPUh73R/nrcHrqw==}
     dev: false
 
   /@shopify/eslint-plugin@44.0.0(@babel/core@7.24.4)(@types/eslint@8.56.9)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.4):
