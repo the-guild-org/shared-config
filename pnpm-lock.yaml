@@ -87,7 +87,7 @@ importers:
         version: 3.1.5(eslint@8.57.0)
       eslint-plugin-n:
         specifier: ^17.0.0
-        version: 17.1.0(eslint@8.57.0)
+        version: 17.2.1(eslint@8.57.0)
       eslint-plugin-promise:
         specifier: ^6.1.1
         version: 6.1.1(eslint@8.57.0)
@@ -3910,8 +3910,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-n@17.1.0(eslint@8.57.0):
-    resolution: {integrity: sha512-+MTiTej3B07+8vS/RfSMD1w4O9VVR9BSJT9kSa9QUsBlXzKi5PZc+lB3w+iu/2eIS3drFU7zCikSrD8Yn8PEBQ==}
+  /eslint-plugin-n@17.2.1(eslint@8.57.0):
+    resolution: {integrity: sha512-uW1+df2bo06kR7ix6nB614RUlvjRPrYxlaX832O6e1MCJp4V7YozEdvMgCYuvn4ltnjPu1FVYhQ2KRrmTNoJfg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.23.0'
