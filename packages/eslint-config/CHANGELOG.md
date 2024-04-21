@@ -1,5 +1,11 @@
 # @theguild/eslint-config
 
+## 0.11.7
+
+### Patch Changes
+
+- [#422](https://github.com/the-guild-org/shared-config/pull/422) [`2f6f4f0`](https://github.com/the-guild-org/shared-config/commit/2f6f4f059d374bbbdd6561580d1bd854cd3e65f7) Thanks [@eddeee888](https://github.com/eddeee888)! - Fix @typescript-eslint/prefer-optional-chain causing eslint to fail if .js files are not included in tsconfig
+
 ## 0.11.6
 
 ### Patch Changes
