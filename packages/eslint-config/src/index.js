@@ -15,9 +15,7 @@ module.exports = {
     },
     {
       files: TS_FILE,
-      rules: {
-        '@typescript-eslint/consistent-type-assertions': 'error',
-      },
+      extends: './typescript',
     },
     {
       files: ['*.c{j,t}s'],
