@@ -95,7 +95,6 @@ module.exports = {
 
     'prefer-object-has-own': 'error',
     'logical-assignment-operators': ['error', 'always', { enforceForIfStatements: true }],
-    '@typescript-eslint/prefer-optional-chain': 'error',
 
     yoda: 'error',
     'unicorn/prefer-export-from': ['error', { ignoreUsedVariables: true }],
