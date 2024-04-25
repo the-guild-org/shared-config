@@ -1,4 +1,4 @@
-const { REACT_RESTRICTED_SYNTAX } = require('./constants.js');
+import { REACT_RESTRICTED_SYNTAX } from './constants.js';
 
 const RESTRICTED_IMPORTS = [
   {
@@ -15,7 +15,7 @@ const RESTRICTED_IMPORTS = [
 ];
 
 /** @type {import('eslint').Linter.Config} */
-module.exports = {
+export default {
   settings: {
     react: {
       version: 'detect',

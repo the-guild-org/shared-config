@@ -1,4 +1,4 @@
-const ignoreWords = [
+export const ignoreWords = [
   // libraries
   'clsx',
   'cssnano',
@@ -43,7 +43,3 @@ const ignoreWords = [
   'ctsx',
   'mtsx',
 ];
-
-module.exports = {
-  ignoreWords,
-};

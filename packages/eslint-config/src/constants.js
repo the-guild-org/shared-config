@@ -1,4 +1,4 @@
-const RESTRICTED_SYNTAX = [
+export const RESTRICTED_SYNTAX = [
   {
     // ❌ readFile(…, { encoding: … })
     selector: `CallExpression[callee.name=/readFileSync|readFile|writeFileSync|writeFile/] > .arguments:last-child[type=ObjectExpression][properties.length=1] Property[key.name=encoding]`,
@@ -46,7 +46,7 @@ const RESTRICTED_SYNTAX = [
   // },
 ];
 
-const REACT_RESTRICTED_SYNTAX = [
+export const REACT_RESTRICTED_SYNTAX = [
   ...RESTRICTED_SYNTAX,
   {
     // ❌ useMemo(…, [])
@@ -57,9 +57,9 @@ const REACT_RESTRICTED_SYNTAX = [
   },
 ];
 
-const RESTRICTED_GLOBALS = ['stop', { name: 'isNaN', message: 'Use Number.isNaN instead' }];
+export const RESTRICTED_GLOBALS = ['stop', { name: 'isNaN', message: 'Use Number.isNaN instead' }];
 
-const RESTRICTED_MODULES = [
+export const RESTRICTED_MODULES = [
   { name: 'axios', message: 'Use `fetch/node-fetch` instead.' },
   { name: 'moment', message: 'Use `dayjs/date-fns` instead.' },
   { name: 'classnames', message: 'Use `clsx` instead because he is faster.' },
@@ -70,12 +70,6 @@ const RESTRICTED_MODULES = [
   { name: 'lodash/identity.js', message: 'Use `(value) => value` instead.' },
 ];
 
-module.exports = {
-  CODE_BLOCK: '**/*.md{,x}/*',
-  CODE_FILE: '*.{,c,m}{j,t}s{,x}',
-  TS_FILE: '*.{,c,m}ts{,x}',
-  RESTRICTED_GLOBALS,
-  RESTRICTED_MODULES,
-  RESTRICTED_SYNTAX,
-  REACT_RESTRICTED_SYNTAX,
-};
+export const CODE_BLOCK = '**/*.md{,x}/*';
+export const CODE_FILE = '*.{,c,m}{j,t}s{,x}';
+export const TS_FILE = '*.{,c,m}ts{,x}';

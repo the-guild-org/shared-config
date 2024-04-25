@@ -1,7 +1,7 @@
-const { CODE_FILE } = require('./constants.js');
+import { CODE_FILE } from './constants.js';
 
 /** @type {import('eslint').Linter.Config} */
-module.exports = {
+export default {
   ignorePatterns: ['next-env.d.ts'],
   overrides: [
     {
