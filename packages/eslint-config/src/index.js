@@ -1,7 +1,8 @@
-const { CODE_FILE, TS_FILE } = require('./constants.js');
+const { CODE_FILE, TS_FILE, CODE_BLOCK } = require('./constants.js');
 
 require('@rushstack/eslint-patch/modern-module-resolution');
 
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   reportUnusedDisableDirectives: true,
   ignorePatterns: [
@@ -14,8 +15,18 @@ module.exports = {
       extends: './base',
     },
     {
+      // Rules which require type info and exclude virtual ts files extracted by `eslint-plugin-mdx`
       files: TS_FILE,
-      extends: './typescript',
+      excludedFiles: [CODE_BLOCK],
+      rules: {
+        '@typescript-eslint/prefer-optional-chain': 'error',
+      },
+    },
+    {
+      files: TS_FILE,
+      rules: {
+        '@typescript-eslint/consistent-type-assertions': 'error',
+      },
     },
     {
       files: ['*.c{j,t}s'],
@@ -30,6 +41,7 @@ module.exports = {
         'babel.config.js',
         'postcss.config.{js,cjs}',
         'rollup.config.js',
+        'next-sitemap.config.js',
       ],
       env: { node: true },
     },
@@ -47,6 +59,7 @@ module.exports = {
         'tsup.config.ts',
         'postcss.config.ts',
         'tailwind.config.ts',
+        'next-sitemap.config.js',
       ],
       rules: { 'import/no-default-export': 'off' },
     },
