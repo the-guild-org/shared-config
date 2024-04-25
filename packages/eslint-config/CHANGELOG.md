@@ -1,5 +1,11 @@
 # @theguild/eslint-config
 
+## 0.11.8
+
+### Patch Changes
+
+- [#427](https://github.com/the-guild-org/shared-config/pull/427) [`47bafcd`](https://github.com/the-guild-org/shared-config/commit/47bafcdb636cdd2cd03b63f6e7905b5da3e122cf) Thanks [@dimaMachina](https://github.com/dimaMachina)! - exclude `**/*.md{,x}/*` for ts files
+
 ## 0.11.7
 
 ### Patch Changes
