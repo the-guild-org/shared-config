@@ -15,9 +15,18 @@ module.exports = {
       extends: './base',
     },
     {
+      // Rules which require type info and exclude virtual ts files extracted by `eslint-plugin-mdx`
       files: TS_FILE,
-      extends: './typescript',
       excludedFiles: [CODE_BLOCK],
+      rules: {
+        '@typescript-eslint/prefer-optional-chain': 'error',
+      },
+    },
+    {
+      files: TS_FILE,
+      rules: {
+        '@typescript-eslint/consistent-type-assertions': 'error',
+      },
     },
     {
       files: ['*.c{j,t}s'],
