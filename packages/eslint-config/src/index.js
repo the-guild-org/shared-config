@@ -1,7 +1,8 @@
-const { CODE_FILE, TS_FILE } = require('./constants.js');
+const { CODE_FILE, TS_FILE, CODE_BLOCK } = require('./constants.js');
 
 require('@rushstack/eslint-patch/modern-module-resolution');
 
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   reportUnusedDisableDirectives: true,
   ignorePatterns: [
@@ -16,6 +17,7 @@ module.exports = {
     {
       files: TS_FILE,
       extends: './typescript',
+      excludedFiles: [CODE_BLOCK],
     },
     {
       files: ['*.c{j,t}s'],
