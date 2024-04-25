@@ -1,7 +1,7 @@
-const { CODE_BLOCK } = require('./constants.js');
+import { CODE_BLOCK } from './constants.js';
 
 /** @type {import('eslint').Linter.Config} */
-module.exports = {
+export default {
   overrides: [
     {
       files: '*.md{,x}',

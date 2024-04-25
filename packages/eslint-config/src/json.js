@@ -1,9 +1,9 @@
-const { CODE_BLOCK } = require('./constants.js');
+import { CODE_BLOCK } from './constants.js';
 
 const JSONC_FILES = ['tsconfig.json', 'tsconfig.eslint.json', 'turbo.json', '.vscode/launch.json'];
 
 /** @type {import('eslint').Linter.Config} */
-module.exports = {
+export default {
   overrides: [
     {
       files: '*.json',

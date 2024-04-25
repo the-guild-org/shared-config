@@ -1,9 +1,7 @@
-const { CODE_FILE, TS_FILE, CODE_BLOCK } = require('./constants.js');
-
-require('@rushstack/eslint-patch/modern-module-resolution');
+import { CODE_BLOCK, CODE_FILE, TS_FILE } from './constants.js';
 
 /** @type {import('eslint').Linter.Config} */
-module.exports = {
+export default {
   reportUnusedDisableDirectives: true,
   ignorePatterns: [
     '!.*', // Don't ignore dot-files because by default ESLint ignore dot-files (except for .eslintrc.*) and dot-folders
