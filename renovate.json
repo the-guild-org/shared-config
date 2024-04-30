@@ -12,7 +12,7 @@
       "groupName": "graphql-eslint",
       "matchPackagePrefixes": ["@graphql-eslint"],
       "prPriority": 20,
-      "reviewers": ["B2o5T"]
+      "reviewers": ["dimaMachina"]
     },
     {
       "groupName": "bob-the-bundler",
@@ -24,7 +24,7 @@
       "groupName": "graphql-config",
       "matchPackagePrefixes": ["@graphql-config", "graphql-config"],
       "prPriority": 20,
-      "reviewers": ["B2o5T"]
+      "reviewers": ["dimaMachina"]
     },
     {
       "groupName": "graphql-tools",
@@ -48,7 +48,7 @@
       "groupName": "graphql-mesh",
       "matchPackagePrefixes": ["@graphql-mesh"],
       "prPriority": 20,
-      "reviewers": ["ardatan", "gilgardosh"]
+      "reviewers": ["ardatan", "gilgardosh", "enisdenjo", "EmrysMyrddin"]
     },
     {
       "groupName": "graphql-codegen",
@@ -60,7 +60,7 @@
       "groupName": "envelop",
       "matchPackagePrefixes": ["@envelop"],
       "prPriority": 20,
-      "reviewers": ["n1ru4l"]
+      "reviewers": ["n1ru4l", "EmrysMyrddin"]
     },
     {
       "groupName": "graphql-inspector",
@@ -87,29 +87,26 @@
       "reviewers": ["ardatan"]
     },
     {
-      "groupName": "@theguild/components",
+      "groupName": "@theguild/components + nextra",
       "matchPackageNames": [
         "@theguild/components",
-        "@theguild/algolia",
-        "@theguild/tailwind-config"
+        "@theguild/tailwind-config",
+        "nextra",
+        "nextra-theme-docs",
+        "nextra-theme-blog"
       ],
       "prPriority": 20,
-      "reviewers": ["B2o5T"]
+      "reviewers": ["dimaMachina"]
     },
     {
       "groupName": "prettier",
       "matchPackageNames": ["prettier", "@theguild/prettier-config"],
       "prPriority": 20,
-      "reviewers": ["B2o5T"]
+      "reviewers": ["dimaMachina"]
     },
     {
       "matchDepTypes": ["devDependencies"],
       "prPriority": 19
-    },
-    {
-      "groupName": "nextra",
-      "matchPackageNames": ["nextra", "nextra-theme-docs", "nextra-theme-blog"],
-      "reviewers": ["B2o5T"]
     }
   ],
   "ignorePaths": ["**/__tests__/**", "**/test/**", "**/tests/**", "**/__fixtures__/**"]

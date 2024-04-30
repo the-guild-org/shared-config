@@ -7,7 +7,7 @@ on:
       nodeVersion:
         required: false
         type: string
-        default: '18'
+        default: '21'
       script:
         required: true
         type: string
