@@ -10,8 +10,8 @@
   "private": true,
   "packageManager": "pnpm@9.0.6",
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=9"
+    "node": ">=21.6",
+    "pnpm": ">=9.0.6"
   },
   "scripts": {
     "build": "echo No build command, skipping…",
