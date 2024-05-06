@@ -99,7 +99,7 @@ importers:
         version: 4.6.2(eslint@8.57.0)
       eslint-plugin-sonarjs:
         specifier: ^1.0.0
-        version: 1.0.0(eslint@8.57.0)
+        version: 1.0.2(eslint@8.57.0)
       eslint-plugin-unicorn:
         specifier: ^52.0.0
         version: 52.0.0(eslint@8.57.0)
@@ -2125,8 +2125,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
 
-  eslint-plugin-sonarjs@1.0.0:
-    resolution: {integrity: sha512-G3QW6ANRyCzbpzlj461aW8c5vnU34BN8MWwFdBLtWx/GoZPaqYRsBOhd/VBNxPN63U+LcIllnzekYT5yXu8ACw==}
+  eslint-plugin-sonarjs@1.0.2:
+    resolution: {integrity: sha512-Mik5ZyxnUEZ+2FCxv5BitmVUXcaIy/QYi0IPrRe9JwpBABqE4EmFFseQu4g93l8g2VphPVDO2+l2aOLsA5CZgA==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: ^8.0.0 || ^9.0.0
@@ -6921,7 +6921,7 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.10
 
-  eslint-plugin-sonarjs@1.0.0(eslint@8.57.0):
+  eslint-plugin-sonarjs@1.0.2(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
 
