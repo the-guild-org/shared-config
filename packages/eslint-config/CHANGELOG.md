@@ -1,5 +1,12 @@
 # @theguild/eslint-config
 
+## 0.11.9
+
+### Patch Changes
+
+- [#438](https://github.com/the-guild-org/shared-config/pull/438) [`dc07018`](https://github.com/the-guild-org/shared-config/commit/dc07018db035a2a9ca15a1dc5e16574426471301) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`eslint-plugin-sonarjs@^1.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-sonarjs/v/1.0.0) (from `^0.25.0`, in `dependencies`)
+
 ## 0.11.8
 
 ### Patch Changes
