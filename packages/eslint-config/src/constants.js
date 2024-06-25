@@ -57,7 +57,11 @@ const REACT_RESTRICTED_SYNTAX = [
   },
 ];
 
-const RESTRICTED_GLOBALS = ['stop', { name: 'isNaN', message: 'Use Number.isNaN instead' }];
+const RESTRICTED_GLOBALS = [
+  'stop',
+  'close',
+  { name: 'isNaN', message: 'Use Number.isNaN instead' },
+];
 
 const RESTRICTED_MODULES = [
   { name: 'axios', message: 'Use `fetch/node-fetch` instead.' },
