@@ -13,7 +13,6 @@ jobs:
       releaseScript: release
       nodeVersion: 18
       packageManager: pnpm
-      packageManagerVersion: 9
     secrets:
       githubToken: ${{ secrets.GUILD_BOT_TOKEN }}
       npmToken: ${{ secrets.NPM_TOKEN }}
