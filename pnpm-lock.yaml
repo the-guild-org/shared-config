@@ -21,7 +21,7 @@ importers:
         version: 2.27.6
       '@shopify/eslint-plugin':
         specifier: 45.0.0
-        version: 45.0.0(@babel/core@7.24.7)(@types/eslint@8.56.10)(eslint@8.57.0)(prettier@3.3.1)(typescript@5.5.2)
+        version: 45.0.0(@babel/core@7.24.7)(@types/eslint@8.56.10)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.5.2)
       '@theguild/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
@@ -44,8 +44,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(patch_hash=lm5ikotw57jauxruva6mg45pva)(eslint@8.57.0)(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))
       prettier:
-        specifier: 3.3.1
-        version: 3.3.1
+        specifier: 3.3.2
+        version: 3.3.2
       ts-node:
         specifier: 10.9.2
         version: 10.9.2(@types/node@20.14.8)(typescript@5.5.2)
@@ -3370,6 +3370,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prettier@3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   proc-log@4.2.0:
     resolution: {integrity: sha512-g8+OnU/L2v+wyiVK+D5fA34J7EH8jZ8DDlvwhRCMxmMj7UCBvxiO1mGeN+36JXIKF4zevU4kRBd8lVgG9vLelA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -4980,7 +4985,7 @@ snapshots:
 
   '@rushstack/eslint-patch@1.10.3': {}
 
-  '@shopify/eslint-plugin@45.0.0(@babel/core@7.24.7)(@types/eslint@8.56.10)(eslint@8.57.0)(prettier@3.3.1)(typescript@5.5.2)':
+  '@shopify/eslint-plugin@45.0.0(@babel/core@7.24.7)(@types/eslint@8.56.10)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.5.2)':
     dependencies:
       '@babel/eslint-parser': 7.24.7(@babel/core@7.24.7)(eslint@8.57.0)
       '@babel/eslint-plugin': 7.24.7(@babel/eslint-parser@7.24.7(@babel/core@7.24.7)(eslint@8.57.0))(eslint@8.57.0)
@@ -4998,7 +5003,7 @@ snapshots:
       eslint-plugin-jest-formatting: 3.1.0(eslint@8.57.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
       eslint-plugin-node: 11.1.0(eslint@8.57.0)
-      eslint-plugin-prettier: 5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.1)
+      eslint-plugin-prettier: 5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.2)
       eslint-plugin-promise: 6.2.0(eslint@8.57.0)
       eslint-plugin-react: 7.34.3(eslint@8.57.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.57.0)
@@ -6333,10 +6338,10 @@ snapshots:
       resolve: 1.22.8
       semver: 6.3.1
 
-  eslint-plugin-prettier@5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.1):
+  eslint-plugin-prettier@5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.2):
     dependencies:
       eslint: 8.57.0
-      prettier: 3.3.1
+      prettier: 3.3.2
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.8
     optionalDependencies:
@@ -7979,6 +7984,8 @@ snapshots:
   prettier@2.8.8: {}
 
   prettier@3.3.1: {}
+
+  prettier@3.3.2: {}
 
   proc-log@4.2.0: {}
 
