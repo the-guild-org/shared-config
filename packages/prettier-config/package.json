@@ -21,7 +21,7 @@
     "prettier": "^3"
   },
   "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "4.2.1",
+    "@ianvs/prettier-plugin-sort-imports": "4.3.0",
     "prettier-plugin-pkg": "^0.18.0",
     "prettier-plugin-sh": "^0.14.0"
   },
