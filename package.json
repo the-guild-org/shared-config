@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.5.0",
-    "@changesets/cli": "2.27.6",
+    "@changesets/cli": "2.27.7",
     "@shopify/eslint-plugin": "45.0.0",
     "@theguild/eslint-config": "workspace:*",
     "@theguild/prettier-config": "workspace:*",
