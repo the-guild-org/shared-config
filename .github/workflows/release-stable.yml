@@ -21,6 +21,10 @@ on:
         required: false
         type: string
         default: release
+      versionScript:
+        required: false
+        type: string
+        default: changeset version
       createGithubReleases:
         required: false
         type: string
@@ -70,7 +74,7 @@ jobs:
         uses: dotansimha/changesets-action@v1.5.2
         with:
           publish: '${{inputs.packageManager}} ${{ inputs.releaseScript }}'
-          version: '${{inputs.packageManager}} changeset version'
+          version: '${{inputs.packageManager}} ${{inputs.versionScript}}'
           commit: 'chore(release): update monorepo packages versions'
           title: ${{inputs.releasePrName}}
           createGithubReleases: ${{ inputs.createGithubReleases }}
