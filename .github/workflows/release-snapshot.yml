@@ -40,10 +40,10 @@ on:
         required: true
     outputs:
       published:
-        description: "???"
+        description: "Whether a new version was published"
         value: ${{ jobs.snapshot.outputs.published }}
       publishedPackages:
-        description: "???"
+        description: "A JSON array containing all the published packages"
         value: ${{ jobs.snapshot.outputs.publishedPackages }}
 
 jobs:
