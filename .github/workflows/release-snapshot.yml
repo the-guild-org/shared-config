@@ -38,6 +38,9 @@ on:
         required: true
       npmToken:
         required: true
+    outputs:
+      published: ${{ jobs.snapshot.outputs.published }}
+      publishedPackages: ${{ jobs.snapshot.outputs.publishedPackages }}
 
 jobs:
   snapshot:
