@@ -38,6 +38,13 @@ on:
         required: true
       npmToken:
         required: true
+    outputs:
+      published:
+        description: "Whether a new version was published"
+        value: ${{ jobs.snapshot.outputs.published }}
+      publishedPackages:
+        description: "A JSON array containing all the published packages"
+        value: ${{ jobs.snapshot.outputs.publishedPackages }}
 
 jobs:
   snapshot:
