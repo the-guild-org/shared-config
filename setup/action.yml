@@ -9,7 +9,6 @@ inputs:
   node-version:
     description: Node.js version to use.
     required: false
-    default: lts
   node-version-file:
     description: File containing the version to use.
     required: false
