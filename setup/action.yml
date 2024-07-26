@@ -16,6 +16,10 @@ inputs:
     description: Working directory.
     required: false
     default: .
+outputs:
+  package-manager:
+    description: The detected package manager that is used.
+    value: ${{ steps.pkgmngr.outputs.result }}
 
 runs:
   using: composite

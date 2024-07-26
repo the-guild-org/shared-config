@@ -303,13 +303,12 @@ jobs:
   test:
     name: myScript
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
-
-      - uses: the-guild-org/shared-config/setup@main
-        name: setup env
+      - uses: the-guild-org/shared-config/setup@v1
+        name: set up env
         with:
-          nodeVersion: 22
+          node-version-file: .node-version
 ```
 
 </details>

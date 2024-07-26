@@ -4,15 +4,6 @@
 on:
   workflow_call:
     inputs:
-      packageManager:
-        type: string
-        required: false
-        default: yarn
-      packageManagerVersion:
-        description: Package manager version
-        type: string
-        required: false
-        default: ''
       nodeVersion:
         required: false
         type: string
@@ -62,16 +53,15 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - uses: the-guild-org/shared-config/setup@main
+      - uses: the-guild-org/shared-config/setup@v1
+        id: env
         name: setup env
         with:
-          nodeVersion: ${{inputs.nodeVersion}}
-          packageManager: ${{inputs.packageManager}}
-          packageManagerVersion: ${{inputs.packageManagerVersion}}
+          node-version: ${{inputs.nodeVersion}}
 
       - if: inputs.exitPre
         name: Exit Prerelease Mode
-        run: ${{inputs.packageManager}} run changeset pre exit
+        run: ${{steps.env.outputs.package-manager}} run changeset pre exit
 
       - if: inputs.restoreDeletedChangesets
         name: restore deleted changesets
@@ -82,7 +72,7 @@ jobs:
         uses: the-guild-org/changesets-snapshot-action@12ae5b6781ea75c36ece2f2e3446cee6dc093e99 # v0.0.3
         with:
           tag: ${{ inputs.npmTag }}
-          prepareScript: '${{inputs.packageManager}} run ${{ inputs.buildScript }}'
+          prepareScript: '${{steps.env.outputs.package-manager}} run ${{ inputs.buildScript }}'
         env:
           NPM_TOKEN: ${{ secrets.npmToken }}
           GITHUB_TOKEN: ${{ secrets.githubToken }}
