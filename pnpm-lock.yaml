@@ -20,8 +20,8 @@ importers:
         specifier: 2.27.7
         version: 2.27.7
       '@shopify/eslint-plugin':
-        specifier: 45.0.0
-        version: 45.0.0(@babel/core@7.24.7)(@types/eslint@8.56.11)(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.3)
+        specifier: 46.0.0
+        version: 46.0.0(@babel/core@7.24.7)(@types/eslint@8.56.11)(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.3)
       '@theguild/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
@@ -964,8 +964,8 @@ packages:
   '@rushstack/eslint-patch@1.10.3':
     resolution: {integrity: sha512-qC/xYId4NMebE6w/V33Fh9gWxLgURiNYgVNObbJl2LZv0GUUItCcCqC5axQSwRaAgaxl2mELq1rMzlswaQ0Zxg==}
 
-  '@shopify/eslint-plugin@45.0.0':
-    resolution: {integrity: sha512-aRgVkl+EovLk6OC4WzT+C6hgAyta5VReEIdetpe+/bJhVovlqbFjYa3yHGvEM4VuWv8sim7XH2VV3ZsDiwpgvQ==}
+  '@shopify/eslint-plugin@46.0.0':
+    resolution: {integrity: sha512-sYUKGaBMXcTEyvMxSECb1H8YPQojgsv6FkUWDN1isLNDrTyk52VETCmRFiS9Aj/hon8W6x8IL5597FyN/SC+qg==}
     peerDependencies:
       eslint: ^8.56.0
 
@@ -2249,6 +2249,10 @@ packages:
 
   globals@15.4.0:
     resolution: {integrity: sha512-unnwvMZpv0eDUyjNyh9DH/yxUaRYrEjW/qK4QcdrHg3oO11igUQrCSgODHEqxlKg8v2CD2Sd7UkqqEBoz5U7TQ==}
+    engines: {node: '>=18'}
+
+  globals@15.8.0:
+    resolution: {integrity: sha512-VZAJ4cewHTExBWDHR6yptdIBlx9YSSZuwojj9Nt5mBRXQzrKakDsVKQ1J63sklLvzAJm0X5+RpO4i3Y2hcOnFw==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -5022,7 +5026,7 @@ snapshots:
 
   '@rushstack/eslint-patch@1.10.3': {}
 
-  '@shopify/eslint-plugin@45.0.0(@babel/core@7.24.7)(@types/eslint@8.56.11)(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.3)':
+  '@shopify/eslint-plugin@46.0.0(@babel/core@7.24.7)(@types/eslint@8.56.11)(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.3)':
     dependencies:
       '@babel/eslint-parser': 7.24.7(@babel/core@7.24.7)(eslint@8.57.0)
       '@babel/eslint-plugin': 7.24.7(@babel/eslint-parser@7.24.7(@babel/core@7.24.7)(eslint@8.57.0))(eslint@8.57.0)
@@ -5045,6 +5049,7 @@ snapshots:
       eslint-plugin-react: 7.34.4(eslint@8.57.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.57.0)
       eslint-plugin-sort-class-members: 1.20.0(eslint@8.57.0)
+      globals: 15.8.0
       jsx-ast-utils: 3.3.5
       pkg-dir: 5.0.0
       pluralize: 8.0.0
@@ -6688,6 +6693,8 @@ snapshots:
   globals@14.0.0: {}
 
   globals@15.4.0: {}
+
+  globals@15.8.0: {}
 
   globalthis@1.0.4:
     dependencies:
