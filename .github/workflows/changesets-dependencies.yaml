@@ -10,15 +10,6 @@ on:
       preCommit:
         type: string
         required: false
-      packageManager:
-        type: string
-        required: false
-        default: yarn
-      packageManagerVersion:
-        type: string
-        description: Package manager version
-        required: false
-        default: ''
       nodeVersion:
         required: false
         type: string
@@ -38,13 +29,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.githubToken }}
 
-      - uses: the-guild-org/shared-config/setup@main
+      - uses: the-guild-org/shared-config/setup@v1
         name: setup env and install dependencies
         if: ${{ inputs.installDependencies }}
         with:
-          nodeVersion: ${{ inputs.nodeVersion }}
-          packageManager: ${{ inputs.packageManager }}
-          packageManagerVersion: ${{ inputs.packageManagerVersion }}
+          node-version: ${{ inputs.nodeVersion }}
 
       - name: Create/Update Changesets
         uses: the-guild-org/changesets-dependencies-action@main

@@ -11,15 +11,6 @@ on:
         required: true
         type: string
         default: '[18]'
-      packageManager:
-        type: string
-        required: false
-        default: yarn
-      packageManagerVersion:
-        type: string
-        description: Package manager version
-        required: false
-        default: ''
 
 jobs:
   ci_setup:
@@ -44,12 +35,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - uses: the-guild-org/shared-config/setup@main
+      - uses: the-guild-org/shared-config/setup@v1
         name: setup env
         with:
-          nodeVersion: ${{matrix.nodeVersion }}
-          packageManager: ${{inputs.packageManager}}
-          packageManagerVersion: ${{inputs.packageManagerVersion}}
+          node-version: ${{matrix.nodeVersion }}
 
       - name: ${{ inputs.script }}
         run: ${{ inputs.script }}
