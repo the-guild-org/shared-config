@@ -8,7 +8,7 @@ configurations/pipelines needed.
 
 <details>
   <summary>Step 1: changesets</summary>
-  
+
 To setup automated release flow for your package, using `changesets`:
 
 1. Create a monorepo, either by using `yarn` (v1) or `pnpm`.
@@ -165,9 +165,9 @@ jobs:
 
 <details>
   <summary>Step 6: Renovate</summary>
-  
+
 1. Install Renovate Bot on your repo: https://github.com/marketplace/renovate
-2. Wait for Renovate to create the first setup PR and merge it. 
+2. Wait for Renovate to create the first setup PR and merge it.
 3. Create `renovate.json` config file in the repo, with the following:
 
 ```
@@ -204,7 +204,7 @@ jobs:
 
 <details>
   <summary>Step 9: ESLint/Prettier config</summary>
-  
+
 If you wish to use the unified config for eslint or prettier, following these instructions:
 
 - eslint: https://github.com/the-guild-org/shared-config/tree/main/packages/eslint-config
@@ -303,13 +303,12 @@ jobs:
   test:
     name: myScript
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
-
-      - uses: the-guild-org/shared-config/setup@main
-        name: setup env
+      - uses: the-guild-org/shared-config/setup@v1
+        name: set up env
         with:
-          nodeVersion: 18
+          node-version-file: .node-version
 ```
 
 </details>
