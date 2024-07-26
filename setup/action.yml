@@ -41,6 +41,7 @@ runs:
           console.log(name);
           return name;
     - name: enable corepack
+      shell: bash
       run: corepack enable
     - name: set up node
       uses: actions/setup-node@v4
@@ -49,6 +50,7 @@ runs:
         node-version-file: ${{ inputs.node-version-file }}
         cache: ${{ steps.pkgmngr.outputs.result }}
     - name: install
+      shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: >
         ${{ steps.pkgmngr.outputs.result }} install
