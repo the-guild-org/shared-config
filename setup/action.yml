@@ -45,6 +45,7 @@ runs:
           return name;
     - name: enable corepack
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: corepack enable
     - name: set up node
       uses: actions/setup-node@v4
