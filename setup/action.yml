@@ -5,17 +5,22 @@ name: Setup
 description: |
   Shared configuration for setting up The Guild's usual environent. It sets up node, detects defined "packageManager", enables corepack and installs with the specified package manager.
 
+# make sure to match the inputs for all workflows using this action
 inputs:
   node-version:
+    type: string
     description: Node.js version to use.
     required: false
   node-version-file:
+    type: string
     description: File containing the version to use.
     required: false
   working-directory:
+    type: string
     description: Working directory.
     required: false
     default: .
+
 outputs:
   package-manager:
     description: The detected package manager that is used.
@@ -35,7 +40,8 @@ runs:
       with:
         result-encoding: string
         script: |
-          const pkgPath = '${{ inputs.working-directory }}/package.json';
+          const wd = '${{ inputs.working-directory }}';
+          const pkgPath = wd ? `${wd}/package.json` : 'package.json';
           const { packageManager } = require(pkgPath);
           const [name] = String(packageManager).split('@');
           if (!name) {

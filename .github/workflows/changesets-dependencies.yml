@@ -10,18 +10,22 @@ on:
       preCommit:
         type: string
         required: false
-      
-      # Setup options
-      nodeVersion:
-        required: false
+
+      # must match setup/actions.yml
+      node-version:
         type: string
-        default: '18'
+        description: Node.js version to use.
+        required: false
       node-version-file:
-        required: false
         type: string
+        description: File containing the version to use.
+        required: false
       working-directory:
-        required: false
         type: string
+        description: Working directory.
+        required: false
+        default: .
+
     secrets:
       githubToken:
         required: true
@@ -38,10 +42,10 @@ jobs:
           token: ${{ secrets.githubToken }}
 
       - uses: the-guild-org/shared-config/setup@v1
-        name: setup env and install dependencies
+        name: Set up env
         if: ${{ inputs.installDependencies }}
         with:
-          node-version: ${{ inputs.nodeVersion }}
+          node-version: ${{ inputs.node-version }}
           node-version-file: ${{ inputs.node-version-file }}
           working-directory: ${{ inputs.working-directory }}
 
