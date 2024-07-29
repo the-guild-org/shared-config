@@ -64,7 +64,7 @@ runs:
         node-version-file: ${{ inputs.node-version-file }}
         cache: ${{ steps.pkgmngr.outputs.result }}
     - name: install
-      if: inputs.install-command == ""
+      if: inputs.install-command == ''
       shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: >
@@ -72,7 +72,7 @@ runs:
         ${{ steps.pkgmngr.outputs.result == 'pnpm' && '--frozen-lockfile' || '' }}
         ${{ steps.pkgmngr.outputs.result == 'yarn' && '--immutable' || '' }}
     - name: custom install
-      if: inputs.install-command != ""
+      if: inputs.install-command != ''
       shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: ${{ inputs.install-command }}
