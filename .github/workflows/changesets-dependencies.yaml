@@ -10,10 +10,18 @@ on:
       preCommit:
         type: string
         required: false
+      
+      # Setup options
       nodeVersion:
         required: false
         type: string
         default: '18'
+      node-version-file:
+        required: false
+        type: string
+      working-directory:
+        required: false
+        type: string
     secrets:
       githubToken:
         required: true
@@ -34,6 +42,8 @@ jobs:
         if: ${{ inputs.installDependencies }}
         with:
           node-version: ${{ inputs.nodeVersion }}
+          node-version-file: ${{ inputs.node-version-file }}
+          working-directory: ${{ inputs.working-directory }}
 
       - name: Create/Update Changesets
         uses: the-guild-org/changesets-dependencies-action@main
