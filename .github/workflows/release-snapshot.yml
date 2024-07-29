@@ -50,7 +50,7 @@ on:
 
 jobs:
   snapshot:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     if: github.event.pull_request.head.repo.full_name == github.repository
     outputs:
       published: ${{ steps.changesets.outputs.published }}
