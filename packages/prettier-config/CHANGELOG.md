@@ -1,35 +1,77 @@
 # @theguild/prettier-config
 
+## 2.0.7
+
+### Patch Changes
+
+- [#500](https://github.com/the-guild-org/shared-config/pull/500)
+  [`60e2524`](https://github.com/the-guild-org/shared-config/commit/60e2524d676073cb53a417507a522554f8aa89ed)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@ianvs/prettier-plugin-sort-imports@4.3.0` ↗︎](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports/v/4.3.0)
+    (from `4.2.1`, in `dependencies`)
+
+- [#513](https://github.com/the-guild-org/shared-config/pull/513)
+  [`dd2d4d4`](https://github.com/the-guild-org/shared-config/commit/dd2d4d4b8d05427411eecb073ff5736f5357f7c0)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@ianvs/prettier-plugin-sort-imports@4.3.1` ↗︎](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports/v/4.3.1)
+    (from `4.3.0`, in `dependencies`)
+
+- [#544](https://github.com/the-guild-org/shared-config/pull/544)
+  [`352390c`](https://github.com/the-guild-org/shared-config/commit/352390cc9c047f564e12cdc439cc993f025a09bf)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - add `importAssertions` in
+  `importOrderParserPlugins` to format files with `assert { type: 'json' }` and not throw an error
+
 ## 2.0.6
 
 ### Patch Changes
 
-- [#364](https://github.com/the-guild-org/shared-config/pull/364) [`862b10d`](https://github.com/the-guild-org/shared-config/commit/862b10d19c8934370a614c3c63e338683b23a7f7) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+- [#364](https://github.com/the-guild-org/shared-config/pull/364)
+  [`862b10d`](https://github.com/the-guild-org/shared-config/commit/862b10d19c8934370a614c3c63e338683b23a7f7)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
 
-  - Updated dependency [`@ianvs/prettier-plugin-sort-imports@4.2.0` ↗︎](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports/v/4.2.0) (from `4.1.1`, in `dependencies`)
+  - Updated dependency
+    [`@ianvs/prettier-plugin-sort-imports@4.2.0` ↗︎](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports/v/4.2.0)
+    (from `4.1.1`, in `dependencies`)
 
-- [#374](https://github.com/the-guild-org/shared-config/pull/374) [`54f1464`](https://github.com/the-guild-org/shared-config/commit/54f14644318fef9ec6c87218f135cb53e818c5a9) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
-  - Updated dependency [`@ianvs/prettier-plugin-sort-imports@4.2.1` ↗︎](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports/v/4.2.1) (from `4.2.0`, in `dependencies`)
+- [#374](https://github.com/the-guild-org/shared-config/pull/374)
+  [`54f1464`](https://github.com/the-guild-org/shared-config/commit/54f14644318fef9ec6c87218f135cb53e818c5a9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`@ianvs/prettier-plugin-sort-imports@4.2.1` ↗︎](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports/v/4.2.1)
+    (from `4.2.0`, in `dependencies`)
 
 ## 2.0.5
 
 ### Patch Changes
 
-- [#327](https://github.com/the-guild-org/shared-config/pull/327) [`d96fb9e`](https://github.com/the-guild-org/shared-config/commit/d96fb9e471bd48c8d1d94e8f767e3974a2c65b59) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
-  - Updated dependency [`prettier-plugin-sh@^0.14.0` ↗︎](https://www.npmjs.com/package/prettier-plugin-sh/v/0.14.0) (from `^0.13.1`, in `dependencies`)
+- [#327](https://github.com/the-guild-org/shared-config/pull/327)
+  [`d96fb9e`](https://github.com/the-guild-org/shared-config/commit/d96fb9e471bd48c8d1d94e8f767e3974a2c65b59)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`prettier-plugin-sh@^0.14.0` ↗︎](https://www.npmjs.com/package/prettier-plugin-sh/v/0.14.0)
+    (from `^0.13.1`, in `dependencies`)
 
 ## 2.0.4
 
 ### Patch Changes
 
-- [`d1d0b17`](https://github.com/the-guild-org/shared-config/commit/d1d0b174409f827f60df77c4717260b7f5361bdb) Thanks [@ardatan](https://github.com/ardatan)! - Disable trailing comma for JSON files
+- [`d1d0b17`](https://github.com/the-guild-org/shared-config/commit/d1d0b174409f827f60df77c4717260b7f5361bdb)
+  Thanks [@ardatan](https://github.com/ardatan)! - Disable trailing comma for JSON files
 
 ## 2.0.3
 
 ### Patch Changes
 
-- [#317](https://github.com/the-guild-org/shared-config/pull/317) [`d37d14e`](https://github.com/the-guild-org/shared-config/commit/d37d14eee9794d93b1b7129ed6244faa8b470056) Thanks [@dotansimha](https://github.com/dotansimha)! - dependencies updates:
-  - Updated dependency [`prettier-plugin-sh@^0.13.1` ↗︎](https://www.npmjs.com/package/prettier-plugin-sh/v/0.13.1) (from `^0.13.0`, in `dependencies`)
+- [#317](https://github.com/the-guild-org/shared-config/pull/317)
+  [`d37d14e`](https://github.com/the-guild-org/shared-config/commit/d37d14eee9794d93b1b7129ed6244faa8b470056)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - dependencies updates:
+  - Updated dependency
+    [`prettier-plugin-sh@^0.13.1` ↗︎](https://www.npmjs.com/package/prettier-plugin-sh/v/0.13.1)
+    (from `^0.13.0`, in `dependencies`)
 
 ## 2.0.2
 
