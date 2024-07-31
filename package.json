@@ -35,7 +35,7 @@
     "eslint-remote-tester": "3.0.1",
     "prettier": "3.3.3",
     "ts-node": "10.9.2",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   },
   "pnpm": {
     "patchedDependencies": {
