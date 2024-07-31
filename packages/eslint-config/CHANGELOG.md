@@ -1,5 +1,24 @@
 # @theguild/eslint-config
 
+## 0.11.11
+
+### Patch Changes
+
+- [#533](https://github.com/the-guild-org/shared-config/pull/533)
+  [`0027744`](https://github.com/the-guild-org/shared-config/commit/00277440cf5e8531771fb5f17527aa9f0b73cdb9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`eslint-plugin-promise@^7.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-promise/v/7.0.0)
+    (from `^6.1.1`, in `dependencies`)
+
+- [#536](https://github.com/the-guild-org/shared-config/pull/536)
+  [`59f3404`](https://github.com/the-guild-org/shared-config/commit/59f34040d185b7fc670459815ad83753a638db98)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-unicorn@^55.0.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-unicorn/v/55.0.0)
+    (from `^54.0.0`, in `dependencies`)
+
 ## 0.11.10
 
 ### Patch Changes
