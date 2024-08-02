@@ -1,5 +1,29 @@
 # @theguild/eslint-config
 
+## 0.12.0
+
+### Minor Changes
+
+- [#548](https://github.com/the-guild-org/shared-config/pull/548)
+  [`647f2cc`](https://github.com/the-guild-org/shared-config/commit/647f2ccd878f4e7d0060275f2ed732b73771d6a7)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - bump `@rushstack/eslint-patch` and
+  `@typescript-eslint/eslint-plugin`
+
+### Patch Changes
+
+- [#548](https://github.com/the-guild-org/shared-config/pull/548)
+  [`647f2cc`](https://github.com/the-guild-org/shared-config/commit/647f2ccd878f4e7d0060275f2ed732b73771d6a7)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+  - Updated dependency
+    [`@rushstack/eslint-patch@^1.10.4` ↗︎](https://www.npmjs.com/package/@rushstack/eslint-patch/v/1.10.4)
+    (from `^1.6.1`, in `dependencies`)
+  - Updated dependency
+    [`@typescript-eslint/eslint-plugin@^7.18.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin/v/7.18.0)
+    (from `^7.0.0`, in `dependencies`)
+  - Updated dependency
+    [`@typescript-eslint/parser@^7.18.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/parser/v/7.18.0)
+    (from `^7.0.0`, in `dependencies`)
+
 ## 0.11.11
 
 ### Patch Changes
