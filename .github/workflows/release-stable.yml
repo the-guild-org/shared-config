@@ -43,10 +43,12 @@ on:
         required: true
     outputs:
       published:
-        description: "A boolean value to indicate whether a publishing is happened or not"
+        description: 'A boolean value to indicate whether a publishing is happened or not'
         value: ${{ jobs.publish.outputs.published }}
       publishedPackages:
-        description: 'A JSON array to present the published packages. The format is [{"name": "@xx/xx", "version": "1.2.0"}, {"name": "@xx/xy", "version": "0.8.9"}]'
+        description:
+          'A JSON array to present the published packages. The format is [{"name": "@xx/xx",
+          "version": "1.2.0"}, {"name": "@xx/xy", "version": "0.8.9"}]'
         value: ${{ jobs.publish.outputs.publishedPackages }}
 
 jobs:
