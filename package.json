@@ -12,7 +12,7 @@
   "scripts": {
     "build": "echo No build command, skipping…",
     "cspell": "cspell --gitignore **/*",
-    "lint": "eslint --cache .",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --ignore-path .gitignore --ignore-path .prettierignore --check .",
     "lint:remote": "eslint-remote-tester",
     "prettier": "pnpm lint:prettier --write",
@@ -27,7 +27,7 @@
     "@types/eslint": "8.56.11",
     "@types/node": "20.14.13",
     "cspell": "8.13.0",
-    "eslint": "8.57.0",
+    "eslint": "9.8.0",
     "eslint-remote-tester": "3.0.1",
     "prettier": "3.3.3",
     "ts-node": "10.9.2",

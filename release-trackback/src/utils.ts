@@ -1,7 +1,7 @@
 import { URL } from 'node:url';
 import { Lexer, marked } from 'marked';
 import { parse as parseSemVer, SemVer } from 'semver';
-import * as github from '@actions/github';
+import type * as github from '@actions/github';
 
 export type RenovatePackageChange = {
   package: string;
