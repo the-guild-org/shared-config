@@ -6,7 +6,7 @@ module.exports = {
     '@theguild/eslint-config/mdx',
   ],
   parserOptions: {
-    project: './tsconfig.json',
+    project: ['tsconfig.json', 'tsconfig.eslint.json'],
   },
   env: {
     node: true,

@@ -1,4 +1,4 @@
-import * as github from '@actions/github';
+import type * as github from '@actions/github';
 
 export interface FindCommentInputs {
   owner: string;
@@ -30,7 +30,7 @@ export function findCommentPredicate(inputs: FindCommentInputs, comment: Comment
 // Adapted from: https://github.com/peter-evans/find-comment/blob/main/src/find.ts
 // Thank you peter-evans
 export async function findComment(
-  octokit: ReturnType<(typeof github)['getOctokit']>,
+  octokit: ReturnType<typeof github.getOctokit>,
   inputs: FindCommentInputs,
 ): Promise<Comment | undefined> {
   const parameters = {
