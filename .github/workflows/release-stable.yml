@@ -4,19 +4,6 @@
 on:
   workflow_call:
     inputs:
-      packageManager:
-        type: string
-        required: false
-        default: yarn
-      packageManagerVersion:
-        type: string
-        description: Package manager version
-        required: false
-        default: ''
-      nodeVersion:
-        required: false
-        type: string
-        default: '18'
       releaseScript:
         required: false
         type: string
@@ -36,6 +23,17 @@ on:
         required: false
         type: string
         default: Upcoming Release Changes
+
+      # must match setup/actions.yml
+      node-version:
+        type: string
+        description: Node.js version to use.
+        required: false
+      node-version-file:
+        type: string
+        description: File containing the version to use.
+        required: false
+
     secrets:
       githubToken:
         required: true
@@ -51,7 +49,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     outputs:
       published: ${{ steps.changesets.outputs.published }}
       publishedPackages: ${{ steps.changesets.outputs.publishedPackages }}
@@ -62,12 +60,12 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.githubToken }}
 
-      - uses: the-guild-org/shared-config/setup@main
+      - uses: the-guild-org/shared-config/setup@v1
+        id: env
         name: setup env
         with:
-          nodeVersion: ${{inputs.nodeVersion}}
-          packageManager: ${{inputs.packageManager}}
-          packageManagerVersion: ${{inputs.packageManagerVersion}}
+          node-version: ${{inputs.node-version}}
+          node-version-file: ${{inputs.node-version-file}}
 
       - name: set version variables
         id: vars
@@ -80,8 +78,8 @@ jobs:
         id: changesets
         uses: dotansimha/changesets-action@v1.5.2
         with:
-          publish: '${{inputs.packageManager}} ${{ inputs.releaseScript }}'
-          version: '${{inputs.packageManager}} ${{inputs.versionScript}}'
+          publish: '${{steps.env.outputs.package-manager}} ${{ inputs.releaseScript }}'
+          version: '${{steps.env.outputs.package-manager}} ${{inputs.versionScript}}'
           commit: 'chore(release): update monorepo packages versions'
           title: ${{inputs.releasePrName}}
           createGithubReleases: ${{ inputs.createGithubReleases }}

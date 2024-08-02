@@ -29,57 +29,53 @@ on:
         required: false
         default: ./src/pages/
         description: Relative path from `website/` to nextra markdown pages root folder
-      nodeVersion:
-        required: false
-        type: string
-        default: '18'
       websiteDirectory:
         required: false
         type: string
         default: ./website/
-      packageManager:
-        type: string
-        description: Package manager
-        required: false
-        default: yarn
-      packageManagerVersion:
-        description: Package manager version
-        required: false
-        type: string
-        default: ''
-      setupEnvWorkingDirectory:
-        description: workingDirectory for `setup-env` action
-        required: false
-        type: string
-        default: .
       skipCommitLockFile:
         description: Prevent committing lockfile
         required: false
         type: boolean
         default: false
 
+      # must match setup/actions.yml
+      node-version:
+        type: string
+        description: Node.js version to use.
+        required: false
+      node-version-file:
+        type: string
+        description: File containing the version to use.
+        required: false
+      setup-working-directory:
+        type: string
+        description: Working directory for the env setup.
+        required: false
+        default: .
+
 jobs:
   algolia-push-records:
     name: Push new records if changes
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup env
-        uses: the-guild-org/shared-config/setup@main
+      - name: Set up env
+        id: env
+        uses: the-guild-org/shared-config/setup@v1
         with:
-          nodeVersion: ${{inputs.nodeVersion}}
-          packageManager: ${{inputs.packageManager}}
-          packageManagerVersion: ${{inputs.packageManagerVersion}}
-          workingDirectory: ${{ inputs.setupEnvWorkingDirectory }}
+          node-version: ${{ inputs.node-version }}
+          node-version-file: ${{ inputs.node-version-file }}
+          working-directory: ${{ inputs.setup-working-directory }}
 
       - name: Algolia push (non-pnpm)
-        if: inputs.packageManager != 'pnpm'
+        if: steps.env.outputs.package-manager != 'pnpm'
         run:
-          ${{ inputs.packageManager }} run theguild-nextra-algolia --publish -o ${{
+          ${{ steps.env.outputs.package-manager }} run theguild-nextra-algolia --publish -o ${{
           inputs.lockFilePath }} --source '${{ inputs.source }}' --domain ${{ inputs.domain }}
           --docsBaseDir ${{ inputs.docsBaseDir }}
         working-directory: ${{ inputs.websiteDirectory }}
@@ -89,12 +85,12 @@ jobs:
           ALGOLIA_INDEX_NAME: searchv2_main
 
       - name: Algolia push (pnpm)
-        if: inputs.packageManager == 'pnpm'
+        if: steps.env.outputs.package-manager == 'pnpm'
         run:
           pnpm --filter ${{ inputs.websiteDirectory }} run theguild-nextra-algolia --publish -o ${{
           inputs.lockFilePath }} --source '${{ inputs.source }}' --domain ${{ inputs.domain }}
           --docsBaseDir ${{ inputs.docsBaseDir }}
-        working-directory: ${{ inputs.setupEnvWorkingDirectory }}
+        working-directory: ${{ inputs.setup-working-directory }}
         env:
           ALGOLIA_APP_ID: ANRJKXZTRW
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.algoliaAdminApiKey }}
