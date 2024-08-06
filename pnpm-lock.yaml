@@ -65,7 +65,7 @@ importers:
         specifier: ^7.18.0
         version: 7.18.0(eslint@9.8.0)(typescript@5.5.4)
       eslint:
-        specifier: ^8 || ^9.0.0
+        specifier: ^8 || ^9
         version: 9.8.0
       eslint-config-prettier:
         specifier: ^9.1.0
@@ -90,7 +90,7 @@ importers:
         version: 17.10.1(eslint@9.8.0)
       eslint-plugin-promise:
         specifier: ^7.0.0
-        version: 7.0.0(eslint@9.8.0)
+        version: 7.1.0(eslint@9.8.0)
       eslint-plugin-react:
         specifier: ^7.33.2
         version: 7.35.0(eslint@9.8.0)
@@ -1952,8 +1952,8 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
-  eslint-plugin-promise@7.0.0:
-    resolution: {integrity: sha512-wb1ECT+b90ndBdAujhIdAU8oQ3Vt5gKqP/t78KOmg0ifynrvc2jGR9f6ndbOVNFpKf6jLUBlBBDF3H3Wk0JICg==}
+  eslint-plugin-promise@7.1.0:
+    resolution: {integrity: sha512-8trNmPxdAy3W620WKDpaS65NlM5yAumod6XeC4LOb+jxlkG4IVcp68c6dXY2ev+uT4U1PtG57YDV6EGAXN0GbQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -6281,7 +6281,7 @@ snapshots:
     dependencies:
       eslint: 9.8.0
 
-  eslint-plugin-promise@7.0.0(eslint@9.8.0):
+  eslint-plugin-promise@7.1.0(eslint@9.8.0):
     dependencies:
       eslint: 9.8.0
 
