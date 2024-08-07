@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.7.0",
   "scripts": {
     "build": "echo No build command, skipping…",
     "cspell": "cspell --gitignore **/*",
