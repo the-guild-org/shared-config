@@ -27,7 +27,7 @@
     "@types/eslint": "9.6.0",
     "@types/node": "20.14.15",
     "cspell": "8.13.2",
-    "eslint": "9.8.0",
+    "eslint": "9.9.0",
     "eslint-remote-tester": "3.0.1",
     "prettier": "3.3.3",
     "ts-node": "10.9.2",
