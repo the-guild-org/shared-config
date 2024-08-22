@@ -1,4 +1,5 @@
 import { type Config } from 'tailwindcss';
+import { hiveColors } from './hive-colors';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- tailwindcss types are incorrect
 const makePrimaryColor: any =
@@ -54,6 +55,7 @@ const config = {
     },
     extend: {
       colors: {
+        ...hiveColors,
         dark: '#111',
         primary: {
           50: makePrimaryColor(97),
