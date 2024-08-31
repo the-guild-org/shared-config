@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/marked": "6.0.0",
-    "@types/node": "20.16.1",
+    "@types/node": "20.16.2",
     "@types/semver": "7.5.8",
     "@vercel/ncc": "0.38.1",
     "typescript": "5.5.4"
