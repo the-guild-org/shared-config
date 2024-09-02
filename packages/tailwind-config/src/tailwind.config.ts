@@ -10,7 +10,11 @@ const makePrimaryColor: any =
     ')';
 
 const config = {
-  darkMode: 'class',
+  /**
+   * Same as `class`, but with the ability to have light-only sections in dark mode.
+   * @see https://github.com/tailwindlabs/tailwindcss/pull/12717/files#diff-cf9185e083748e39c6940d3ad337df23b0ecbbd70b9550f596de7cf4b4668bcfR263-R273
+   */
+  darkMode: ['variant', '&:not(.light *)'],
   content: [
     './src/**/*.{tsx,mdx}',
     './theme.config.tsx',
