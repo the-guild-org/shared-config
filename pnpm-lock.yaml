@@ -87,7 +87,7 @@ importers:
         version: 3.1.5(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-n:
         specifier: ^17.0.0
-        version: 17.10.3(eslint@9.9.0(jiti@1.21.6))
+        version: 17.11.1(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-promise:
         specifier: ^7.0.0
         version: 7.1.0(eslint@9.9.0(jiti@1.21.6))
@@ -1931,8 +1931,8 @@ packages:
     peerDependencies:
       eslint: '>=8.0.0'
 
-  eslint-plugin-n@17.10.3:
-    resolution: {integrity: sha512-ySZBfKe49nQZWR1yFaA0v/GsH6Fgp8ah6XV0WDz6CN8WO0ek4McMzb7A2xnf4DCYV43frjCygvb9f/wx7UUxRw==}
+  eslint-plugin-n@17.11.1:
+    resolution: {integrity: sha512-93IUD82N6tIEgjztVI/l3ElHtC2wTa9boJHrD8iN+NyDxjxz/daZUZKfkedjBZNdg6EqDk4irybUsiPwDqXAEA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.23.0'
@@ -2266,6 +2266,10 @@ packages:
 
   globals@15.10.0:
     resolution: {integrity: sha512-tqFIbz83w4Y5TCbtgjZjApohbuh7K9BxGYFm7ifwDR240tvdb7P9x+/9VvUKlmkPoiknoJtanI8UOrqxS3a7lQ==}
+    engines: {node: '>=18'}
+
+  globals@15.11.0:
+    resolution: {integrity: sha512-yeyNSjdbyVaWurlwCpcA6XNBrHTMIeDdj0/hnvX/OLJ9ekOXYbLsLinH/MucQyGvNnXhidTdNhTtJaffL2sMfw==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -6300,14 +6304,14 @@ snapshots:
       - bluebird
       - supports-color
 
-  eslint-plugin-n@17.10.3(eslint@9.9.0(jiti@1.21.6)):
+  eslint-plugin-n@17.11.1(eslint@9.9.0(jiti@1.21.6)):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.9.0(jiti@1.21.6))
       enhanced-resolve: 5.17.1
       eslint: 9.9.0(jiti@1.21.6)
       eslint-plugin-es-x: 7.8.0(eslint@9.9.0(jiti@1.21.6))
       get-tsconfig: 4.8.1
-      globals: 15.10.0
+      globals: 15.11.0
       ignore: 5.3.2
       minimatch: 9.0.5
       semver: 7.6.3
@@ -6701,6 +6705,8 @@ snapshots:
   globals@14.0.0: {}
 
   globals@15.10.0: {}
+
+  globals@15.11.0: {}
 
   globalthis@1.0.4:
     dependencies:
