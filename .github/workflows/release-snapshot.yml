@@ -8,7 +8,6 @@ on:
       buildScript:
         required: false
         type: string
-        default: build
       npmTag:
         required: false
         type: string
@@ -82,7 +81,7 @@ jobs:
         uses: the-guild-org/changesets-snapshot-action@v0.0.2
         with:
           tag: ${{ inputs.npmTag }}
-          prepareScript: '${{steps.env.outputs.package-manager}} run ${{ inputs.buildScript }}'
+          prepareScript: ${{ inputs.buildScript == '' && '' || format('{0} run {1}', steps.env.outputs.package-manager, inputs.buildScript) }}
         env:
           NPM_TOKEN: ${{ secrets.npmToken }}
           GITHUB_TOKEN: ${{ secrets.githubToken }}
