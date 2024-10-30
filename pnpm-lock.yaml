@@ -87,7 +87,7 @@ importers:
         version: 3.1.5(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-n:
         specifier: ^17.0.0
-        version: 17.11.1(eslint@9.9.0(jiti@1.21.6))
+        version: 17.12.0(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-promise:
         specifier: ^7.0.0
         version: 7.1.0(eslint@9.9.0(jiti@1.21.6))
@@ -693,6 +693,10 @@ packages:
 
   '@eslint-community/regexpp@4.12.0':
     resolution: {integrity: sha512-gh7PdNombP8ftL8TinYC8Xd7WEypB8EKV4PI2h0eMzndKjPCXuo2zUiZtD2Hu+MSPt02Ty2MdS788ADl9ai1rA==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+
+  '@eslint-community/regexpp@4.12.1':
+    resolution: {integrity: sha512-CCZCDJuduB9OUkFkY2IgppNZMi2lBQgD2qzwXkEia16cge2pijY/aXi96CJMquDMn3nJdlPV1A5KrJEXwfLNzQ==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
   '@eslint/config-array@0.17.1':
@@ -1931,8 +1935,8 @@ packages:
     peerDependencies:
       eslint: '>=8.0.0'
 
-  eslint-plugin-n@17.11.1:
-    resolution: {integrity: sha512-93IUD82N6tIEgjztVI/l3ElHtC2wTa9boJHrD8iN+NyDxjxz/daZUZKfkedjBZNdg6EqDk4irybUsiPwDqXAEA==}
+  eslint-plugin-n@17.12.0:
+    resolution: {integrity: sha512-zNAtz/erDn0v78bIY3MASSQlyaarV4IOTvP5ldHsqblRFrXriikB6ghkDTkHjUad+nMRrIbOy9euod2azjRfBg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.23.0'
@@ -4701,6 +4705,8 @@ snapshots:
 
   '@eslint-community/regexpp@4.12.0': {}
 
+  '@eslint-community/regexpp@4.12.1': {}
+
   '@eslint/config-array@0.17.1':
     dependencies:
       '@eslint/object-schema': 2.1.4
@@ -6115,7 +6121,7 @@ snapshots:
   eslint-plugin-es-x@7.8.0(eslint@9.9.0(jiti@1.21.6)):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.9.0(jiti@1.21.6))
-      '@eslint-community/regexpp': 4.12.0
+      '@eslint-community/regexpp': 4.12.1
       eslint: 9.9.0(jiti@1.21.6)
       eslint-compat-utils: 0.5.1(eslint@9.9.0(jiti@1.21.6))
 
@@ -6226,7 +6232,7 @@ snapshots:
       - bluebird
       - supports-color
 
-  eslint-plugin-n@17.11.1(eslint@9.9.0(jiti@1.21.6)):
+  eslint-plugin-n@17.12.0(eslint@9.9.0(jiti@1.21.6)):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.9.0(jiti@1.21.6))
       enhanced-resolve: 5.17.1
