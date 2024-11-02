@@ -1,24 +1,28 @@
+import { createRequire } from 'node:module';
+import path from 'node:path';
 import { type Config } from 'tailwindcss';
-import { hiveColors } from './hive-colors';
+import { hiveColors } from './hive-colors.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- tailwindcss types are incorrect
 const makePrimaryColor: any =
   (l: number) =>
-  ({ opacityValue }: { opacityValue?: string }) =>
-    `hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) ${l}%` +
-    (opacityValue ? ` / ${opacityValue}` : '') +
-    ')';
+  ({ opacityValue }: { opacityValue?: string }) => {
+    return (
+      `hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) calc(var(--nextra-primary-lightness) + ${l}%)` +
+      (opacityValue ? ` / ${opacityValue})` : ')')
+    );
+  };
+
+const require = createRequire(import.meta.url);
+
+const componentsPackageJson = require.resolve('@theguild/components/package.json');
 
 const config = {
   darkMode: 'class',
   content: [
-    './src/**/*.{tsx,mdx}',
-    './theme.config.tsx',
-    // components v4 + tsup
-    '../node_modules/@theguild/components/dist/**/*.{js,mjs}',
-    './node_modules/@theguild/components/dist/**/*.{js,mjs}',
-    // pnpm
-    '../node_modules/.pnpm/node_modules/@theguild/components/dist/**/*.{js,mjs}',
+    './{src,app}/**/*.{tsx,mdx}',
+    './mdx-components.tsx',
+    path.join(componentsPackageJson, '..', 'dist/**/*.{js,mjs}'),
   ],
   theme: {
     container: {

@@ -1,13 +1,8 @@
-import { Config } from 'postcss-load-config';
-
-const config: Config = {
+/** @type {import('postcss').Postcss} */
+export default {
   plugins: {
     'postcss-import': {},
     tailwindcss: {},
-    autoprefixer: {},
-    ...(process.env.NODE_ENV === 'production' && { cssnano: {} }),
+    'postcss-lightningcss': { browsers: '>= .25% and not dead' },
   },
 };
-
-export default config;
-export { type Config };
