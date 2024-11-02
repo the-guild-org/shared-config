@@ -10,8 +10,10 @@ module.exports = {
     },
     {
       files: [
-        '**/pages/**', // Next.js pages directory use default export
-        'next.config.{js,mjs}',
+        '**/pages/**', // Next.js' `pages` directory use default export
+        '**/app/**/{layout,page,not-found}.tsx', // Next.js' `layout`/`page`/`not-found` components use default export
+        '**/app/**/_meta.{ts,tsx}', // Nextra's `_meta` file uses default export
+        'next.config.{js,mjs,ts}',
         '**/*.stories.tsx',
         '.storybook/main.ts',
       ],
