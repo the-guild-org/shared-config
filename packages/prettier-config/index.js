@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   trailingComma: 'all', // default to `all` in v3
   printWidth: 100,
   singleQuote: true,

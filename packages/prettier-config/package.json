@@ -1,6 +1,7 @@
 {
   "name": "@theguild/prettier-config",
   "version": "2.0.7",
+  "type": "module",
   "description": "The Guild's shared Prettier config",
   "repository": {
     "url": "the-guild-org/shared-config",
@@ -10,7 +11,7 @@
   "license": "MIT",
   "private": false,
   "exports": {
-    ".": "./index.cjs",
+    ".": "./index.js",
     "./package.json": "./package.json"
   },
   "keywords": [
