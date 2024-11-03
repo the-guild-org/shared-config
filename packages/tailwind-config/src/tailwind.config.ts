@@ -1,4 +1,3 @@
-import { createRequire } from 'node:module';
 import path from 'node:path';
 import { type Config } from 'tailwindcss';
 import { hiveColors } from './hive-colors.js';
@@ -13,8 +12,11 @@ const makePrimaryColor: any =
     );
   };
 
-const require = createRequire(import.meta.url);
-
+/**
+ * We explicitly do not use `import { createRequire } from 'node:module'` and
+ * `const require = createRequire(import.meta.url)` because it works even without it.
+ * E.g. storybook complains about cannot found `module` package
+ */
 const componentsPackageJson = require.resolve('@theguild/components/package.json', {
   // Paths to resolve module location from CWD, without pick incorrect `@theguild/components`
   paths: [process.cwd()],

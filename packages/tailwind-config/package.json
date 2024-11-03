@@ -19,7 +19,8 @@
     },
     "./postcss.config": {
       "types": "./dist/postcss.config.d.ts",
-      "import": "./dist/postcss.config.js"
+      "import": "./dist/postcss.config.js",
+      "require": "./dist/postcss.config.js"
     }
   },
   "files": [
