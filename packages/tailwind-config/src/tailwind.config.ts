@@ -15,15 +15,19 @@ const makePrimaryColor: any =
 
 const require = createRequire(import.meta.url);
 
-const componentsPackageJson = require.resolve('@theguild/components/package.json');
+const componentsPackageJson = require.resolve('@theguild/components/package.json', {
+  // Paths to resolve module location from CWD, without pick incorrect `@theguild/components`
+  paths: [process.cwd()],
+});
+
+const componentsPattern = path.relative(
+  process.cwd(),
+  path.join(componentsPackageJson, '..', 'dist/**/*.js'),
+);
 
 const config = {
   darkMode: 'class',
-  content: [
-    './{src,app}/**/*.{tsx,mdx}',
-    './mdx-components.tsx',
-    path.join(componentsPackageJson, '..', 'dist/**/*.{js,mjs}'),
-  ],
+  content: ['./{src,app}/**/*.{tsx,mdx}', './mdx-components.tsx', componentsPattern],
   theme: {
     container: {
       center: true,
