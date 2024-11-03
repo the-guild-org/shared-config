@@ -51,16 +51,7 @@ module.exports = {
       rules: { 'import/extensions': ['error', 'never'] },
     },
     {
-      files: [
-        'vite.config.ts',
-        'jest.config.js',
-        '*.d.ts',
-        'website/theme.config.tsx',
-        'tsup.config.ts',
-        'postcss.config.ts',
-        'tailwind.config.ts',
-        'next-sitemap.config.js',
-      ],
+      files: ['vite.config.ts', 'jest.config.js', '*.d.ts', 'tsup.config.ts'],
       rules: { 'import/no-default-export': 'off' },
     },
     {

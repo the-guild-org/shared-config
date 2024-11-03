@@ -1,9 +1,10 @@
 module.exports = {
   extends: [
     '@theguild',
+    '@theguild/eslint-config/react',
     '@theguild/eslint-config/json',
     '@theguild/eslint-config/yml',
-    '@theguild/eslint-config/mdx',
+    // '@theguild/eslint-config/mdx',
   ],
   parserOptions: {
     project: ['tsconfig.json', 'tsconfig.eslint.json'],

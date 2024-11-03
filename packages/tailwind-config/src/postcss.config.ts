@@ -1,3 +1,5 @@
+/* eslint-disable import/no-default-export */
+
 /** @type {import('postcss').Postcss} */
 export default {
   plugins: {

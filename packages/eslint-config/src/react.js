@@ -16,6 +16,10 @@ module.exports = {
         'next.config.{js,mjs,ts}',
         '**/*.stories.tsx',
         '.storybook/main.ts',
+        'website/theme.config.tsx',
+        'postcss.config.js',
+        'tailwind.config.ts',
+        'next-sitemap.config.js',
       ],
       rules: {
         'import/no-default-export': 'off',
