@@ -18,13 +18,16 @@ const makePrimaryColor: any =
  * E.g. storybook complains about cannot found `module` package
  */
 const componentsPackageJson = require.resolve('@theguild/components/package.json', {
-  // Paths to resolve module location from CWD, without pick incorrect `@theguild/components`
+  /**
+   * Paths to resolve module location from CWD. Without specifying, it picks incorrect
+   * `@theguild/components`, also must be relative
+   */
   paths: [process.cwd()],
 });
 
 const componentsPattern = path.relative(
   process.cwd(),
-  path.join(componentsPackageJson, '..', 'dist/**/*.js'),
+  path.posix.join(componentsPackageJson, '..', 'dist/**/*.js'),
 );
 
 const config = {
