@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-default-export
 export default {
   trailingComma: 'all', // default to `all` in v3
   printWidth: 100,

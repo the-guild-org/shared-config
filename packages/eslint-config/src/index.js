@@ -51,7 +51,7 @@ module.exports = {
       rules: { 'import/extensions': ['error', 'never'] },
     },
     {
-      files: ['vite.config.ts', 'jest.config.js', '*.d.ts', 'tsup.config.ts'],
+      files: ['vite.config.ts', 'jest.config.js', '*.d.ts', 'tsup.config.ts', 'prettier.config.js'],
       rules: { 'import/no-default-export': 'off' },
     },
     {
