@@ -32,8 +32,8 @@ importers:
         specifier: 9.6.1
         version: 9.6.1
       '@types/node':
-        specifier: 20.16.2
-        version: 20.16.2
+        specifier: 20.17.6
+        version: 20.17.6
       cspell:
         specifier: 8.13.2
         version: 8.13.2
@@ -42,13 +42,13 @@ importers:
         version: 9.9.0(jiti@1.21.6)
       eslint-remote-tester:
         specifier: 3.0.1
-        version: 3.0.1(patch_hash=lm5ikotw57jauxruva6mg45pva)(eslint@9.9.0(jiti@1.21.6))(ts-node@10.9.2(@types/node@20.16.2)(typescript@5.5.4))
+        version: 3.0.1(patch_hash=lm5ikotw57jauxruva6mg45pva)(eslint@9.9.0(jiti@1.21.6))(ts-node@10.9.2(@types/node@20.17.6)(typescript@5.5.4))
       prettier:
         specifier: 3.3.3
         version: 3.3.3
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@types/node@20.16.2)(typescript@5.5.4)
+        version: 10.9.2(@types/node@20.17.6)(typescript@5.5.4)
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -169,8 +169,8 @@ importers:
         specifier: 6.0.0
         version: 6.0.0
       '@types/node':
-        specifier: 20.16.2
-        version: 20.16.2
+        specifier: 20.17.6
+        version: 20.17.6
       '@types/semver':
         specifier: 7.5.8
         version: 7.5.8
@@ -1031,8 +1031,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@20.16.2':
-    resolution: {integrity: sha512-91s/n4qUPV/wg8eE9KHYW1kouTfDk2FPGjXbBMfRWP/2vg1rCXNQL1OCabwGs0XSdukuK+MwCDXE30QpSeMUhQ==}
+  '@types/node@20.17.6':
+    resolution: {integrity: sha512-VEI7OdvK2wP7XHnsuXbAJnEpEkF6NjSN45QJlL4VGqZSXsnicpesdTWsg9RISeSdYd3yeRj/y3k5KGjUXYnFwQ==}
 
   '@types/node@22.8.7':
     resolution: {integrity: sha512-LidcG+2UeYIWcMuMUpBKOnryBWG/rnmOHQR5apjn8myTQcx3rinFRn7DcIFhMnS0PPFSC6OafdIKEad0lj6U0Q==}
@@ -5052,7 +5052,7 @@ snapshots:
 
   '@types/concat-stream@2.0.3':
     dependencies:
-      '@types/node': 20.16.2
+      '@types/node': 20.17.6
 
   '@types/debug@4.1.12':
     dependencies:
@@ -5095,7 +5095,7 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@20.16.2':
+  '@types/node@20.17.6':
     dependencies:
       undici-types: 6.19.8
 
@@ -6342,7 +6342,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-remote-tester@3.0.1(patch_hash=lm5ikotw57jauxruva6mg45pva)(eslint@9.9.0(jiti@1.21.6))(ts-node@10.9.2(@types/node@20.16.2)(typescript@5.5.4)):
+  eslint-remote-tester@3.0.1(patch_hash=lm5ikotw57jauxruva6mg45pva)(eslint@9.9.0(jiti@1.21.6))(ts-node@10.9.2(@types/node@20.17.6)(typescript@5.5.4)):
     dependencies:
       '@babel/code-frame': 7.26.2
       JSONStream: 1.3.5
@@ -6353,7 +6353,7 @@ snapshots:
       react: 17.0.2
       simple-git: 3.27.0
     optionalDependencies:
-      ts-node: 10.9.2(@types/node@20.16.2)(typescript@5.5.4)
+      ts-node: 10.9.2(@types/node@20.17.6)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@types/react'
       - bufferutil
@@ -8410,14 +8410,14 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@types/node@20.16.2)(typescript@5.5.4):
+  ts-node@10.9.2(@types/node@20.17.6)(typescript@5.5.4):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.16.2
+      '@types/node': 20.17.6
       acorn: 8.14.0
       acorn-walk: 8.3.4
       arg: 4.1.3
