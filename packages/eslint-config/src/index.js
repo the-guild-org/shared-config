@@ -18,6 +18,9 @@ module.exports = {
       // Rules which require type info and exclude virtual ts files extracted by `eslint-plugin-mdx`
       files: TS_FILE,
       excludedFiles: [CODE_BLOCK],
+      parserOptions: {
+        projectService: true,
+      },
       rules: {
         '@typescript-eslint/prefer-optional-chain': 'error',
       },
