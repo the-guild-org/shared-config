@@ -129,7 +129,7 @@ importers:
     dependencies:
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
-        version: 0.1.1(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.16.2)(typescript@5.5.4)))
+        version: 0.1.1(tailwindcss@3.4.14(ts-node@10.9.2(@types/node@22.8.7)(typescript@5.5.4)))
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.20(postcss@8.4.47)
@@ -5044,9 +5044,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.16.2)(typescript@5.5.4)))':
+  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.14(ts-node@10.9.2(@types/node@22.8.7)(typescript@5.5.4)))':
     dependencies:
-      tailwindcss: 3.4.10(ts-node@10.9.2(@types/node@20.16.2)(typescript@5.5.4))
+      tailwindcss: 3.4.14(ts-node@10.9.2(@types/node@22.8.7)(typescript@5.5.4))
 
   '@trysound/sax@0.2.0': {}
 
