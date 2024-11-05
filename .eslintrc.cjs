@@ -1,13 +1,11 @@
 module.exports = {
   extends: [
     '@theguild',
+    '@theguild/eslint-config/react',
     '@theguild/eslint-config/json',
     '@theguild/eslint-config/yml',
     '@theguild/eslint-config/mdx',
   ],
-  parserOptions: {
-    project: ['tsconfig.json', 'tsconfig.eslint.json'],
-  },
   env: {
     node: true,
   },
@@ -15,7 +13,14 @@ module.exports = {
     {
       files: 'packages/eslint-config/**',
       rules: {
-        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-require-imports': 'off',
+      },
+    },
+    {
+      files: 'packages/prettier-config/README.md/*.js',
+      rules: {
+        'unicorn/prefer-export-from': 'off',
+        'import/no-default-export': 'off',
       },
     },
   ],

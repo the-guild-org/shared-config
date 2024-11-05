@@ -24,22 +24,22 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@rushstack/eslint-patch": "^1.10.4",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsonc": "^2.11.1",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-mdx": "^3.0.0",
-    "eslint-plugin-n": "^17.0.0",
-    "eslint-plugin-promise": "^7.0.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-sonarjs": "^1.0.0",
-    "eslint-plugin-unicorn": "^55.0.0",
-    "eslint-plugin-yml": "^1.11.0"
+    "@rushstack/eslint-patch": "1.10.4",
+    "@typescript-eslint/eslint-plugin": "8.13.0",
+    "@typescript-eslint/parser": "8.13.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-import-resolver-typescript": "3.6.3",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-jsonc": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-mdx": "3.1.5",
+    "eslint-plugin-n": "17.12.0",
+    "eslint-plugin-promise": "7.1.0",
+    "eslint-plugin-react": "7.37.2",
+    "eslint-plugin-react-hooks": "5.0.0",
+    "eslint-plugin-sonarjs": "2.0.4",
+    "eslint-plugin-unicorn": "56.0.0",
+    "eslint-plugin-yml": "1.15.0"
   },
   "publishConfig": {
     "access": "public"

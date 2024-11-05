@@ -18,9 +18,9 @@ export function createCommentBody(
   context: typeof github.context,
   change: RenovatePackageChange,
 ) {
-  let content = `### 🛤️ The Guild Trackback`;
+  let content = '### 🛤️ The Guild Trackback';
   content += `\n❌ The NPM release **\`${change.package}@${change.to}\`** created by this Pull Request failed the continuous integration (workflow: **\`${context.workflow}\`**, job: **\`${context.job}\`**) for repository **[\`${context.repo.owner}/${context.repo.repo}\`](https://github.com/${context.repo.owner}/${context.repo.repo})**.`;
-  content += `\n\nYou can find additional details on the following links:`;
+  content += '\n\nYou can find additional details on the following links:';
   content +=
     '\n' +
     [
