@@ -11,6 +11,8 @@ pnpm add -D prettier @theguild/prettier-config
 ## Usage
 
 ```js
-// .prettierrc.cjs
-module.exports = require('@theguild/prettier-config')
+// prettier.config.js
+import prettierConfig from '@theguild/prettier-config'
+
+export default prettierConfig
 ```

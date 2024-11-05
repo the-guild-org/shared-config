@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any, no-console */
 
-/* eslint-disable no-console, import/extensions */
 import * as core from '@actions/core';
 import * as github from '@actions/github';
 import { findComment } from './gh-utils';
@@ -56,7 +55,7 @@ async function run(): Promise<void> {
 
     if (!ghToken) {
       return core.setFailed(
-        `No token provided. Please set the GITHUB_TOKEN environment variable, or use "token" input.`,
+        'No token provided. Please set the GITHUB_TOKEN environment variable, or use "token" input.',
       );
     }
     const octokit = github.getOctokit(ghToken);
@@ -84,7 +83,7 @@ async function run(): Promise<void> {
     core.debug(`Relevant packages: ${JSON.stringify(relevantChanges, null, 2)}`);
 
     if (relevantChanges.length === 0) {
-      core.warning(`No relevant packages were changed in this PR. Nothing to do here.`);
+      core.warning('No relevant packages were changed in this PR. Nothing to do here.');
 
       return;
     }
@@ -242,9 +241,9 @@ async function run(): Promise<void> {
       }),
     );
 
-    console.log('Result: ', result);
+    console.log('Result:', result);
   } catch (error) {
-    console.log(`Failed to run: `, error);
+    console.log('Failed to run:', error);
     if (error instanceof Error) {
       core.setFailed(error.message);
     }

@@ -1,6 +1,7 @@
 {
   "name": "@theguild/tailwind-config",
   "version": "0.5.0",
+  "type": "module",
   "description": "The Guild's shared Tailwind config",
   "repository": {
     "url": "the-guild-org/shared-config",
@@ -10,21 +11,21 @@
   "license": "MIT",
   "private": false,
   "exports": {
+    "./package.json": "./package.json",
     ".": {
-      "default": "./dist/tailwind.config.mjs",
-      "types": "./dist/tailwind.config.d.mts"
+      "types": "./dist/tailwind.config.d.ts",
+      "import": "./dist/tailwind.config.js",
+      "require": "./dist/tailwind.config.js"
     },
     "./postcss.config": {
-      "default": "./dist/postcss.config.js",
-      "types": "./dist/postcss.config.d.ts"
-    },
-    "./package.json": "./package.json"
+      "types": "./dist/postcss.config.d.ts",
+      "import": "./dist/postcss.config.js",
+      "require": "./dist/postcss.config.js"
+    }
   },
-  "types": "./dist/tailwind.config.d.mts",
   "files": [
     "dist",
-    "README.md",
-    "LICENSE"
+    "README.md"
   ],
   "keywords": [
     "tailwind",
@@ -34,17 +35,16 @@
     "build": "tsup",
     "prepublishOnly": "pnpm build"
   },
-  "dependencies": {
-    "@tailwindcss/container-queries": "^0.1.1",
-    "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.0",
-    "postcss": "^8.4.38",
+  "peerDependencies": {
     "postcss-import": "^16.1.0",
-    "tailwindcss": "^3.4.3"
+    "postcss-lightningcss": "^1.0.1",
+    "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1"
   },
   "devDependencies": {
-    "postcss-load-config": "6.0.1",
-    "tsup": "^8.0.2"
+    "tsup": "8.0.2"
   },
   "publishConfig": {
     "access": "public"

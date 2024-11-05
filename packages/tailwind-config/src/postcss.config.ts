@@ -1,13 +1,8 @@
-import { Config } from 'postcss-load-config';
-
-const config: Config = {
+/* eslint-disable import/no-default-export */
+export default {
   plugins: {
     'postcss-import': {},
     tailwindcss: {},
-    autoprefixer: {},
-    ...(process.env.NODE_ENV === 'production' && { cssnano: {} }),
+    'postcss-lightningcss': { browsers: '>= .25% and not dead' },
   },
 };
-
-export default config;
-export { type Config };

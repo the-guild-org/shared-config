@@ -2,7 +2,6 @@ const { RESTRICTED_SYNTAX, RESTRICTED_GLOBALS, RESTRICTED_MODULES } = require('.
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-  parser: '@typescript-eslint/parser',
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   plugins: ['sonarjs', 'unicorn', 'promise', 'import', 'n'],
   rules: {

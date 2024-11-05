@@ -18,6 +18,9 @@ module.exports = {
       // Rules which require type info and exclude virtual ts files extracted by `eslint-plugin-mdx`
       files: TS_FILE,
       excludedFiles: [CODE_BLOCK],
+      parserOptions: {
+        projectService: true,
+      },
       rules: {
         '@typescript-eslint/prefer-optional-chain': 'error',
       },
@@ -51,16 +54,7 @@ module.exports = {
       rules: { 'import/extensions': ['error', 'never'] },
     },
     {
-      files: [
-        'vite.config.ts',
-        'jest.config.js',
-        '*.d.ts',
-        'website/theme.config.tsx',
-        'tsup.config.ts',
-        'postcss.config.ts',
-        'tailwind.config.ts',
-        'next-sitemap.config.js',
-      ],
+      files: ['vite.config.ts', 'jest.config.js', '*.d.ts', 'tsup.config.ts', 'prettier.config.js'],
       rules: { 'import/no-default-export': 'off' },
     },
     {

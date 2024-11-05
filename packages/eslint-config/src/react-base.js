@@ -3,11 +3,6 @@ const { REACT_RESTRICTED_SYNTAX } = require('./constants.js');
 const RESTRICTED_IMPORTS = [
   {
     name: 'react',
-    importNames: ['FC', 'FunctionComponent'],
-    message: 'Just type props and `ReactElement` as return type',
-  },
-  {
-    name: 'react',
     importNames: ['PropsWithChildren'],
     message:
       '`PropsWithChildren` set `children` as optional, explicitly define `children` field in your type',
