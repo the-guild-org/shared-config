@@ -3,6 +3,8 @@
 ---
 dependencies updates:
   - Updated dependency [`@rushstack/eslint-patch@1.10.4` ↗︎](https://www.npmjs.com/package/@rushstack/eslint-patch/v/1.10.4) (from `^1.10.4`, in `dependencies`)
+  - Updated dependency [`@typescript-eslint/eslint-plugin@8.13.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin/v/8.13.0) (from `^7.18.0`, in `dependencies`)
+  - Updated dependency [`@typescript-eslint/parser@8.13.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/parser/v/8.13.0) (from `^7.18.0`, in `dependencies`)
   - Updated dependency [`eslint-config-prettier@9.1.0` ↗︎](https://www.npmjs.com/package/eslint-config-prettier/v/9.1.0) (from `^9.1.0`, in `dependencies`)
   - Updated dependency [`eslint-import-resolver-typescript@3.6.3` ↗︎](https://www.npmjs.com/package/eslint-import-resolver-typescript/v/3.6.3) (from `^3.6.1`, in `dependencies`)
   - Updated dependency [`eslint-plugin-import@2.31.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-import/v/2.31.0) (from `^2.29.1`, in `dependencies`)
