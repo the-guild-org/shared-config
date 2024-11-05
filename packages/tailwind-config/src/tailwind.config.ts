@@ -1,5 +1,6 @@
 import path from 'node:path';
 import { type Config } from 'tailwindcss';
+import tailwindContainerQueries from '@tailwindcss/container-queries';
 import { hiveColors } from './hive-colors.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- tailwindcss types are incorrect
@@ -87,6 +88,7 @@ const config = {
       },
     },
   },
+  plugins: [tailwindContainerQueries],
 } satisfies Config;
 
 export default config;

@@ -35,6 +35,9 @@
     "build": "tsup",
     "prepublishOnly": "pnpm build"
   },
+  "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1"
+  },
   "peerDependencies": {
     "postcss-import": "^16.1.0",
     "postcss-lightningcss": "^1.0.1",
