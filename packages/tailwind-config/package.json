@@ -35,13 +35,13 @@
     "build": "tsup",
     "prepublishOnly": "pnpm build"
   },
-  "dependencies": {
-    "@tailwindcss/container-queries": "^0.1.1"
-  },
   "peerDependencies": {
     "postcss-import": "^16.1.0",
     "postcss-lightningcss": "^1.0.1",
     "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1"
   },
   "devDependencies": {
     "tsup": "8.0.2"
