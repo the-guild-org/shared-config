@@ -1,6 +1,6 @@
 {
   "name": "@theguild/prettier-config",
-  "version": "2.0.7",
+  "version": "3.0.0",
   "type": "module",
   "description": "The Guild's shared Prettier config",
   "repository": {
