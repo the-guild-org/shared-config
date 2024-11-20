@@ -1,5 +1,30 @@
 # @theguild/eslint-config
 
+## 0.13.1
+
+### Patch Changes
+
+- 3c745fe: dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-jsonc@2.18.2` ↗︎](https://www.npmjs.com/package/eslint-plugin-jsonc/v/2.18.2)
+    (from `2.17.0`, in `dependencies`)
+- 357baae: dependencies updates:
+  - Updated dependency
+    [`@typescript-eslint/eslint-plugin@8.15.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin/v/8.15.0)
+    (from `8.13.0`, in `dependencies`)
+  - Updated dependency
+    [`@typescript-eslint/parser@8.15.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/parser/v/8.15.0)
+    (from `8.13.0`, in `dependencies`)
+- cbedce1: dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-n@17.13.2` ↗︎](https://www.npmjs.com/package/eslint-plugin-n/v/17.13.2) (from
+    `17.13.1`, in `dependencies`)
+- 4eabf76: dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-unicorn@56.0.1` ↗︎](https://www.npmjs.com/package/eslint-plugin-unicorn/v/56.0.1)
+    (from `56.0.0`, in `dependencies`)
+- 254b74d: ignore default export for `_meta.global.{ts,tsx}`
+
 ## 0.13.0
 
 ### Minor Changes
