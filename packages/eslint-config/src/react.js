@@ -13,8 +13,9 @@ module.exports = {
         '**/pages/**', // Next.js' `pages` directory use default export
         '**/app/**/{layout,page,not-found,manifest}.{ts,tsx}', // Next.js' `layout`/`page`/`not-found` components use default export
         '**/app/**/_meta.{ts,tsx}', // Nextra's `_meta` file uses default export
+        '**/app/_meta.global.{ts,tsx}', // Nextra's `_meta.global` file uses default export
         'next.config.{js,mjs,ts}',
-        '**/*.stories.tsx',
+        '**/*.stories.{ts,tsx}',
         '.storybook/main.ts',
         'website/theme.config.tsx',
         'postcss.config.js',
@@ -29,6 +30,12 @@ module.exports = {
       files: ['next.config.{js,mjs}'],
       env: {
         node: true,
+      },
+    },
+    {
+      files: ['**/*.stories.{ts,tsx}'],
+      rules: {
+        'no-console': 'off',
       },
     },
   ],
