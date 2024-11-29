@@ -64,9 +64,9 @@ runs:
       # - /docs/integrations/:path* /docs/other-integrations/:path* 302
       # + /docs/integrations/* /docs/other-integrations/:splat 302
       run: |
-        pwd
-        ls
-        [ -f _redirects ] && sed -i 's|\([^ ]*\):path\* \([^ ]*\):path\* \([0-9]*\)|\1* \2:splat \3|' _redirects
+        if [ -f _redirects ]; then
+          sed -i 's|\([^ ]*\):path\* \([^ ]*\):path\* \([0-9]*\)|\1* \2:splat \3|' _redirects
+        fi
       working-directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
 
     - name: push to cloudflare pages
