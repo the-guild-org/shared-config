@@ -58,12 +58,13 @@ runs:
 
     - name: fix wildcard redirects
       shell: bash
-      # NextJS requires `docs/things/:path*` syntax, but that does not work on Cloudflare.
-      # Redirects in CF uses `*` and `:splat`.
-      # With `:path*` the redirect from "docs/old/:path*" to "docs/new/:path*" becomes "docs/new/foo*"
+      # NextJS requires "docs/things/:path*" syntax, but that does not work on Cloudflare.
+      # Redirects in CF uses "*" and ":splat".
+      # With ":path*" the redirect from "docs/old/:path*" to "docs/new/:path*" becomes "docs/new/foo*"
       # - /docs/integrations/:path* /docs/other-integrations/:path* 302
       # + /docs/integrations/* /docs/other-integrations/:splat 302
-      run: [ -f _redirects ] && sed -i 's|\([^ ]*\):path\* \([^ ]*\):path\* \([0-9]*\)|\1* \2:splat \3|' _redirects
+      run: |
+        [ -f _redirects ] && sed -i 's|\([^ ]*\):path\* \([^ ]*\):path\* \([0-9]*\)|\1* \2:splat \3|' _redirects
       working-directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
 
     - name: push to cloudflare pages
