@@ -56,6 +56,14 @@ runs:
       run: ${{ inputs.buildScript }}
       working-directory: ${{ inputs.websiteDirectory }}
 
+    - name: fix wildcard redirects
+      shell: bash
+      # NextJS requires `docs/things/:path*` syntax, but that does not work on Cloudflare.
+      # Redirects in CF uses `*`.
+      # With `:path*` the redirect from "docs/old/:path*" to "docs/new/:path*" becomes "docs/new/foo*"
+      run: sed -i 's/:path\*/\*/g' _redirects
+      working-directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
+
     - name: push to cloudflare pages
       uses: cloudflare/pages-action@v1.5.0
       id: deploy
