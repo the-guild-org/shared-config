@@ -1,0 +1,13 @@
+---
+'@theguild/eslint-config': patch
+---
+
+Fix a wildcard redirects (Nexjs fights with Cloudflare) the-guild-org/shared-config#657
+NextJS requires `docs/things/:path*` syntax, but that does not work on Cloudflare.
+Redirects in CF uses `*` and `:splat`.
+With `:path*` the redirect from "docs/old/:path*" to "docs/new/:path*" becomes "docs/new/foo*"
+
+```diff
+- /docs/integrations/:path* /docs/other-integrations/:path* 302
++ /docs/integrations/* /docs/other-integrations/:splat 302
+```
