@@ -14,23 +14,29 @@ const makePrimaryColor: any =
     return 'hsl(' + h + s + l + (opacityValue ? ` / ${opacityValue}` : '') + ')';
   };
 
-/**
- * We explicitly do not use `import { createRequire } from 'node:module'` and
- * `const require = createRequire(import.meta.url)` because it works even without it.
- * E.g. storybook complains about cannot found `module` package
- */
-const componentsPackageJson = require.resolve('@theguild/components/package.json', {
-  /**
-   * Paths to resolve module location from CWD. Without specifying, it picks incorrect
-   * `@theguild/components`, also must be relative
-   */
-  paths: [process.cwd()],
-});
+function getComponentsPatterns() {
+  try {
+    /**
+     * We explicitly do not use `import { createRequire } from 'node:module'` and
+     * `const require = createRequire(import.meta.url)` because it works even without it.
+     * E.g. storybook complains about cannot found `module` package
+     */
+    const componentsPackageJson = require.resolve('@theguild/components/package.json', {
+      /**
+       * Paths to resolve module location from CWD. Without specifying, it picks incorrect
+       * `@theguild/components`, also must be relative
+       */
+      paths: [process.cwd()],
+    });
 
-const componentsPattern = path.relative(
-  process.cwd(),
-  path.posix.join(componentsPackageJson, '..', 'dist/**/*.js'),
-);
+    return [
+      path.relative(process.cwd(), path.posix.join(componentsPackageJson, '..', 'dist/**/*.js')),
+    ];
+  } catch {
+    console.warn("Can't find `@theguild/components` package.")
+    return [];
+  }
+}
 
 const config = {
   /**
@@ -38,7 +44,7 @@ const config = {
    * @see https://github.com/tailwindlabs/tailwindcss/pull/12717/files#diff-cf9185e083748e39c6940d3ad337df23b0ecbbd70b9550f596de7cf4b4668bcfR263-R273
    */
   darkMode: ['variant', '&:not(.light *)'],
-  content: ['./{src,app}/**/*.{tsx,mdx}', './mdx-components.tsx', componentsPattern],
+  content: ['./{src,app}/**/*.{tsx,mdx}', './mdx-components.tsx', ...getComponentsPatterns()],
   theme: {
     container: {
       center: true,
