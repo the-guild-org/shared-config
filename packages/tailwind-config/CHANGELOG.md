@@ -1,5 +1,12 @@
 # @theguild/tailwind-config
 
+## 0.6.1
+
+### Patch Changes
+
+- d23da18: Stop crashing when @theguild/components cannot be imported
+- 83a003f: add `'./content/**/*.{md,mdx}'` to Tailwind CSS config
+
 ## 0.6.0
 
 ### Minor Changes
