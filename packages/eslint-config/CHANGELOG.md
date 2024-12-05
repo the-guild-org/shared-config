@@ -1,5 +1,48 @@
 # @theguild/eslint-config
 
+## 0.13.2
+
+### Patch Changes
+
+- 866aef2: dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-n@17.14.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-n/v/17.14.0) (from
+    `17.13.2`, in `dependencies`)
+- f1146a6: dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-promise@7.2.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-promise/v/7.2.0)
+    (from `7.1.0`, in `dependencies`)
+- 5503b84: dependencies updates:
+  - Updated dependency
+    [`@typescript-eslint/eslint-plugin@8.17.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin/v/8.17.0)
+    (from `8.15.0`, in `dependencies`)
+  - Updated dependency
+    [`@typescript-eslint/parser@8.17.0` ↗︎](https://www.npmjs.com/package/@typescript-eslint/parser/v/8.17.0)
+    (from `8.15.0`, in `dependencies`)
+- d23da18: dependencies updates:
+  - Updated dependency
+    [`eslint-import-resolver-typescript@3.7.0` ↗︎](https://www.npmjs.com/package/eslint-import-resolver-typescript/v/3.7.0)
+    (from `3.6.3`, in `dependencies`)
+  - Updated dependency
+    [`eslint-plugin-promise@7.2.1` ↗︎](https://www.npmjs.com/package/eslint-plugin-promise/v/7.2.1)
+    (from `7.1.0`, in `dependencies`)
+- 8d4b216: dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-yml@1.16.0` ↗︎](https://www.npmjs.com/package/eslint-plugin-yml/v/1.16.0) (from
+    `1.15.0`, in `dependencies`)
+- ef4d681: dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-sonarjs@3.0.1` ↗︎](https://www.npmjs.com/package/eslint-plugin-sonarjs/v/3.0.1)
+    (from `2.0.4`, in `dependencies`)
+- 6049e99: dependencies updates:
+  - Updated dependency
+    [`eslint-import-resolver-typescript@3.7.0` ↗︎](https://www.npmjs.com/package/eslint-import-resolver-typescript/v/3.7.0)
+    (from `3.6.3`, in `dependencies`)
+- d0f1869: dependencies updates:
+  - Updated dependency
+    [`eslint-plugin-promise@7.2.1` ↗︎](https://www.npmjs.com/package/eslint-plugin-promise/v/7.2.1)
+    (from `7.2.0`, in `dependencies`)
+
 ## 0.13.1
 
 ### Patch Changes
