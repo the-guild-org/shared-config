@@ -33,7 +33,7 @@ function getComponentsPatterns() {
       path.relative(process.cwd(), path.posix.join(componentsPackageJson, '..', 'dist/**/*.js')),
     ];
   } catch {
-    console.warn("Can't find `@theguild/components` package.")
+    console.warn("Can't find `@theguild/components` package.");
     return [];
   }
 }
@@ -44,7 +44,12 @@ const config = {
    * @see https://github.com/tailwindlabs/tailwindcss/pull/12717/files#diff-cf9185e083748e39c6940d3ad337df23b0ecbbd70b9550f596de7cf4b4668bcfR263-R273
    */
   darkMode: ['variant', '&:not(.light *)'],
-  content: ['./{src,app}/**/*.{tsx,mdx}', './mdx-components.tsx', ...getComponentsPatterns()],
+  content: [
+    './{src,app}/**/*.{tsx,mdx}',
+    './mdx-components.tsx',
+    './content/**/*.{md,mdx}',
+    ...getComponentsPatterns(),
+  ],
   theme: {
     container: {
       center: true,
