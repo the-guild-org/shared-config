@@ -48,6 +48,7 @@ const config = {
     './{src,app}/**/*.{tsx,mdx}',
     './mdx-components.tsx',
     './content/**/*.{md,mdx}',
+    './theme.config.tsx', // Still needed for Nextra 3 websites.
     ...getComponentsPatterns(),
   ],
   theme: {
