@@ -1,5 +1,11 @@
 # @theguild/tailwind-config
 
+## 0.6.2
+
+### Patch Changes
+
+- 4149fb5: Add theme.config.tsx back to Tailwind content
+
 ## 0.6.1
 
 ### Patch Changes
