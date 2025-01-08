@@ -53,8 +53,8 @@ importers:
   packages/eslint-config:
     dependencies:
       '@rushstack/eslint-patch':
-        specifier: 1.10.4
-        version: 1.10.4
+        specifier: 1.10.5
+        version: 1.10.5
       '@typescript-eslint/eslint-plugin':
         specifier: 8.17.0
         version: 8.17.0(@typescript-eslint/parser@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2)
@@ -1483,8 +1483,8 @@ packages:
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
-  '@rushstack/eslint-patch@1.10.4':
-    resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
+  '@rushstack/eslint-patch@1.10.5':
+    resolution: {integrity: sha512-kkKUDVlII2DQiKy7UstOR1ErJP8kUKAQ4oa+SQtM0K+lPdmmjj0YnnxBgtTVYH7mUKtbsxeFC9y0AmK7Yb78/A==}
 
   '@shopify/eslint-plugin@46.0.0':
     resolution: {integrity: sha512-sYUKGaBMXcTEyvMxSECb1H8YPQojgsv6FkUWDN1isLNDrTyk52VETCmRFiS9Aj/hon8W6x8IL5597FyN/SC+qg==}
@@ -6075,7 +6075,7 @@ snapshots:
 
   '@rtsao/scc@1.1.0': {}
 
-  '@rushstack/eslint-patch@1.10.4': {}
+  '@rushstack/eslint-patch@1.10.5': {}
 
   '@shopify/eslint-plugin@46.0.0(@babel/core@7.26.0)(@types/eslint@9.6.1)(eslint@9.17.0(jiti@1.21.6))(prettier@3.4.2)(typescript@5.7.2)':
     dependencies:
