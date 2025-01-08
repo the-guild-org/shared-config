@@ -33,6 +33,11 @@ outputs:
 runs:
   using: composite
   steps:
+    - name: cancel concurrent runs
+      uses: styfle/cancel-workflow-action@0.12.1
+      continue-on-error: true
+      with:
+        access_token: ${{ github.token }}
     - name: detect package manager
       id: pkgmngr
       uses: actions/github-script@v7
