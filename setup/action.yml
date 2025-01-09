@@ -47,10 +47,10 @@ runs:
           const wd = '${{ inputs.working-directory }}';
           const pkgPath = wd ? `./${wd}/package.json` : 'package.json';
           const { packageManager } = require(pkgPath);
-          const [name] = String(packageManager).split('@');
-          if (!name) {
+          if (!packageManager) {
             return core.setFailed(`"packageManager" not defined in "${pkgPath}". Please choose a package manager with "corepack use <your favourite manager>".`);
           }
+          const [name] = packageManager.split('@');
           console.log(name);
           return name;
     - name: enable corepack
