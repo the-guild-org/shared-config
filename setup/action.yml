@@ -45,7 +45,7 @@ runs:
         result-encoding: string
         script: |
           const wd = '${{ inputs.working-directory }}';
-          const pkgPath = wd ? `${wd}/package.json` : 'package.json';
+          const pkgPath = wd ? `./${wd}/package.json` : 'package.json';
           const { packageManager } = require(pkgPath);
           const [name] = String(packageManager).split('@');
           if (!name) {
