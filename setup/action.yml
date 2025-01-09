@@ -57,7 +57,8 @@ runs:
           const [name] = packageManager.split('@');
           console.log(name);
           return name;
-    - name: enable corepack      shell: bash
+    - name: enable corepack
+      shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: corepack enable
     - name: set up node
