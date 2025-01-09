@@ -46,15 +46,18 @@ runs:
         script: |
           const wd = '${{ inputs.working-directory }}';
           const pkgPath = wd ? `./${wd}/package.json` : 'package.json';
-          const { packageManager } = require(pkgPath);
+          let { packageManager } = require(pkgPath);
+          if (!packageManager && wd) {
+            // try the packageManager from root package json
+            packageManager = require('package.json').packageManager;
+          }
           if (!packageManager) {
             return core.setFailed(`"packageManager" not defined in "${pkgPath}". Please choose a package manager with "corepack use <your favourite manager>".`);
           }
           const [name] = packageManager.split('@');
           console.log(name);
           return name;
-    - name: enable corepack
-      shell: bash
+    - name: enable corepack      shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: corepack enable
     - name: set up node
