@@ -45,11 +45,11 @@ runs:
         result-encoding: string
         script: |
           const wd = '${{ inputs.working-directory }}';
-          const pkgPath = wd ? `./${wd}/package.json` : 'package.json';
+          const pkgPath = wd ? `./${wd}/package.json` : './package.json';
           let { packageManager } = require(pkgPath);
           if (!packageManager && wd) {
             // try the packageManager from root package json
-            packageManager = require('package.json').packageManager;
+            packageManager = require('./package.json').packageManager;
           }
           if (!packageManager) {
             return core.setFailed(`"packageManager" not defined in "${pkgPath}". Please choose a package manager with "corepack use <your favourite manager>".`);
