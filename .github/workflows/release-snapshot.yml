@@ -79,7 +79,7 @@ jobs:
 
       - name: ${{ inputs.npmTag }} release
         id: changesets
-        uses: the-guild-org/changesets-snapshot-action@v0.0.2
+        uses: the-guild-org/changesets-snapshot-action@v0.0.3
         with:
           tag: ${{ inputs.npmTag }}
           prepareScript: '${{inputs.packageManager}} run ${{ inputs.buildScript }}'
