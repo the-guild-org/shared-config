@@ -1,0 +1,59 @@
+# Note: this is a shared pipeline used by other repositories.
+# Docs: https://docs.github.com/en/actions/using-workflows/reusing-workflows
+
+on:
+  workflow_call:
+    inputs:
+      nodeVersion:
+        required: false
+        type: string
+        default: '22'
+      packageManager:
+        type: string
+        required: false
+        default: yarn
+      packageManagerVersion:
+        type: string
+        description: Package manager version
+        required: false
+        default: ''
+      cwd:
+        type: string
+        description: The directory containing the MDX files
+      files:
+        type: string
+        description: The glob pattern for MDX files
+      verbose:
+        type: boolean
+        description: Whether to print all scanned files
+        default: false
+      version:
+        type: string
+        description: The version of the package to validate
+        default: 'latest'
+
+jobs:
+  validate-mdx-links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - uses: actions/checkout@v4
+        name: checkout
+
+      - uses: the-guild-org/shared-config/setup@main
+        name: setup env
+        with:
+          nodeVersion: ${{inputs.nodeVersion}}
+          packageManager: ${{inputs.packageManager}}
+          packageManagerVersion: ${{inputs.packageManagerVersion}}
+
+      - name: validate links
+        run: |
+          ${{inputs.packageManager}} dlx validate-mdx-links@${{inputs.version}} \
+            --cwd ${{inputs.cwd}} \
+            --files ${{inputs.files}} \
+            ${{inputs.verbose && '--verbose' || ''}}
