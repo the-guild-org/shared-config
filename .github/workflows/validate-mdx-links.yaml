@@ -56,4 +56,4 @@ jobs:
           ${{inputs.packageManager}} dlx validate-mdx-links@${{inputs.version}} \
             --cwd ${{inputs.cwd}} \
             --files ${{inputs.files}} \
-            --verbose ${{inputs.verbose}}
+            --verbose=${{inputs.verbose}}
