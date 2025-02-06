@@ -60,7 +60,9 @@ runs:
     - name: enable corepack
       shell: bash
       working-directory: ${{ inputs.working-directory }}
-      run: corepack enable
+      run: |
+        npm i -g --force corepack
+        corepack enable
     - name: set up node
       uses: actions/setup-node@v4
       with:
