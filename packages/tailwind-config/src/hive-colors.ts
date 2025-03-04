@@ -39,4 +39,25 @@ export const hiveColors = {
     900: '#6D6A63',
     1000: '#4D4B46',
   },
+  // primary color functional tones, e.g. for icons in tables
+  // use bright for icons and dark for text on light backgrounds
+  // use dark for icons and bright for text on dark backgrounds
+  'critical-bright': '#FD3325',
+  'critical-dark': '#F81202',
+  'warning-bright': '#FE8830',
+  'positive-bright': '#24D551',
+  'positive-dark': '#1BA13D',
+  // subtle matching functional tones, e.g. for callouts
+  'warning-100': '#FBF8CB',
+  'warning-500': '#E7DE62',
+  'warning-800': '#7D7204',
+  'critical-100': '#FFF0E8',
+  'critical-500': '#FFC6BB',
+  'critical-800': '#932D47',
+  'info-100': '#E7F7FF',
+  'info-500': '#9FC9DC',
+  'info-800': '#205B75',
+  'positive-100': '#F3FBD7',
+  'positive-500': '#AFD563',
+  'positive-800': '#406B10',
 };
