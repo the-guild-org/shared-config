@@ -1,5 +1,11 @@
 # @theguild/tailwind-config
 
+## 0.6.3
+
+### Patch Changes
+
+- 6f745e6: Add functional tones to Tailwind config
+
 ## 0.6.2
 
 ### Patch Changes
