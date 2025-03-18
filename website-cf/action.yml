@@ -96,5 +96,5 @@ runs:
           <!--- ${{ inputs.commentId }} --->
           ### ${{ inputs.commentTitle }}
 
-          The latest changes are available as preview in: [${{ steps.deploy.outputs.url }}](${{ steps.deploy.outputs.url }})
+          The latest changes are available as preview in: [${{ steps.deploy.outputs.pages-deployment-alias-url }}](${{ steps.deploy.outputs.pages-deployment-alias-url }})
         edit-mode: replace
