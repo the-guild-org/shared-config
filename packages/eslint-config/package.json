@@ -24,7 +24,7 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@rushstack/eslint-patch": "1.10.4",
+    "@rushstack/eslint-patch": "1.11.0",
     "@typescript-eslint/eslint-plugin": "8.17.0",
     "@typescript-eslint/parser": "8.17.0",
     "eslint-config-prettier": "9.1.0",
