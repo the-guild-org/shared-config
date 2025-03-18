@@ -36,7 +36,7 @@ runs:
       if: inputs.packageManager == 'pnpm'
       working-directory: ${{ inputs.workingDirectory }}
       run: |
-        PNPM_VERSION=${PNPM_VERSION:-9.0.6}
+        PNPM_VERSION=${PNPM_VERSION:-10.6.4}
         PKG_JSON=$(cat package.json | jq -r '.packageManager' | awk -F@ '{print $2}')
         if [ ! -z $PKG_JSON ]; then
           PNPM_VERSION=$PKG_JSON
