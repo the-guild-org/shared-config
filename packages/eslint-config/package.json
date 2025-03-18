@@ -1,6 +1,6 @@
 {
   "name": "@theguild/eslint-config",
-  "version": "0.13.2",
+  "version": "0.13.3",
   "type": "commonjs",
   "description": "The Guild's shared ESLint config",
   "repository": {

@@ -1,5 +1,14 @@
 # @theguild/eslint-config
 
+## 0.13.3
+
+### Patch Changes
+
+- 8e90ba8: dependencies updates:
+  - Updated dependency
+    [`eslint-import-resolver-typescript@3.9.1` ↗︎](https://www.npmjs.com/package/eslint-import-resolver-typescript/v/3.9.1)
+    (from `3.7.0`, in `dependencies`)
+
 ## 0.13.2
 
 ### Patch Changes
