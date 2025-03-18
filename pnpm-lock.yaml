@@ -74,8 +74,8 @@ importers:
         specifier: 2.31.0
         version: 2.31.0(@typescript-eslint/parser@8.17.0(eslint@9.22.0(jiti@1.21.7))(typescript@5.7.2))(eslint-import-resolver-typescript@3.9.1)(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-jsonc:
-        specifier: 2.18.2
-        version: 2.18.2(eslint@9.22.0(jiti@1.21.7))
+        specifier: 2.19.1
+        version: 2.19.1(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-jsx-a11y:
         specifier: 6.10.2
         version: 6.10.2(eslint@9.22.0(jiti@1.21.7))
@@ -2361,8 +2361,8 @@ packages:
       jest:
         optional: true
 
-  eslint-plugin-jsonc@2.18.2:
-    resolution: {integrity: sha512-SDhJiSsWt3nItl/UuIv+ti4g3m4gpGkmnUJS9UWR3TrpyNsIcnJoBRD7Kof6cM4Rk3L0wrmY5Tm3z7ZPjR2uGg==}
+  eslint-plugin-jsonc@2.19.1:
+    resolution: {integrity: sha512-MmlAOaZK1+Lg7YoCZPGRjb88ZjT+ct/KTsvcsbZdBm+w8WMzGx+XEmexk0m40P1WV9G2rFV7X3klyRGRpFXEjA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -7131,7 +7131,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-jsonc@2.18.2(eslint@9.22.0(jiti@1.21.7)):
+  eslint-plugin-jsonc@2.19.1(eslint@9.22.0(jiti@1.21.7)):
     dependencies:
       '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@1.21.7))
       eslint: 9.22.0(jiti@1.21.7)
