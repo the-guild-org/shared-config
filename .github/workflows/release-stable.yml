@@ -59,7 +59,7 @@ jobs:
       publishedPackages: ${{ steps.changesets.outputs.publishedPackages }}
     steps:
       - name: checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
           token: ${{ secrets.githubToken }}
@@ -80,7 +80,7 @@ jobs:
 
       - name: release / pull_request
         id: changesets
-        uses: dotansimha/changesets-action@v1.5.2
+        uses: dotansimha/changesets-action@069996e9be15531bd598272996fa23853d61590e # v1.5.2
         with:
           publish: '${{inputs.packageManager}} ${{ inputs.releaseScript }}'
           version: '${{inputs.packageManager}} ${{inputs.versionScript}}'
