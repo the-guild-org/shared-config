@@ -24,7 +24,7 @@
   "dependencies": {
     "@actions/core": "1.11.1",
     "@actions/github": "6.0.0",
-    "marked": "12.0.2",
+    "marked": "15.0.7",
     "semver": "7.7.1"
   },
   "devDependencies": {
