@@ -83,8 +83,8 @@ importers:
         specifier: 3.1.5
         version: 3.1.5(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-n:
-        specifier: 17.14.0
-        version: 17.14.0(eslint@9.22.0(jiti@1.21.7))
+        specifier: 17.16.2
+        version: 17.16.2(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-promise:
         specifier: 7.2.1
         version: 7.2.1(eslint@9.22.0(jiti@1.21.7))
@@ -2385,8 +2385,8 @@ packages:
     peerDependencies:
       eslint: '>=8.0.0'
 
-  eslint-plugin-n@17.14.0:
-    resolution: {integrity: sha512-maxPLMEA0rPmRpoOlxEclKng4UpDe+N5BJS4t24I3UKnN109Qcivnfs37KMy84G0af3bxjog5lKctP5ObsvcTA==}
+  eslint-plugin-n@17.16.2:
+    resolution: {integrity: sha512-iQM5Oj+9o0KaeLoObJC/uxNGpktZCkYiTTBo8PkRWq3HwNcRxwpvSDFjBhQ5+HLJzBTy+CLDC5+bw0Z5GyhlOQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.23.0'
@@ -5933,7 +5933,7 @@ snapshots:
       eslint-plugin-jest: 28.11.0(@typescript-eslint/eslint-plugin@8.26.1(@typescript-eslint/parser@8.26.1(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2)
       eslint-plugin-jest-formatting: 3.1.0(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.22.0(jiti@1.21.7))
-      eslint-plugin-n: 17.14.0(eslint@9.22.0(jiti@1.21.7))
+      eslint-plugin-n: 17.16.2(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-prettier: 5.2.3(@types/eslint@9.6.1)(eslint-config-prettier@9.1.0(eslint@9.22.0(jiti@1.21.7)))(eslint@9.22.0(jiti@1.21.7))(prettier@3.5.3)
       eslint-plugin-promise: 7.2.1(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-react: 7.37.2(eslint@9.22.0(jiti@1.21.7))
@@ -7186,7 +7186,7 @@ snapshots:
       - bluebird
       - supports-color
 
-  eslint-plugin-n@17.14.0(eslint@9.22.0(jiti@1.21.7)):
+  eslint-plugin-n@17.16.2(eslint@9.22.0(jiti@1.21.7)):
     dependencies:
       '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@1.21.7))
       enhanced-resolve: 5.18.1
