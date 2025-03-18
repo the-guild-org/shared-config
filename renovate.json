@@ -7,6 +7,13 @@
     "enabled": true,
     "automerge": true
   },
+  "github-actions": {
+    "fileMatch": [
+        "(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$",
+        "(^|/)action\\.ya?ml$",
+        "(^|/)setup/action\\.ya?ml"
+    ]
+  },
   "recreateClosed": false,
   "prConcurrentLimit": 25,
   "labels": ["dependencies"],
