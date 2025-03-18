@@ -16,19 +16,13 @@
       "groupName": "graphql-eslint",
       "matchPackagePrefixes": ["@graphql-eslint"],
       "prPriority": 20,
-      "reviewers": ["dimaMachina"]
+      "reviewers": ["dotansimha"]
     },
     {
       "groupName": "bob-the-bundler",
       "matchPackagePrefixes": ["bob-the-bundler"],
       "prPriority": 20,
       "reviewers": ["n1ru4l"]
-    },
-    {
-      "groupName": "graphql-config",
-      "matchPackagePrefixes": ["@graphql-config", "graphql-config"],
-      "prPriority": 20,
-      "reviewers": ["dimaMachina"]
     },
     {
       "groupName": "graphql-tools",
@@ -58,7 +52,7 @@
       "groupName": "graphql-codegen",
       "matchPackagePrefixes": ["@graphql-codegen"],
       "prPriority": 20,
-      "reviewers": ["dotansimha", "saihaj"]
+      "reviewers": ["dotansimha", "eddeee888"]
     },
     {
       "groupName": "envelop",
@@ -76,13 +70,13 @@
       "groupName": "graphql-yoga",
       "matchPackagePrefixes": ["@graphql-yoga", "graphql-yoga"],
       "prPriority": 20,
-      "reviewers": ["ardatan", "enisdenjo", "n1ru4l"]
+      "reviewers": ["ardatan", "enisdenjo", "n1ru4l", "EmrysMyrddin"]
     },
     {
       "groupName": "whatwg-node",
       "matchPackagePrefixes": ["@whatwg-node"],
       "prPriority": 20,
-      "reviewers": ["ardatan"]
+      "reviewers": ["ardatan", "EmrysMyrddin"]
     },
     {
       "groupName": "graphql-scalars",
@@ -100,13 +94,11 @@
         "nextra-theme-blog"
       ],
       "prPriority": 20,
-      "reviewers": ["dimaMachina"]
     },
     {
       "groupName": "prettier",
       "matchPackageNames": ["prettier", "@theguild/prettier-config"],
       "prPriority": 20,
-      "reviewers": ["dimaMachina"]
     },
     {
       "matchDepTypes": ["devDependencies"],
