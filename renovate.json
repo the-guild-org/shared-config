@@ -9,9 +9,10 @@
   },
   "github-actions": {
     "fileMatch": [
-        "(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$",
-        "(^|/)action\\.ya?ml$",
-        "(^|/)setup/action\\.ya?ml"
+      "(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$",
+      "(^|/)action\\.ya?ml$",
+      "(^|/)setup/action\\.ya?ml",
+      "(^|/)website-cf/action\\.ya?ml"
     ]
   },
   "recreateClosed": false,
@@ -100,12 +101,12 @@
         "nextra-theme-docs",
         "nextra-theme-blog"
       ],
-      "prPriority": 20,
+      "prPriority": 20
     },
     {
       "groupName": "prettier",
       "matchPackageNames": ["prettier", "@theguild/prettier-config"],
-      "prPriority": 20,
+      "prPriority": 20
     },
     {
       "matchDepTypes": ["devDependencies"],

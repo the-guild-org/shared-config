@@ -48,10 +48,6 @@ runs:
   using: composite
   steps:
     - name: build website
-      env:
-        NEXT_PUBLIC_ALGOLIA_INDEX_NAME: searchv2_main
-        NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY: a5522203ca95675199cc21edf09e6d75
-        NEXT_PUBLIC_ALGOLIA_APP_ID: ANRJKXZTRW
       shell: bash
       run: ${{ inputs.buildScript }}
       working-directory: ${{ inputs.websiteDirectory }}
@@ -70,17 +66,17 @@ runs:
       working-directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
 
     - name: push to cloudflare pages
-      uses: cloudflare/pages-action@v1.5.0
+      uses: cloudflare/wrangler-action@v3.14.1
       id: deploy
       with:
         apiToken: ${{ inputs.cloudflareApiToken }}
         accountId: ${{ inputs.cloudflareAccountId }}
-        projectName: ${{ inputs.projectName }}
-        directory: ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }}
-        branch: ${{ inputs.prId != '' && format('pr-{0}', inputs.prId) || inputs.mainBranch }}
+        command: |
+          pages deploy ${{ format('{0}/{1}', inputs.websiteDirectory, inputs.artifactDir) }} --project-name=${{ inputs.projectName }} --branch=${{ inputs.prId != '' && format('pr-{0}', inputs.prId) || inputs.mainBranch }}
+        gitHubToken: ${{ inputs.githubToken }}
 
     - name: find pr comment
-      uses: peter-evans/find-comment@v3
+      uses: peter-evans/find-comment@v3.1.0
       id: fc
       if: ${{ inputs.prId != '' }}
       with:
@@ -90,14 +86,14 @@ runs:
         body-includes: <!--- ${{ inputs.commentId }} --->
 
     - name: create/update comment
-      uses: peter-evans/create-or-update-comment@v4
+      uses: peter-evans/create-or-update-comment@v4.0.0
       if: ${{ inputs.prId != '' }}
       with:
         token: ${{ inputs.githubToken }}
         comment-id: ${{ steps.fc.outputs.comment-id }}
         issue-number: ${{ inputs.prId }}
         body: |
-          <!--- ${{ inputs.commentId }} ---> 
+          <!--- ${{ inputs.commentId }} --->
           ### ${{ inputs.commentTitle }}
 
           The latest changes are available as preview in: [${{ steps.deploy.outputs.url }}](${{ steps.deploy.outputs.url }})

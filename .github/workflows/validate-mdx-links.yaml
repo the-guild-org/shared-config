@@ -41,7 +41,7 @@ jobs:
       cancel-in-progress: true
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.2
         name: checkout
 
       - uses: the-guild-org/shared-config/setup@main

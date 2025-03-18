@@ -22,7 +22,7 @@ on:
       nodeVersion:
         required: false
         type: string
-        default: '18'
+        default: '22'
     secrets:
       githubToken:
         required: true
@@ -33,7 +33,7 @@ jobs:
     if: github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
           token: ${{ secrets.githubToken }}

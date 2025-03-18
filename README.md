@@ -8,7 +8,7 @@ configurations/pipelines needed.
 
 <details>
   <summary>Step 1: changesets</summary>
-  
+
 To setup automated release flow for your package, using `changesets`:
 
 1. Create a monorepo, either by using `yarn` (v1) or `pnpm`.
@@ -106,7 +106,7 @@ jobs:
     uses: the-guild-org/shared-config/.github/workflows/release-stable.yml@main
     with:
       releaseScript: release # script to run as part of publish command
-      nodeVersion: 18 # you can change if needed
+      nodeVersion: 22 # you can change if needed
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
       npmToken: ${{ secrets.NPM_TOKEN }}
@@ -152,7 +152,7 @@ jobs:
     with:
       npmTag: alpha
       buildScript: build
-      nodeVersion: 18
+      nodeVersion: 22
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
       npmToken: ${{ secrets.NPM_TOKEN }}
@@ -165,9 +165,9 @@ jobs:
 
 <details>
   <summary>Step 6: Renovate</summary>
-  
+
 1. Install Renovate Bot on your repo: https://github.com/marketplace/renovate
-2. Wait for Renovate to create the first setup PR and merge it. 
+2. Wait for Renovate to create the first setup PR and merge it.
 3. Create `renovate.json` config file in the repo, with the following:
 
 ```
@@ -204,7 +204,7 @@ jobs:
 
 <details>
   <summary>Step 9: ESLint/Prettier config</summary>
-  
+
 If you wish to use the unified config for eslint or prettier, following these instructions:
 
 - eslint: https://github.com/the-guild-org/shared-config/tree/main/packages/eslint-config
@@ -283,7 +283,7 @@ jobs:
     uses: the-guild-org/shared-config/.github/workflows/ci-node-matrix.yml@main
     with:
       script: yarn build
-      nodeVersions: '[14,16,18]'
+      nodeVersions: '[22,23]'
 ```
 
 If your script requires more stuff, and you just want to avoid configuring NodeJS + Yarn + Caches,
@@ -309,7 +309,7 @@ jobs:
       - uses: the-guild-org/shared-config/setup@main
         name: setup env
         with:
-          nodeVersion: 18
+          nodeVersion: 22
 ```
 
 </details>
@@ -328,7 +328,7 @@ jobs:
     uses: the-guild-org/shared-config/.github/workflows/release-stable.yml@main
     with:
       releaseScript: release
-      nodeVersion: 18
+      nodeVersion: 22
     secrets:
       githubToken: ${{ secrets.GUILD_BOT_TOKEN }} # HERE
       npmToken: ${{ secrets.NPM_TOKEN }}
@@ -345,7 +345,7 @@ jobs:
     with:
       npmTag: alpha
       buildScript: build
-      nodeVersion: 18
+      nodeVersion: 22
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
       npmToken: ${{ secrets.NPM_TOKEN }}
@@ -357,127 +357,10 @@ jobs:
       npmTag: rc # Here we are using a different tag
       restoreDeletedChangesets: true # Make sure to add this flag, in order to make changesets visible to the release pipeline!
       buildScript: build
-      nodeVersion: 18
+      nodeVersion: 22
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
       npmToken: ${{ secrets.NPM_TOKEN }}
 ```
 
 </details>
-
-<details>
-  <summary> Step 13: Trackback</summary>
-
-Trackback is a in-house tool for The Guild repositories, that allows up to easily test `rc`
-releases.
-
-To use that, following these instructions:
-
-1. Ensure you have `GUILD_BOT_TOKEN` set.
-2. Find the workflows in your repositories that might be effected by changes. Usually `build` /
-   `typecheck` and `test` are relevant here. Also more complicated workflows, such as integration
-   tests. Add this at the end of the workflow (or, after the importand command):
-
-```yaml
-- uses: the-guild-org/shared-config/release-trackback@main
-  if: ${{ always() }}} # Important!
-  with:
-    token: ${{ secrets.GUILD_BOT_TOKEN }} # Make sure to use the Guild bot token here
-    relevantPackages:
-      | # Here you can specify a list of explicit dependencies, or using "*" matcher.
-      @theguild/*
-      @whatwg-node/*
-```
-
-3. To make sure your repository accepts Renovate configuration for alpha release, use the following
-   snippet in your `renovate.json` config file:
-
-```json
-{
-  "groupName": "whatwg-node",
-  "matchPackageNames": ["@whatwg-node/*"],
-  "prPriority": 21,
-  "ignoreUnstable": false,
-  "respectLatest": false,
-  "allowedVersions": "/^([0-9]+).([0-9]+)(?:.([0-9]+))?(-rc-.+)?$/"
-}
-```
-
-4. Now, if a **Renovate PR** with **`rc`** release, for a depenendecies declared under
-   `relevantPackages` will fail your workflow, you'll get a comment on `Upcoming Release Changes` PR
-   in the source repository!
-
-</details>
-
-<details>
-  <summary>Step 13: (Optional) Setup Algolia search</summary>
-
-We recommend setup Algolia to any The Guild project that provides documentation with Nextra.
-
-  <br />
-
-1. Install `@theguild/algolia`
-
-```
-yarn add -D @theguild/algolia
-```
-
-2. Configure Prettier
-
-If Prettier or other tools are used, ensure to exclude the `website/algolia-lockfile.json` file.
-
-3. Add Algolia credentials to repo secrets
-
-Configure the following GitHub Actions secrets from your Algolia dashboard:
-
-- `ALGOLIA_ADMIN_API_KEY`
-
-4. Add the GitHub Actions workflows
-
-_PR workflow example_
-
-```yml
-name: pr
-on:
-  pull_request:
-    branches:
-      - master
-
-jobs:
-  algolia:
-    uses: the-guild-org/shared-config/.github/workflows/algolia-integrity.yml@main
-    with:
-      domain: https://www.the-guild.dev/graphql/codegen/
-    secrets:
-      githubToken: ${{ secrets.GITHUB_TOKEN }}
-```
-
-_main branch workflow example_
-
-```yml
-name: release
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  algolia:
-    uses: the-guild-org/shared-config/.github/workflows/algolia-publish.yml@main
-    secrets:
-      githubToken: ${{ secrets.GITHUB_TOKEN }}
-      algoliaAdminApiKey: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
-    with:
-      domain: https://www.the-guild.dev/graphql/codegen/
-```
-
-</details>
-
-For the complete list of available options (`with: ...`), please refer to the
-[workflow declaration](./github/workflows/algolia-integrity.yml).
-
-If your project runs a node version different version of `18` or uses a package manager different
-from `yarn`, please use the following options under the `with` block:
-
-- `packageManager: "pnpm"`
-- `nodeVersion: 16`
