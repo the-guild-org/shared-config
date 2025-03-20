@@ -4,39 +4,48 @@
 on:
   workflow_call:
     inputs:
-      nodeVersion:
+      annotations:
         required: false
-        type: string
-        default: '22'
-      packageManager:
-        type: string
+        type: boolean
+        default: true
+      onlyPrFiles:
         required: false
-        default: yarn
-      packageManagerVersion:
-        type: string
-        description: Package manager version
-        required: false
-        default: ''
+        type: boolean
+        default: true
       script:
         required: false
         type: string
+      reportFile:
+        required: false
+        type: string
+        default: eslint_report.json
+
+      # must match setup/actions.yml
+      node-version:
+        type: string
+        description: Node.js version to use.
+        required: false
+      node-version-file:
+        type: string
+        description: File containing the version to use.
+        required: false
+
     secrets:
       githubToken:
         required: false
 
 jobs:
   eslint:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - uses: the-guild-org/shared-config/setup@main
-        name: setup env
+      - uses: the-guild-org/shared-config/setup@v1
+        name: set up env
         with:
-          nodeVersion: ${{inputs.nodeVersion}}
-          packageManager: ${{inputs.packageManager}}
-          packageManagerVersion: ${{inputs.packageManagerVersion}}
+          node-version: ${{ inputs.node-version }}
+          node-version-file: ${{ inputs.node-version-file }}
 
       - name: lint
         run: ${{ inputs.script || 'yarn eslint --output-file eslint_report.json --format json .' }}

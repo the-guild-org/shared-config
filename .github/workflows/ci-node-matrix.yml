@@ -10,20 +10,11 @@ on:
       nodeVersions:
         required: true
         type: string
-        default: '[22]'
-      packageManager:
-        type: string
-        required: false
-        default: yarn
-      packageManagerVersion:
-        type: string
-        description: Package manager version
-        required: false
-        default: ''
+        default: '[18]'
 
 jobs:
   ci_setup:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.setVariables.outputs.matrix }}
     steps:
@@ -34,7 +25,7 @@ jobs:
 
   ci:
     needs: ci_setup
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         nodeVersion: ${{fromJson(needs.ci_setup.outputs.matrix)}}
@@ -44,12 +35,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - uses: the-guild-org/shared-config/setup@main
-        name: setup env
+      - uses: the-guild-org/shared-config/setup@v1
+        name: set up env
         with:
-          nodeVersion: ${{matrix.nodeVersion }}
-          packageManager: ${{inputs.packageManager}}
-          packageManagerVersion: ${{inputs.packageManagerVersion}}
+          node-version: ${{matrix.nodeVersion }}
 
       - name: ${{ inputs.script }}
         run: ${{ inputs.script }}

@@ -1,85 +1,84 @@
 # Note: This is a composite GitHub Actions, it should do all env setup, caching an so on, so other pipelines can just compose their own stuff on top of that.
 # Docs: https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 
-name: Configure Environment
-description: Shared configuration for checkout, Node.js and package manager
+name: Setup
+description: |
+  Shared configuration for setting up The Guild's usual environent. It sets up node, detects defined "packageManager", enables corepack and installs with the specified package manager.
+
+# make sure to match the inputs for all workflows using this action
 inputs:
-  nodeVersion:
-    description: Node.js version to use
-    required: true
-    default: '22'
-  workingDirectory:
-    description: Working directory
+  node-version:
+    type: string
+    description: Node.js version to use.
     required: false
-    default: ./
-  packageManager:
-    description: Package manager
+  node-version-file:
+    type: string
+    description: File containing the version to use.
     required: false
-    default: yarn
-  packageManagerVersion:
-    description: Package manager version
+  working-directory:
+    type: string
+    description: Working directory.
     required: false
-    default: ''
+    default: .
+  install-command:
+    type: string
+    description: Custom install command to run after the environment has been set up. Will run instead of the default "install" step.
+    required: false
+
+outputs:
+  package-manager:
+    description: The detected package manager that is used.
+    value: ${{ steps.pkgmngr.outputs.result }}
 
 runs:
   using: composite
   steps:
-    - name: Cancel Previous Runs
-      uses: styfle/cancel-workflow-action@85880fa0301c86cca9da44039ee3bb12d3bedbfa # 0.12.1
+    - name: cancel concurrent runs
+      uses: styfle/cancel-workflow-action@0.12.1
       continue-on-error: true
       with:
         access_token: ${{ github.token }}
-
-    - name: check pnpm version
+    - name: detect package manager
+      id: pkgmngr
+      uses: actions/github-script@v7
+      with:
+        result-encoding: string
+        script: |
+          const wd = '${{ inputs.working-directory }}';
+          const pkgPath = wd ? `./${wd}/package.json` : './package.json';
+          let { packageManager } = require(pkgPath);
+          if (!packageManager && wd) {
+            // try the packageManager from root package json
+            packageManager = require('./package.json').packageManager;
+          }
+          if (!packageManager) {
+            return core.setFailed(`"packageManager" not defined in "${pkgPath}". Please choose a package manager with "corepack use <your favourite manager>".`);
+          }
+          const [name] = packageManager.split('@');
+          console.log(name);
+          return name;
+    - name: enable corepack
       shell: bash
-      id: pnpm
-      if: inputs.packageManager == 'pnpm'
-      working-directory: ${{ inputs.workingDirectory }}
+      working-directory: ${{ inputs.working-directory }}
       run: |
-        PNPM_VERSION=${PNPM_VERSION:-10.6.4}
-        PKG_JSON=$(cat package.json | jq -r '.packageManager' | awk -F@ '{print $2}')
-        if [ ! -z $PKG_JSON ]; then
-          PNPM_VERSION=$PKG_JSON
-        fi
-        if [ ! -z {{inputs.packageManager}} ]; then
-          PNPM_VERSION=${{ inputs.packageManagerVersion }}
-        fi
-        echo "Using PNPM version $PNPM_VERSION"
-        echo "version=$PNPM_VERSION" >> $GITHUB_OUTPUT
-
-    - name: Setup ${{ inputs.packageManager }}
-      id: pnpm_setup
-      if: inputs.packageManager == 'pnpm'
-      uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        npm i -g --force corepack
+        corepack enable
+    - name: set up node
+      uses: actions/setup-node@v4
       with:
-        version: ${{ steps.pnpm.outputs.version }}
-        run_install: false
-        package_json_file: ${{ inputs.workingDirectory }}/package.json
-
-    - name: setup node
-      uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
-      with:
-        node-version: ${{ inputs.nodeVersion }}
-        cache: ${{ inputs.packageManager }}
-        cache-dependency-path: |
-          **/pnpm-lock.yaml
-          **/yarn.lock
-          patches/**
-
-    - name: yarn install
+        node-version: ${{ inputs.node-version }}
+        node-version-file: ${{ inputs.node-version-file }}
+        cache: ${{ steps.pkgmngr.outputs.result }}
+    - name: install
+      if: inputs.install-command == ''
       shell: bash
-      if: inputs.packageManager == 'yarn' && inputs.packageManagerVersion == ''
-      run: yarn install --ignore-engines --frozen-lockfile --immutable
-      working-directory: ${{ inputs.workingDirectory }}
-
-    - name: modern yarn install
+      working-directory: ${{ inputs.working-directory }}
+      run: >
+        ${{ steps.pkgmngr.outputs.result }} install
+        ${{ steps.pkgmngr.outputs.result == 'pnpm' && '--frozen-lockfile' || '' }}
+        ${{ steps.pkgmngr.outputs.result == 'yarn' && '--immutable' || '' }}
+    - name: custom install
+      if: inputs.install-command != ''
       shell: bash
-      if: inputs.packageManager == 'yarn' && inputs.packageManagerVersion == 'modern'
-      run: corepack enable && yarn
-      working-directory: ${{ inputs.workingDirectory }}
-
-    - name: pnpm install
-      shell: bash
-      if: inputs.packageManager == 'pnpm'
-      run: pnpm install --frozen-lockfile
-      working-directory: ${{ inputs.workingDirectory }}
+      working-directory: ${{ inputs.working-directory }}
+      run: ${{ inputs.install-command }}
