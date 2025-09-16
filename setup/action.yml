@@ -58,6 +58,9 @@ runs:
           const [name] = packageManager.split('@');
           console.log(name);
           return name;
+    - name: setup bun
+      uses: oven-sh/setup-bun@v2
+      if: steps.pkgmngr.outputs.result == 'bun'
     - name: enable corepack
       shell: bash
       working-directory: ${{ inputs.working-directory }}
