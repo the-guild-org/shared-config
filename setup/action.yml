@@ -44,8 +44,9 @@ runs:
       with:
         result-encoding: string
         script: |
+          const path = require('path');
           const wd = '${{ inputs.working-directory }}';
-          const pkgPath = wd ? `./${wd}/package.json` : './package.json';
+          const pkgPath = wd ? path.join(wd, './package.json') : './package.json';
           let { packageManager } = require(pkgPath);
           if (!packageManager && wd) {
             // try the packageManager from root package json
