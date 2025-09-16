@@ -69,7 +69,7 @@ runs:
       with:
         node-version: ${{ inputs.node-version }}
         node-version-file: ${{ inputs.node-version-file }}
-        cache: ${{ steps.pkgmngr.outputs.result === 'bun' && '' || steps.pkgmngr.outputs.result }}
+        cache: ${{ steps.pkgmngr.outputs.result == 'bun' && '' || steps.pkgmngr.outputs.result }}
     - name: install
       if: inputs.install-command == ''
       shell: bash
