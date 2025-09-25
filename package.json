@@ -20,7 +20,7 @@
     "release": "changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "2.28.1",
+    "@changesets/cli": "2.29.7",
     "@shopify/eslint-plugin": "48.0.0",
     "@theguild/eslint-config": "workspace:*",
     "@theguild/prettier-config": "workspace:*",
