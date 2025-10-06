@@ -32,8 +32,9 @@ function getComponentsPatterns() {
     return [
       path.relative(process.cwd(), path.posix.join(componentsPackageJson, '..', 'dist/**/*.js')),
     ];
-  } catch {
-    console.warn("Can't find `@theguild/components` package.");
+  } catch (err) {
+    console.error("Can't find `@theguild/components` package.");
+    console.error(err);
     return [];
   }
 }
