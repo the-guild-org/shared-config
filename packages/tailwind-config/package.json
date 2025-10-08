@@ -1,6 +1,6 @@
 {
   "name": "@theguild/tailwind-config",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "type": "module",
   "description": "The Guild's shared Tailwind config",
   "repository": {
