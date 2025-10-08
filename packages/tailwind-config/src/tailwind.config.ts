@@ -2,6 +2,7 @@ import path from 'node:path';
 import { type Config } from 'tailwindcss';
 import tailwindContainerQueries from '@tailwindcss/container-queries';
 import { hiveColors } from './hive-colors.js';
+import { createRequire } from 'node:module';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- tailwindcss types are incorrect
 const makePrimaryColor: any =
@@ -15,25 +16,24 @@ const makePrimaryColor: any =
   };
 
 function getComponentsPatterns() {
+  const cwd = process.cwd();
+  let require = globalThis.require;
   try {
-    /**
-     * We explicitly do not use `import { createRequire } from 'node:module'` and
-     * `const require = createRequire(import.meta.url)` because it works even without it.
-     * E.g. storybook complains about cannot found `module` package
-     */
-    const componentsPackageJson = require.resolve('@theguild/components/package.json', {
+    if (typeof require === "undefined") require = createRequire(cwd);
+    
+    const componentsPackageJson = require.resolve("@theguild/components/package.json", {
       /**
        * Paths to resolve module location from CWD. Without specifying, it picks incorrect
        * `@theguild/components`, also must be relative
        */
-      paths: [process.cwd()],
+      paths: [cwd]
     });
-
     return [
-      path.relative(process.cwd(), path.posix.join(componentsPackageJson, '..', 'dist/**/*.js')),
+      path.relative(cwd, path.posix.join(componentsPackageJson, "..", "dist/**/*.js"))
     ];
-  } catch {
-    console.warn("Can't find `@theguild/components` package.");
+  } catch (err) {
+    console.error("Failed to find `@theguild/components` package in ", cwd);
+    console.error(err);
     return [];
   }
 }
