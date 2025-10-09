@@ -38,7 +38,7 @@
     "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-sonarjs": "3.0.2",
-    "eslint-plugin-unicorn": "57.0.0",
+    "eslint-plugin-unicorn": "^56.0.0",
     "eslint-plugin-yml": "1.17.0"
   },
   "publishConfig": {
