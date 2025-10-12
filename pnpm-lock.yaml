@@ -74,8 +74,8 @@ importers:
         specifier: 2.31.0
         version: 2.31.0(@typescript-eslint/parser@8.26.1(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint-import-resolver-typescript@4.2.1)(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-jsonc:
-        specifier: 2.19.1
-        version: 2.19.1(eslint@9.22.0(jiti@1.21.7))
+        specifier: 2.20.0
+        version: 2.20.0(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-jsx-a11y:
         specifier: 6.10.2
         version: 6.10.2(eslint@9.22.0(jiti@1.21.7))
@@ -1848,8 +1848,8 @@ packages:
       jest:
         optional: true
 
-  eslint-plugin-jsonc@2.19.1:
-    resolution: {integrity: sha512-MmlAOaZK1+Lg7YoCZPGRjb88ZjT+ct/KTsvcsbZdBm+w8WMzGx+XEmexk0m40P1WV9G2rFV7X3klyRGRpFXEjA==}
+  eslint-plugin-jsonc@2.20.0:
+    resolution: {integrity: sha512-FRgCn9Hzk5eKboCbVMrr9QrhM0eO4G+WKH8IFXoaeqhM/2kuWzbStJn4kkr0VWL8J5H8RYZF+Aoam1vlBaZVkw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -5816,13 +5816,13 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-jsonc@2.19.1(eslint@9.22.0(jiti@1.21.7)):
+  eslint-plugin-jsonc@2.20.0(eslint@9.22.0(jiti@1.21.7)):
     dependencies:
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.22.0(jiti@1.21.7))
       eslint: 9.22.0(jiti@1.21.7)
       eslint-compat-utils: 0.6.5(eslint@9.22.0(jiti@1.21.7))
       eslint-json-compat-utils: 0.2.1(eslint@9.22.0(jiti@1.21.7))(jsonc-eslint-parser@2.4.0)
-      espree: 9.6.1
+      espree: 10.3.0
       graphemer: 1.4.0
       jsonc-eslint-parser: 2.4.0
       natural-compare: 1.4.0
