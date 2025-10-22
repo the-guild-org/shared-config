@@ -18,7 +18,7 @@ importers:
         version: 2.28.1
       '@shopify/eslint-plugin':
         specifier: 48.0.0
-        version: 48.0.0(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.40.0(@typescript-eslint/parser@8.40.0(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(@typescript-eslint/parser@8.40.0(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(prettier@3.5.3)(typescript@5.8.2)
+        version: 48.0.0(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.40.0(@typescript-eslint/parser@8.40.0(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(@typescript-eslint/parser@8.40.0(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(prettier@3.6.2)(typescript@5.8.2)
       '@theguild/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
@@ -41,8 +41,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(patch_hash=50003843f2321dab1bed352a3db155e1d27b1f913fb1b5962a74b5510fa84947)(eslint@9.22.0(jiti@1.21.7))(ts-node@10.9.2(@types/node@22.13.10)(typescript@5.8.2))
       prettier:
-        specifier: 3.5.3
-        version: 3.5.3
+        specifier: 3.6.2
+        version: 3.6.2
       ts-node:
         specifier: 10.9.2
         version: 10.9.2(@types/node@22.13.10)(typescript@5.8.2)
@@ -3112,6 +3112,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   proc-log@4.2.0:
     resolution: {integrity: sha512-g8+OnU/L2v+wyiVK+D5fA34J7EH8jZ8DDlvwhRCMxmMj7UCBvxiO1mGeN+36JXIKF4zevU4kRBd8lVgG9vLelA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -4613,7 +4618,7 @@ snapshots:
 
   '@rushstack/eslint-patch@1.11.0': {}
 
-  '@shopify/eslint-plugin@48.0.0(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.40.0(@typescript-eslint/parser@8.40.0(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(@typescript-eslint/parser@8.40.0(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(prettier@3.5.3)(typescript@5.8.2)':
+  '@shopify/eslint-plugin@48.0.0(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.40.0(@typescript-eslint/parser@8.40.0(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(@typescript-eslint/parser@8.40.0(eslint@9.22.0(jiti@1.21.7))(typescript@5.8.2))(eslint@9.22.0(jiti@1.21.7))(prettier@3.6.2)(typescript@5.8.2)':
     dependencies:
       change-case: 4.1.2
       common-tags: 1.8.2
@@ -4627,7 +4632,7 @@ snapshots:
       eslint-plugin-jest-formatting: 3.1.0(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-n: 17.16.2(eslint@9.22.0(jiti@1.21.7))
-      eslint-plugin-prettier: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@9.22.0(jiti@1.21.7)))(eslint@9.22.0(jiti@1.21.7))(prettier@3.5.3)
+      eslint-plugin-prettier: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@9.22.0(jiti@1.21.7)))(eslint@9.22.0(jiti@1.21.7))(prettier@3.6.2)
       eslint-plugin-promise: 7.2.1(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-react: 7.37.4(eslint@9.22.0(jiti@1.21.7))
       eslint-plugin-react-hooks: 5.2.0(eslint@9.22.0(jiti@1.21.7))
@@ -5878,10 +5883,10 @@ snapshots:
       minimatch: 9.0.5
       semver: 7.7.2
 
-  eslint-plugin-prettier@5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@9.22.0(jiti@1.21.7)))(eslint@9.22.0(jiti@1.21.7))(prettier@3.5.3):
+  eslint-plugin-prettier@5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@9.22.0(jiti@1.21.7)))(eslint@9.22.0(jiti@1.21.7))(prettier@3.6.2):
     dependencies:
       eslint: 9.22.0(jiti@1.21.7)
-      prettier: 3.5.3
+      prettier: 3.6.2
       prettier-linter-helpers: 1.0.0
       synckit: 0.11.11
     optionalDependencies:
@@ -7312,6 +7317,8 @@ snapshots:
   prettier@2.8.8: {}
 
   prettier@3.5.3: {}
+
+  prettier@3.6.2: {}
 
   proc-log@4.2.0: {}
 
