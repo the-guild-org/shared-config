@@ -46,6 +46,8 @@ runs:
         script: |
           const path = require('path');
           const wd = '${{ inputs.working-directory }}';
+          // we need to use path.resolve because path.join will remove the leading './' on
+          // relative paths and therefore break require for some setups
           const pkgPath = (wd != null && wd != '.')
             ? path.resolve('.', wd, 'package.json')
             : path.resolve('.', 'package.json');
