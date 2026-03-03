@@ -4,19 +4,14 @@
 on:
   workflow_call:
     inputs:
-      nodeVersion:
+      node-version:
         required: false
         type: string
-        default: '22'
-      packageManager:
+      working-directory:
         type: string
+        description: Working directory for setup (where package.json with packageManager is)
         required: false
-        default: yarn
-      packageManagerVersion:
-        type: string
-        description: Package manager version
-        required: false
-        default: ''
+        default: .
       cwd:
         type: string
         description: The directory containing the MDX files
@@ -34,7 +29,7 @@ on:
 
 jobs:
   validate-mdx-links:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -44,16 +39,16 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         name: checkout
 
-      - uses: the-guild-org/shared-config/setup@main
+      - uses: the-guild-org/shared-config/setup@v1
         name: setup env
+        id: setup
         with:
-          nodeVersion: ${{inputs.nodeVersion}}
-          packageManager: ${{inputs.packageManager}}
-          packageManagerVersion: ${{inputs.packageManagerVersion}}
+          node-version: ${{inputs.node-version}}
+          working-directory: ${{inputs.working-directory}}
 
       - name: validate links
         run: |
-          ${{inputs.packageManager}} dlx validate-mdx-links@${{inputs.version}} \
+          ${{steps.setup.outputs.package-manager}} dlx validate-mdx-links@${{inputs.version}} \
             --cwd ${{inputs.cwd}} \
             --files ${{inputs.files}} \
             ${{inputs.verbose && '--verbose' || ''}}
