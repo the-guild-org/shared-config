@@ -48,7 +48,7 @@ jobs:
 
       - name: validate links
         run: |
-          ${{steps.setup.outputs.package-manager}} dlx validate-mdx-links@${{inputs.version}} \
+          ${{ steps.setup.outputs.package-manager == 'bun' && 'bunx' || format('{0} dlx', steps.setup.outputs.package-manager) }} validate-mdx-links@${{inputs.version}} \
             --cwd ${{inputs.cwd}} \
             --files ${{inputs.files}} \
             ${{inputs.verbose && '--verbose' || ''}}
