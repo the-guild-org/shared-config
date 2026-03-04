@@ -52,9 +52,10 @@ jobs:
           working-directory: ${{inputs.working-directory}}
 
       - name: validate links
+        working-directory: ${{inputs.cwd}}
         run: |
           ${{ steps.setup.outputs.package-manager == 'bun' && 'bunx' || format('{0} dlx', steps.setup.outputs.package-manager) }} validate-mdx-links@${{inputs.version}} \
-            --cwd ${{inputs.cwd}} \
+            --cwd . \
             ${{inputs.files && format('--files {0}', inputs.files) || ''}} \
             ${{inputs['content-dir'] && format('--content-dir {0}', inputs['content-dir']) || ''}} \
             ${{inputs.verbose && '--verbose' || ''}}
