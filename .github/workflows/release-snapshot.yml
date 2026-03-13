@@ -35,7 +35,7 @@ on:
       githubToken:
         required: true
       npmToken:
-        required: true
+        required: false
 
     outputs:
       published:
