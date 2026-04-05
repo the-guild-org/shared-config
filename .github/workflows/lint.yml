@@ -49,4 +49,3 @@ jobs:
 
       - name: lint
         run: ${{ inputs.script || 'yarn eslint --output-file eslint_report.json --format json .' }}
-        continue-on-error: ${{ github.event_name == 'pull_request' }}
