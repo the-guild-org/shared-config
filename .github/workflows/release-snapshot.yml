@@ -30,6 +30,9 @@ on:
         type: string
         description: File containing the version to use.
         required: false
+      bun:
+        type: boolean
+        description: Enable it if build requires bun
 
     secrets:
       githubToken:
@@ -60,6 +63,10 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
+
+      - if: inputs.bun
+        name: Install Bun
+        uses: oven-sh/setup-bun@v2
 
       - uses: the-guild-org/shared-config/setup@v1
         id: env
