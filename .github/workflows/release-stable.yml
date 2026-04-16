@@ -40,7 +40,7 @@ on:
       githubToken:
         required: true
       npmToken:
-        required: true
+        required: false
     outputs:
       published:
         description: A boolean value to indicate whether a publishing is happened or not
