@@ -86,3 +86,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.npmToken }}
           GITHUB_TOKEN: ${{ secrets.githubToken }}
           NPM_CONFIG_PROVENANCE: true
+          # starting pnpm v11 pnpm no longer reads npm_config_* environment
+          # variables and we should use pnpm_config_* instead
+          PNPM_CONFIG_PROVENANCE: true
