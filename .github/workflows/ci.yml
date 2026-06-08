@@ -14,29 +14,18 @@ on:
       name:
         required: false
         type: string
-      packageManager:
-        type: string
-        required: false
-        default: yarn
-      packageManagerVersion:
-        type: string
-        description: Package manager version
-        required: false
-        default: ''
 jobs:
   ci:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     name: ${{ inputs.name || 'script' }}
     steps:
       - name: checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - uses: the-guild-org/shared-config/setup@main
+      - uses: the-guild-org/shared-config/setup@v1
         name: setup env
         with:
-          nodeVersion: ${{inputs.nodeVersion}}
-          packageManager: ${{inputs.packageManager}}
-          packageManagerVersion: ${{inputs.packageManagerVersion}}
+          node-version: ${{inputs.nodeVersion}}
 
       - name: ${{ inputs.script }}
         run: ${{ inputs.script }}
