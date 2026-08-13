@@ -78,7 +78,7 @@ jobs:
 
       - name: ${{ inputs.npmTag }} release
         id: changesets
-        uses: the-guild-org/changesets-snapshot-action@232ff9af22cfd043528fe2e4c403afd090ba3ed3 # v0.0.4
+        uses: ardatan/changesets-action@29038f2da7aa7c2a3c2a44172a53577503d9c13c # fix: parse @changesets/cli v3 publish output
         with:
           tag: ${{ inputs.npmTag }}
           prepareScript: ${{ inputs.buildScript == '' && '' || format('{0} run {1}', steps.env.outputs.package-manager, inputs.buildScript) }}
