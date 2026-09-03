@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "2.28.1",
-    "@shopify/eslint-plugin": "48.0.0",
+    "@shopify/eslint-plugin": "50.0.0",
     "@theguild/eslint-config": "workspace:*",
     "@theguild/prettier-config": "workspace:*",
     "@types/eslint": "9.6.1",
