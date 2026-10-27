@@ -78,7 +78,10 @@ jobs:
 
       - name: release / pull_request
         id: changesets
-        uses: dotansimha/changesets-action@069996e9be15531bd598272996fa23853d61590e # v1.5.2
+        # Temporary: parse @changesets/cli v3 publish output (Successfully published /
+        # bare name@version) until upstream changesets-action gains the same fix.
+        # Same class of bug as release-snapshot.yml's ardatan/changesets-action pin.
+        uses: ardatan/changesets-action@748de4e3daea08fb40c9ace7f29c9892e65bb175
         with:
           publish: '${{steps.env.outputs.package-manager}} ${{ inputs.releaseScript }}'
           version: '${{steps.env.outputs.package-manager}} ${{inputs.versionScript}}'
